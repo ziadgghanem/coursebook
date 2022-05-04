@@ -1,6 +1,29 @@
 # remote_theme: GTM52/LatexJekyll
 # theme: jekyll-theme-minimal
 # theme: jekyll-theme-cayman
-markdown: kramdown
-kramdown:
-  math_engine: katex
+
+baseurl: /notebook
+title: CourseBook
+subtitle: personal notebook of Ziad Ghanem
+author: Ziad Ghanem
+simple_search: http://google.com/search
+description: A notebook containing studies, interests, and ideas of Ziad Ghanem
+name: notes
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+permalink: /articles/:short_year/:title
+timezone: America/Texas
+excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
