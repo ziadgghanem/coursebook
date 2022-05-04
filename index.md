@@ -3,9 +3,9 @@ layout: post
 title: Home
 ---
 
-These are my notes. \  
+These are my notes.  
 [Github repository](https://github.com/ziadgghanem/ziadgghanem).
 
 ## Course Notes
 
-- [Planar Degree Theory](degree_theory.md): Course notes.
+- [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
