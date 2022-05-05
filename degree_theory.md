@@ -3,6 +3,11 @@ layout: post
 title: 'Planar Degree Theory'
 ---
 
+<blockquote>
+        Mathematicians are a kind of Frenchmen. Whenever you say anything or talk to them, they translate it into their own language, and right away it is something completely different.
+        <footer>Goethe</footer>
+</blockquote>
+
 <hr>
 
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
