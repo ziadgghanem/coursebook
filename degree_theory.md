@@ -9,6 +9,7 @@ title: 'Planar Degree Theory'
 
 <section>
 Definition (Algebra): Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties: $\forall x,y,z \in V \, \forall \alpha, \beta \in K$
+</section>
 
 1. (Right Distributivity) $(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$
 2. (Left Distributivity) $z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$
@@ -22,7 +23,6 @@ We will consider three classes of algebras, $(A, *)$ is called:
 3. Unital if $\exists e \in A$ st $\forall a \in A a*e=e*a=a$
 
 For our purposes, an algebra satisfying atleast one of the above properties will be called *reasonable*.
-</section>
 
 
 
