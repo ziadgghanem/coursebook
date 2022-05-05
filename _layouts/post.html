@@ -4,14 +4,16 @@ layout: default
 <h1>{{ page.title | capitalize }}</h1>
 <p class="subtitle">{{ page.date | date: "%B %-d, %Y" }}</p>
 
-  <!-- Allow $..$ style inline mode -->
+
+<!-- Allow $..$ style inline mode -->
+
+<script type="text/x-mathjax-config">
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
   };
 
-<script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: {
       Macros: {
