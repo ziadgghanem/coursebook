@@ -5,12 +5,12 @@ layout: default
 <p class="subtitle">{{ page.date | date: "%B %-d, %Y" }}</p>
 
 <script type="text/x-mathjax-config">
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ["\\(", "\\)"]],
-      processEscapes: true,
+  MathJax.Hub.Config({
+    TeX: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
     }
-  }
+  });
 </script>
 
 <script type="text/x-mathjax-config">
