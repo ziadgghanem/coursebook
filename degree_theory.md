@@ -7,12 +7,11 @@ title: 'Planar Degree Theory'
 
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
-<section>
 Definition (Algebra): Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties: $\forall x,y,z \in V \, \forall \alpha, \beta \in K$
-</section>
 
-1. (Right Distributivity) $(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$
+1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
 2. (Left Distributivity) $z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$
+
 Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$. 
 
 In essence, an Algebra is a vector space with an additional operator that is bilinear.
