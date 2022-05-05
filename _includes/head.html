@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="tufte.css"/>
   <link rel="stylesheet" href="latex.css"/>  
 
-
+  <!-- Allow $..$ style inline mode -->
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  
   <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
   {% if site.data.options.mathjax %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
