@@ -12,13 +12,15 @@ title: 'Planar Degree Theory'
 
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
-> **Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
->
-> 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
-> 2. (Left Distributivity) $$z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$$
->
-> Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$.<br>
-In essence, an Algebra is a vector space with an additional operator that is bilinear. <label for="test" class="margin-toggle">&#8853;</label><input type="checkbox" id="test" class="margin-toggle"/><span class="marginnote">margin note.</span> 
+---
+**Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
+
+1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
+2. (Left Distributivity) $$z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$$
+
+Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$.  
+In essence, an Algebra is a vector space with an additional operator that is bilinear. 
+---
 
 We will consider three classes of algebras, $(A, *)$ is called: <label for="reasonable_algebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="reasonable_algebras" class="margin-toggle"/><span class="marginnote">For our purposes, an algebra satisfying atleast one of the above properties will be called *reasonable*.</span> 
 1. Commutative if $$a*b = b*a \quad \forall a,b \in A$$
@@ -38,8 +40,10 @@ If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is 
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
-1. Take a basis $$\{e_1, \ldots , \e_n \}$$
-2. Fix $$i,j$$ from $$1:n$$ and put $$e_j * e_i := \sum_{k=1}^n \alpha_{i \, j}^{k} e_{k} = \alpha_{i \, j}^{1} e_{1} + \cdots + \alpha_{i \, j}^{n} e_{n}$$ where $$\alpha_{i \, j}^{k}$$$ are chosen from our field.
+1. Take a basis $$\{e_1, \ldots , e_n \}$$
+2. Fix indices $$i,j$$ from $$1:n$$ and put 
+    - $$e_j * e_i := \sum_{k=1}^n \alpha_{i \, j}^{k} e_{k} = \alpha_{i \, j}^{1} e_{1} + \cdots + \alpha_{i \, j}^{n} e_{n}$$ 
+where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
-4. Suppose we wanted to define a *commutative* multiplication, then $$\forall i,j,k \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
+4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
 
