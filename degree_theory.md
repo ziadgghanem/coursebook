@@ -17,8 +17,8 @@ title: 'Planar Degree Theory'
 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
 2. (Left Distributivity) $$z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$$
 
-Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$./
-In essence, an Algebra is a vector space with an additional operator that is bilinear.
+Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$.//
+In essence, an Algebra is a vector space with an additional operator that is bilinear. <label for="test" class="margin-toggle">&#8853;</label><input type="checkbox" id="test" class="margin-toggle"/><span class="marginnote">margin note.</span> 
 
 We will consider three classes of algebras, $(A, *)$ is called:
 1. Commutative if $$a*b = b*a \quad \forall a,b \in A$$
