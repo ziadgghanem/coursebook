@@ -13,7 +13,7 @@ title: 'Planar Degree Theory'
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
 ---
-**Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
+>**Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
 2. (Left Distributivity) $$z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$$
@@ -46,4 +46,6 @@ Given an n-dimensional vector space $A$ one might want to define a multiplicatio
 where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
 4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
+
+
 
