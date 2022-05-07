@@ -13,6 +13,7 @@ title: 'Planar Degree Theory'
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
 <blockquote class="ex1">
+
 **Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
@@ -27,7 +28,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 2. Associative if $$(a*b)*c = a*(b*c) \quad \forall a,b,c \in A$$
 3. Unital if $$\exists e \in A$$ st $$\forall a \in A a*e=e*a=a$$
 
-<hr style="width:10%">
+<blockquote class="ex1">
 
 ***Examples***
 1. $$(\mathbb{C}, \cdot)$$ The complex numbers with standard complex multiplication is *commutative,* *associative* and *unital*
@@ -35,11 +36,13 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 3. $$(\mathbb{R} \bigoplus \mathbb{R}, *)$$ with the following multiplication: $$ \forall u = (u_1, u_2) v = (v_1, v_2) \quad u*v = (u_1v_1, u_2,v_2)$$ is *commutative,* *associative* and *unital*
 4. $$(M(n,K), \cdot)$$ The group of $$n \times n$$ matrices with entries from field $$K$$ with the usual matrix multiplication. is *associative,* *unital* but *not commutative*
 5. $$((C[a,b], K),*)$$ The space of functions continous over the interval $$[a,b] \subset K$$ with the usual function multiplication $$f*g = f(x) \cdot g(x) \, \forall x \in [a,b]$$ is *commutative,* *associative* and *unital*
+</blockquote>
 
 If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is a finite dimensional algebra.
-<hr style="width:10%">
 
-**Construction of Algebras from Vector Spaces** 
+<blockquote class="ex1">
+
+**Explicit Construction of Algebras from Vector Spaces** 
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
@@ -49,8 +52,9 @@ Given an n-dimensional vector space $A$ one might want to define a multiplicatio
 where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
 4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
+</blockquote>
 
-<hr style="width:10%">
+<blockquote class="ex1">
 
 ***Example***  
 Take $$\mathbb{C}$$ and define the usual complex multiplication $$*$$ using the above strategy. 
@@ -63,8 +67,28 @@ $$= \begin{pmatrix} 1 & 0 & -1\\\ 0 & 1 & 0 \end{pmatrix}$$
 
 So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected product
 - $$ (x_1, x_2)*(y_1, y_2)$$ $$ = (\alpha_{1}x_1y_1 + \alpha_{3}x_2y_2 , \beta_{2}x_1y_2 + \beta_{2}x_2y_2) = (x_1y_1 - x_2y_2, x_1y_2 + x_2y_2)$$
+</blockquote>
 
-<hr style="width:10%">
+
+<blockquote class="ex1">
+
+**Definition: Left Multiplication Matrix, norm, trace** 
+
+Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
+1. The *norm of A:* $$ \quad \gamma_2 := \det J_A(x)$$
+2. The *trace of A:* $$\quad \gamma_1 := \operatorname{Tr} J_A(x)$$
+
+</blockquote>
+
+
+<blockquote class="ex1">
+
+***Example*** \\
+Take $(\mathbb{C}, \cdot)$ the complex numbers with their usual multiplication. For any, $z_1 = (x_1,y_1), z_2 = (x_2,y_2),$ we should have $z_1 \cdot z_2 = (x_1 x_2 - y_1 y_2, x_1 y_2 + x_2 y_1)$ The appropriate left multiplication matrix is: $J_A(z_1) = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix}$ with norm  $\gamma_2 = \det (J_A(x)) = x_1^2 + y_1^2 = \lVert z_1 {\rVert}_{2}^2$ and trace $ \gamma_1 = \operatorname{Tr} J_A(x) = 2x_1$
+
+To confirm we take $J_A(z_1)z_2 = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix} \begin{pmatrix}x_2 \\\ y_2 \end{pmatrix} = \begin{pmatrix}x_1 x_2 - y_1 y_2 \\\ x_1 y_2 + x_2 y_1 \end{pmatrix} = z_1 \cdot z_2$
+</blockquote>
+
 
 **Table Of Classification for**
 
