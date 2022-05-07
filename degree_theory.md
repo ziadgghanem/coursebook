@@ -12,7 +12,7 @@ title: 'Planar Degree Theory'
 
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
-```
+<hr style="width:10%">
 **Definition(Algebra):**  Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
@@ -20,11 +20,14 @@ title: 'Planar Degree Theory'
 
 Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$.  
 In essence, an Algebra is a vector space with an additional operator that is bilinear. 
-```
+<hr style="width:10%">
+
 We will consider three classes of algebras, $(A, *)$ is called: <label for="reasonable_algebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="reasonable_algebras" class="margin-toggle"/><span class="marginnote">For our purposes, an algebra satisfying atleast one of the above properties will be called *reasonable*.</span> 
 1. Commutative if $$a*b = b*a \quad \forall a,b \in A$$
 2. Associative if $$(a*b)*c = a*(b*c) \quad \forall a,b,c \in A$$
 3. Unital if $$\exists e \in A$$ st $$\forall a \in A a*e=e*a=a$$
+
+<hr style="width:10%">
 
 ***Examples***
 1. $$(\mathbb{C}, \cdot)$$ The complex numbers with standard complex multiplication is *commutative,* *associative* and *unital*
@@ -32,6 +35,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 3. $$(\mathbb{R} \bigoplus \mathbb{R}, *)$$ with the following multiplication: $$ \forall u = (u_1, u_2) v = (v_1, v_2) \quad u*v = (u_1v_1, u_2,v_2)$$ is *commutative,* *associative* and *unital*
 4. $$(M(n,K), \cdot)$$ The group of $$n \times n$$ matrices with entries from field $$K$$ with the usual matrix multiplication. is *associative,* *unital* but *not commutative*
 5. $$((C[a,b], K),*)$$ The space of functions continous over the interval $$[a,b] \subset K$$ with the usual function multiplication $$f*g = f(x) \cdot g(x) \, \forall x \in [a,b]$$ is *commutative,* *associative* and *unital*
+<hr style="width:10%">
 
 If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is a finite dimensional algebra.
 
@@ -46,5 +50,16 @@ where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
 4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
 
+<hr style="width:10%">
 
+***Example***  
+Take $$\mathbb{C}$$ and define the usual complex multiplication $$*$$ using the above strategy. 
+
+We have the standard basis $e_1 = (1,0), e_2 = (0,1)$. As complex multiplication is *commutative* it is sufficient to define six coefficients: $ \begin{pmatrix} \alpha_{1} & \alpha_{2} & \alpha_{3}\\\ \beta_{1} & \beta_{2} & \beta_{3} \end{pmatrix}$ 
+$$= \begin{pmatrix} 1 & 0 & -1\\\ 0 & 1 & 0 \end{pmatrix}$$
+1. $$e_1 * e_1 = \alpha_{1}e_1 + \beta_{1}e_2 = e_1$$ $$\iff$$ $$(1,0)*(1,0) = (1,0) $$ $$\iff$$ $$1 \cdot 1 = 1$$
+2. $$e_1 * e_2 = \alpha_{2}e_1 + \beta_{2}e_2 = e_2$$ $$\iff$$ $$(1,0)*(0,1) = (0,1) $$ $$\iff$$ $$1 \cdot i = i$$
+3. $$e_2 * e_2 = \alpha_{3}e_1 + \beta_{3}e_2 = -e_1$$ $$\iff$$ $$(0,1)*(0,1) = (-1,0) $$ $$\iff$$ $$i \cdot i = -1$$
+
+<hr style="width:10%">
 
