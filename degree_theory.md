@@ -13,7 +13,7 @@ title: 'Planar Degree Theory'
 ### algebras and the existence of bounded/periodic solutions to dynamical systems 
 
 
-> ---
+---
 
 **Definition(Algebra):**  
 
@@ -31,7 +31,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 3. Unital if $$\exists e \in A$$ st $$\forall a \in A a*e=e*a=a$$
 
 
-> ---
+---
 
 ***Examples***  
 1. $$(\mathbb{C}, \cdot)$$ The complex numbers with standard complex multiplication is *commutative,* *associative* and *unital*
@@ -42,7 +42,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 
 If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is a finite dimensional algebra.
 
-> ---
+---
 
 **Explicit Construction of Algebras from Vector Spaces** 
 
@@ -55,7 +55,7 @@ where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
 4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
 
-> ---
+---
 
 ***Example***  
 
@@ -70,7 +70,7 @@ $$= \begin{pmatrix} 1 & 0 & -1\\\ 0 & 1 & 0 \end{pmatrix}$$
 So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected product
 - $$ (x_1, x_2)*(y_1, y_2)$$ $$ = (\alpha_{1}x_1y_1 + \alpha_{3}x_2y_2 , \beta_{2}x_1y_2 + \beta_{2}x_2y_2) = (x_1y_1 - x_2y_2, x_1y_2 + x_2y_2)$$
 
-> ---
+---
 
 **Definition: Left Multiplication Matrix, norm, trace** 
 
@@ -78,7 +78,7 @@ Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called
 1. The *norm of A:* $$ \quad \gamma_2 := \det J_A(x)$$
 2. The *trace of A:* $$\quad \gamma_1 := \operatorname{Tr} J_A(x)$$
 
-> ---
+---
 
 ***Example***
 
@@ -86,34 +86,45 @@ Take $(\mathbb{C}, \cdot)$ the complex numbers with their usual multiplication. 
 
 To confirm we take $J_A(z_1)z_2 = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix} \begin{pmatrix}x_2 \\\ y_2 \end{pmatrix} = \begin{pmatrix}x_1 x_2 - y_1 y_2 \\\ x_1 y_2 + x_2 y_1 \end{pmatrix} = z_1 \cdot z_2$
 
-> ---
+---
 
 ***Example***
 
-Take $(\mathbb{R} \bigoplus \mathbb{R}, *)$ equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this algebra has
+Take $(\mathbb{R} \bigoplus \mathbb{R}, *)$ 
+equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this algebra has
 1. Left multiplication matrix:  $$J_A(z_1) = \begin{pmatrix}x_1 & 0\\\ 0 & y_1\end{pmatrix}$$ 
 2. Norm: $$\gamma_2(z_1) = x_1 y_1$$
 3. Trace: $$\gamma_1(z_1) = x_1 + y_1$$
 
-> ---
+---
 
 **Theorem (Cayley-Hamilton):**
 
 Let $(A,*)$ be a 2-dimensional algebra, then
 - $$ \forall x,y \in A x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
 
-> ---
+---
 
 **Corollary**
 
 If in addition $(A,*)$ is commutative, we have 
 - $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
 
-**Table Of Classification for**
 
-| $N$         | Price     | # In stock |
-|--------------|-----------|------------|
-| Juicy Apples | 1.99      | *7*        |
-| Bananas      | **1.89**  | 5234       |
+### formulation of Muhamadiev type results
 
-Theorem
+---
+**Theorem**
+
+Consider the m-homogeneous map $P: \mathbb{R}^n \rightarrow \mathbb{R}^n$ satisfying the following properties
+1. $P( \lambda x) = \lambda^m P(x)$ for all $\lambda \in \mathbb{R}$
+2. if $P(x) = 0$ then x = 0
+3. $ind(0,P)$ $\neq 0$
+4. The system $\dot{x} = P(x)$ does not admit any bounded solutions
+
+and $h: \mathbb{R} \cross \mathbb{R}^n \rightarrow \mathbb{R}^n$ any map satisfying
+1. *continuity*
+2. *$\omega$ periodicity* i.e. $\exists \omega \in \mathbb{R}$ such that $h(t+\omega,x) = h(t,x)$
+3. *asymptoticity* $\lim_{\vert x \vert \to \infty} \frac{h(t,x)}{\vert x \vert^m} = 0$ uniformly in t
+
+Then the system $\dot{x} = P(x) + h(t,x)$ admits at least one periodic solution. <label for="no_perturbation" class="margin-toggle">&#8853;</label><input type="checkbox" id="no_perturbation" class="margin-toggle"/><span class="marginnote">Note: the result holds for $h \equiv	0$ as $x(t) \equiv 0$ solves $\dot{x} = P(x)$ by assumption and is trivially $\omega$ periodic.</span> 
