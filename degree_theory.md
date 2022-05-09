@@ -122,9 +122,24 @@ Consider the m-homogeneous map $P: \mathbb{R}^n \rightarrow \mathbb{R}^n$ satisf
 3. $ind(0,P)$ $\neq 0$
 4. The system $\dot{x} = P(x)$ does not admit any bounded solutions
 
-and $h: \mathbb{R} \cross \mathbb{R}^n \rightarrow \mathbb{R}^n$ any map satisfying
+and $h: \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{R}^n$ any map satisfying
 1. *continuity*
-2. *$\omega$ periodicity* i.e. $\exists \omega \in \mathbb{R}$ such that $h(t+\omega,x) = h(t,x)$
-3. *asymptoticity* $\lim_{\vert x \vert \to \infty} \frac{h(t,x)}{\vert x \vert^m} = 0$ uniformly in t
+2. *$\omega$ periodicity* 
+    - $\exists \omega \in \mathbb{R}$ such that $h(t+\omega,x) = h(t,x)$
+3. *asymptoticity* 
+    - $\lim_{\vert x \vert \to \infty} \frac{h(t,x)}{\vert x \vert^m} = 0$ uniformly in t
 
 Then the system $\dot{x} = P(x) + h(t,x)$ admits at least one periodic solution. <label for="no_perturbation" class="margin-toggle">&#8853;</label><input type="checkbox" id="no_perturbation" class="margin-toggle"/><span class="marginnote">Note: the result holds for $h \equiv	0$ as $x(t) \equiv 0$ solves $\dot{x} = P(x)$ by assumption and is trivially $\omega$ periodic.</span> 
+
+**Termionolgy (Autonomous System)**  
+Consider the system $\dot{x} = f(t,x)$ we say that $f(t,x)$ is autonomous as it depends explicitly on t. Otherwise the system is called non-autonomous
+- e.g. $\dot{x}=x^2 + sin(t)$ is an autonomous system
+
+### construction of degree theory in n-dimensions
+
+Assume $\Omega$ is an open subset of $\mathbb{R}^n$ and $f: \Omega \rightarrow \mathbb{R}^m$ a differrentiable map. The point $x_0 \in \Omega$ is called rregular if $$
+
+
+
+
+

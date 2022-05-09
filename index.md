@@ -9,3 +9,5 @@ These are my notes.
 ## Course Notes
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
+
+- [Algebraic Topology](algebraic_topology.md): Notes on algebraic topology.
