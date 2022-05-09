@@ -5,7 +5,9 @@ title: 'Algebraic Topology'
 
 ### paths and homotopy
 
-A path in a space $X$ is a continuous map $f:I \rightarrow X$ two paths are said to be homotopic if one can be continuously deforrmed to the other with endpoints fixed.
+A path in a space $X$ is a continuous map $f:I \rightarrow X$ 
+
+Two paths $f,g$ are said to be homotopic, denoted $f \simeq g$, if one can be continuously deforrmed to the other with endpoints fixed.
 
 We define a homotopy of paths as the family of maps $f_t:I \rightarrow X$ such that
 1. $f_t(0) = x_0$ and $f_t(1) = x_1$ for all $t \in I$
@@ -14,7 +16,17 @@ We define a homotopy of paths as the family of maps $f_t:I \rightarrow X$ such t
 In these terms, the paths $f_1, f_2$ with coincident endpoints $x_0,x_1$ are homotopic if there exists a homotopy $f_t$ connecting them.
 
 <div class="example">
+
   ***Example: Path Homotopy in Convex Spaces***  
-  \Large
+
   In any convex space $X$ two paths $f,g:I \rightarrow X$ having the same endpoints are homotopoic via the homotopy $h_t(x) = (1-t)f(x) + tg(x)$
 </div>
+
+<div class="example">
+
+  ***Proposition: Homotopy as Equivalence Relation***  
+
+  Homotopy is an equivalence relation on the space of paths with fixed endpoints in any topological space $X$.
+</div>
+
+We will call the equivalence class of a path $f$ under this relation a homotopy class, denoted $[f]$ such that $f \simeq g$ if and only if $g \in [f].$
