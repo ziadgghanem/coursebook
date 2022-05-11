@@ -2,6 +2,21 @@
 layout: post
 title: 'Algebraic Topology'
 ---
+### Topology
+
+## Topological Equivalence
+
+Two topological spaces $X, Y$ are *homeomorphic* if there exists a homeomorphism $\phi : X \rightarrow Y$ between them
+<label for="homeomorphism" class="margin-toggle">&#8853;</label><input type="checkbox" id="homeomorphism" class="margin-toggle"/><span class="marginnote">A homeomorphism between topological spaces is a continuous function with continuous inverse.</span> 
+
+- $$X \simeq Y \iff \exists_{\phi : X \rightarrow Y}$$ 
+
+*Topological Invariant:* An algebraic object that is unchanged under homeomorphism. 
+- e.g.: # of connected components, Euler characteristic, fundamental group.
+
+*Topological Property:* A property that is unchanged under homeomorphism
+- e.g.: compactness, connectedness, path connectedness, seperability.
+
 
 ### The Fundamental Group
 
@@ -18,8 +33,7 @@ We define a homotopy of paths as the family of maps $f_t:I \rightarrow X$ such t
 In these terms, the paths $f_1, f_2$ with coincident endpoints $x_0,x_1$ are homotopic if there exists a homotopy $f_t$ connecting them.
 
 <div class="example">
-
-  ***Example: Path Homotopy in Convex Spaces***  
+  <h3>Example: Path Homotopy in Convex Spaces</h3>
 
   In any convex space $X$ two paths $f,g:I \rightarrow X$ having the same endpoints are homotopoic via the homotopy $h_t(x) = (1-t)f(x) + tg(x)$
 
@@ -27,8 +41,7 @@ In these terms, the paths $f_1, f_2$ with coincident endpoints $x_0,x_1$ are hom
 
 
 <div class="example">
-
-  ***Proposition: Homotopy as Equivalence Relation***  
+  <h3>Proposition: Homotopy as Equivalence Relation</h3>
 
   Homotopy is an equivalence relation on the space of paths with fixed endpoints in any topological space $X$.
 
