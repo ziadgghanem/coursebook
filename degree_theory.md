@@ -34,7 +34,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 ---
 
 <div class="example">
-<section markdown="block", width = 800>
+<section markdown="block" width = 800>
 
 **Examples: Reasonable Algebras**
 
