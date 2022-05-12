@@ -33,8 +33,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 
 ---
 
-<div class="example">
-<section markdown="block" width = 800>
+<div class="example" markdown="1">
 
 **Examples: Reasonable Algebras**
 
@@ -44,7 +43,6 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 4. $$(M(n,K), \cdot)$$ The group of $$n \times n$$ matrices with entries from field $$K$$ with the usual matrix multiplication. is *associative,* *unital* but *not commutative*
 5. $$((C[a,b], K),*)$$ The space of functions continous over the interval $$[a,b] \subset K$$ with the usual function multiplication $$f*g = f(x) \cdot g(x) \, \forall x \in [a,b]$$ is *commutative,* *associative* and *unital*
 
-</section>
 </div>
 
 If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is a finite dimensional algebra.
