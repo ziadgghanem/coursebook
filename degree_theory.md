@@ -79,8 +79,10 @@ So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected prod
 **Definition: Left Multiplication Matrix, norm, trace** 
 
 Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
-1. The *norm of A:* $$ \quad \gamma_2 := \det J_A(x)$$
-2. The *trace of A:* $$\quad \gamma_1 := \operatorname{Tr} J_A(x)$$
+1. The *norm of A:* 
+    * $$ \quad \gamma_2$$ $$:= \det J_A(x)$$
+2. The *trace of A:* 
+    * $$\quad \gamma_1$$ $$:= \operatorname{Tr} J_A(x)$$
 
 ---
 
@@ -113,6 +115,48 @@ Let $(A,*)$ be a 2-dimensional algebra, then
 
 If in addition $(A,*)$ is commutative, we have 
 - $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
+
+### Algebraic Terminology
+
+The element $a$ in the K-algebra, $(A,*)$, $a \neq 0,$ is called *idempotent* if $a^2=a$
+
+<div class="example" markdown="1">
+
+**Example: (idempotence in unital algebras)**
+
+Take any unital algebra $(A,*)$ then for the unital element $e\in A$
+it is always the case that $e^2 = e$
+</div>
+
+The element $b$ in the K-algebra, $(A,*)$, $b \neq 0,$ is called *2-nilpotent* if $a^2 = 0$
+<label for="multiple_2nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="multiple_2nilpotence" class="margin-toggle"/><span class="marginnote">If $u$ is a 2-nilpotent, then so is $\alpha u$ for all $\alpha \in K$.</span> 
+
+
+<div class="example" markdown="1">
+
+**Example: (2-nilpotence in matrix algebra)**
+
+Consider the matrix algebra $(M(2,K), \cdot).$ Take $a = \begin{pmatrix}0 & 1\\\ 0 & 0\end{pmatrix}$ and verify that $a^2 = \begin{pmatrix}0 & 0\\\ 0 & 0\end{pmatrix}$
+</div>
+
+**Theorem: (certainty of idempotence in algebra without 2-nilpotents)**
+Let $(A,*)$ be an arbitrary K-algebra, assume that $A$ does not admit 2-nilpotents, then A admits atleast one idempotent.
+
+<div class="example" markdown="1">
+
+**Proof:**
+
+We will employ degree theory. Consider the map $\phi: A \rightarrow A$ given by $\phi(u) = u - u^2$ and assume, by contradiction, that $A$ admits neither 2-nilpotents nor idempotents.
+<label for="consequence_idempotent" class="margin-toggle">&#8853;</label><input type="checkbox" id="consequence_idempotent" class="margin-toggle"/><span class="marginnote">As A does not admit idempotents, $\forall u \in A$ with $u \neq 0,$ $u^2 \neq u \rightarrow \phi(u) \neq 0$ such that $\phi$ is admissible on any neighborhood of $0$.</span> 
+
+1. Near the origin, $$\phi_0(u) := u$$ is a principle part of our map with $$ind(0, \phi_0) = 1$$
+2. On a sufficiently large ball $$B:=B_R(0),$$ $$\phi_{\infty}(u) := u^2,$$ an even map, is a principle part of $\phi$ such that $deg(\phi_{\infty})$ is even. 
+<label for="consequence_nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="consequence_nilpotence" class="margin-toggle"/><span class="marginnote">If $A$ were to admit a 2-nilpotent then $\phi_{\infty}(u) = 0$ would have a ray solution passing through the origin, as $A$ does *not* admit any 2-nilpotents we are guarenteed admissibility on $B_R$.</span>
+
+Homotopy equivalence is an equivalence relation, in particular it is a transitive relation, such that $ind(0, \phi_0) = ind(0, \phi_{\infty}),$ contradiction.
+</div>
+
+
 
 
 ### formulation of Muhamadiev type results
