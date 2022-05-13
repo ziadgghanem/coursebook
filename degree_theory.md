@@ -28,10 +28,8 @@ In essence, an Algebra is a vector space with an additional operator that is bil
 We will consider three classes of algebras, $(A, *)$ is called: <label for="reasonable_algebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="reasonable_algebras" class="margin-toggle"/><span class="marginnote">For our purposes, an algebra satisfying atleast one of the above properties will be called *reasonable*.</span> 
 1. Commutative if $$a*b = b*a \quad \forall a,b \in A$$
 2. Associative if $$(a*b)*c = a*(b*c) \quad \forall a,b,c \in A$$
-3. Unital if $$\exists e \in A$$ st $$\forall a \in A a*e=e*a=a$$
+3. Unital if $$\exists e \in A$$ st $$\forall a \in A$$ $$a*e=e*a=a$$
 
-
----
 
 <div class="example" markdown="1">
 
@@ -49,18 +47,19 @@ If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is 
 
 ---
 
-**Explicit Construction of Algebras from Vector Spaces** 
+#### Explicit Construction of Algebras from Vector Spaces
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
 1. Take a basis $$\{e_1, \ldots , e_n \}$$
 2. Fix indices $$i,j$$ from $$1:n$$ and put 
-    - $$e_j * e_i := \sum_{k=1}^n \alpha_{i \, j}^{k} e_{k} = \alpha_{i \, j}^{1} e_{1} + \cdots + \alpha_{i \, j}^{n} e_{n}$$ 
+    * $$e_j * e_i := \sum_{k=1}^n \alpha_{i \, j}^{k} e_{k} = \alpha_{i \, j}^{1} e_{1} + \cdots + \alpha_{i \, j}^{n} e_{n}$$ 
 where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 3. In general we will need to specify $$n^3$$ coefficients $$\alpha_{i \, j}^{k} \in K$$ in order to define a particular multiplication over $$A$$.
 4. If, in particular, we wanted to define a *commutative* multiplication then $$\forall i,j,k \quad \alpha_{i \, j}^{k}= \alpha_{j \, i}^{k}$$
 
----
+
+<div class="example" markdown="1">
 
 ***Example***  
 
@@ -73,9 +72,9 @@ $$= \begin{pmatrix} 1 & 0 & -1\\\ 0 & 1 & 0 \end{pmatrix}$$
 3. $$e_2 * e_2 = \alpha_{3}e_1 + \beta_{3}e_2 = -e_1$$ $$\iff$$ $$(0,1)*(0,1) = (-1,0) $$ $$\iff$$ $$i \cdot i = -1$$
 
 So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected product
-- $$ (x_1, x_2)*(y_1, y_2)$$ $$ = (\alpha_{1}x_1y_1 + \alpha_{3}x_2y_2 , \beta_{2}x_1y_2 + \beta_{2}x_2y_2) = (x_1y_1 - x_2y_2, x_1y_2 + x_2y_2)$$
+* $$ (x_1, x_2)*(y_1, y_2)$$ $$ = (\alpha_{1}x_1y_1 + \alpha_{3}x_2y_2 , \beta_{2}x_1y_2 + \beta_{2}x_2y_2) = (x_1y_1 - x_2y_2, x_1y_2 + x_2y_2)$$
 
----
+</div>
 
 **Definition: Left Multiplication Matrix, norm, trace** 
 
