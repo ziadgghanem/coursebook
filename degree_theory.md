@@ -15,7 +15,7 @@ title: 'Planar Degree Theory'
 
 ---
 
-**Definition(Algebra):**  
+***<u>Definition(Algebra):</u>***
 
 Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
@@ -33,7 +33,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 
 <div class="example" markdown="1">
 
-**Examples: Reasonable Algebras**
+***Examples: Reasonable Algebras***
 
 1. $$(\mathbb{C}, \cdot)$$ The complex numbers with standard complex multiplication is *commutative,* *associative* and *unital*
 2. $$(\bar{\mathbb{C}}, *)$$ The complex numbers with the following multiplication: $$\forall z_1, z_2 \in \mathbb{C} \quad z_1 * z_2 = \bar{z_1} * \bar{z_2}$$ is *commutative,* *associative* but *not unital*
@@ -47,7 +47,7 @@ If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is 
 
 ---
 
-<u>Explicit Construction of Algebras from Vector Spaces</u>
+***<u>Explicit Construction of Algebras from Vector Spaces</u>***
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
@@ -61,7 +61,7 @@ where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 
 <div class="example" markdown="1">
 
-**Example**
+***Example***
 
 Take $$\mathbb{C}$$ and define the usual complex multiplication $$*$$ using the above strategy. 
 
@@ -76,13 +76,13 @@ So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected prod
 
 </div>
 
-<u>Definition: Left Multiplication Matrix, norm, trace</u>
+***<u>Definition: Left Multiplication Matrix, norm, trace</u>***
 
 Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
 1. The *norm of A:* 
-    * $$ \quad \gamma_2$$ $$:= \det J_A(x)$$
+    > $$ \quad \gamma_2$$ $$:= \det J_A(x)$$
 2. The *trace of A:* 
-    * $$\quad \gamma_1$$ $$:= \operatorname{Tr} J_A(x)$$
+    > $$\quad \gamma_1$$ $$:= \operatorname{Tr} J_A(x)$$
 
 <div class="example" markdown="1">
 
@@ -107,16 +107,44 @@ equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this alg
 
 </div>
 
-<u>Theorem (Cayley-Hamilton):</u>
+***<u>Theorem (Cayley-Hamilton):</u>***
 
 Let $(A,*)$ be a 2-dimensional algebra, then
 - $$ \forall x,y \in A x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
 
 
-<u>Corollary</u>
+***<u>Corollary</u>***
 
 If in addition $(A,*)$ is commutative, we have 
 - $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
+
+<div class="example" markdown="1">
+
+***Proof (Cayley-Hamilton)*** 
+
+Take the left multiplication matrix, $J_A(x)$, with characteristic polynomial $P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$ We will first prove the following lemma.
+
+***<u>Lemma</u>***
+for any $n \times n$ matrix $A$ with characteristic polynomial $P( \lambda ) = a_0 + a_1 \lambda + \cdots + a_n \lambda^n$ we have:
+<label for="charpoly_annihilation" class="margin-toggle">&#8853;</label><input type="checkbox" id="charpoly_annihilation" class="margin-toggle"/><span class="marginnote">i.e. any square matrix *annihilates* its characteristic polynomial.</span> 
+
+> $$P(A) =  a_0 + a_1 A + \cdots + a_n A^n$$ $$= 0$$
+
+***Proof (Lemma Case: n=2)*** 
+Take $A =  \begin{pmatrix}a & b\\\ c & d\end{pmatrix}$ it is well known that the characteristic polynomial of a $2 \times 2$ matrix is given by: $ P( \lambda ) = \lambda^2 -  \operatorname{Tr}(A) \lambda + \det(A) \cdot \mathbb{1}_{2}$
+
+Now let's evaluate $A$ with its characteristic polynomial: $P(A) = A^2 - \operatorname{Tr}(A) A + \det(A) \cdot \mathbb{1}_{2} $
+
+> $$ P(A) = \begin{pmatrix}a & b\\\ c & d\end{pmatrix} \begin{pmatrix}a & b\\\ c & d\end{pmatrix} - (a+d) \begin{pmatrix}a & b\\\ c & d\end{pmatrix} + \begin{pmatrix}ad - bc & 0\\\ 0 & ad - bc\end{pmatrix} $$
+> $$ = \begin{pmatrix}a^2 + bc - a^2 - ad + ad - bc & ab + bd - ab - db\\\ ca + dc - ac + dc & cb + d^2 - ad - d^2 + ad -bc \end{pmatrix} = \begin{pmatrix}0 & 0\\\ 0 & 0\end{pmatrix}$$ $$\blacksquare$$
+
+By ***Lemma** we have:
+> $$ P(J_A(x)) = J_A(x)^2 - \operatorname{Tr}(J_A(x)) J_A(x) + \det(J_A(x)) \cdot \mathbb{1}_{2} = 0 $$ 
+> $$\rightarrow $$ $$ J_A(x)^2 = \operatorname{Tr}(J_A(x)) J_A(x) - \det(J_A(x)) \cdot \mathbb{1}_{2}$$
+> $$\rightarrow $$ $$ J_A(x)^2 y = \operatorname{Tr}(J_A(x)) J_A(x) y - \det(J_A(x)) y = \gamma_{1}(x)(x*y) -  \gamma_{2}(x) y$$
+> Note $$J_A(x) \cdot y := x * y$$ $$\rightarrow$$ $$x*(x*y) = x*(J_A(x)y) = J_A(x) J_A(x) y = J_A(x)^2 y$$ 
+
+</div>
 
 ### Algebraic Terminology
 
