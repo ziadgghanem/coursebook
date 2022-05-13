@@ -47,7 +47,7 @@ If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is 
 
 ---
 
-#### Explicit Construction of Algebras from Vector Spaces
+<u>Explicit Construction of Algebras from Vector Spaces</u>
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
@@ -61,7 +61,7 @@ where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 
 <div class="example" markdown="1">
 
-***Example***  
+**Example**
 
 Take $$\mathbb{C}$$ and define the usual complex multiplication $$*$$ using the above strategy. 
 
@@ -76,7 +76,7 @@ So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected prod
 
 </div>
 
-**Definition: Left Multiplication Matrix, norm, trace** 
+<u>Definition: Left Multiplication Matrix, norm, trace</u>
 
 Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
 1. The *norm of A:* 
@@ -84,15 +84,18 @@ Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called
 2. The *trace of A:* 
     * $$\quad \gamma_1$$ $$:= \operatorname{Tr} J_A(x)$$
 
----
+<div class="example" markdown="1">
 
-***Example***
+***Example (the complex numbers)***
 
 Take $(\mathbb{C}, \cdot)$ the complex numbers with their usual multiplication. For any, $z_1 = (x_1,y_1), z_2 = (x_2,y_2),$ we should have $z_1 \cdot z_2 = (x_1 x_2 - y_1 y_2, x_1 y_2 + x_2 y_1)$ The appropriate left multiplication matrix is: $J_A(z_1) = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix}$ with norm  $\gamma_2 = \det (J_A(x)) = x_1^2 + y_1^2 = \lVert z_1 {\rVert}_{2}^2$ and trace $ \gamma_1 = \operatorname{Tr} J_A(x) = 2x_1$
 
 To confirm we take $J_A(z_1)z_2 = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix} \begin{pmatrix}x_2 \\\ y_2 \end{pmatrix} = \begin{pmatrix}x_1 x_2 - y_1 y_2 \\\ x_1 y_2 + x_2 y_1 \end{pmatrix} = z_1 \cdot z_2$
+</div>
 
 ---
+
+<div class="example" markdown="1">
 
 ***Example***
 
@@ -102,23 +105,22 @@ equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this alg
 2. Norm: $$\gamma_2(z_1) = x_1 y_1$$
 3. Trace: $$\gamma_1(z_1) = x_1 + y_1$$
 
----
+</div>
 
-**Theorem (Cayley-Hamilton):**
+<u>Theorem (Cayley-Hamilton):</u>
 
 Let $(A,*)$ be a 2-dimensional algebra, then
 - $$ \forall x,y \in A x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
 
----
 
-**Corollary**
+<u>Corollary</u>
 
 If in addition $(A,*)$ is commutative, we have 
 - $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
 
 ### Algebraic Terminology
 
-The element $a$ in the K-algebra, $(A,*)$, $a \neq 0,$ is called *idempotent* if $a^2=a$
+The element $a$ in the K-algebra, $(A,*),$ $a \neq 0,$ is called *idempotent* if $a^2=a$
 
 <div class="example" markdown="1">
 
@@ -128,7 +130,7 @@ Take any unital algebra $(A,*)$ then for the unital element $e\in A$
 it is always the case that $e^2 = e$
 </div>
 
-The element $b$ in the K-algebra, $(A,*)$, $b \neq 0,$ is called *2-nilpotent* if $a^2 = 0$
+The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called *2-nilpotent* if $a^2 = 0$
 <label for="multiple_2nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="multiple_2nilpotence" class="margin-toggle"/><span class="marginnote">If $u$ is a 2-nilpotent, then so is $\alpha u$ for all $\alpha \in K$.</span> 
 
 
@@ -139,7 +141,8 @@ The element $b$ in the K-algebra, $(A,*)$, $b \neq 0,$ is called *2-nilpotent* i
 Consider the matrix algebra $(M(2,K), \cdot).$ Take $a = \begin{pmatrix}0 & 1\\\ 0 & 0\end{pmatrix}$ and verify that $a^2 = \begin{pmatrix}0 & 0\\\ 0 & 0\end{pmatrix}$
 </div>
 
-**Theorem: (certainty of idempotence in algebra without 2-nilpotents)**
+<u>Theorem: (certainty of idempotence in algebra without 2-nilpotents)</u>
+
 Let $(A,*)$ be an arbitrary K-algebra, assume that $A$ does not admit 2-nilpotents, then A admits atleast one idempotent.
 
 <div class="example" markdown="1">
@@ -151,7 +154,7 @@ We will employ degree theory. Consider the map $\phi: A \rightarrow A$ given by 
 
 1. Near the origin, $$\phi_0(u) := u$$ is a principle part of our map with $$ind(0, \phi_0) = 1$$
 2. On a sufficiently large ball $$B:=B_R(0),$$ $$\phi_{\infty}(u) := u^2,$$ an even map, is a principle part of $\phi$ such that $deg(\phi_{\infty})$ is even. 
-<label for="consequence_nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="consequence_nilpotence" class="margin-toggle"/><span class="marginnote">If $A$ were to admit a 2-nilpotent then $\phi_{\infty}(u) = 0$ would have a ray solution passing through the origin, as $A$ does *not* admit any 2-nilpotents we are guarenteed admissibility on $B_R$.</span>
+<label for="consequence_nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="consequence_nilpotence" class="margin-toggle"/><span class="marginnote">We are only guaranteed admissibility of $\phi_{\infty}$ on the ball $B$ as $A$ does not admit 2-nilpotents. Indeed, suppose $v$ was a 2-nilpotent of $A,$ but then $\phi_{\infty}(u) = 0$ would have a ray solution in the direction of $v$ passing through the origin prohibiting admissibility on any ball about the origin.</span>
 
 Homotopy equivalence is an equivalence relation, in particular it is a transitive relation, such that $ind(0, \phi_0) = ind(0, \phi_{\infty}),$ contradiction.
 </div>
