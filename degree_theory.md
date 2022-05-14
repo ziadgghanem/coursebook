@@ -107,48 +107,59 @@ equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this alg
 
 </div>
 
+<div class="proposition" markdown="1">
+
 ***<u>Theorem (Cayley-Hamilton):</u>***
 
-Let $(A,*)$ be a 2-dimensional algebra, then
-- $$ \forall x,y \in A x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
+Let $(A,*)$ be a 2-dimensional algebra, then $\forall x,y \in A$
 
+> $$ x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
+
+</div>
 
 ***<u>Corollary</u>***
 
 If in addition $(A,*)$ is commutative, we have 
-- $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
+
+> $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
 
 <div class="example" markdown="1">
 
 ***Proof (Cayley-Hamilton)*** 
 
-Take the left multiplication matrix, $J_A(x)$, with characteristic polynomial $P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$ We will first prove the following lemma.
+Consider the left multiplication matrix, $J_A(x)$, associated with a 2-dimensional algebra $(A,*).$ with characteristic polynomial $P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$ We will need the following lemma:
 
-***<u>Lemma</u>***
-for any $n \times n$ matrix $A$ with characteristic polynomial $P( \lambda ) = a_0 + a_1 \lambda + \cdots + a_n \lambda^n$ we have:
+***<u>Lemma: (square matrix as root of its own characteristic polynomial)</u>*** <br>
+For any $n \times n$ matrix $A$ with characteristic polynomial $P( \lambda ) = a_0 + a_1 \lambda + \cdots + a_n \lambda^n$ we have:
 <label for="charpoly_annihilation" class="margin-toggle">&#8853;</label><input type="checkbox" id="charpoly_annihilation" class="margin-toggle"/><span class="marginnote">i.e. any square matrix *annihilates* its characteristic polynomial.</span> 
 
 > $$P(A) =  a_0 + a_1 A + \cdots + a_n A^n$$ $$= 0$$
 
-***Proof (Lemma Case: n=2)*** 
-Take $A =  \begin{pmatrix}a & b\\\ c & d\end{pmatrix}$ it is well known that the characteristic polynomial of a $2 \times 2$ matrix is given by: $ P( \lambda ) = \lambda^2 -  \operatorname{Tr}(A) \lambda + \det(A) \cdot \mathbb{1}_{2}$
+***Proof (Lemma Case: $n=2$)*** <br>
+Take $A =  \begin{pmatrix}a & b\\\ c & d\end{pmatrix},$ it is well known that the characteristic polynomial of a $2 \times 2$ matrix is given by: 
+> $$ P( \lambda ) = \lambda^2 -  \operatorname{Tr}(A) \lambda + \det(A) \cdot \mathbb{1}_{2}$$ 
 
-Now let's evaluate $A$ with its characteristic polynomial: $P(A) = A^2 - \operatorname{Tr}(A) A + \det(A) \cdot \mathbb{1}_{2} $
-
+If we evaluate valuate $A$ with its characteristic polynomial we obtain:
+> $$P(A) = A^2 - \operatorname{Tr}(A) A + \det(A) \cdot \mathbb{1}_{2} $$
 > $$ P(A) = \begin{pmatrix}a & b\\\ c & d\end{pmatrix} \begin{pmatrix}a & b\\\ c & d\end{pmatrix} - (a+d) \begin{pmatrix}a & b\\\ c & d\end{pmatrix} + \begin{pmatrix}ad - bc & 0\\\ 0 & ad - bc\end{pmatrix} $$
 > $$ = \begin{pmatrix}a^2 + bc - a^2 - ad + ad - bc & ab + bd - ab - db\\\ ca + dc - ac + dc & cb + d^2 - ad - d^2 + ad -bc \end{pmatrix} = \begin{pmatrix}0 & 0\\\ 0 & 0\end{pmatrix}$$ $$\blacksquare$$
 
-By ***Lemma** we have:
+The characteristic polynomial of the left multiplication matrix, $J_A(x)$, is
+> $$P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$$
+
+By ***Lemma*** we have: 
 > $$ P(J_A(x)) = J_A(x)^2 - \operatorname{Tr}(J_A(x)) J_A(x) + \det(J_A(x)) \cdot \mathbb{1}_{2} = 0 $$ 
-> $$\rightarrow $$ $$ J_A(x)^2 = \operatorname{Tr}(J_A(x)) J_A(x) - \det(J_A(x)) \cdot \mathbb{1}_{2}$$
-> $$\rightarrow $$ $$ J_A(x)^2 y = \operatorname{Tr}(J_A(x)) J_A(x) y - \det(J_A(x)) y = \gamma_{1}(x)(x*y) -  \gamma_{2}(x) y$$
+> $$\rightarrow $$
+> $$ J_A(x)^2 = \operatorname{Tr}(J_A(x)) J_A(x) - \det(J_A(x)) \cdot \mathbb{1}_{2}$$
+> $$\rightarrow $$
+> $$ J_A(x)^2 y = \operatorname{Tr}(J_A(x)) J_A(x) y - \det(J_A(x)) y = \gamma_{1}(x)(x*y) -  \gamma_{2}(x) y$$
 > Note $$J_A(x) \cdot y := x * y$$ $$\rightarrow$$ $$x*(x*y) = x*(J_A(x)y) = J_A(x) J_A(x) y = J_A(x)^2 y$$ 
 
 </div>
 
 ### Algebraic Terminology
 
-The element $a$ in the K-algebra, $(A,*),$ $a \neq 0,$ is called *idempotent* if $a^2=a$
+The element $a$ in a K-algebra, $(A,*),$ $a \neq 0,$ is called ***idempotent*** if $a^2=a$
 
 <div class="example" markdown="1">
 
@@ -158,7 +169,7 @@ Take any unital algebra $(A,*)$ then for the unital element $e\in A$
 it is always the case that $e^2 = e$
 </div>
 
-The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called *2-nilpotent* if $a^2 = 0$
+The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called ***2-nilpotent*** if $a^2 = 0$
 <label for="multiple_2nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="multiple_2nilpotence" class="margin-toggle"/><span class="marginnote">If $u$ is a 2-nilpotent, then so is $\alpha u$ for all $\alpha \in K$.</span> 
 
 
@@ -169,9 +180,11 @@ The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called *2-nilpotent* i
 Consider the matrix algebra $(M(2,K), \cdot).$ Take $a = \begin{pmatrix}0 & 1\\\ 0 & 0\end{pmatrix}$ and verify that $a^2 = \begin{pmatrix}0 & 0\\\ 0 & 0\end{pmatrix}$
 </div>
 
+<div class="proposition" markdown="1">
 <u>Theorem: (certainty of idempotence in algebra without 2-nilpotents)</u>
 
 Let $(A,*)$ be an arbitrary K-algebra, assume that $A$ does not admit 2-nilpotents, then A admits atleast one idempotent.
+</div>
 
 <div class="example" markdown="1">
 
@@ -187,7 +200,44 @@ We will employ degree theory. Consider the map $\phi: A \rightarrow A$ given by 
 Homotopy equivalence is an equivalence relation, in particular it is a transitive relation, such that $ind(0, \phi_0) = ind(0, \phi_{\infty}),$ contradiction.
 </div>
 
+Let algebra $(A,*)$ be associative -or- commutative -or- both. Then $a \in A$ is called ***3-nilpotent*** if $a^2 \neq 0$ but $a^3 = 0$
 
+
+<div class="example" markdown="1">
+
+**Example: (3-nilpotence in matrix algebra)**
+
+Consider the matrix algebra $(M(3,\mathbb{R}), \cdot).$ Take $a =  \begin{pmatrix}0 & 1 & 0\\\ 0 & 0 & 1\\\ 0 & 0 & 0\end{pmatrix}$ and verify that $a^2 \neq a^3 = \begin{pmatrix}0 & 0 & 0\\\ 0 & 0 & 0 \\\ 0 & 0 & 0 \end{pmatrix}$
+</div>
+
+If $(A,*)$ is a K-algebra, then $x \in A, x \neq 0$ is called a ***zero-divisor*** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
+
+In order to embark on the perilous, crucial passage from algebra theory to their application in the study of dynamical systems we will have to discuss special classes of algebra, the first of which is the division algebra.
+
+$(A,*)$ is called a division algebra if it does not admit zero-divisors.
+
+<div class="example" markdown="1">
+
+**Example: (division algebras)**
+
+1. $$\mathbb{C}$$ is a division algebra
+2. $$\bar{\mathbb{C}}$$ is a division algebra
+3. $$\mathbb{R} \bigoplus \mathbb{R}$$ is not a division algebra, take for instance $$(1,0)*(0,1) = (0,0)$$
+
+</div>
+
+The next class of special algebras is the so-called regular algebra.
+
+$(A,*)$ is called a ***regular*** algebra if $\exists x \in A$ such that $J_A(x)$ is invertible.
+
+On the other hand, we call an algebra $(A,*)$ ***singular*** if $\forall x \in A$ the matrix $J_A(x)$ is singular, i.e. $det J_A(x) = 0$. <label for="norm_singularalgebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="norm_singularalgebras" class="margin-toggle"/><span class="marginnote"> As one might suspect, the norm is an important tool in the study of regular alegbras and not so for singular algebras.</span>
+
+<div class="proposition" markdown="1">
+
+***Proposition***
+Suppose $(A,*)$ is singular, then every element $x\in A$ is a zero-divisor.
+
+</div>
 
 
 ### formulation of Muhamadiev type results
