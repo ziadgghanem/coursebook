@@ -243,10 +243,37 @@ Suppose $(A,*)$ is singular, then for every element in $x \in A,$ $x$ is a zero-
 <div class="proof" markdown="1">
 
 **Proof**
-
 Let $(A,*)$ be a singular algebra. 
-For every element, $x \in A,$ the left multiplication matrix $J_A(x)$ is singular $\rightarrow$
+* For every element, $$x \in A,$$ the left multiplication matrix $$J_A(x)$$ is singular 
+> $$\rightarrow$$
+* $$J_A(x)$$, has a nontrivial kernel in $$A$$
+> i.e. $$\exists y \neq 0 \in A$$ with $$J_A(x)y = x * y = 0$$
+
+Hence, $x$ is a zero divisor. $\blacksquare$
 </div>
+
+Given two algebras $(A,*)$ and $(B,\cdot)$ we call the map $\phi: A \rightarrow B$ a homomomorphism if it is *structure preserving* i.e. if
+> $$\forall x,y \in A \quad \phi(x*y) = \phi(x) \cdot \phi(y)$$
+
+If, in addition, $\phi$ is invertibile, then it is an isomorphism and we say that the algebras are *isomoprhic.* Furthermore, we have the following relation
+> $$x*y = \phi^{-1}[\phi(x) \cdot \phi(y)]$$
+
+<div class="proposition" markdown="1">
+
+**Theorem (Classification of Commutative 2-dimensional Algebras)**
+All 2-dimensional commutative algebras are completely described, up to isomorphism, with six classes. They are distinguished by two invariants: number of idempotents, number of 2-nilpotents.
+
+</div>
+
+Notation | Number of Idempotents | Number of Nilpotents | Multiplication Table
+---|---|---|---
+$N^0_{\infty}$| 0 | $\infty$ | $\begin{pmatrix} 0 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{0}$| 1 | 0 | $\begin{pmatrix} 1 & 0 & 1\\\ 0 & 1 & 0 \end{pmatrix}$
+$N^1_{1}$| 1 | 1 | $\begin{pmatrix} 1 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{2}$| 1 | 2 | $\begin{pmatrix} 1 & 0 & -1\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^0_{1}$| 0 | 1 | $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
+$N^0_{2}$| 0 | 2 | $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
+
 
 ### formulation of Muhamadiev type results
 
