@@ -15,7 +15,7 @@ title: 'Planar Degree Theory'
 
 ---
 
-***<u>Definition(Algebra):</u>***
+**<u>Definition(Algebra):</u>**
 
 Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
@@ -33,7 +33,7 @@ We will consider three classes of algebras, $(A, *)$ is called: <label for="reas
 
 <div class="example" markdown="1">
 
-***Examples: Reasonable Algebras***
+**Examples: Reasonable Algebras**
 
 1. $$(\mathbb{C}, \cdot)$$ The complex numbers with standard complex multiplication is *commutative,* *associative* and *unital*
 2. $$(\bar{\mathbb{C}}, *)$$ The complex numbers with the following multiplication: $$\forall z_1, z_2 \in \mathbb{C} \quad z_1 * z_2 = \bar{z_1} * \bar{z_2}$$ is *commutative,* *associative* but *not unital*
@@ -47,7 +47,7 @@ If the underlying vector space $A$ is finite-dimensional then we say $(A,*)$ is 
 
 ---
 
-***<u>Explicit Construction of Algebras from Vector Spaces</u>***
+**<u>Explicit Construction of Algebras from Vector Spaces</u>**
 
 Given an n-dimensional vector space $A$ one might want to define a multiplication $*$ on this space to construct an algebra $$(A,*).$$ This can be achieved as follows:
 
@@ -61,7 +61,7 @@ where $$\alpha_{i \, j}^{k}$$ are chosen from our field.
 
 <div class="example" markdown="1">
 
-***Example***
+**Example**
 
 Take $$\mathbb{C}$$ and define the usual complex multiplication $$*$$ using the above strategy. 
 
@@ -76,17 +76,17 @@ So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected prod
 
 </div>
 
-***<u>Definition: Left Multiplication Matrix, norm, trace</u>***
+**<u>Definition: Left Multiplication Matrix, norm, trace</u>**
 
-Given an algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
-1. The *norm of A:* 
-    > $$ \quad \gamma_2$$ $$:= \det J_A(x)$$
-2. The *trace of A:* 
-    > $$\quad \gamma_1$$ $$:= \operatorname{Tr} J_A(x)$$
+Given a K-algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
+1. The *norm* of A, $$\gamma_2: A \rightarrow K$$ 
+    > $$ \quad \gamma_2(x)$$ $$:= \det J_A(x)$$
+2. The *trace* of A, $$\gamma_1: A \rightarrow K$$ 
+    > $$\quad \gamma_1(x)$$ $$:= \operatorname{Tr} J_A(x)$$
 
 <div class="example" markdown="1">
 
-***Example (the complex numbers)***
+**Example (the complex numbers)**
 
 Take $(\mathbb{C}, \cdot)$ the complex numbers with their usual multiplication. For any, $z_1 = (x_1,y_1), z_2 = (x_2,y_2),$ we should have $z_1 \cdot z_2 = (x_1 x_2 - y_1 y_2, x_1 y_2 + x_2 y_1)$ The appropriate left multiplication matrix is: $J_A(z_1) = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pmatrix}$ with norm  $\gamma_2 = \det (J_A(x)) = x_1^2 + y_1^2 = \lVert z_1 {\rVert}_{2}^2$ and trace $ \gamma_1 = \operatorname{Tr} J_A(x) = 2x_1$
 
@@ -97,10 +97,11 @@ To confirm we take $J_A(z_1)z_2 = \begin{pmatrix}x_1 & -y_1\\\ y_1 & x_1\end{pma
 
 <div class="example" markdown="1">
 
-***Example***
+**Example**
 
-Take $(\mathbb{R} \bigoplus \mathbb{R}, *)$ 
-equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this algebra has
+Take the algebra  $(\mathbb{R} \bigoplus \mathbb{R}, *)$ 
+equipped with multiplication 
+$(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this algebra has
 1. Left multiplication matrix:  $$J_A(z_1) = \begin{pmatrix}x_1 & 0\\\ 0 & y_1\end{pmatrix}$$ 
 2. Norm: $$\gamma_2(z_1) = x_1 y_1$$
 3. Trace: $$\gamma_1(z_1) = x_1 + y_1$$
@@ -109,7 +110,7 @@ equipped with multiplication $(x_1,y_1)*(x_2,y_2) = (x_1 x_2, y_1 y_2)$ this alg
 
 <div class="proposition" markdown="1">
 
-***<u>Theorem (Cayley-Hamilton):</u>***
+**<u>Theorem (Cayley-Hamilton):</u>**
 
 Let $(A,*)$ be a 2-dimensional algebra, then $\forall x,y \in A$
 
@@ -117,25 +118,25 @@ Let $(A,*)$ be a 2-dimensional algebra, then $\forall x,y \in A$
 
 </div>
 
-***<u>Corollary</u>***
+**<u>Corollary</u>**
 
 If in addition $(A,*)$ is commutative, we have 
 
 > $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
 
-<div class="example" markdown="1">
+<div class="proof" markdown="1">
 
-***Proof (Cayley-Hamilton)*** 
+**Proof (Cayley-Hamilton)** 
 
 Consider the left multiplication matrix, $J_A(x)$, associated with a 2-dimensional algebra $(A,*).$ with characteristic polynomial $P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$ We will need the following lemma:
 
-***<u>Lemma: (square matrix as root of its own characteristic polynomial)</u>*** <br>
+**<u>Lemma: (square matrix as root of its own characteristic polynomial)</u>** <br>
 For any $n \times n$ matrix $A$ with characteristic polynomial $P( \lambda ) = a_0 + a_1 \lambda + \cdots + a_n \lambda^n$ we have:
 <label for="charpoly_annihilation" class="margin-toggle">&#8853;</label><input type="checkbox" id="charpoly_annihilation" class="margin-toggle"/><span class="marginnote">i.e. any square matrix *annihilates* its characteristic polynomial.</span> 
 
 > $$P(A) =  a_0 + a_1 A + \cdots + a_n A^n$$ $$= 0$$
 
-***Proof (Lemma Case: $n=2$)*** <br>
+**Proof (Lemma Case: $n=2$)** <br>
 Take $A =  \begin{pmatrix}a & b\\\ c & d\end{pmatrix},$ it is well known that the characteristic polynomial of a $2 \times 2$ matrix is given by: 
 > $$ P( \lambda ) = \lambda^2 -  \operatorname{Tr}(A) \lambda + \det(A) \cdot \mathbb{1}_{2}$$ 
 
@@ -147,7 +148,7 @@ If we evaluate valuate $A$ with its characteristic polynomial we obtain:
 The characteristic polynomial of the left multiplication matrix, $J_A(x)$, is
 > $$P( \lambda ) = \lambda^2 -  \operatorname{Tr}(J_A) \lambda + \det(J_A) \cdot \mathbb{1}_{2}$$
 
-By ***Lemma*** we have: 
+By **Lemma** we have: 
 > $$ P(J_A(x)) = J_A(x)^2 - \operatorname{Tr}(J_A(x)) J_A(x) + \det(J_A(x)) \cdot \mathbb{1}_{2} = 0 $$ 
 > $$\rightarrow $$
 > $$ J_A(x)^2 = \operatorname{Tr}(J_A(x)) J_A(x) - \det(J_A(x)) \cdot \mathbb{1}_{2}$$
@@ -159,7 +160,7 @@ By ***Lemma*** we have:
 
 ### Algebraic Terminology
 
-The element $a$ in a K-algebra, $(A,*),$ $a \neq 0,$ is called ***idempotent*** if $a^2=a$
+The element $a$ in a K-algebra, $(A,*),$ $a \neq 0,$ is called **idempotent** if $a^2=a$
 
 <div class="example" markdown="1">
 
@@ -169,7 +170,7 @@ Take any unital algebra $(A,*)$ then for the unital element $e\in A$
 it is always the case that $e^2 = e$
 </div>
 
-The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called ***2-nilpotent*** if $a^2 = 0$
+The element $b$ in the K-algebra, $(A,*),$ $b \neq 0,$ is called **2-nilpotent** if $a^2 = 0$
 <label for="multiple_2nilpotence" class="margin-toggle">&#8853;</label><input type="checkbox" id="multiple_2nilpotence" class="margin-toggle"/><span class="marginnote">If $u$ is a 2-nilpotent, then so is $\alpha u$ for all $\alpha \in K$.</span> 
 
 
@@ -186,7 +187,7 @@ Consider the matrix algebra $(M(2,K), \cdot).$ Take $a = \begin{pmatrix}0 & 1\\\
 Let $(A,*)$ be an arbitrary K-algebra, assume that $A$ does not admit 2-nilpotents, then A admits atleast one idempotent.
 </div>
 
-<div class="example" markdown="1">
+<div class="proof" markdown="1">
 
 **Proof:**
 
@@ -200,7 +201,7 @@ We will employ degree theory. Consider the map $\phi: A \rightarrow A$ given by 
 Homotopy equivalence is an equivalence relation, in particular it is a transitive relation, such that $ind(0, \phi_0) = ind(0, \phi_{\infty}),$ contradiction.
 </div>
 
-Let algebra $(A,*)$ be associative -or- commutative -or- both. Then $a \in A$ is called ***3-nilpotent*** if $a^2 \neq 0$ but $a^3 = 0$
+Let algebra $(A,*)$ be associative -or- commutative -or- both. Then $a \in A$ is called **3-nilpotent** if $a^2 \neq 0$ but $a^3 = 0$
 
 
 <div class="example" markdown="1">
@@ -210,7 +211,7 @@ Let algebra $(A,*)$ be associative -or- commutative -or- both. Then $a \in A$ is
 Consider the matrix algebra $(M(3,\mathbb{R}), \cdot).$ Take $a =  \begin{pmatrix}0 & 1 & 0\\\ 0 & 0 & 1\\\ 0 & 0 & 0\end{pmatrix}$ and verify that $a^2 \neq a^3 = \begin{pmatrix}0 & 0 & 0\\\ 0 & 0 & 0 \\\ 0 & 0 & 0 \end{pmatrix}$
 </div>
 
-If $(A,*)$ is a K-algebra, then $x \in A, x \neq 0$ is called a ***zero-divisor*** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
+If $(A,*)$ is a K-algebra, then $x \in A, x \neq 0$ is called a **zero-divisor** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
 
 In order to embark on the perilous, crucial passage from algebra theory to their application in the study of dynamical systems we will have to discuss special classes of algebra, the first of which is the division algebra.
 
@@ -228,17 +229,24 @@ $(A,*)$ is called a division algebra if it does not admit zero-divisors.
 
 The next class of special algebras is the so-called regular algebra.
 
-$(A,*)$ is called a ***regular*** algebra if $\exists x \in A$ such that $J_A(x)$ is invertible.
+$(A,*)$ is called a **regular** algebra if $\exists x \in A$ such that $J_A(x)$ is invertible.
 
-On the other hand, we call an algebra $(A,*)$ ***singular*** if $\forall x \in A$ the matrix $J_A(x)$ is singular, i.e. $det J_A(x) = 0$. <label for="norm_singularalgebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="norm_singularalgebras" class="margin-toggle"/><span class="marginnote"> As one might suspect, the norm is an important tool in the study of regular alegbras and not so for singular algebras.</span>
+On the other hand, we call an algebra $(A,*)$ **singular** if $\forall x \in A$ the matrix $J_A(x)$ is singular, i.e. $det J_A(x) = 0$. <label for="norm_singularalgebras" class="margin-toggle">&#8853;</label><input type="checkbox" id="norm_singularalgebras" class="margin-toggle"/><span class="marginnote"> As one might suspect, the norm is an important tool in the study of regular alegbras and not so for singular algebras.</span>
 
 <div class="proposition" markdown="1">
 
-***Proposition***
-Suppose $(A,*)$ is singular, then every element $x\in A$ is a zero-divisor.
+**Proposition**
+Suppose $(A,*)$ is singular, then for every element in $x \in A,$ $x$ is a zero-divisor.
 
 </div>
 
+<div class="proof" markdown="1">
+
+**Proof**
+
+Let $(A,*)$ be a singular algebra. 
+For every element, $x \in A,$ the left multiplication matrix $J_A(x)$ is singular $\rightarrow$
+</div>
 
 ### formulation of Muhamadiev type results
 
