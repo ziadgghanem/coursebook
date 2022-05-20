@@ -208,10 +208,12 @@ Let algebra $(A,*)$ be associative -or- commutative -or- both. Then $a \in A$ is
 
 **Example: (3-nilpotence in matrix algebra)**
 
-Consider the matrix algebra $(M(3,\mathbb{R}), \cdot).$ Take $a =  \begin{pmatrix}0 & 1 & 0\\\ 0 & 0 & 1\\\ 0 & 0 & 0\end{pmatrix}$ and verify that $a^2 \neq a^3 = \begin{pmatrix}0 & 0 & 0\\\ 0 & 0 & 0 \\\ 0 & 0 & 0 \end{pmatrix}$
+Consider the matrix algebra $(M(3,\mathbb{R}), \cdot).$ 
+
+Take $a =  \begin{pmatrix}0 & 1 & 0\\\ 0 & 0 & 1\\\ 0 & 0 & 0\end{pmatrix}$ and verify that $a^2 \neq a^3 = \begin{pmatrix}0 & 0 & 0\\\ 0 & 0 & 0 \\\ 0 & 0 & 0 \end{pmatrix}$
 </div>
 
-If $(A,*)$ is a K-algebra, then $x \in A, x \neq 0$ is called a **zero-divisor** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
+If $ (A,*) $ is a K-algebra, then $x \in A, x \neq 0$ is called a **zero-divisor** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
 
 In order to embark on the perilous, crucial passage from algebra theory to their application in the study of dynamical systems we will have to discuss special classes of algebra, the first of which is the division algebra.
 
@@ -268,29 +270,28 @@ All 2-dimensional commutative algebras are completely described, up to isomorphi
 </div>
 
 Notation | Number of Idempotents | Number of Nilpotents | Multiplication Table
----|---|---|---|---|---|---
-$N^0_{\infty}$|  | 0 |  | $\infty$ |  | $\begin{pmatrix} 0 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^1_{0}$|  | 1 |  | 0 |  | $\begin{pmatrix} 1 & 0 & 1\\\ 0 & 1 & 0 \end{pmatrix}$
-$N^1_{1}$|  | 1 |  | 1 |  | $\begin{pmatrix} 1 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^1_{2}$|  | 1 |  | 2 |  | $\begin{pmatrix} 1 & 0 & -1\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^0_{1}$|  | 0 |  | 1 |  | $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
-$N^0_{2}$|  | 0 |  | 2 |  | $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
-
-**<u>Definition (Rank 3-algebra):</u>**
-
-A real commutative algebra $(A,*)$ is called rank-3 if $x^3 = \gamma_1(x) x^2 - \gamma_2(x) x$ 
-<label for="column_rank" class="margin-toggle">&#8853;</label><input type="checkbox" id="column_rank" class="margin-toggle"/><span class="marginnote"> Recall that, in linear algebra, the rank of a matrix is the dimension of the vector space spanned by its columns.</span>
+---|---|---|---
+$N^0_{\infty}$ $\quad$| 0 $\quad$| $\infty$ $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{0}$ $\quad$| 1 $\quad$ $\quad$| 0  $\quad$| $\begin{pmatrix} 1 & 0 & 1\\\ 0 & 1 & 0 \end{pmatrix}$
+$N^1_{1}$ $\quad$| 1  $\quad$| 1  $\quad$| $\begin{pmatrix} 1 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{2}$ $\quad$| 1  $\quad$| 2  $\quad$| $\begin{pmatrix} 1 & 0 & -1\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^0_{1}$ $\quad$| 0  $\quad$| 1  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
+$N^0_{2}$ $\quad$| 0  $\quad$| 2  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
 
 
 <div class="proposition" markdown="1">
 
 **Theorem (First Main Theorem)**
 
-Let $(A,*)$ be a real commutative 2-dimensional rank-3 algebra, then:
-1. Regular algebra A is a division algebra iff the norm is uniformly positive definite or uniformly negative definite i.e. iff $$\gamma_2(x) > 0 \forall x \neq 0 \in A$$ or  $$\gamma_2(x) < 0 \forall x \neq 0 \in A$$
-2. Regular algebra A, admits a basis of zero-divisors iff the norm is indefinite i.e. iff $$\exists x,y \neq 0$$ such that $$\gamma_2(x) > 0$$ and $$\gamma_2(y) < 0$$
-3. A admits a 2-nilpotent elelment iff the norm is uniformly positive semi-definite or uniformly negative semi-definite i.e. iff $$ \gamma_2(x) \geq 0 \forall x \in A$$ and $$\exists y \neq 0$$ with $$ \gamma_2(y) = 0$$ or $\gamma_2(x) \leq 0 \forall x \in A$$ and $$\exists y \neq 0$$ with $$ \gamma_2(y) = 0$$
-4. A is singular iff the norm is identically zero i.e. iff $$\gamma_2(x) \equiv 0$$
+Let $(A,*)$ be a real commutative 2-dimensional, then:
+1. Regular algebra A is a division algebra iff the norm is uniformly positive definite or uniformly negative definite 
+    > i.e. A is a division algebra iff $$\gamma_2(x) > 0 \forall x \neq 0 \in A$$ or  $$\gamma_2(x) < 0 \forall x \neq 0 \in A$$
+2. Regular algebra A, admits a basis of zero-divisors iff the norm is indefinite 
+    > i.e. A admits a basis of zero-divisors iff $$\exists x,y \neq 0$$ such that $$\gamma_2(x) > 0$$ and $$\gamma_2(y) < 0$$
+3. A admits a 2-nilpotent elelment iff the norm is uniformly positive semi-definite or uniformly negative semi-definite 
+    > i.e. A admits a 2-nilpotent elelment iff $$ \gamma_2(x) \geq 0 \forall x \in A$$ and $$\exists y \neq 0$$ with $$ \gamma_2(y) = 0$$ or $\gamma_2(x) \leq 0 \forall x \in A$$ and $$\exists y \neq 0$$ with $$ \gamma_2(y) = 0$$
+4. A is singular iff the norm is identically zero 
+    >i.e. A is singular iff $$\gamma_2(x) \equiv 0$$
 
 </div>
 
@@ -300,21 +301,76 @@ Given a finite K-algebra $(A,*)$ of dimension $n$ we are interested in the quadr
 > $$\dot{x} = x*x = x^2$$
 
 Conversely, given a quadratic map $f: K^n \rightarrrow K^n,$ we will associate the algebra $(A,*)$ where $A=K^n$ and the multiplication is defined by the the polarization formula
-> $$x*y = \frac{1}{2} [f(x+y) - f(x) - f(y)]
+> $$x*y = \frac{1}{2} [f(x+y) - f(x) - f(y)]$$
+
+**<u>Definition (Quadratic Algebra):</u>**
+
+We will call the algebra associated with a quadratic map a quadratic algebra.
 
 <div class="example" markdown="1">
 
 **Example: (The Complex Numbers)**
 
-We will show how the polarization formula retrieves the algebra associated to a quadratic map in the context of the complex numbers. Consider the map $f: \mathbb{C} \rightarrow \mathbb{C}$ 
-> f(x_1,x_2) = (x^2_1 - x^2_2, x_1x_2)
-<label for="complex_map" class="margin-toggle">&#8853;</label><input type="checkbox" id="complex_map" class="margin-toggle"/><span class="marginnote"> Note, for $x \in \mathbb{C},$ $x^2 = f(x)$.</span>
+We will show how the polarization formula retrieves the appropriate algebra associated to a quadratic map in the context of the complex numbers. 
+
+Consider the map $f: \mathbb{C} \rightarrow \mathbb{C}$ 
+<label for="complex_map" class="margin-toggle">&#8853;</label><input type="checkbox" id="complex_map" class="margin-toggle"/><span class="marginnote"> Note for $x \in \mathbb{C},$ $x^2 = f(x)$.</span>
+
+> $$f(x_1,x_2) = (x^2_1 - x^2_2, x_1x_2)$$
+
+Using the polarization formula we induce the multiplication
+> $$x*y = \frac{1}{2}[f(x+y) - f(x) - f(y)]$$
+> $$= \frac{1}{2} \begin{pmatrix} (x_1 + y_1)^2 - (x_2 + y_2)^2 \\\ 2(x_1 + y_1)(x_2 + y_2) \end{pmatrix} - \frac{1}{2} \begin{pmatrix} (x_1^2 - x_2^2) + (y_1^2 - y_2^2) \\\ 2x_1x_2 - 2y_1y_2 \end{pmatrix}$$
+> $$= \frac{1}{2} \begin{pmatrix} x_1^2 + 2x_1y_1 + y_1^2 - x_2^2 - 2x_2y_2 - y_2^2 - x_1^2 + x_2^2 - y_1^2 +y_2^2 \\\ 2[x_1x_2 + y_1x_2 +x_1y_2 + y_1y_2 - x_1x_2 - y_1y_2] \end{pmatrix}$$
+> $$= \frac{1}{2} \begin{pmatrix} 2x_1y_1 - 2x_2y_2 \\\ 2y_1x_2 + 2y_2x_1 \end{pmatrix} = \begin{pmatrix} x_1y_1 - x_2y_2 \\\ y_1x_2 + y_2x_1 \end{pmatrix}$$
+
+which is exactly the standard complex multiplication.
+</div>
+
+**<u>Definition (Rank 3-algebra):</u>**
+
+<label for="column_rank" class="margin-toggle">&#8853;</label><input type="checkbox" id="column_rank" class="margin-toggle"/><span class="marginnote"> 
+Recall that, in linear algebra, the rank of a matrix is the dimension of the vector space spanned by its columns.</span>
+
+A real commutative algebra $(A,*)$ is called rank-3 if there exists a linear form $\gamma_1(x): A \rightarrow A$ and a quadratic form $\gamma_2(x): A \rightarrow A$ such that 
+<label for="2dim_comm_r3" class="margin-toggle">&#8853;</label><input type="checkbox" id="2dim_comm_r3" class="margin-toggle"/><span class="marginnote"> 
+If $(A,*)$ is a 2-dimensional, commutative algebra then, $A$ is a rank-3 algebra with the norm of $A$ appearing as the quadratic form $\gamma_2(x)$ and its trace as the linear form $\gamma_1(x)$, an immediate consequence of the Cayley-Hamilton theorem.</span>
+
+> $$x^3 = \gamma_1(x) x^2 - \gamma_2(x) x$$
+
+**<u>Definition (Pseudo-composition Algebras):</u>**
+
+We call the real commutative algebra $(A,*)$ a pseudo-composition algebra if there exists a quadratic form $\gamma_2(x): A \rightarrow A$ such that
+<label for="pseudocomposition" class="margin-toggle">&#8853;</label><input type="checkbox" id="pseudocomposition" class="margin-toggle"/><span class="marginnote"> 
+i.e. the linear form, $\gamma_1(x) = 0$.</span>
+
+> $$x^3 = \gamma_2(x) x$$
 
 
-1. $$\mathbb{C}$$ is a division algebra
-2. $$\bar{\mathbb{C}}$$ is a division algebra
-3. $$\mathbb{R} \bigoplus \mathbb{R}$$ is not a division algebra, take for instance $$(1,0)*(0,1) = (0,0)$$
+<div class="proposition" markdown="1">
 
+**Proposition**
+$(\bar{C}, *)$ is a pseudo composition algebra)
+</div>
+
+<div class="proof" markdown="1">
+
+**Proof**
+</div>
+
+
+<div class="example" markdown="1">
+
+**Examples: (Rank-3 Algebras)**
+
+1. All commutative, 2-dimensional algebras
+2. Quadratic Algebras
+    > Indeed, any quadratic map $$f: K^n \rightarrrow K^n$$ can be decomposed as the the linear combination of some quadratic form, $$\gamma: K^n \rightarrrow K^n,$$ and a linear form  $$\ell: K^n \rightarrrow K^n$$
+        > $$f(x) = \alpha \gamma(x) + \beta \ell(x) \cdot x$$
+    > Using the polarization formula canonically defines a a commutative algebra with
+        > $$f(x) = x^2$$
+    > If we multiply both sides of this equation by $$x$$ we see that such an algebra is rank-3.
+3. Pseudo-composition algebras
 </div>
 
 ### formulation of Muhamadiev type results
