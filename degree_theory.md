@@ -344,6 +344,27 @@ If $(A,*)$ is a 2-dimensional, commutative algebra then, $A$ is a rank-3 algebra
 
 > $$x^3 = \gamma_1(x) x^2 - \gamma_2(x) x$$
 
+<div class="proposition" markdown="1">
+
+**Proposition**
+
+Quadratic Algebras are rank-3 algebras.
+</div>
+
+<div class="proof" markdown="1">
+
+**Proof**
+
+Indeed, any quadratic map $$f: K^n \ow K^n$$ can be decomposed as the the linear combination of some quadratic form, $$\gamma: K^n \ow K^n,$$ and a linear form  $$\ell: K^n \rightarrow K^n$$
+> $$f(x) = \alpha \gamma(x) + \beta \ell(x) \cdot x$$
+
+Using the polarization formula canonically defines a a commutative algebra with
+> $$f(x) = x^2$$
+
+If we multiply both sides of this equation by $$x$$ we see that such an algebra is rank-3.
+
+</div>
+
 **<u>Definition (Pseudo-composition Algebras):</u>**
 
 We call the real commutative algebra $(A,*)$ a pseudo-composition algebra if there exists a quadratic form $\gamma_2(x): A \rightarrow A$ such that
@@ -356,6 +377,7 @@ i.e. the linear form, $\gamma_1(x) = 0$.</span>
 <div class="proposition" markdown="1">
 
 **Proposition**
+
 $(\bar{C}, *)$ is a pseudo composition algebra)
 </div>
 
