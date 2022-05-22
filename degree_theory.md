@@ -15,12 +15,15 @@ title: 'Planar Degree Theory'
 
 ---
 
+<div class="definition" markdown="1">
+
 **<u>Definition(Algebra):</u>**
 
 Let $V$ be a vector space over a field $K$ (either $\mathbb{R}$ or $\mathbb{C}$). We equip $V$ with an additional operation $*: V \times V \rightarrow V$ satisfying the properties $\forall x,y,z \in V$ and $\forall \alpha, \beta \in K:$
 
 1. (Right Distributivity) $$(\alpha x + \beta y) * z = \alpha(x*z) + \beta(y*z)$$
 2. (Left Distributivity) $$z * (\alpha a + \beta b) = \alpha(z*x) + \beta(z*y)$$
+</div>
 
 Then we say that $V$ is an algebra over the field $K$ or we may call $V$ a K-algebra and write $(V, *)$.  
 In essence, an Algebra is a vector space with an additional operator that is bilinear. 
@@ -76,6 +79,8 @@ So for $x = (x_1, x_2), y = (y_1, y_2) \in \mathbb{C}$ we have the expected prod
 
 </div>
 
+<div class="definition" markdown="1">
+
 **<u>Definition: Left Multiplication Matrix, norm, trace</u>**
 
 Given a K-algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-called *left multiplication matrix,* $J_A(x): A \rightarrow A,$ as $J_A(x) \cdot y := x * y$ In addition, we define:
@@ -83,6 +88,7 @@ Given a K-algebra $(A,*)$ take a fixed element $x \in A.$ We define the so-calle
     > $$ \quad \gamma_2(x)$$ $$:= \det J_A(x)$$
 2. The *trace* of A, $$\gamma_1: A \rightarrow K$$ 
     > $$\quad \gamma_1(x)$$ $$:= \operatorname{Tr} J_A(x)$$
+</div>
 
 <div class="example" markdown="1">
 
@@ -116,13 +122,13 @@ Let $(A,*)$ be a 2-dimensional algebra, then $\forall x,y \in A$
 
 > $$ x*(x*y)$$ $$= \gamma_{1}(x) (x*y) - \gamma_{2}(x) y$$ 
 
-</div>
-
 **<u>Corollary</u>**
 
 If in addition $(A,*)$ is commutative, we have 
 
 > $$x*(x*x) = x^3$$ $$= \gamma_{1}(x) x^2 - \gamma_{2}(x) x$$ 
+
+</div>
 
 <div class="proof" markdown="1">
 
@@ -213,7 +219,7 @@ Consider the matrix algebra $(M(3,\mathbb{R}), \cdot).$
 Take $a =  \begin{pmatrix}0 & 1 & 0\\\ 0 & 0 & 1\\\ 0 & 0 & 0\end{pmatrix}$ and verify that $a^2 \neq a^3 = \begin{pmatrix}0 & 0 & 0\\\ 0 & 0 & 0 \\\ 0 & 0 & 0 \end{pmatrix}$
 </div>
 
-If $ (A,*) $ is a K-algebra, then $x \in A, x \neq 0$ is called a **zero-divisor** if $\exist y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
+If $ (A,*) $ is a K-algebra, then $x \in A, x \neq 0$ is called a **zero-divisor** if $\exists y \in A, y \neq 0$ such that $x*y=0$ <label for="nilpotence_zdivisor" class="margin-toggle">&#8853;</label><input type="checkbox" id="nilpotence_zdivisor" class="margin-toggle"/><span class="marginnote"> Any 2-nilpotent element, $$x$$, is a zero-divisor of itself.</span>
 
 In order to embark on the perilous, crucial passage from algebra theory to their application in the study of dynamical systems we will have to discuss special classes of algebra, the first of which is the division algebra.
 
@@ -271,12 +277,12 @@ All 2-dimensional commutative algebras are completely described, up to isomorphi
 
 Notation | Number of Idempotents | Number of Nilpotents | Multiplication Table
 ---|---|---|---
-$N^0_{\infty}$ $\quad$| 0 $\quad$| $\infty$ $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^1_{0}$ $\quad$| 1 $\quad$ $\quad$| 0  $\quad$| $\begin{pmatrix} 1 & 0 & 1\\\ 0 & 1 & 0 \end{pmatrix}$
-$N^1_{1}$ $\quad$| 1  $\quad$| 1  $\quad$| $\begin{pmatrix} 1 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^1_{2}$ $\quad$| 1  $\quad$| 2  $\quad$| $\begin{pmatrix} 1 & 0 & -1\\\ 0 & 0 & 0 \end{pmatrix}$
-$N^0_{1}$ $\quad$| 0  $\quad$| 1  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
-$N^0_{2}$ $\quad$| 0  $\quad$| 2  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
+$N^0_{\infty}\quad$| $0 \quad$| $\infty \quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{0} \quad$| 1 $\quad \quad$| 0  $\quad$| $\begin{pmatrix} 1 & 0 & 1\\\ 0 & 1 & 0 \end{pmatrix}$
+$N^1_{1} \quad$| 1  $\quad$| 1  $\quad$| $\begin{pmatrix} 1 & 0 & 0\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^1_{2} \quad$| 1 $\quad$| 2  $\quad$| $\begin{pmatrix} 1 & 0 & -1\\\ 0 & 0 & 0 \end{pmatrix}$
+$N^0_{1} \quad$| 0  $\quad$| 1  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
+$N^0_{2} \quad$| 0  $\quad$| 2  $\quad$| $\begin{pmatrix} 0 & 0 & 0\\\ 1 & 0 & 0 \end{pmatrix}$
 
 
 <div class="proposition" markdown="1">
@@ -300,7 +306,7 @@ Let $(A,*)$ be a real commutative 2-dimensional, then:
 Given a finite K-algebra $(A,*)$ of dimension $n$ we are interested in the quadratic differrential equation, called the Ricatti equation
 > $$\dot{x} = x*x = x^2$$
 
-Conversely, given a quadratic map $f: K^n \rightarrrow K^n,$ we will associate the algebra $(A,*)$ where $A=K^n$ and the multiplication is defined by the the polarization formula
+Conversely, given a quadratic map $f: K^n \rightarrow K^n,$ we will associate the algebra $(A,*)$ where $A=K^n$ and the multiplication is defined by the the polarization formula
 > $$x*y = \frac{1}{2} [f(x+y) - f(x) - f(y)]$$
 
 **<u>Definition (Quadratic Algebra):</u>**
@@ -365,7 +371,7 @@ $(\bar{C}, *)$ is a pseudo composition algebra)
 
 1. All commutative, 2-dimensional algebras
 2. Quadratic Algebras
-    > Indeed, any quadratic map $$f: K^n \rightarrrow K^n$$ can be decomposed as the the linear combination of some quadratic form, $$\gamma: K^n \rightarrrow K^n,$$ and a linear form  $$\ell: K^n \rightarrrow K^n$$
+    > Indeed, any quadratic map $$f: K^n \ow K^n$$ can be decomposed as the the linear combination of some quadratic form, $$\gamma: K^n \ow K^n,$$ and a linear form  $$\ell: K^n \ow K^n$$
         > $$f(x) = \alpha \gamma(x) + \beta \ell(x) \cdot x$$
     > Using the polarization formula canonically defines a a commutative algebra with
         > $$f(x) = x^2$$
