@@ -10,4 +10,4 @@ These are my notes.
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
 
-- [Algebraic Topology](algebraic_topology.md): Notes on algebraic topology.
+- [Algebraic Dynamical Systems](dynamical_systems.md): Notes on algebraic dynamical systems.
