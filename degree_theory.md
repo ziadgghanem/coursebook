@@ -4,9 +4,8 @@ title: 'Planar Degree Theory'
 ---
 
 <blockquote>
-        Years upon years I've been using my nose for the purpose of smelling. <br>
-        Now I must question myself: Have I a right to its use?
-        <footer>Schiller</footer>
+        What is, is what must be.
+        <footer>Leibniz</footer>
 </blockquote>
 
 <hr>
@@ -20,7 +19,7 @@ Take $\Omega \subset \mathbb{R}^1$ a bounded open set.
 
 For the sake of simplicity we assume $\Omega$ us a finite disjoint union of open intervals.
 
-Consider a map $f: \bar{\Omega} \rightarrow \mathbb{R}$ with $f(t) \neq 0$ $\forall t \in \del \Omega.$ We will the pair $(f,\Omega)$ admissible. That is, an admissible pair consists of an open set $\Omega$ and a map $f: \bar{\Omega} \rightarrow \mathbb{R}$ that does not vanish on its boundary.
+Consider a map $f: \bar{\Omega} \rightarrow \mathbb{R}$ with $f(t) \neq 0$ $\forall t \in \partial \Omega.$ We will the pair $(f,\Omega)$ admissible. That is, an admissible pair consists of an open set $\Omega$ and a map $f: \bar{\Omega} \rightarrow \mathbb{R}$ that does not vanish on its boundary.
 
 Denote by $M(\mathbb{R}^1)$ the collection of all admissible pairs.
 
@@ -35,11 +34,11 @@ satisfying reasonable properties.
 
 Let $\Omega$ be an open, non-empty, bounded subset of $\mathbb{R}^n$
 
-(1.) _Additivity_: 
+(1) _Additivity_: 
 
-If $\Omega_1, \Omega_2 \subset \Omega$ with 
-* $$\Omega_1 \cap $$\Omega_2 = \emptyset $$
-* $$ f^{-1} \subset \Omega_1 \cup $$\Omega_2$$
+For subsets $\Omega_1, \Omega_2 \subset \Omega$ with
+* Empty intersection: $$\Omega_1 \cap \Omega_2 = \emptyset $$
+* Containing all zeros of $$f$$: $$ f^{-1}(0) \subset \Omega_1 \cup \Omega_2$$
 
 then $deg(f,\Omega) = deg(f,\Omega_1) + deg(f,\Omega_2)$
 
@@ -74,7 +73,7 @@ With these reasonable properties of a degree theory in mind, we are ready to exp
 **<u>Theorem (Degree in $\mathbb{R}^1.$):</u>**
 
 Let $(f,\Omega) \in M(\mathbb{R}^1),$ then, 
-> $$deg(f,\Omega) = x = \begin{cases} 1, \text{if} f(a)<0 \text{and} f(b)>0 \\ -1, \text{if} f(a)>0 \text{and} f(b)<0 \\ 0, \text{else} \end{cases}$$ 
+> $$deg(f,\Omega) = x = \begin{cases} 1, \qquad \text{if} \; f(a)<0 \; \text{and} \; f(b)>0 \\ -1, \qquad \text{if} \; f(a)>0 \; \text{and} \; f(b)<0 \\ 0, \qquad \text{else} \end{cases}$$ 
 
 correctly defines a degree theory in $\mathbb{R}^1.$
 </div>
@@ -85,7 +84,7 @@ For $\Omega = \bigcup_{n=1}^{\infty} (a_n,b_n)$ and $f: \bar{\Omega} \rightarrow
 
 ## 1. Rotation of a Vector Field
 
-### 1.1 Angular Function
+### 1.1 Vector Fields
 
 <div class="definition" markdown="1">
 
@@ -99,7 +98,7 @@ We call the map $\Phi: \Omega \rightarrow \mathbb{R}^n$ a vector field over $\Om
 In particular we are concerned with _planar vector fields_ which are defined over sets $\Omega \subset \mathbb{R}^2$.
 
 Any planar vector field $\Phi: \Omega \rightarrow \mathbb{R}^2$ is specified by two _component vectors,_ which are real functions $\phi, \psi: \Omega \rightarrow \mathbb{R}$ such that
-> $$\Phi(p) = {\phi(p), \psi(p)}$$
+> $$\Phi(p) = [\phi(p), \psi(p)]$$
 
 To describe a vector field as continuous is equivalent to describing ech of its component vectors as continuous functions.
 
@@ -110,4 +109,28 @@ To describe a vector field as continuous is equivalent to describing ech of its 
 Any complex function $f: \mathbb{C} \rightarrow \mathbb{C}$
 can be decomposed into real and imaginary component functions
 > $$f(z) = f(x+iy) = u(x,y) + iv(x,y) = {u(x,y), v(x,y)}$$
+
+And so, complex functions are naturally expressed as vector fields.
 </div>
+
+### 1.2 Curves
+
+<div class="definition" markdown="1">
+
+**<u>Definition(Planar Curve):</u>**
+
+A map $[0,1] \rightarrow \mathbb{R}^2$ is called a curve.
+
+We will call the image of a curve its trajectory.
+</div>
+
+A planar curve if given once two component functions are specified
+> $$\begin{pmatrix} x \\\ y \end{pmatrix} = \begin{pmatrix} x(t) \\\ y(t) \end{pmatrix}$$
+
+A curve is continuous $\iff$ its component functions are continuous
+
+A curve is called closed if $$\begin{pmatrix} x(a) \\\ y(a) \end{pmatrix} = \begin{pmatrix} x(b) \\\ y(b) \end{pmatrix}$$
+
+Often, we will define a vector field, $\Phi(x,y) = [\phi(x,y), \psi(x,y)],$ over a curve $\Gamma(t) = [x(t),y(t)].$ In which case the vector field is paramaterized by the variable $ $t \in [0,1].$
+> $$\Phi(t) = \begin{pmatrix} \phi(x(t),y(t) \\\ \psi(x(t),y(t)) \end{pmatrix}$$
+
