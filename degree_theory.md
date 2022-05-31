@@ -15,9 +15,16 @@ title: 'Planar Degree Theory'
 ### Motivation
 We will begin this exposition into degree theory with a recolection of the _intermediate value thorem,_ and a skech of its famous proof by Cauchy.
 
-Let $f(x)$ be a continuous function defined on an interval $[a,b]$ with $f(a),f(b)$ having different signs. The IVT guarantees the existence of some point $c \in [a,b]$ such that $f(c) = 0.$
+<div class="proposition" markdown="1">
 
-Without loss of generality, we assume $f(a)$ is negative and $f(b)$ positive. You may be familiar with the bisection method: we consider the sign of the function at the midpoint of our interval $\frac{b-a}{2}.$ If $f(\frac{b-a}{2}) = 0,$ we have found our root so we assume $f(\frac{b-a}{2}) \neq 0.$ If $f(\frac{b-a}{2})<0$ we set $a_1 := \frac{b-a}{2},$ $b_1:= b,$ if, on the otherhand, $f(\frac{b-a}{2})>0$ we set $a_1 = a,$ $b_1:= \frac{b-a}{2}$ the process is then repeated for the interval $[a_1,b_1].$ Such an algorithm will generate a sequence $a,a_1,a_2,\ldot$ at which our function is negative and increasing, and a sequence $b,b_1,b_2,\ldot$ at which our function is positive and decreasing.The difference of our sequences, $\vert a_n - b_n \vert,$ goes to zero and hence must have a common limit $\lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} b_n = c$ and as our function is continuous, the sequences $f(a_n)$ and $f(b_n)$ must also have a common limit $f(c).$ Finally, as $f(a_n),$ $f(b_n)$ are each monotonic and bounded by zero, they must converge to zero. Hence, for some $c \in [a,b]$ we have $f(c) = 0.$
+**Theorem: The Intermediate Value Theorem**
+
+Let $f(x)$ be a continuous function defined on an interval $[a,b]$ with $f(a),f(b)$ having different signs. The IVT guarantees the existence of some point $c \in [a,b]$ such that $f(c) = 0.$
+</div>
+
+<div class="proof" markdown="1">
+Without loss of generality, we assume $f(a)$ is negative and $f(b)$ positive. You may be familiar with the bisection method: we consider the sign of the function at the midpoint of our interval $\frac{b-a}{2}.$ If $f(\frac{b-a}{2}) = 0,$ we have found our root so we assume $f(\frac{b-a}{2}) \neq 0.$ If $f(\frac{b-a}{2})<0$ we set $a_1 := \frac{b-a}{2},$ $b_1:= b,$ if, on the otherhand, $f(\frac{b-a}{2})>0$ we set $a_1 = a,$ $b_1:= \frac{b-a}{2}$ the process is then repeated for the interval $[a_1,b_1].$ Such an algorithm will generate a sequence $a,a_1,a_2,\ldots$ at which our function is negative and increasing, and a sequence $b,b_1,b_2,\ldots$ at which our function is positive and decreasing.The difference of our sequences, $\vert a_n - b_n \vert,$ goes to zero and hence must have a common limit $\lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} b_n = c$ and as our function is continuous, the sequences $f(a_n)$ and $f(b_n)$ must also have a common limit $f(c).$ Finally, as $f(a_n),$ $f(b_n)$ are each monotonic and bounded by zero, they must converge to zero. Hence, for some $c \in [a,b]$ we have $f(c) = 0.$
+</div>
 
 This simple argumentation on the existence of a solution for the equation $f(x) = 0$ is the motivation of the entire field of degree theory.
 
@@ -82,7 +89,7 @@ With these reasonable properties of a degree theory in mind, we are ready to exp
 **<u>Theorem (Degree in $\mathbb{R}^1.$):</u>**
 
 Let $(f,\Omega) \in M(\mathbb{R}^1),$ then, 
-> $$deg(f,\Omega) = x = \begin{cases} \, 1, \qquad \text{if} \; f(a)<0 \; \text{and} \; f(b)>0 \\ -1, \qquad \text{if} \; f(a)>0 \; \text{and} \; f(b)<0 \\ \, 0, \qquad \text{otherwise} \end{cases}$$ 
+> $$deg(f,\Omega) = \begin{cases} \, 1, \qquad \text{if} \; f(a)<0 \; \text{and} \; f(b)>0 \\ -1, \qquad \text{if} \; f(a)>0 \; \text{and} \; f(b)<0 \\ \, 0, \qquad \text{otherwise} \end{cases}$$ 
 
 correctly defines a degree theory in $\mathbb{R}^1.$
 </div>
@@ -123,7 +130,7 @@ Any planar vector field $\Phi: \Omega \rightarrow \mathbb{R}^2$ is specified by 
 
 **Example: Complex Functions**
 
-Consider the complex function $f: \mathbb{C} \rightarrow \mathbb{C}$ \mathbb$** 
+Consider the complex function $f: \mathbb{C} \rightarrow \mathbb{C}$
 > $$f(z) = z^2$$
 
 Let $z = x+iy,$ then $f(z) = (x+iy)^2 = x^2 - y^2 + i2xy$ such that $f$ is specified by component functions
@@ -153,20 +160,29 @@ To describe a vector field as continuous, smooth, differrentiable is equivalent 
 
 **Examples: Tangent Field, Fields of Normals**
 
-<label for="figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-1" class="margin-toggle"/><span class="marginnote"><img src="img/tangent_field.png" alt="Sketch of Tangent Field"/> We call $\tau$ the *tangent field* as $<\tau, \mathbb{1}> = (-y,x) \cdot (x,y)^{T} = -yx + xy = 0$.</span> 
-
 Consider the unit circle $x^2 + y^2 = 1$ and define the tangent field 
 > $$\tau(x,y) = (-y,x)$$
 
-<label for="figure-2" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-2" class="margin-toggle"/><span class="marginnote"><img src="img/external_normal.png" alt="Sketch of external normals"/> In other settings this is also known as the identity vector field, for the obvious reason.</span> 
+ <figure>
+          <label for="figure-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-1" class="margin-toggle"/><span class="marginnote">We call $\tau$ the *tangent field* as $<\tau, \mathbb{1}> = (-y,x) \cdot (x,y)^{T} = -yx + xy = 0$.</span>
+          <img src="img/tangent_field.png" alt="Sketch of Tangent Field" />
+</figure>
 
 Alternatively consider the field of external normals
 > $$\eta(x,y) = (x,y)$$
 
-<label for="figure-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-3" class="margin-toggle"/><span class="marginnote"><img src="img/external_normal.png" alt="Sketch of internal normals"/> At every point on the circle $\omega$ assumes an internal normal.</span> 
+ <figure>
+          <label for="figure-2" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-2" class="margin-toggle"/><span class="marginnote">In other settings this is also known as the identity vector field, for the obvious reason.</span>
+          <img src="img/external_normal.png" alt="Sketch of external normals" />
+</figure>
 
 Finally we consider the field of internal normals
 > $$\omega(x,y) = (-x,-y)$$
+
+ <figure>
+          <label for="figure-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="figure-3" class="margin-toggle"/><span class="marginnote">At every point on the circle $\omega$ assumes an internal normal.</span>
+          <img src="img/external_normal.png" alt="Sketch of internal normals" />
+</figure>
 
 </div>
 
