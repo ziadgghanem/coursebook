@@ -292,9 +292,20 @@ As $\Phi$ is nonzero on $\Gamma$ we can directly find the degree
 
 **(2)** Take the vector field
 > $$ \Phi(x,y) = (x^2 - y^2,2xy) t$$
-> $$\rightarrow$$
+    > $$\rightarrow$$
 > $$\Theta(t) = 2t$$
 > $$ \Phi(t) \neq 0 \, \forall t \in [0, \pi]$$
-> $$\rightarrow$$
+    > $$\rightarrow$$
 > $$ deg(\Phi, \Gamma) = \frac{1}{2 \pi} [2 \pi - 0] = 1$$
 </div>
+
+### The Poincare Formula
+
+We will derive the Poincare formula on a smooth curve 
+> $$\Gamma(t) = \begin{cases} x = x(t) \\ y = y(t) \end{cases}$$ 
+for a continuously differentiable vector field
+> $$\Phi(x,y) = \begin{pmatrix} \phi(x,y) \\\ \psi(x,y) \end{pmatrix}$$
+such that the component functions $\phi(x(t),y(t)),$ $\phi(x(t),y(t))$ are also continuously differentiable. Let $\Theta(t)$ be the angular function of the pair $(\Phi, \Gamma),$ then:
+> $$d \Theta = d(arctan(\frac{\psi}{\phi})) = \frac{1}{1 + (\frac{\psi}{\phi})^2} \frac{\phi d \psi - \psi d \phi}{\phi^2}= \frac{\phi d \psi - \psi d \phi}{\phi^2 + \psi^2}$$  
+then it follows that
+> $$deg(\Phi, \Gamma)= \frac{1}{2 \pi} [\Theta(b) - \Theta(a)] = \frac{1}{2 \pi} \int_a^b frac{\phi(t) \psi^'(t) - \psi(t)  \phi^'(t)}{\phi^2(t) + \psi^2(t)}dt$$
