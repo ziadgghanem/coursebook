@@ -94,9 +94,26 @@ Let $(f,\Omega) \in M(\mathbb{R}^1),$ then,
 correctly defines a degree theory in $\mathbb{R}^1.$
 </div>
 
-For $\Omega = \bigcup_{n=1}^{\infty} (a_n,b_n)$ and $f: \bar{\Omega} \rightarrow \mathbb{R}$ $\Omega-$ admissible,
-> $$deg(f,\Omega) = \sum_{n=1}^{\infty} deg(f, (a_n,b_n))$$
+For $\Omega = \bigcup_{i=1}^{n} (a_i,b_i)$ with $(a_i,b_i) \cap (a_j,b_j) = \emptyset$ for $i \neq j$ and $f: \bar{\Omega} \rightarrow \mathbb{R}$ $\Omega-$ admissible,
+> $$deg(f,\Omega) = \sum_{i=1}^{n} deg(f, (a_i,b_i))$$
 
+So far we have only considered sets consisting of the finite union of disjoint open intervals, we would like to extend our degree theory to a countable union of disjoint open intervals
+
+<div class="proposition" markdown="1">
+
+**<u>Theorem:</u>**
+
+Suppose $\Omega = \bigcup_{i=1}^{\infty} (a_i,b_i),$ a countable union of disjoint open intervals with $f: \bar{\Omega} \rightarrow \mathbb{R}$ $\Omega-$ admissible.
+> $$deg(f,\Omega) = \sum_{i=1}^{\infty} deg(f, (a_i,b_i))$$
+
+</div>
+
+<div class="proof" markdown="1">
+
+We will show that this definition is well-defined, i.e. that the sum is always finite which in turn is equivalent to the claim that all but finitely many of the terms are zero. 
+
+It is necessary to recall a result from analysis: in a metric space, the condition of compactness is equivalent to that of sequential compactness. In particular, a set $K \in \mathbb{R}$ is compact iff every sequence of points $\{ x_n \} \subset K$ has a convergent subsequence $ \{ x_{n_k} \}$ with $\lim_{k \rightarrow \infty} \in K.$ 
+</div>
 
 <div class="example" markdown="1">
 
