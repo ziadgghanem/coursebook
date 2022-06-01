@@ -192,7 +192,7 @@ Finally we consider the field of internal normals
 
 **<u>Definition(Planar Curve):</u>**
 
-A map $\Gamma:[a,b] \rightarrow \mathbb{R}^2$ is called a curve.
+A piecewise-smooth map $\Gamma:[a,b] \rightarrow \mathbb{R}^2$ is called a curve.
 
 A planar curve if given once two component functions are specified
 > $$\Gamma(t) = \begin{pmatrix} x(t) \\\ y(t) \end{pmatrix}$$
@@ -201,28 +201,34 @@ A planar curve if given once two component functions are specified
 
 The image of a curve will be called its trajectory. We define the *reparametrization* of a curve $\Gamma$ to be its composition with any continuous map $\gamma:[0,1] \rightarrow [0,1]$ with $\gamma(0) = 0$ and $\gamma(1) = 1$. It is clear that all parameterizations of a curve share the same trajectory.
 
-A curve is **continuous** $\iff$ its component functions are continuous
-
-A curve is called **closed** if 
-> $$\begin{pmatrix} x(a) \\\ y(a) \end{pmatrix} = \begin{pmatrix} x(b) \\\ y(b) \end{pmatrix}$$
+A curve is called **closed** if $\begin{pmatrix} x(a) \\\ y(a) \end{pmatrix} = \begin{pmatrix} x(b) \\\ y(b) \end{pmatrix}$
 
 A vector field, $\Phi(x,y) = [\phi(x,y), \psi(x,y)],$ may be defined over a curve $\Gamma(t) = [x(t),y(t)].$ In which case the vector field is also paramaterized by the variable $t \in [a,b]$ and can be expressed as a vector function:
 > $$\Phi(t) = \begin{pmatrix} \phi(x(t),y(t)) \\\ \psi(x(t),y(t)) \end{pmatrix}$$
 
 ### Angular Function
 
-Let $\Phi: [0,1] \rightarrow \mathbb{R}^2$ the continuous vector function associated with a vector field $\Phi$ over some curve $\Gamma$ such that $\Phi(t) \neq \vec{0}$ $\forall t \in [a,b].$ Its angular function, $\Theta : [a,b] \rightarrow [0, 2 \pi],$ returns the angle between the vectors $\Phi(t)$ and $\Phi(a).$ 
-<label for="angular_function" class="margin-toggle">&#8853;</label><input type="checkbox" id="angular_function" class="margin-toggle"/><span class="marginnote">*Problem*: The angular function might be multivalued $\Theta(t) = \Theta(t + n(a-b)),$ instead we want to define $\Theta$ as only the continuous branch on $[a,b]$.</span> 
+Let $\Phi: [a,b] \rightarrow \mathbb{R}^2$ be the continuous vector function associated with a vector field $\Phi$ defined over some curve $\Gamma.$ Assume that $\Phi$ is nonzero on $\Gamma$ i.e. asumme that $\Phi(t) \neq 0$ $\forall t \in [a,b].$
+<label for="nonzero_vectors" class="margin-toggle">&#8853;</label><input type="checkbox" id="nonzero_vectors" class="margin-toggle"/><span class="marginnote">The angle between a vector and the zero vector is, of course, not defined.</span> 
+Then, we introduce the map $\angle: [0,1] \rightarrow \mathbb{R}$ which returns the angle between $\Phi(a)$ and $\Phi(t)$ in radians. 
+<label for="angular_function" class="margin-toggle">&#8853;</label><input type="checkbox" id="angular_function" class="margin-toggle"/><span class="marginnote">The map, $\angle,$ is multivalued $\angle(t) = \angle(t) + 2 \pi = \angle(t) + 4 \pi \cdots$.</span> 
+We define the **angular function**, $\theta \Phi: [a,b] \rightarrow [0,2 \pi]$ as the continuous branch of $\angle(t)$
+
 
 <div class="example" markdown="1">
 
 **Examples: Angular Function of Vector Fields**
 
 Consider the curve with a trajectory of the upper-half unit circle parameterized by
-> $$\Gamma(t) = \begin{pmatrix} x(t) \\\ y(t) \end{pmatrix}$ = \begin{pmatrix} cos(t) \\\ sin(t) \end{pmatrix}$$ $$t \in [0, \pi]$$
+> $$\Gamma(t) = \begin{pmatrix} x(t) \\\ y(t) \end{pmatrix} = \begin{pmatrix} cos(t) \\\ sin(t) \end{pmatrix}$$ $$ \quad t \in [0, \pi]$$
+
+<hr style="margin: auto;" />
 
 **(1)** Take the identity vector field 
-> $$ \Phi(x,y) = (x,y) t$$
+> $$ \Phi(x,y) = (x,y) $
+
+Over $\Gamma$ we have the following parameterization
+> $$ \Phi(t) = (cos(t),sin(t))
 
 The angular function of $\Phi$ satisfies the equation
 > $$tan(\Theta(t)) = \frac{y(t)}{x(t)} = \frac{sin(t)}{cos(t)} = tan(t)$$
@@ -232,25 +238,30 @@ Hence $\Phi$ has angular function
 <hr>
 
 **(2)** Take the vector field 
-> $$ \Phi(x,y) = (y,-x) t$$
-> $$\rightarrow$$
+> $$ \Phi(x,y) = (y,-x) $$
+    > $$\rightarrow$$
+
 > $$tan(\Theta(t)) = \frac{-cos(t)}{sin(t)} = -cot(t) = -tan(\frac{\pi}{2}-t)$$
+
 > $$\rightarrow$$
+
 > $$\Theta(t) = -(\frac{\pi}{2}-t)$$
 <hr>
 
 **(3)** Take the complex vector field 
-> $$ \Phi(x,y) = (x^2 - y^2,2xy) t$$
+> $$ \Phi(x,y) = (x^2 - y^2,2xy) $$
 > $$\rightarrow$$
+
 > $$tan(\Theta(t)) = \frac{2cos(t)sin(t)}{cos^2(t) - sin^2(t)} = \frac{sin(2t)}{cos(2t)} = tan(2t)$$
 > $$\rightarrow$$
+
 > $$\Theta(t) = 2t$$
 
 </div>
 
 **Properties of the Angular Function:** Let $\Phi$ be a planar vector field,
-1. Scalar multiples of $$\Phi$$ all share the same angular function.
-2. Vector fields obtained from $$\Phi$$ from rotating every vector by some fixed angle all share the same angular function.
+1. Positive scalar multiples of $$\Phi$$ all share the same angular function.
+2. Vector fields obtained from $$\Phi$$ through rotating every vector by some fixed angle all share the same angular function.
 3. In general, if $$\Phi$$ is defined over different parameterizations of the same curve it will have different angular functions.
     * In fact, if we pass from the parameter of a curve $$t$$ to $$\tau:= -t$$ then $$\Theta(\tau) = - \Theta(t)$$
 4. If the vectors $$\Phi(a)$$ and $$\Phi(b)$$ point in the same direction then $$\Theta(b)$$ is a multiple of $$2 \pi$$
