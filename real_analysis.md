@@ -101,7 +101,7 @@ Some instructive examples and non-examples of algebraic operations:
     - $$(\mathbb{R}, +),(\mathbb{R}, -),(\mathbb{R}, \cdot),(\mathbb{R}, \div)$$ are all algebraic operations.
 </div>
 
-## Fields
+### Fields
 
 Simply, a field is a set on which algebraic operations behave as they do on $$\mathbb{R}$$ and $$\mathbb{Q}$$
 
@@ -285,29 +285,28 @@ Then, $0 < -i$ and by the axioms of ordered fields
 > $$0 \cdot -i < -i \cdot -i $$ $$\rightarrow$$ $$0 < -1,$$ again a contradiction. 
 </div>
 
-## Metric Spaces
-
-**Fundamental Concepts from Topology in $\mathbb{R}$**
+### Topology in $\mathbb{R}$
 
 Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \{x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \}$ the *$\epsilon-$ 
-neighborhood* of $a$ and by $N^{*}_{\epsilon}(a) = N_{\epsilon}(a) \ \{ a \}$ the *deleted $\epsilon-$ 
+neighborhood* of $a$ 
+and by $N^{*}_{\epsilon}(a) = N_{\epsilon}(a) \ \{ a \}$ the *deleted $\epsilon-$ 
 neighborhood* of $a.$
 
-**Terminology:** take $A \subset \mathbb{R}$ 
+**Fundamental Concepts from Topology take $A \subset \mathbb{R}$** 
 1. $$a \in A$$ is called an *interior point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(a) \subset A$$
     - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
-2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the neighborhood $$N_{\epsilon}(a)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$N_{\epsilon}(a) \cap A \neq \emptyset$$ $$\land$$ $$N_{\epsilon}(a) \cap A^{C} \neq \emptyset$$
+2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the neighborhood $$N_{\epsilon}(b)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$N_{\epsilon}(b) \cap A \neq \emptyset$$ $$\land$$ $$N_{\epsilon}(b) \cap A^{C} \neq \emptyset$$
     - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
 3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ 
 has nonempty intersection with $$A$$ i.e. if $$N^{*}_{\epsilon}(c) \cap A \neq \emptyset$$
-4. $$d \in A$$ iscalled an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \{ d \}$$
+4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \{ d \}$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted by $$\bar{A} = A \cup \{ limit points of A \}$$
+    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \{$$ limit points of $$A \}$$
 
-1. $$A$$ is called *open* if $$A = int(A)$$
-2. In turn we say that $$A$$ is *closed* if $$A^{C}$$ is open
-3. $$A$$ is said to be *compact* if it is both bounded and closed
+$A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
+
+### Metric Spaces
 
 A metric space is a set together with a map, called a metric, that defines a rule of distance between elements of the set.
 
@@ -337,6 +336,128 @@ Some instructive examples of metric spaces:
     > $$\rho(f,g) =$$ $$\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$$
 4. Again, take $$M = C([a,b],\mathbb{R})$$ but this time define the integral metric
     > $$\rho(f,g) =$$ $$\int_a^b \vert f(x) - g(x) \vert dx$$ 
-5. Consider $$M = \ell^2 := \{(x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \} equipped with the euclidean metric
-    > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}
+5. Consider $$M = \ell^2 := \{(x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \}$$ equipped with the euclidean metric
+    > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$$
+</div>
+
+### Topology in Metric Spaces
+
+In order to define topological concepts in $\mathbb{R}$ we first had to introduce the $\epsilon$ neighborhood of a point.
+Given a metric space, $(M, \rho),$ we generalize the notion of a neighborhood with the open ball centered at a point $x_0 \in M$ with radius $r$ $B_r(x_0):= \{x \in M: \rho(x,x_0)< r \}$$
+Given a metric space $(M, \rho)$ with $x_0 \in M$ which is denoted by $B_r(x_0):= \{x \in M: \rho(x,x_0)< r \}.$$ Now the topological concepts in $(M, \rho)$ using balls follow
+as they did in $\mathbb{R}$ using neighborhoods.
+
+**Fundamental Concepts from Topology take $A \subset M$** 
+1. $$a \in A$$ is called an *interior point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(a) \subset A$$
+    - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
+2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the ball $$B_{\epsilon}(b)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$B_{\epsilon}(b) \cap A \neq \emptyset$$ $$\land$$ $$B_{\epsilon}(b) \cap A^{C} \neq \emptyset$$
+    - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
+3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted ball of $$c$$ 
+has nonempty intersection with $$A$$ i.e. if $$B^{*}_{\epsilon}(c) \cap A \neq \emptyset$$
+4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(d) \cap A = \{ d \}$$
+5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
+6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
+    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \{$$ limit points of $$A \}$$
+
+Just as with subsets of $\mathbb{R},$ $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
+
+<div class="proposition" markdown="1">
+
+**Statement:** Let $(M,\rho)$ be a metric space
+1. The arbitrary union of open sets is open $M$. 
+    - i.e. If $$\{ U_{\alpha} \}_{\alpha \in I}$$ is an arbitrary collection of open subsets in $$M$$ then $$\bigcup_{\alpha} U_{\alpha}$$ is open.
+2. The finite intersection of open sets is open in $M$
+    - i.e. if $$\{ U_{\alpha} \}^{N}_{n=1}$$ is a finite collection of open subsets in $$M$$ then $$\bigcap^{N}_{n=1} U_{n}$$ is open.
+3. The arbitrary intersection of closed sets is closed $M$. 
+    - i.e. If $$\{ V_{\alpha} \}_{\alpha \in I}$$ is an arbitrary collection of closed subsets in $$M$$ then $$\bigcap_{\alpha} V_{\alpha}$$ is closed.
+4. The finite union of closed sets is closed in $M$
+    - i.e. if $$\{ V_{\alpha} \}^{N}_{n=1}$$ is a finite collection of closed subsets in $$M$$ then $$\bigcup^{N}_{n=1} V_{n}$$ is closed.
+</div>
+
+<div class="example" markdown="1">
+
+**Example:** The arbitrary intersection of open subsets of a metric space is not, in general, open.
+
+Consider the family of open neighborhoods of the origin $A = \{(-\frac{1}{n},\frac{1}{n})\}^{\infty}_{n=1}$
+
+The intersection of this family is the singleton set $0 = \bigcap^{\infty}_{n=1} (-\frac{1}{n},\frac{1}{n})$ which is, 
+of course, closed in $\mathbb{R}$.
+
+</div>
+
+Now that we have reviewed some fundamental concepts of topology in metric spaces we are ready to define the notion of
+convergence in a metric space.
+
+<div class="definition" markdown="1">
+
+**Convergence in Metric Spaces:**
+
+Let $(M, \rho)$ be a metric space, a sequence $\{ x_n \} \subset M$ is said to be convergent to an element $a \in M$ if 
+all but finitely many terms of the sequence belong to any neighborhood of $a,$ i.e. 
+- $$ \lim_{n \rightarrow \infty } \{ x_n \} = a$$ $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n > N \, 
+    \rho(x_n,a) < \epsilon$$
+
+</div>
+
+<div class="definition" markdown="1">
+
+**Cauchy Sequences:**
+
+Given a metric space $(M, \rho)$ a sequence $\{ x_n \} \subset M$ is called a Cauchy sequence if its terms 
+become arbitarily close together, i.e.
+- $$$\{ x_n \}$$ Cauchy $$\iff$$ $$$$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n,m > N \, \rho(x_n,x_m)< \epsilon$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Any convergent sequence in a metric space is a Cauchy sequence.
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* 
+
+Given metric space $(M, \rho),$ suppose $\{ x_n \} \subset M$ is convergent to $a \in M$
+> $$\rightarrow$$ $$\lim_{n \rightarrow \infty } \rho(x_n, a) = 0$$
+
+Now consider the distance between the $$n$$-th and $$m$$-th terms of our sequence. By the triangle inequality metric axiom:
+> $$\rho(x_n, x_m) \leq \rho(x_n, a) + \rho(x_m, a)$$
+
+Where, both terms on the RHS of the inequality vanish in the limit such that
+> $$\lim_{n \rightarrow \infty } \rho(x_n, x_m) = 0$$
+</div>
+
+<div class="example" markdown="1">
+
+**Example:** The inverse statement, that any Cauchy sequence in a metric space $(M, \rho)$ must converge in $M$ is not true, in general.
+
+Consider the sequence $\{2, 2.7, 2.71, 2.718, 2.7182, 2.71828, 2.718281, \ldots \}$ which converges to Euler's constant $e.$ 
+We note that this is a sequence of rational numbers and yet the sequence does not converge in $\mathbb{Q}$
+
+</div>
+
+This last example gives motivation for the concept of a complete metric space.
+
+<div class="definition" markdown="1">
+
+**Complete Metric Space:**
+
+A metric space, $(M, \rho),$ is called complete if any Cauchy sequence in $M$ converges to an element of the space.
+</div>
+
+<div class="example" markdown="1">
+
+**Examples: Complete Metric Spaces**
+
+Some instructive examples of complete metric spaces:
+1. $$(X, \rho)$$ is a complete metric space for any set $$X$$ and the trivial metric $$\rho(x,y) = \begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
+    - Indeed, let $$\{ x_n \}$$ be a Cauchy sequence in $$X$$ and choose $$\epsilon = \frac{1}{2},$$ we are guarenteed the existence of some $$N \in \mathbb{N}$$ such that $$\forall n,m > N \, \rho(x,y) < \frac{1}{2}$$ but then $$\rho(x,y) = 0$$ $$\rightarrow$$ $$x=y.$$ 
+    - Hence, any Cauchy sequence in such a metric space must become constant for all indices $$n >N$$ and as such is convergent to that constant value, which belongs to $$X$$.
+2. $$(\mathbb{R}, \rho)$$ is a complete metric space with the natural metric $$\rho(x,y) = \vert x-y \vert$$
+    - This will be shown later.
+3. $$(\mathbb{R}^n, \rho_p)$$ is a complete metric space, where $$\rho_p(x,y) = (\sum^n_{i=1} \vert x-y \vert^p)^{\frac{1}{p}}$$
+4. Let $$X =C([a,b],\mathbb{R})$$ then for $$\rho(f,g) =\sup_{x \in [a,b]} \vert f(x) - g(x) \vert,$$ the metric space $$(X, \rho)$$ is complete
+    - Take fundamental sequence of functions $$\{ f_n \} \subset X$$
 </div>
