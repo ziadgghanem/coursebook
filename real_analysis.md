@@ -146,7 +146,7 @@ Informally, we think of an ordered set as a set, $A,$ equipped with a binary rel
 Let $A$ be a set and $\leq \in A \times A$ a binary relation
 1. We say that $$\leq$$ is a partial order on $$A$$ if it is reflexive, transitive, and anti-symmetric, i.e. 
     - *Reflexive:* every element is comparable to itself, $$a \leq a$$
-    - *Transitive:* comparable elements form a *chain*, $$a \leq b \, \and b \leq c \implies a \leq c$$
+    - *Transitive:* comparable elements form a *chain*, $$a \leq b \, \land b \leq c \implies a \leq c$$
     - *Anti-Symmetric:* elements may only be compared in at most one direction, if $$a \leq b$$ then not $$b \leq a$$
 2. We say that $$\leq$$ is a total order on $$A$$ if it is a partial order with the condition that any two elements are comparable, i.e.
     - *Totality:* If $$a,b \in A$$ then either $$a \leq b$$ or $$b \leq a$$
@@ -170,8 +170,173 @@ Let $\mathbb{F}$ be a set with total order $\leq \in \mathbb{F} \times \mathbb{F
 **Examples: Ordered Fields**
 
 Some instructive examples and ordered fields:
-1. $$(\mathbb{Q}, \leq), (\mathbb{R}, \leq)$$ are fields
+1. $$(\mathbb{Q}, \leq), (\mathbb{R}, \leq)$$ are ordered fields
 2. Any subfield of an ordered field is again ordered.
 3. The field of rational functions is an ordered field.
 </div>
 
+The canonical example of an ordered field is the real numbers. We will introduce the notions of order-completeness and the archimedian property
+which provide sufficient condtitions for a field isomorphism to $\mathbb{R}.$
+
+**Fundamental Concepts from Analysis**
+
+Assume $(\mathbb{F}, \leq)$ is an ordered field with $A \subset \mathbb{F}$
+1. $$A$$ is called bounded from above with *upper bound* $$\alpha$$ if
+    > $$\exists \alpha \in \mathbb{F}$$ such that $$\forall x \in A$$ $$x \leq \alpha$$
+2.  $$A$$ is called bounded from below with *lower bound* $$\beta$$ if
+    > $$\exists \beta \in \mathbb{F}$$ such that $$\forall x \in A$$ $$ \beta \leq x$$
+3. An element $$\gamma \in \mathbb{F}$$ is called a *supremum* for $$A$$ if
+    1. $$\gamma$$ is an upper bound for $$A$$
+    2. If $$\gamma^'$$ is also an upper bound for $$A$$ then $$\gamma \leq \gamma^',$$ i.e. $$\gamma$$ is the least upper bound for $$A$$
+4. An element $$\delta \in \mathbb{F}$$ is called a *infimum* for $$A$$ if
+    1. $$\delta$$ is an lower bound for $$A$$
+    2. If $$\delta^'$$ is also an lower bound for $$A$$ then $$\delta^' \leq \delta,$$ i.e. $$\delta$$ is the greatest lower bound for $$A$$
+
+If a supremum for $A \subset \mathbb{F}$ belongs to $A$ then we call it a maximum of $A.$ 
+Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.$
+
+<div class="definition" markdown="1">
+
+**Order-Complete Fields**
+
+An ordered field $\mathbb{F}$ is called order complete if any set bounded from above, $A \subset \mathbb{F},$ admits a maximum.
+
+Equivalently, we might require the existence of a minimum for any set bounded from below.
+</div>
+
+<div class="example" markdown="1">
+
+**Examples: Order-Complete Fields**
+
+Some instructive examples and nonexamples of order-complete fields:
+1. $$(\mathbb{R}, <)$$ is order complete.
+2. $$(\mathbb{Q}, <), (\mathbb{N}, <), (\mathbb{Z}, <)$$ are not order complete.
+    - Indeed, put $$A:= \{ x \in \mathbb{Q}: \quad x^2 < 2 \}$$ which has supremum $$\sqrt{2} \notin \mathbb{Q}$$
+</div>
+
+The Archimedian property is very nicely described by Euclid himself. In Book $\romannumeral 5$ of Euclid's Elements we read
+<blockquote>
+        Magnitudes are said to have a ratio to one another which can, when multiplied, exceed one another.
+</blockquote>
+
+<div class="definition" markdown="1">
+
+**Archimedian Property**
+
+We say that an ordered field $$(\mathbb{F}, <)$$ is Archimedian if 
+> $$\forall a,b \in \mathbb{F}$$ with $$a < b$$ $$\exists n \in \mathbb{N}$$ such that $$b < na $$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Any complete ordered field is Archimedian.
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Let the field, $(\mathbb{F}, <),$ be order complete.
+> $$\iff$$ any bounded set $$A \subset \mathbb{F}$$ admits a supremum
+
+Suppose, by contradiction, that $\mathbb{F}$ is not Archimedian
+> $$\rightarrow$$ $$\exists a,b \in \mathbb{F}$$ with $$a < b$$ such that $$\forall n \in \mathbb{N}$$ we have $$na < b$$
+
+Now, take the set $A: = \{ na \}_{n \in \mathbb{N}},$ by negation of the Archimedian property this set is bounded above by $b \in \mathbb{F}.$
+
+Also, by order completeness of $\mathbb{F},$ we are guarenteed the existence of some supremum $\gamma = \sup A$
+> $$\rightarrow$$ $$\forall n \in \mathbb{N}$$ we have $$na < \gamma$$
+
+> In particular we have $$\forall n \in \mathbb{N} \,$$ $$(n+1)a < \gamma$$ 
+
+> $$\rightarrow$$ $$\forall n \in \mathbb{N} \,$$ $$na + a < \gamma$$ $$\rightarrow$$ $$na < \gamma - a < \gamma$$
+
+But now we must conclude that $\gamma - a$ is an upper bound for $A$ and $\gamma - a < \gamma$ which contradicts our assumption that
+$\gamma$ is the *least upper bound* for $A$ and so the proposition follows.
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+It is not possible to define an order, $<,$ on the complex numbers such that the restriction of $(\mathbb{C}, <)$ to 
+$(\mathbb{R}, <)$ coincides with the natural order on the reals.
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Suppose, by contradiction, that such an order exists. 
+
+Case $1:$ Assume that $0 < i$ 
+
+Then, by the axioms of ordered fields, 
+> $$0 \cdot i < i \cdot i $$ $$\rightarrow$$ $$0 < -1,$$ contradiction. 
+
+Case $1:$ Assume that $i < 0$ 
+
+Then, $0 < -i$ and by the axioms of ordered fields 
+> $$0 \cdot -i < -i \cdot -i $$ $$\rightarrow$$ $$0 < -1,$$ again a contradiction. 
+</div>
+
+## Metric Spaces
+
+**Fundamental Concepts from Topology in $\mathbb{R}$**
+
+Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \{x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \}$ the *$\epsilon-$ 
+neighborhood* of $a$ and by $N^{*}_{\epsilon}(a) = N_{\epsilon}(a) \ \{ a \}$ the *deleted $\epsilon-$ 
+neighborhood* of $a.$
+
+**Terminology:** take $A \subset \mathbb{R}$ 
+1. $$a \in A$$ is called an *interior point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(a) \subset A$$
+    - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
+2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the neighborhood $$N_{\epsilon}(a)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$N_{\epsilon}(a) \cap A \neq \emptyset$$ $$\land$$ $$N_{\epsilon}(a) \cap A^{C} \neq \emptyset$$
+    - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
+3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ 
+has nonempty intersection with $$A$$ i.e. if $$N^{*}_{\epsilon}(c) \cap A \neq \emptyset$$
+4. $$d \in A$$ iscalled an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \{ d \}$$
+5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
+6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
+    - The closure of $$A$$ is often denoted by $$\bar{A} = A \cup \{ limit points of A \}$$
+
+1. $$A$$ is called *open* if $$A = int(A)$$
+2. In turn we say that $$A$$ is *closed* if $$A^{C}$$ is open
+3. $$A$$ is said to be *compact* if it is both bounded and closed
+
+A metric space is a set together with a map, called a metric, that defines a rule of distance between elements of the set.
+
+<div class="definition" markdown="1">
+
+**Metric Space**
+
+A set $M$ is called a metric space if there exists a map $\rho : M \times M \rightarrow \mathbb{R}$ satisfying 
+the metric properties $\forall x,y,z \in M$
+1. *Positive Semi-Definiteness:* $$\rho(x,y) \geq 0$$
+2. *Indiscernibility:* $$\rho(x,y) = 0 \iff x = y$$
+3. *Symmetry:* $$\rho(x,y) = \rho(y,x)$$
+4. *Triangle Inequality:* $$\rho(x,y) \leq \rho(x,z) + \rho(z,y)$$
+
+</div>
+
+<div class="example" markdown="1">
+
+**Examples: Metric Spaces**
+
+Some instructive examples of metric spaces:
+1. It is the case that any set $$X$$ can be made into a metric space with the so-called trivial metric
+    > $$\rho(x,y) =$$ $$\begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
+2. Consider $$M = \mathbb{R}^n$$ where $$\mathbb{R}^n := \{ (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \}$$ and define the $$p-$$ metric
+    > $$\rho(x,y)_p =$$ $$(\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$$ 
+3. Take $$M = C([a,b],\mathbb{R})$$ the space of real-valued, continuous functions defined over the interval $$[a,b] \subset \mathbb{R}$$ and define the supremum metric
+    > $$\rho(f,g) =$$ $$\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$$
+4. Again, take $$M = C([a,b],\mathbb{R})$$ but this time define the integral metric
+    > $$\rho(f,g) =$$ $$\int_a^b \vert f(x) - g(x) \vert dx$$ 
+5. Consider $$M = \ell^2 := \{(x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \} equipped with the euclidean metric
+    > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}
+</div>
