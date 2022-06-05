@@ -17,7 +17,7 @@ title: 'Real Analysis'
 In simple terms, a binary relation between two sets is a rule of association between elements of each set. 
 
 Consider the *cartesian product* of sets $A$ and $B$
-> $$A \times B = \{ (a,b): \quad a \in A, \; b \in B \}$$
+> $$A \times B = \lbrace (a,b): \quad a \in A, \; b \in B \rbrace$$
 
 We will see that the cartesian product of sets is the most general binary relation between them.
 
@@ -137,7 +137,7 @@ We say that $\mathcal{S} \subset \mathcal{F}$ is a **subfield** of the field $\m
 Some instructive examples and non-examples of fields:
 1. $$\mathbb{Q},\mathbb{R},\mathbb{C}$$ are fields
 2. $$\mathbb{Z}$$ is not a field
-3. The set of rational functions over $$\mathbb{R},$$ $$X = \{ \frac{a_0 + a_1x + \cdots + a_n x^n}{b_0 + b_1x + \cdots + b_m x^m} \}$$ with $$a_i, b_j \in \mathbb{R}$$ is a field.
+3. The set of rational functions over $$\mathbb{R},$$ $$X = \lbrace \frac{a_0 + a_1x + \cdots + a_n x^n}{b_0 + b_1x + \cdots + b_m x^m} \rbrace$$ with $$a_i, b_j \in \mathbb{R}$$ is a field.
 </div>
 
 Informally, we think of an ordered set as a set, $A,$ equipped with a binary relation $$\leq \in A \times A$$ that describes a comparison rule between its elements.
@@ -214,7 +214,7 @@ Equivalently, we might require the existence of a minimum for any set bounded fr
 Some instructive examples and nonexamples of order-complete fields:
 1. $$(\mathbb{R}, <)$$ is order complete.
 2. $$(\mathbb{Q}, <), (\mathbb{N}, <), (\mathbb{Z}, <)$$ are not order complete.
-    - Indeed, put $$A:= \{ x \in \mathbb{Q}: \quad x^2 < 2 \}$$ which has supremum $$\sqrt{2} \notin \mathbb{Q}$$
+    - Indeed, put $$A:= \lbrace x \in \mathbb{Q}: \quad x^2 < 2 \rbrace$$ which has supremum $$\sqrt{2} \notin \mathbb{Q}$$
 </div>
 
 The Archimedian property is very nicely described by Euclid himself. In Book $\romannumeral{5}$ of Euclid's Elements we read
@@ -248,7 +248,7 @@ Let the field, $(\mathbb{F}, <),$ be order complete.
 Suppose, by contradiction, that $\mathbb{F}$ is not Archimedian
 > $$\rightarrow$$ $$\exists a,b \in \mathbb{F}$$ with $$a < b$$ such that $$\forall n \in \mathbb{N}$$ we have $$na < b$$
 
-Now, take the set $A: = \{ na \}_{n \in \mathbb{N}},$ by negation of the Archimedian property this set is bounded above by $b \in \mathbb{F}.$
+Now, take the set $A: = \lbrace na \rbrace_{n \in \mathbb{N}},$ by negation of the Archimedian property this set is bounded above by $b \in \mathbb{F}.$
 
 Also, by order completeness of $\mathbb{F},$ we are guarenteed the existence of some supremum $\gamma = \sup A$
 > $$\rightarrow$$ $$\forall n \in \mathbb{N}$$ we have $$na < \gamma$$
@@ -290,9 +290,9 @@ Then, $0 < -i$ and by the axioms of ordered fields
 
 ### Topology in $\mathbb{R}$
 
-Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \{x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \}$ the *$\epsilon-$ 
+Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \lbrace  x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \rbrace$ the *$\epsilon-$ 
 neighborhood* of $a$ 
-and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \{ a \}$ the *deleted* $\epsilon$ 
+and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \lbrace a \rbrace$ the *deleted* $\epsilon$ 
 -neighborhood of $a$.
 
 **Fundamental Concepts from Topology take $A \subset \mathbb{R}$** 
@@ -302,10 +302,10 @@ and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \{ a \}$ the *delete
     - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
 3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ 
 has nonempty intersection with $$A$$ i.e. if $$N^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
-4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \{ d \}$$
+4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \{$$ limit points of $$A \}$$
+    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \lbrace $$ limit points of $$A \rbrace$$
 
 $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
 
@@ -333,20 +333,20 @@ the metric properties $\forall x,y,z \in M$
 Some instructive examples of metric spaces:
 1. It is the case that any set $$X$$ can be made into a metric space with the so-called trivial metric
     > $$\rho(x,y) =$$ $$\begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
-2. Consider $$M = \mathbb{R}^n$$ where $$\mathbb{R}^n := \{ (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \}$$ and define the $$p-$$ metric
+2. Consider $$M = \mathbb{R}^n$$ where $$\mathbb{R}^n := \lbrace (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \rbrace$$ and define the $$p-$$ metric
     > $$\rho(x,y)_p =$$ $$(\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$$ 
 3. Take $$M = C([a,b],\mathbb{R})$$ the space of real-valued, continuous functions defined over the interval $$[a,b] \subset \mathbb{R}$$ and define the supremum metric
     > $$\rho(f,g) =$$ $$\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$$
 4. Again, take $$M = C([a,b],\mathbb{R})$$ but this time define the integral metric
     > $$\rho(f,g) =$$ $$\int_a^b \vert f(x) - g(x) \vert dx$$ 
-5. Consider $$M = \ell^2 := \{(x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \}$$ equipped with the euclidean metric
+5. Consider $$M = \ell^2 := \lbrace (x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \rbrace$$ equipped with the euclidean metric
     > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$$
 </div>
 
 ### Topology in Metric Spaces
 
 In order to define topological concepts in $\mathbb{R}$ we first had to introduce the $\epsilon$- neighborhood of a point.
-Given a metric space, $(M, \rho),$ we generalize the notion of a neighborhood with the open ball centered at a point $x_0 \in M$ with radius $r$, $B_r(x_0):= \{x \in M: \rho(x,x_0)< r \}$, 
+Given a metric space, $(M, \rho),$ we generalize the notion of a neighborhood with the open ball centered at a point $x_0 \in M$ with radius $r$, $B_r(x_0):= \lbrace x \in M: \rho(x,x_0)< r \rbrace$, 
 Now the topological concepts in $(M, \rho)$ using balls follow
 as they did in $\mathbb{R}$ using neighborhoods.
 
@@ -357,10 +357,10 @@ as they did in $\mathbb{R}$ using neighborhoods.
     - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
 3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted ball of $$c$$ 
 has nonempty intersection with $$A$$ i.e. if $$B^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
-4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(d) \cap A = \{ d \}$$
+4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \{$$ limit points of $$A \}$$
+    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \lbrace $$ limit points of $$A \rbrace$$
 
 Just as with subsets of $\mathbb{R},$ $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
 
@@ -368,20 +368,20 @@ Just as with subsets of $\mathbb{R},$ $A$ is called *open* if $A = int(A),$ in t
 
 **Statement:** Let $(M,\rho)$ be a metric space
 1. The arbitrary union of open sets is open $M$. 
-    - i.e. If $$\{ U_{\alpha} \}_{\alpha \in I}$$ is an arbitrary collection of open subsets in $$M$$ then $$\bigcup_{\alpha} U_{\alpha}$$ is open.
+    - i.e. If $$\lbrace U_{\alpha} \rbrace_{\alpha \in I}$$ is an arbitrary collection of open subsets in $$M$$ then $$\bigcup_{\alpha} U_{\alpha}$$ is open.
 2. The finite intersection of open sets is open in $M$
-    - i.e. if $$\{ U_{\alpha} \}^{N}_{n=1}$$ is a finite collection of open subsets in $$M$$ then $$\bigcap^{N}_{n=1} U_{n}$$ is open.
+    - i.e. if $$\lbrace U_{\alpha} \rbrace^{N}_{n=1}$$ is a finite collection of open subsets in $$M$$ then $$\bigcap^{N}_{n=1} U_{n}$$ is open.
 3. The arbitrary intersection of closed sets is closed $M$. 
-    - i.e. If $$\{ V_{\alpha} \}_{\alpha \in I}$$ is an arbitrary collection of closed subsets in $$M$$ then $$\bigcap_{\alpha} V_{\alpha}$$ is closed.
+    - i.e. If $$\lbrace V_{\alpha} \rbrace_{\alpha \in I}$$ is an arbitrary collection of closed subsets in $$M$$ then $$\bigcap_{\alpha} V_{\alpha}$$ is closed.
 4. The finite union of closed sets is closed in $M$
-    - i.e. if $$\{ V_{\alpha} \}^{N}_{n=1}$$ is a finite collection of closed subsets in $$M$$ then $$\bigcup^{N}_{n=1} V_{n}$$ is closed.
+    - i.e. if $$\lbrace V_{\alpha} \rbrace^{N}_{n=1}$$ is a finite collection of closed subsets in $$M$$ then $$\bigcup^{N}_{n=1} V_{n}$$ is closed.
 </div>
 
 <div class="example" markdown="1">
 
 **Example:** The arbitrary intersection of open subsets of a metric space is not, in general, open.
 
-Consider the family of open neighborhoods of the origin $A = \{(-\frac{1}{n},\frac{1}{n})\}^{\infty}_{n=1}$
+Consider the family of open neighborhoods of the origin $A = \lbrace (-\frac{1}{n},\frac{1}{n}) \rbrace^{\infty}_{n=1}$
 
 The intersection of this family is the singleton set $0 = \bigcap^{\infty}_{n=1} (-\frac{1}{n},\frac{1}{n})$ which is, 
 of course, closed in $\mathbb{R}$.
@@ -395,9 +395,9 @@ convergence in a metric space.
 
 **Convergence in Metric Spaces:**
 
-Let $(M, \rho)$ be a metric space, a sequence $\{ x_n \} \subset M$ is said to be convergent to an element $a \in M$ if 
+Let $(M, \rho)$ be a metric space, a sequence $\lbrace x_n \rbrace \subset M$ is said to be convergent to an element $a \in M$ if 
 all but finitely many terms of the sequence belong to any neighborhood of $a,$ i.e. 
-- $$ \lim_{n \rightarrow \infty } \{ x_n \} = a$$ $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n > N \, 
+- $$ \lim_{n \rightarrow \infty } \lbrace x_n \rbrace = a$$ $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n > N \, 
     \rho(x_n,a) < \epsilon$$
 
 </div>
@@ -406,9 +406,9 @@ all but finitely many terms of the sequence belong to any neighborhood of $a,$ i
 
 **Cauchy Sequences:**
 
-Given a metric space $(M, \rho)$ a sequence $\{ x_n \} \subset M$ is called a Cauchy sequence if its terms 
+Given a metric space $(M, \rho)$ a sequence $\lbrace x_n \rbrace \subset M$ is called a Cauchy sequence if its terms 
 become arbitarily close together, i.e.
-- $$\{ x_n \}$$ Cauchy $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n,m > N \, \rho(x_n,x_m)< \epsilon$$
+- $$\lbrace x_n \rbrace$$ Cauchy $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n,m > N \, \rho(x_n,x_m)< \epsilon$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -422,7 +422,7 @@ Any convergent sequence in a metric space is a Cauchy sequence.
 
 *Proof:* 
 
-Given metric space $(M, \rho),$ suppose $\{ x_n \} \subset M$ is convergent to $a \in M$
+Given metric space $(M, \rho),$ suppose $\lbrace x_n \rbrace \subset M$ is convergent to $a \in M$
 > $$\rightarrow$$ $$\lim_{n \rightarrow \infty } \rho(x_n, a) = 0$$
 
 Now consider the distance between the $$n$$-th and $$m$$-th terms of our sequence. By the triangle inequality metric axiom:
@@ -436,7 +436,7 @@ Where, both terms on the RHS of the inequality vanish in the limit such that
 
 **Example:** The inverse statement, that any Cauchy sequence in a metric space $(M, \rho)$ must converge in $M$ is not true, in general.
 
-Consider the sequence $\{2, 2.7, 2.71, 2.718, 2.7182, 2.71828, 2.718281, \ldots \}$ which converges to Euler's constant $e.$ 
+Consider the sequence $\lbrace 2, 2.7, 2.71, 2.718, 2.7182, 2.71828, 2.718281, \ldots \rbrace$ which converges to Euler's constant $e.$ 
 We note that this is a sequence of rational numbers and yet the sequence does not converge in $\mathbb{Q}$
 
 </div>
@@ -456,13 +456,13 @@ A metric space, $(M, \rho),$ is called complete if any Cauchy sequence in $M$ co
 
 Some instructive examples of complete metric spaces:
 1. $$(X, \rho)$$ is a complete metric space for any set $$X$$ and the trivial metric $$\rho(x,y) = \begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
-    - Indeed, let $$\{ x_n \}$$ be a Cauchy sequence in $$X$$ and choose $$\epsilon = \frac{1}{2},$$ we are guarenteed the existence of some $$N \in \mathbb{N}$$ such that $$\forall n,m > N \, \rho(x,y) < \frac{1}{2}$$ but then $$\rho(x,y) = 0$$ $$\rightarrow$$ $$x=y.$$ 
+    - Indeed, let $$\lbrace x_n \rbrace$$ be a Cauchy sequence in $$X$$ and choose $$\epsilon = \frac{1}{2},$$ we are guarenteed the existence of some $$N \in \mathbb{N}$$ such that $$\forall n,m > N \, \rho(x,y) < \frac{1}{2}$$ but then $$\rho(x,y) = 0$$ $$\rightarrow$$ $$x=y.$$ 
     - Hence, any Cauchy sequence in such a metric space must become constant for all indices $$n >N$$ and as such is convergent to that constant value, which belongs to $$X$$.
 2. $$(\mathbb{R}, \rho)$$ is a complete metric space with the natural metric $$\rho(x,y) = \vert x-y \vert$$
     - This will be shown later.
 3. $$(\mathbb{R}^n, \rho_p)$$ is a complete metric space, where $$\rho_p(x,y) = (\sum^n_{i=1} \vert x-y \vert^p)^{\frac{1}{p}}$$
 4. Let $$X =C([a,b],\mathbb{R})$$ then for $$\rho(f,g) =\sup_{x \in [a,b]} \vert f(x) - g(x) \vert,$$ the metric space $$(X, \rho)$$ is complete
-    - Take fundamental sequence of functions $$\{ f_n \} \subset X$$
+    - Take fundamental sequence of functions $$\lbrace f_n \rbrace \subset X$$
 </div>
 
 ### Compactness in Metric Spaces
@@ -475,8 +475,8 @@ as motivation for a more general theorem concerning compactness in general metri
 **Heine-Borel Theorem:**
 
 The following properties are equivalent in any Euclidean space $\mathbb{R}^n$ for the closed subset $S \subset \mathbb{R}^n$
-1. If $$\{ U_n \}_{n \in I}$$ is an open cover of $$S$$ then there exissts a finite subcover $$\{U_{n_1},U_{n_2}, \ldots U_{n_k}\}$$ with $$S \subset \bigcup^k_{i=1} U_{n_i}$$
-2. Any sequence $$\{ x_n \} \subset S$$ admits a convergent subsequence, $$\{ x_{n_k} \},$$ with $$\lim_{k \rightarrow \infty} x_{n_k} \in S$$
+1. If $$\lbrace U_n \rbrace_{n \in I}$$ is an open cover of $$S$$ then there exissts a finite subcover $$\lbrace U_{n_1},U_{n_2}, \ldots U_{n_k} \rbrace$$ with $$S \subset \bigcup^k_{i=1} U_{n_i}$$
+2. Any sequence $$\lbrace x_n \rbrace \subset S$$ admits a convergent subsequence, $$\lbrace x_{n_k} \rbrace,$$ with $$\lim_{k \rightarrow \infty} x_{n_k} \in S$$
 3. $$S$$ is bounded
 </div>
 
@@ -486,7 +486,7 @@ The following properties are equivalent in any Euclidean space $\mathbb{R}^n$ fo
 
 Let $(M, \rho)$ be a metric space with subset $K \subset M$
 1. $$K$$ is called compact if any open cover of $$K$$ admits a finite subcoverr
-2. K is called sequentially compact if any sequence $$\{ x_n \} \subset K$$ admits a subsequence convergent to some $$a \in K$$
+2. K is called sequentially compact if any sequence $$\lbrace x_n \rbrace \subset K$$ admits a subsequence convergent to some $$a \in K$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -509,7 +509,7 @@ Take the metric space $(\ell^2,\rho)$ which we recall was equipped with the metr
 
 Consider the unit sphere $S^{\infty} \subset \ell^2,$ the set of all vectors in $\ell^2$
 with distance $1$ away from the origin.
-> $$S^{\infty}:= \{ x \in \ell^2: \rho(x,0) \} = 1$$ where $$0 = (0,0,\ldots)$$
+> $$S^{\infty}:= \lbrace x \in \ell^2: \rho(x,0) \rbrace = 1$$ where $$0 = (0,0,\ldots)$$
 
 Such a subset is both closed and bounded but we will show that it is not sequentially compact. Indeed consider the sequence
 > $$\begin{cases} (1,0,0,0,\ldots) \\ (0,1,0,0,\ldots) \\ (0,0,1,0,\ldots) \\ \cdots  \end{cases}$$
@@ -530,7 +530,7 @@ definition to generalize the result.
 
 Given a metric space $(M, \rho),$ a set $K \subset M$ is called totally bounded if it can be covered by finitely many
 balls of any fixed size, i.e.
-> $$K \subset M$$ is totally bounded $$\iff$$ $$\forall \epsilon > 0$$ $$\exist x_1,\ldots,x_n \in K$$ such that $$K \subset \bigcup^n_{i=1} B_{\epsilon}(x_i)$$
+> $$K \subset M$$ is totally bounded $$\iff$$ $$\forall \epsilon > 0$$ $$\exists x_1,\ldots,x_n \in K$$ such that $$K \subset \bigcup^n_{i=1} B_{\epsilon}(x_i)$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -553,7 +553,7 @@ imply closeness of their images in the codomain. We will generalize this notion 
 **Continuity**
 
 Given two metric spaces $(M_1, \rho_1),$ $(M_2, \rho_2),$ and a map $f: M_1 \rightarrow M_2$ then
-1. $$f$$ is called continuous at $$x_0 \in M_1$$ if $$\forall \epsilon > 0 \, \exist \delta > 0$$ such that
+1. $$f$$ is called continuous at $$x_0 \in M_1$$ if $$\forall \epsilon > 0 \, \exists \delta > 0$$ such that
     > $$\rho_1(x,x_0) < \delta$$ implies $$\rho_2(f(x),f(x_0)) < \epsilon$$
 2. $$f$$ is called sequentially continuous if $$x_n \rightarrow x_0$$ implies $$f(x_n) \rightarrow f(x_0)$$
 3. $$f$$ is said to be open if for any open subset $$U \subset M_2,$$ its preimage $$f^{-1}(U)$$ is open in $$M_1$$
@@ -574,14 +574,14 @@ $f(K)$ is compact in $M_2$
 
 *Proof:*
 
-Take any sequence belonging to the image of $K,$ $\{y_n\} \subset f(K)$ and find the corresponding sequence $\{x_n\} \subset$ such that 
+Take any sequence belonging to the image of $K,$ $\lbrace y_n \rbrace \subset f(K)$ and find the corresponding sequence $\lbrace x_n \rbrace \subset$ such that 
 $f(x_n) = y_n$ $\forall n.$
 
-As $K$ is compact, $\{x_n\}$ has a convergent subsequence $\{x_{n_k}\}$ with $x_{n_k} \rightarrow x_0 \in K$
+As $K$ is compact, $\lbrace x_n \rbrace$ has a convergent subsequence $\lbrace x_{n_k} \rbrace$ with $x_{n_k} \rightarrow x_0 \in K$
 
 As $f$ is continuous, it is sequentially continuous such that $f(x_{n_k}) \rightarrow f(x_0) \in f(K).$ 
 
-So, any sequence $\{y_n\} \subset K$ has a convergent subsequence $\{y_n = f(x_{n_k}\}$ which converges in $f(K).$
+So, any sequence $\lbrace y_n \rbrace \subset K$ has a convergent subsequence $\lbrace y_n = f(x_{n_k} \rbrace$ which converges in $f(K).$
 
 Hence, $f(K)$ is sequentially compact $\iff$ $f(K)$ is compact.
 </div>
@@ -646,7 +646,7 @@ We will prove that every metric space has a completion which is unique up to iso
 Given a metric space $(M, \rho),$ 
 1. There exists a completion of $$M$$ 
 2. If $$M_1$$ and $$M_2$$ are two completions of M, then
-    > There exists an isometry $$f: M_1 \rightarrow M_2$$ such that $$f|_M = \mathbb{1}$$
+    - There exists an isometry $$f: M_1 \rightarrow M_2$$ such that $$f \vert_M = \mathbb{1}$$
 </div>
 
 <div class="proof" markdown="1">
@@ -657,7 +657,7 @@ Given a metric space $(M, \rho),$
 
 Denote by $\tilde{M}$ the set of all Cauchy sequences in metric space $(M, \rho)$ and take $\sigma$, a 
 binary relation on $\tilde{M}$ defining the following rule
-> $$\{x_n \} \; \sigma \; \{ y_n \}$$ $$\iff$$ $$\lim_{n \rightarrow \infty} \rho(x_n,y_n) = 0$$
+> $$\lbrace x_n \rbrace \; \sigma \; \lbrace y_n \rbrace$$ $$\iff$$ $$\lim_{n \rightarrow \infty} \rho(x_n,y_n) = 0$$
 
 **Claim 1:** $\sigma$ is an equivalence relation which partitions $\tilde{M}$ into equivalence classes.
 - verify
@@ -668,7 +668,7 @@ binary relation on $\tilde{M}$ defining the following rule
 
 Take the quotient space $M^{\star}:= \tilde{M}/_{\sigma}$ and define the following metric on $M^{\star}$
 > $$(1)$$ $$\rho^{\star}(\bar{x}, \bar{y}) = \lim_{n \rightarrow \infty} \rho(x_n,y_n)$$ where $$\bar{x}, \bar{y}$$ represent 
-the Cauchy sequences $$\{x_n \},\{y_n \}$$ respectively.
+the Cauchy sequences $$\lbrace x_n \rbrace,\lbrace y_n \rbrace$$ respectively.
 
 **Claim 1:** Such a map, $(1)$, exists. <br>
 As $$\mathbb{R}$$ is complete, it is enough to show that $$\rho(x_n,y_n)$$ is a Cauchy sequence.
@@ -678,15 +678,15 @@ As $$\mathbb{R}$$ is complete, it is enough to show that $$\rho(x_n,y_n)$$ is a 
 - *Reverse Triangle Inequality:* $$ \leq \rho(x_n,x_m) + \rho(y_n,y_m) \rightarrow 0$$
 
 **Claim 2:** The limit in $(1)$ is independent of choice of representative. <br>
-- Assume $$\{ x_n \} \; \sigma \; \{ x_n' \} \in [\bar{x}]$$ and $$\{ y_n \} \; \sigma \; \{ y_n' \} \in [\bar{y}]$$
+- Assume $$\lbrace x_n \rbrace \; \sigma \; \lbrace x_n' \rbrace \in [\bar{x}]$$ and $$\lbrace y_n \rbrace \; \sigma \; \lbrace y_n' \rbrace \in [\bar{y}]$$
 - We want to show that $$ \vert \rho(x_n,y_n) - \rho(x_n',y_n') \vert \rightarrow 0,$$ which follows from the same argument used above. 
 
 
 **Claim 3:** $(1)$ is indeed a metric on $M^{\star}$ <br>
 We will only show the triangle inequality.   
-- Let $$\bar{x}, \bar{y}, \bar{z} \in M^{\star}$$ be represented by the Cauchy sequences $$\{ x_n \}, \{ y_n \}, \{ z_n \} \subset M$$
+- Let $$\bar{x}, \bar{y}, \bar{z} \in M^{\star}$$ be represented by the Cauchy sequences $$\lbrace x_n \rbrace, \lbrace y_n \rbrace, \lbrace z_n \rbrace \subset M$$
 - As $$\rho: M \times M \rightarrow \mathbb{R}$$ is a metric it satisfies the triangle inequality $$\rho(x_n,y_n) \leq \rho(x_n,z_n) + \rho(z_n,y_n)$$
-- The inequality is preserved in the limit $$\limit_{n \rightarrow \infty} \rho(x_n,y_n) \leq \limit_{n \rightarrow \infty} \rho(x_n,z_n) + \limit_{n \rightarrow \infty} \rho(z_n,y_n)$$
+- The inequality is preserved in the limit $$\lim_{n \rightarrow \infty} \rho(x_n,y_n) \leq \lim_{n \rightarrow \infty} \rho(x_n,z_n) + \lim_{n \rightarrow \infty} \rho(z_n,y_n)$$
 - And by construction of $$\rho^{\star}$$ this is exactly $$\rho^{\star}(\bar{x}, \bar{y}) \leq \rho^{\star}(\bar{x}, \bar{z}) + \rho^{\star}(\bar{y}, \bar{z})$$
 
 <hr>
@@ -694,7 +694,7 @@ We will only show the triangle inequality.
 **Step 3:** Realization of $M$ in $M^{\star}$
 
 Take $x \in M,$ we must show that this element manifests as the limit point of some class of Cauchy sequences in $M^{\star}$
-- Consider the stationary sequence $$\{x,x, \ldots\}$$ which is by inspection
+- Consider the stationary sequence $$\lbrace x,x, \ldots \rbrace$$ which is by inspection
     1. A Cauchy Sequence
     2. Convergent to $$x \in M$$
 - As an equivalence relation on $$\tilde{M}$$ *partitions* the space, we are guaranteed our stationary sequence represents exactly one 
@@ -705,10 +705,10 @@ equivalence class in $$M^{\star}$$
 
 **Step 4:** Density of $M$ in $M^{\star}$
 
-We will show that $\bar{M} = M^{\star}:$ Take $\bar{x} \in M^{\star}$, fix $\epsilon > 0$, find Cauchy sequence, $\{x_n \}$ representing 
+We will show that $\bar{M} = M^{\star}:$ Take $\bar{x} \in M^{\star}$, fix $\epsilon > 0$, find Cauchy sequence, $\lbrace x_n \rbrace$ representing 
 $\bar{x}$
-- As $$\{x_n \}$$ is Cauchy $$\exists N$$ such that $$\forall n,m > N$$ we have $$\rho(x_n,x_m)$$
-- Choose any $$k > N$$ and take the stationary sequence $$\{x_k,x_k, \ldots\}$$ and denote its equivalence class $$\hat{x} \in M^{\star}$$
+- As $$\lbrace x_n \rbrace$$ is Cauchy $$\exists N$$ such that $$\forall n,m > N$$ we have $$\rho(x_n,x_m)$$
+- Choose any $$k > N$$ and take the stationary sequence $$\lbrace x_k,x_k, \ldots \rbrace$$ and denote its equivalence class $$\hat{x} \in M^{\star}$$
 - Now, $$\lim_{n \rightarrow \infty} \rho(x_n, x_k) < \epsilon$$ $$\rightarrow$$ $$\rho^{\star}(\bar{x}, \hat{x}) < \epsilon$$
 
 <hr>
@@ -753,16 +753,16 @@ There is no map $\mu: \mathcal{P}(\mathbb{R}^n) \rightarrow \mathbb{R}$ satisfyi
 Assume for simplicity that $n=1,$ suppose, for contradiction, that $\mu: \mathcal{P}(\mathbb{R}) \rightarrow \mathbb{R}$ is a map
 satisfying the listed properties.
 
-Consider the family of subsets $\{ N_r \}^{\infty}_{r=1}$ constructed such that
+Consider the family of subsets $\lbrace N_r \rbrace^{\infty}_{r=1}$ constructed such that
 1. $$ \bigcup_{r} N_r = [0,1)$$ $$ $$
 2. $$ N_r \cap N_s = \emptyset$$ for all $$r \neq s$$
 3. $$\mu(N_r) = \mu(N_s)$$ for all $$r,s$$
 
-As $\{ N_r \}^{\infty}_{r=1}$ are disjoint and $\mu$ is $\sigma$- additive
-- $$\mu[0,1) = \sum^{\infty}_{r=1} \mu(N_r)$$ 
+As $\lbrace N_r \rbrace^{\infty}_{r=1}$ are disjoint and $\mu$ is $\sigma$- additive
+- $$\mu[0,1) = \sum^{\infty}_{r=1} \mu(N_r)$$ $$ $$
 
-By normalization 
-- $$\sum^{\infty}_{r=1} \mu(N_r) = 1$$
+And by normalization 
+- $$\sum^{\infty}_{r=1} \mu(N_r) = 1$$ $$ $$
 
 Now consider two cases that both lead to contradiction
 1. *Case:* assume that $$\forall r$$ $$\mu(N_r) = 0$$
@@ -770,7 +770,7 @@ Now consider two cases that both lead to contradiction
 2. *Case:* assume that $$\forall r$$ $$\mu(N_r) = \alpha > 0$$
     - But then, $$1 = \alpha + \alpha + \cdots = \infty$$ $$\rightarrow$$ contradiction.
 
-What remains is to show that such a family of sets $\{ N_r \}^{\infty}_{r=1}$ indeed exists.
+What remains is to show that such a family of sets $\lbrace N_r \rbrace^{\infty}_{r=1}$ indeed exists.
 </div>
 
 ### Lebesgue Measure on the Plane
@@ -785,7 +785,8 @@ then the set $P = X \times Y$ is called a rectangle.
 In the degenerate case that either $a=b$ or $c=d$ then we say that the rectangle is *empty* and write $P = \emptyset$ 
 
 We define the measure of a rectangle $P$ as follows:
-> $$\mu(P) = \begin{cases}(b-a)(d-c), \quad if P \neq \emptyset //0, \quad if P = \emptyset \end{cases}
+> $$\mu(P) = \begin{cases}(b-a)(d-c), \quad \text{if} \; \text{P} \neq \emptyset \\ 0, \quad \text{if} \; \text{P} = \emptyset \end{cases}$$
+
 </div>
 
 <div class="proof" markdown="1">
@@ -793,8 +794,8 @@ We define the measure of a rectangle $P$ as follows:
 It is clear that such a measure on the set of planar rectangles is well-defined and satisfies the four properties of measure
 namely:
 1. *Positivity:* $$\mu \geq 0$$ as $b>a$ and $d>c$
-2. *$$\sigma$$- additivity:* If $$\{ P_n \}^{k}_{n=1}$$ is a finite collection of disjoint rectangles we have
-    - $$ \mu(\bigcup^k_{n=1} P_n) = \sum^{k}_{n=1} \mu(P_n)$$
+2. *$$\sigma$$- additivity:* If $$\lbrace P_n \rbrace^{k}_{n=1}$$ is a finite collection of disjoint rectangles we have
+    - $$ \mu(\bigcup^k_{n=1} P_n) = \sum^{k}_{n=1} \mu(P_n)$$ $$ $$
 3. *Normalization:* By inspection, $$\mu([0,1] \times [0,1]) = 1 $$
 4. *Congruence*
 
@@ -817,10 +818,10 @@ A set $A \subset \mathbb{R}^2$ is called *elementary* if it can be represented a
 **Proposition**
 
 Suppose that $$A,B$$ are elementary sets, then so are
-1. $$A \cap B$$
-2. $$A \cup B$$
-3. $$A \setminus B$$
-4. $$A \triangle B = (A \cup B) \setminus (A \cap B)$$ where $$\triangle$$ is called the symmetric difference of $$A$$ and $$B$$
+1. $$A \cap B$$ $$ $$
+2. $$A \cup B$$ $$ $$
+3. $$A \setminus B$$ $$ $$
+4. $$A \Delta B = (A \cup B) \setminus (A \cap B)$$ where $$A \Delta B$$ is called the symmetric difference of $$A$$ and $$B$$
 </div>
 
 <div class="proof" markdown="1">
@@ -865,8 +866,8 @@ $(3)$ Consider their difference: $A \setminus B$
 
 <hr>
 
-$(4)$ Finally consider their symmetric difference: $A \triangle B$
-- Write $$A \triangle B = (A \cup B) \setminus (A \cap B)$$
-- $$A \triangle B$$ is elementary by $$(1),(2),(3)$$
+$(4)$ Finally consider their symmetric difference: $A \Delta B$
+- Write $$A \Delta B = (A \cup B) \setminus (A \cap B)$$
+- $$A \Delta B$$ is elementary by $$(1),(2),(3)$$
 
 </div>
