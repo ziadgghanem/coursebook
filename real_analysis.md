@@ -871,3 +871,45 @@ $(4)$ Finally consider their symmetric difference: $A \Delta B$
 - $$A \Delta B$$ is elementary by $$(1),(2),(3)$$
 
 </div>
+
+We are now equpped to extend our measure theory to include elementary sets. For simplicity, we will initially
+only consider subsets of the unit square $E = [0,1] \times [0,1]$ and then show how this assumption is easily discarded.
+
+<div class="definition" markdown="1">
+
+**Measure on Elementary Sets**
+
+Let $E =  = [0,1] \times [0,1]$ an take elementary set $A \subset E$ with expression as finite union of disjoint rectangles
+> $$A = \bigcup^n_{i=1} P_i$$ where $$\begin{cases} \lbrace P_i \rbrace \; \text{rectangles} \\ P_i \cap P_j = \emptyset \; i \neq j \end{cases}$$
+
+We define the measure of $$$ as
+> $$ \mu(A):= \sum^n_{i=1} \mu(P_i)$$
+
+</div>
+
+Every elementary set must have expression as the finite union of disjoint rectangles, however, this expression need not be unique.
+There is a reasonable concern that distinct rectangular partitions of $A$ might have different measures. We will prove that this is not 
+the case.
+
+<div class="proposition" markdown="1">
+
+**Proposition**
+
+The measure of an elementary set is independent of its partition.
+
+</div>
+
+<div class="proof" markdown="1">
+
+**Proof**
+
+Given elementary $A$ take any two partitions
+- $$A = \bigcup^n_{i=1} P_i,$$ $$\bigcup^m_{j=1} Q_j$$ $$ \quad \begin{cases} \lbrace P_i,Q_j \rbrace \; \text{rectangles} \\ P_i \cap P_l = \emptyset \; i \neq l \\ Q_j \cap Q_k = \emptyset \; j \neq k \end{cases}$$
+
+We make the observation that
+1.  $$ \sum^n_{i=1} \mu(P_i) = \sum^n_{i=1} \sum^m_{j=1} \mu(P_i \cap Q_j)$$ $$ $$
+2.  $$ \sum^m_{j=1} \mu(Q_j) = \sum^m_{j=1} \sum^n_{i=1} \mu(Q_j \cap P_i)$$ $$ $$
+
+Hence $\mu(A):= \sum^n_{i=1} \mu(P_i) = \sum^m_{j=1} \mu(Q_j)$
+
+</div>
