@@ -45,22 +45,18 @@ The formulation of a degree theory on $\mathbb{R}^1$ involves the construction o
 
 satisfying reasonable properties.
 
-<div class="example" markdown="1">
+<div class="definition" markdown="1">
 
 **Reasonable Properties of a Degree**
 
 Let $\Omega$ be an open, non-empty, bounded subset of $\mathbb{R}^1$
 
-(1) _Additivity_: 
-
-For subsets $\Omega_1, \Omega_2 \subset \Omega$ with
-* Empty intersection: $$\Omega_1 \cap \Omega_2 = \emptyset $$
-* Containing all zeros of $$f$$: $$ f^{-1}(0) \subset \Omega_1 \cup \Omega_2$$
-
-then $deg(f,\Omega) = deg(f,\Omega_1) + deg(f,\Omega_2)$
+- _Additivity_: For subsets $\Omega_1, \Omega_2 \subset \Omega$ with
+    1. Empty intersection: $$\Omega_1 \cap \Omega_2 = \emptyset $$
+    2. Containing all zeros of $$f$$: $$ f^{-1}(0) \subset \Omega_1 \cup \Omega_2$$
+- then $deg(f,\Omega) = deg(f,\Omega_1) + deg(f,\Omega_2)$
 
 <hr>
-(2) _Homotopy_:
 
 <div class="definition" markdown="1">
 
@@ -69,21 +65,19 @@ then $deg(f,\Omega) = deg(f,\Omega_1) + deg(f,\Omega_2)$
 Let $h: [0,1] \times \bar{\Omega} \rightarrow \mathbb{R}$ be a continuous map such that $\forall \lambda \in [0,1]$ $h_{\lambda}: \bar{\Omega} \rightarrow \mathbb{R}$ is $\Omega-$ admissible. Then, we say that $h$ is an admissible homotopy joining $h_0$ and $h_1$
 </div>
 
-For any $\Omega-$ admissible homotopy $h(\lambda, t)$ we have
-> $$deg(h(\lambda, \cdot),\Omega) =$$ constant.
-
+- _Homotopy_: For any $\Omega-$ admissible homotopy $h(\lambda, t)$ we have
+    > $$deg(h(\lambda, \cdot),\Omega) =$$ constant.
 i.e. the degree of of an $\Omega-$ admissible homotopy is independent of $\lambda \in [0,1]$
 
 <hr>
-(3) _Normalization_:
 
-Consider the map $f(t) = t - t_0$ with $t\in \Omega$ and $t_0$ arbitrary. then
-> $$deg(f,\Omega) = x = \begin{cases} 1, \quad t_0 \in \Omega \\ 0, \quad t_0 \notin \Omega \end{cases}$$ 
+- _Normalization_: Consider the map $f(t) = t - t_0$ with $t\in \Omega$ and $t_0$ arbitrary, then
+    > $$deg(f,\Omega) = x = \begin{cases} 1, \quad t_0 \in \Omega \\ 0, \quad t_0 \notin \Omega \end{cases}$$ 
 
 <hr>
-(4) _Existence_:    
 
-For any admissible pair $(f,\Omega),$ if $deg(f,\Omega) \neq 0$ then $\exists p \in \Omega$ such that $f(c) = 0$
+- _Existence_: For any admissible pair $(f,\Omega),$ if $deg(f,\Omega) \neq 0$ then $\exists p \in \Omega$ such that $f(c) = 0$
+
 </div>
 
 With these reasonable properties of a degree theory in mind, we are ready to explicitly define the degree function in $\mathbb{R}^1.$
@@ -227,6 +221,8 @@ We say that $\Gamma$ is **simple** if it does not intersect itself, that is if $
 A simple closed planar curve, $\Gamma$ is called a Jordan curve. It's namesake, The Jordan Curve Theorem, asserts that $\Gamma$ divides the plane into two connected components, one bounded by the curve and one unbounded. For our purposes we will assume that all closed curves are also simple and without further reference to the JCT we will denote the planar region bounded by $\Gamma$ as $\Omega.$
 
 A Curve has an *orientation* which describes a rule for which one of two directions to travel along its trajectory. By convention, a closed curve has positive orientation if its interior region is to the left of a path along its trajectory. Otherwise, the orientation is negative.
+
+We may define a vector field $\Phi(x,y) = [\phi(x,y), \psi(x,y)]$ over a region $\Omega$ bounded by some curve $\Gamma.$ It will be necessary to consider the field
 
 A vector field, $\Phi(x,y) = [\phi(x,y), \psi(x,y)],$ may be defined over a curve $\Gamma(t) = [x(t),y(t)].$ In which case the vector field is also paramaterized by the variable $t \in [a,b]$ and can be expressed as a vector function:
 > $$\Phi(t) = \begin{pmatrix} \phi(x(t),y(t)) \\\ \psi(x(t),y(t)) \end{pmatrix}$$
@@ -376,22 +372,23 @@ As we found using the angular function formula for degree.
 
 Let $\Gamma: [a,b] \rightarrow \mathbb{R}^2$ be a closed curve we want to consider the degree of a continuous vector field $\Phi$ on *partitions* of $\Gamma.$
 
-We say that the points $\lbrace A_1, \ldots, A_n \rbrace \in \Gamma$ partition a curve if $\exists \lbrace p_1, \ldots, p_n \rbrace \in [a,b]$
-with $a \leq p_1 < p_2 < \cdots < p_n \leq b$ and we denote the section of curve between points $A_j$ and $A_{j+1}$ as $\Gamma_j$ such that $\Gamma = \bigcup^n_{i=1} \Gamma_i.$
+We say that the points $\lbrace A_1, \ldots, A_n \rbrace \in \Gamma$ partition a curve into segments $\lbrace \Gamma_1 , \ldots, \Gamma_n \rbrace$ where $\Gamma_j$ is the section of curve between points $A_j$ and $A_{j+1}$ if $\exists \lbrace p_1, \ldots, p_n \rbrace \in [a,b]$ with $a \leq p_1 < p_2 < \cdots < p_n \leq b$ such that
+1. $$\Gamma(p_j) = A_j,$$ $$\; \forall j = 1:n$$
+2. $$\Gamma = \bigcup^n_{j=1} \Gamma_j$$ $$$$
 
-The most simple nontrivial partition on a closed curve $\Gamma$ is to split $\Gamma$ into two sections. It should be clear that any result demonstrated for a $2$-partition can be generalized by induction to an $n$-partition.
+The most simple *nontrivial* partition on a closed curve $\Gamma$ is to split $\Gamma$ into two sections. It should be clear that results demonstrated below for a $2$-partition can be generalized by induction to an $n$-partition.
 
-Choose two points on $\Gamma$ say $(A,B) = (\Gamma(p), \Gamma(q))$ with $p,q \in [a,b]$ and $p < q$
+Choose two points on $\Gamma$ say $(A_1,A_2) = (\Gamma(p_1), \Gamma(p_2))$ with $p_1,p_2 \in [a,b]$ and $p_1 < p_2$
 
-Now, $\Gamma$ is *split* into two sections, say $\Gamma_1$ running from $A$ to $B$ and $\Gamma_2$ from $B$ to $A,$ whose union gives us again the original closed curve. The sum of the rotations of $\Phi$ over $\Gamma_1$ and then $\Gamma_2$ must equal the rotation $\Phi$ over $\Gamma$ so we might suspect that the sum of the degrees of $\Phi$ over each section of the curve should equal the degree of $\Phi$ over the curve itself.
+Now, $\Gamma$ is *split* into two sections, say $\Gamma_1$ running from $A_1$ to $A_2$ and $\Gamma_2$ from $A_2$ to $A_1,$ whose union gives us again the original closed curve. The sum of the rotations of $\Phi$ over $\Gamma_1$ and then $\Gamma_2$ must equal the rotation $\Phi$ over $\Gamma$ so we might suspect that the sum of the degrees of $\Phi$ over each section of the curve should equal the degree of $\Phi$ over the curve itself.
 
 <div class="proposition" markdown="1">
 
 If closed curve $\Gamma$ is split into disjoint sections $\Gamma_1, \Gamma_2$ then for any continuous vector field $\Phi$
 > $$deg(\Phi, \Gamma) = deg(\Phi, \Gamma_1) + deg(\Phi, \Gamma_2)$$
 
-This definition is independent of where the curve is split, i.e. if $\Gamma_3, \Gamma_4$ is any other partition of $\Gamma$ then
-> $$deg(\Phi, \Gamma) deg(\Phi, \Gamma_3) + deg(\Phi, \Gamma_4)$$
+This definition is independent of where the curve is split, i.e. if $\Gamma_1', \Gamma_2'$ is any other partition of $\Gamma$ then
+> $$deg(\Phi, \Gamma) deg(\Phi, \Gamma_1') + deg(\Phi, \Gamma_2')$$
 
 The degree of a continuous vector field over a closed curve must be an integer.
 </div>
@@ -413,8 +410,7 @@ Let $\Phi: S^1 \rightarrow \mathbb{R}^2 \setminus 0$ be a continuous, odd map. T
 Split the unit circle into upper and lower hemispheres $\Gamma_1, \Gamma_2$ respectively. The rotation of $\Phi$ over $S^1$ is equal to the sum of its rotations over $\Gamma_1$ and $\Gamma_2.$
 > $$deg(S^1) = deg(\Gamma_1) + deg(\Gamma_2)$$
 
-As $\Phi$ is odd, $\Phi(-x,-y) = - \Phi(x,y),$ the vectors at $(x,y)$ and 
-$(-x,-y)$ point in parallel but opposite directions. It must be the case that the rotation of the vector field over the upper hemisphere will equal its rotation over the lower hemisphere
+As $\Phi$ is odd the vectors the field takes at antipodal points of $S^1$ are parallel but point in opposite directions i.e. $\Phi(-x,-y) = - \Phi(x,y),$ such that the rotation of $\Phi$ over the upper hemisphere must equal its rotation over the lower hemisphere
 > $$deg(\Gamma_1) = deg(\Gamma_2)$$
 
 In particular any odd vector field must rotate some odd multiple $\pi$ radians over each hemisphere as $\Phi(-1,0) = - \Phi(1,0)$ and so, using the angular rotation formula for the degree $deg(\Gamma_1) = \frac{1}{2 \pi}((2n + 1) \pi) = n + \frac{1}{2}$ Hence, the degree over the entire circle must be odd
