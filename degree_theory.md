@@ -340,10 +340,10 @@ for a continuously differentiable vector field
 > $$\Phi(x,y) = \begin{pmatrix} \phi(x,y) \\\ \psi(x,y) \end{pmatrix}$$
 
 such that the component functions $\phi(x(t),y(t)),$ $\phi(x(t),y(t))$ are also continuously differentiable. Let $\Theta(t)$ be the angular function of the pair $(\Phi, \Gamma),$ then:
-> $$d \Theta = d(arctan(\frac{\psi}{\phi})) = \frac{1}{1 + (\frac{\psi}{\phi})^2} \frac{\phi d \psi - \psi d \phi}{\phi^2}= \frac{\phi d \psi - \psi d \phi}{\phi^2 + \psi^2}$$  
+> $$ d \Theta = d(arctan(\frac{\psi}{\phi})) = \frac{1}{1 + (\frac{\psi}{\phi})^2} \frac{\phi d \psi - \psi d \phi}{\phi^2}= \frac{\phi d \psi - \psi d \phi}{\phi^2 + \psi^2} $$  
 
 It follows that
-> $$deg(\Phi, \Gamma)= \frac{1}{2 \pi} [ \Theta(b) - \Theta(a) ] = \frac{1}{2 \pi} \int_a^b \frac{\phi(t) \psi^'(t) - \psi(t)  \phi^'(t)}{\phi^2(t) + \psi^2(t)} dt$$
+> $$ deg(\Phi, \Gamma)= \frac{1}{2 \pi} [ \Theta(b) - \Theta(a) ] = \frac{1}{2 \pi} \int_a^b \frac{\phi(t) \psi'(t) - \psi(t)  \phi'(t)}{\phi^2(t) + \psi^2(t)} dt$$
 
 <div class="example" markdown="1">
 
