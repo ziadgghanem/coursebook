@@ -19,7 +19,8 @@ In simple terms, a binary relation between two sets is a rule of association bet
 Consider the *cartesian product* of sets $A$ and $B$
 > $$A \times B = \lbrace (a,b): \quad a \in A, \; b \in B \rbrace$$
 
-We will see that the cartesian product of sets is the most general binary relation between them.
+We will see that the cartesian product of sets is the most general binary relation between them as each element in $A$ is 
+associated with every element in $B$.
 
 <div class="definition" markdown="1">
 
@@ -29,8 +30,8 @@ Given $A, B$ any subset $\sigma \subset A \times B$ is called a binary relation.
 - In the case that $$A = B,$$ we say that $\sigma \subset A \times A$ is a binary relation on A.
 </div>
 
-In general a binary relation between sets $A$ and $B$ defines a map from $A$ to $B$ if it is transitive. 
-- i.e. $$\sigma \subset A \times B$$ is a map $$:A \rightarrow B$$ $$\iff \begin{cases} a \; \sigma \; b \\ b \; \sigma \; c \end{cases} \implies a \; \sigma \; c$$
+In general a binary relation between sets $A$ and $B$ defines a map from $A$ to $B$ iff it is a transitive relation. 
+- i.e. $$\sigma \subset A \times B$$ is a map $$:A \rightarrow B$$ $$\iff$$ $$\begin{cases} a \; \sigma \; b \\ b \; \sigma \; c \end{cases} \implies a \; \sigma \; c$$
 
 <div class="example" markdown="1">
 
@@ -122,7 +123,7 @@ A set $$\mathbb{F},$$ containing at least the two elements $$\mathbb{1}, \mathbb
     1. *Associativity:* $$a \cdot (b \cdot c) = (a \cdot b) \cdot c$$
     2. *Multplicative Identity:* $$a \cdot \mathbb{1} = \mathbb{1} \cdot a = a$$
     3. *Multplicative Inverse:* For all $$a \neq 0$$ there exists a unique $$b$$ such that $$a \cdot b = b \cdot a = \mathbb{1}$$
-    4. *Commutativity:* $$a \cdot b = b \cdot a$ $
+    4. *Commutativity:* $$a \cdot b = b \cdot a$$
 3. Conditions between $$+$$ and $$\cdot: \quad$$ $$\forall a,b,c \in \mathbb{F}$$ 
     1. *Right Distributivity* $$(a+b) \cdot c = a \cdot c + b \cdot c$$
     2. *Left Distributivity* $$c \cdot (a+b) = c \cdot a + c \cdot b$$
@@ -217,7 +218,7 @@ Some instructive examples and nonexamples of order-complete fields:
     - Indeed, put $$A:= \lbrace x \in \mathbb{Q}: \quad x^2 < 2 \rbrace$$ which has supremum $$\sqrt{2} \notin \mathbb{Q}$$
 </div>
 
-The Archimedian property is very nicely described by Euclid himself. In Book $\romannumeral{5}$ of Euclid's Elements we read
+The Archimedian property is very nicely described by Euclid himself. In Book $\textrm{V}$ of Euclid's Elements we read
 <blockquote>
         Magnitudes are said to have a ratio to one another which can, when multiplied, exceed one another.
 </blockquote>
@@ -227,7 +228,8 @@ The Archimedian property is very nicely described by Euclid himself. In Book $\r
 **Archimedian Property**
 
 We say that an ordered field $$(\mathbb{F}, <)$$ is Archimedian if 
-> $$\forall a,b \in \mathbb{F}$$ with $$a < b$$ $$\exists n \in \mathbb{N}$$ such that $$b < na $$
+> $$\forall a,b \in \mathbb{F}$$ with $$a < b$$ 
+    >$$\exists n \in \mathbb{N}$$ such that $$b < na $$
 </div>
 
 <div class="proposition" markdown="1">
@@ -280,19 +282,21 @@ Suppose, by contradiction, that such an order exists.
 Case $1:$ Assume that $0 < i$ 
 
 Then, by the axioms of ordered fields, 
-> $$0 \cdot i < i \cdot i $$ $$\rightarrow$$ $$0 < -1,$$ contradiction. 
+> $$0 \cdot i < i \cdot i $$ $$\rightarrow$$ $$0 < -1,$$ 
+    > contradiction. 
 
 Case $1:$ Assume that $i < 0$ 
 
 Then, $0 < -i$ and by the axioms of ordered fields 
-> $$0 \cdot -i < -i \cdot -i $$ $$\rightarrow$$ $$0 < -1,$$ again a contradiction. 
+> $$0 \cdot -i < -i \cdot -i $$ $$\rightarrow$$ $$0 < -1,$$ 
+    > again a contradiction. 
 </div>
 
 ### Topology in $\mathbb{R}$
 
 Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \lbrace  x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \rbrace$ the *$\epsilon-$ 
 neighborhood* of $a$ 
-and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \lbrace a \rbrace$ the *deleted* $\epsilon$ 
+and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \lbrace a \rbrace $ the *deleted* $\epsilon$ 
 -neighborhood of $a$.
 
 **Fundamental Concepts from Topology take $A \subset \mathbb{R}$** 
@@ -620,7 +624,7 @@ Isometries are distance preserving bijections between metric spaces.
 
 Given two metric spaces $(M_1, \rho_1),$ $(M_2, \rho_2),$ a map $f: M_1 \rightarrow M_2$ is called
 an isometry if $\forall x,y \in M_1$
-1. $$\rho_1(x,y) = \rho_2(f(x),f(y))$$
+1. $$\rho_1(x,y) = \rho_2(f(x),f(y))$$ $$$$
 2. $$f$$ is bijective
 </div>
 
@@ -882,7 +886,7 @@ only consider subsets of the unit square $E = [0,1] \times [0,1]$ and then show 
 Let $E =  = [0,1] \times [0,1]$ an take elementary set $A \subset E$ with expression as finite union of disjoint rectangles
 > $$A = \bigcup^n_{i=1} P_i$$ where $$\begin{cases} \lbrace P_i \rbrace \; \text{rectangles} \\ P_i \cap P_j = \emptyset \; i \neq j \end{cases}$$
 
-We define the measure of $$$ as
+We define the measure of $A$ as
 > $$ \mu(A):= \sum^n_{i=1} \mu(P_i)$$
 
 </div>
@@ -901,7 +905,7 @@ The measure of an elementary set is independent of its partition.
 
 <div class="proof" markdown="1">
 
-**Proof**
+*Proof:*
 
 Given elementary $A$ take any two partitions
 - $$A = \bigcup^n_{i=1} P_i,$$ $$\bigcup^m_{j=1} Q_j$$ $$ \quad \begin{cases} \lbrace P_i,Q_j \rbrace \; \text{rectangles} \\ P_i \cap P_l = \emptyset \; i \neq l \\ Q_j \cap Q_k = \emptyset \; j \neq k \end{cases}$$
@@ -912,4 +916,44 @@ We make the observation that
 
 Hence $\mu(A):= \sum^n_{i=1} \mu(P_i) = \sum^m_{j=1} \mu(Q_j)$
 
+</div>
+
+A measure must satisfy the properties of a measure, lets check that $\mu$ is $\sigma$-additive on elementary sets
+
+<div class="proposition" markdown="1">
+
+**Proposition**
+
+The measure of an elementary set is $\sigma$-additive i.e.
+
+Suppose $A, \lbrace A_n \rbrace^{\infty}_{n=1} \subset E$ are elementary sets with $A \subset \bigcup^{\infty}_{n=1} A_n$ then,
+> $$\mu(A) \leq \sum^{\infty}_{n=1} \mu(A_n)$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Fix some $\epsilon > 0$
+
+**Step 1:** Approximation of $A$ by compact subset
+
+As an elementary set, $A$ may be expressed as the finite union of disjoint rectangles
+> $$A = \bigcup^{k}_{i=1} B_i$$ where $$ \lbrace B_i \rbrace$$ is the disjoint family of rectangles
+
+For each $B_i$ find a closed rectangle $\hat{B}_i$ such that
+1. $$\hat{B}_i$ \subset B_i$$ $$$$
+2. $$\mu(B_i) \leq \mu(\hat{B}_i) + \frac{\epsilon}{2k}$$ $$ $$
+
+Put $\hat{A}:= \bigcup^{k}_{i=1} \hat{B}_i,$ then $\hat{A}$ is an elementary compact subset of $A$ with
+> $$\mu(A) \leq \sum^{k}_{i=1} [\mu(\hat{B}_i) + \frac{\epsilon}{2k}]$$ $$$$
+> $$\leq \sum^{k}_{i=1} \mu(\hat{B}_i) + \sum^{k}_{i=1} \frac{\epsilon}{2k} = \mu(\hat{A}) + \frac{\epsilon}{2}$$
+
+**Step 2:** Approximation of $\lbrace A_n \rbrace$ by open superset
+
+For each $A_n$ find an elementary set $\mathring{A}_n$ such that
+1. $$A_n \subset \mathring{A}_n$$ $$ $$
+2. $$\mathring{A}_n$$ is open
+3. $$\mu(\mathring{A}_n) \leq \mu(A_n) + \frac{\epsilon}{2^{n+1}}
+ 
 </div>
