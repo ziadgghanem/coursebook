@@ -141,7 +141,9 @@ Some instructive examples and non-examples of fields:
 3. The set of rational functions over $$\mathbb{R},$$ $$X = \lbrace \frac{a_0 + a_1x + \cdots + a_n x^n}{b_0 + b_1x + \cdots + b_m x^m} \rbrace$$ with $$a_i, b_j \in \mathbb{R}$$ is a field.
 </div>
 
-Informally, we think of an ordered set as a set, $A,$ equipped with a binary relation $$\leq \in A \times A$$ that describes a comparison rule between its elements.
+### Order
+
+Informally, we think of an ordered set as a set $A$ equipped with a binary relation $$\leq \in A \times A$$ that describes a comparison rule between its elements. 
 
 <div class="definition" markdown="1">
 
@@ -155,6 +157,16 @@ Let $A$ be a set and $\leq \in A \times A$ a binary relation
 2. We say that $$\leq$$ is a total order on $$A$$ if it is a partial order with the condition that any two elements are comparable, i.e.
     - *Totality:* If $$a,b \in A$$ then either $$a \leq b$$ or $$b \leq a$$
 
+</div>
+
+<div class="example" markdown="1">
+
+**Examples: Ordered Sets**
+
+Some instructive examples of ordered sets:
+1. $$(\mathbb{R},<)$$ and $$(\mathbb{R},\leq)$$ describe respectively total and partial orders on $$\mathbb{R}$$
+2. Any set $$M$$ can be partially ordered with the following relation
+    - $$a \; \sigma \; b$$ $$\iff$$ $$a=b$$
 </div>
 
 We call sets with partial and total orders partially and totally ordered, respectively. The ordering of field comes with the extra complication that the relation respect field operations.
@@ -315,7 +327,7 @@ $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^
 
 ### Metric Spaces
 
-A metric space is a set together with a map, called a metric, that defines a rule of distance between elements of the set.
+A metric space is a set together with a map, called a metric, that defines a rule of distance between elements of the set. A well defined concept of distance must be understood as a pillar of analysis without which the analysist would be unable to take limits, define continuity or begin to explore calculus.
 
 <div class="definition" markdown="1">
 
@@ -343,7 +355,7 @@ Some instructive examples of metric spaces:
     > $$\rho(f,g) =$$ $$\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$$
 4. Again, take $$M = C([a,b],\mathbb{R})$$ but this time define the integral metric
     > $$\rho(f,g) =$$ $$\int_a^b \vert f(x) - g(x) \vert dx$$ 
-5. Consider $$M = \ell^2 := \lbrace (x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \rbrace$$ equipped with the euclidean metric
+5. Consider the set of convergent infinite sequences $$M = \ell^2 := \lbrace (x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \rbrace$$ equipped with the euclidean metric
     > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$$
 </div>
 
