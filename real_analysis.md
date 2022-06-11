@@ -211,13 +211,47 @@ Assume $(\mathbb{F}, \leq)$ is an ordered field with $A \subset \mathbb{F}$
 If a supremum for $A \subset \mathbb{F}$ belongs to $A$ then we call it a maximum of $A.$ 
 Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.$
 
+<div class="proposition" markdown="1">
+
+**Proposition**
+
+Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a limit point. i.e.
+- $$\forall \epsilon > 0$$ $$\exist a \in A$$ such that $$\sup{A} \leq a + \epsilon$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Let $\sup{A}$ be the supremum of some set $A \subset \mathbb{R}$. Suppose, for contradiction, that $\sup{A}$ is not a limit point of $A$ i.e. suppose
+- $$\exists \epsilon > 0$$ such that $$\forall a \in A$$ $$\sup{A} > a + \epsilon$$
+
+Then the quantinty $\sup{A} - \epsilon$ is an upper bound for $A$ and as $\epsilon > 0$ $\sup{A} - \epsilon < \sup{A}$.
+
+However, $\sup{A}$ was assumed to be the *least* upper bound for $A$, contradiction.
+</div>
+
+<div class="example" markdown="1">
+
+**Problem**
+
+Let $A,B \subset \mathbb{R}$ be bounded above. Show that
+> $$A + B = \lbrace x+y \in \mathbb{R} \; \vert \; x \in A, \; y \in B \rbrace$$ <br>
+is bounded above, and that
+> $$\sup{(A+B)} = \sup{A} + \sup{B}$$
+
+[Solution](/pdf/RA_HW1_1.pdf)
+
+</div>
+
+
 <div class="definition" markdown="1">
 
 **Order-Complete Fields**
 
-An ordered field $\mathbb{F}$ is called order complete if any set bounded from above, $A \subset \mathbb{F},$ admits a maximum.
+An ordered field $\mathbb{F}$ is called order complete if any set bounded from above, $A \subset \mathbb{F},$ admits a supremum.
 
-Equivalently, we might require the existence of a minimum for any set bounded from below.
+Equivalently, we might require the existence of a infimum for any set bounded from below.
 </div>
 
 <div class="example" markdown="1">
@@ -316,8 +350,7 @@ and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \lbrace a \rbrace $ 
     - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
 2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the neighborhood $$N_{\epsilon}(b)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$N_{\epsilon}(b) \cap A \neq \emptyset$$ $$\land$$ $$N_{\epsilon}(b) \cap A^{C} \neq \emptyset$$
     - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
-3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ 
-has nonempty intersection with $$A$$ i.e. if $$N^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
+3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ has nonempty intersection with $$A$$ i.e. if $$N^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
 4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
