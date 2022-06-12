@@ -11,6 +11,7 @@ These are my notes.
 - [Functional Analysis](functional_analysis.md): Notes on Functional Analysis
 
 - [Real Analysis](real_analysis.md): Notes on Real Analysis.
+    - [Real Numbers](/pages/real_numbers.md)
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
 
