@@ -1,5 +1,5 @@
 ---
-previewWebRootPath: .\
+previewWebRootPath: ../
 layout: post
 title: 'Real Numbers'
 ---
