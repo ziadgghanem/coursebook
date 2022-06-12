@@ -216,7 +216,7 @@ Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.
 **Proposition**
 
 Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a limit point. i.e.
-- $$\forall \epsilon > 0$$ $$\exist a \in A$$ such that $$\sup{A} \leq a + \epsilon$$
+- $$\forall \epsilon > 0$$ $$\exists a \in A$$ such that $$\sup{A} \leq a + \epsilon$$
 </div>
 
 <div class="proof" markdown="1">
@@ -226,17 +226,18 @@ Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a
 Let $\sup{A}$ be the supremum of some set $A \subset \mathbb{R}$. Suppose, for contradiction, that $\sup{A}$ is not a limit point of $A$ i.e. suppose
 - $$\exists \epsilon > 0$$ such that $$\forall a \in A$$ $$\sup{A} > a + \epsilon$$
 
-Then the quantinty $\sup{A} - \epsilon$ is an upper bound for $A$ and as $\epsilon > 0$ $\sup{A} - \epsilon < \sup{A}$.
+Then the quantity $\sup{A} - \epsilon$ is an upper bound for $A$ and as $\epsilon > 0$ $\sup{A} - \epsilon < \sup{A}$.
 
 However, $\sup{A}$ was assumed to be the *least* upper bound for $A$, contradiction.
 </div>
 
-<div class="example" markdown="1">
+<div class="problem" markdown="1">
 
 **Problem**
 
 Let $A,B \subset \mathbb{R}$ be bounded above. Show that
-> $$A + B = \lbrace x+y \in \mathbb{R} \; \vert \; x \in A, \; y \in B \rbrace$$ <br>
+> $$A + B = \lbrace x+y \in \mathbb{R} \; \vert \; x \in A, \; y \in B \rbrace$$
+
 is bounded above, and that
 > $$\sup{(A+B)} = \sup{A} + \sup{B}$$
 
@@ -354,7 +355,7 @@ and by $N^{\star}_{\epsilon}(a) = N_{\epsilon}(a) \setminus \lbrace a \rbrace $ 
 4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \lbrace $$ limit points of $$A \rbrace$$
+    - The closure of $$A$$ is often denoted $$cl(A) = A \cup \lbrace $$ limit points of $$A \rbrace$$
 
 $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
 
@@ -409,9 +410,40 @@ has nonempty intersection with $$A$$ i.e. if $$B^{\star}_{\epsilon}(c) \cap A \n
 4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
 5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
 6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$\bar{A} = A \cup \lbrace $$ limit points of $$A \rbrace$$
+    - The closure of $$A$$ is often denoted $$cl(A) = A \cup \lbrace $$ limit points of $$A \rbrace$$
 
 Just as with subsets of $\mathbb{R},$ $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Let $A \subset X$ for some metric space $(M, \rho)$ then $cl(A)$ is the minimal closed subset of $X$ that contains $A$ 
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* 
+
+That $cl(A)$ is closed follows from the face that closure is an idempotent operation, i.e. that $cl(cl(A)) = cl(A)$. We will show that any other closed set containing $A$ must also contain $cl(A)$.
+
+Recall that the closure of $A$ is defined to be the union of $A$ the limit points of $A$. Let $B \subset X$ be a closed set with $A \subset B$. As $B$ is closed, it contains all of its limit points. Let $\lbrace a_n \rbrace \subset A$ be a sequence with $a_n \rightarrow a$. As $\lbrace a_n \rbrace$ also belongs to $B$ and $B$ is closed it must be that $a \in B$. Hence, as $B$ contains both $A$ and all of its limit points $B$ must also contain the closure of $A$.
+
+</div>
+
+<div class="problem" markdown="1">
+
+**Problem:** 
+
+Let $X$ be a metric space. Show that for $A,B \subset X$ the closure satisfies the following properties:
+1. If $$A \subset B$$ then $$cl(A) \subset cl(B)$$.
+2. $$cl(A\cup B) = cl(A) \cup cl(B)$$ $$$$
+3. $$cl(A \cap B) \subset cl(A) \cap cl(B)$$ $$$$
+
+[Solution](/pdf/RA_HW1_3.pdf)
+
+</div>
 
 <div class="proposition" markdown="1">
 
@@ -683,7 +715,7 @@ Given a metric space $(M', \rho),$ we say that it is the completion
 of the metric space $(M, \rho)$ if 
 1. $$M'$$ complete (in the sense of Cauchy sequences)
 2. $$M'$$ contains $$M$$ i.e. $$M \subset M'$$
-3. $$M$$ is dense in $$M'$$ i.e. $$\bar{M} = M'$$
+3. $$M$$ is dense in $$M'$$ i.e. $$cl(M) = M'$$
 </div>
 
 We will prove that every metric space has a completion which is unique up to isometry.
@@ -754,7 +786,7 @@ equivalence class in $$M^{\star}$$
 
 **Step 4:** Density of $M$ in $M^{\star}$
 
-We will show that $\bar{M} = M^{\star}:$ Take $\bar{x} \in M^{\star}$, fix $\epsilon > 0$, find Cauchy sequence, $\lbrace x_n \rbrace$ representing 
+We will show that $cl(M) = M^{\star}:$ Take $\bar{x} \in M^{\star}$, fix $\epsilon > 0$, find Cauchy sequence, $\lbrace x_n \rbrace$ representing 
 $\bar{x}$
 - As $$\lbrace x_n \rbrace$$ is Cauchy $$\exists N$$ such that $$\forall n,m > N$$ we have $$\rho(x_n,x_m)$$
 - Choose any $$k > N$$ and take the stationary sequence $$\lbrace x_k,x_k, \ldots \rbrace$$ and denote its equivalence class $$\hat{x} \in M^{\star}$$
