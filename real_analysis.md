@@ -19,8 +19,7 @@ In simple terms, a binary relation between two sets is a rule of association bet
 Consider the *cartesian product* of sets $A$ and $B$
 > $$A \times B = \lbrace (a,b): \quad a \in A, \; b \in B \rbrace$$
 
-We will see that the cartesian product of sets is the most general binary relation between them as each element in $A$ is 
-associated with every element in $B$.
+We will see that the cartesian product is the most general binary relation between sets as each element in one is associated with every element of the other.
 
 <div class="definition" markdown="1">
 
