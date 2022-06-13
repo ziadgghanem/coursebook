@@ -14,6 +14,31 @@ A mathematical result must first be appreciated according to its aesthetics and 
 
 # Basic Topology
 
+## Compactness
+
+**Cover**
+
+Let $X$ be a set and $A \subset X$ we say that the family of sets $\lbrace B_i \rbrace_{i \in I} \subset \mathcal{P}(X)$ is a **cover** of $A$ if and only if $A \subset \bigcup_{i \in I} B_i$
+
+In the case that $(X, {\Large \tau})$ is a topological space, a cover $\lbrace U_i \rbrace_{i \in I}$ is said to be an **open cover** if $\lbrace U_i \rbrace_{i \in I} \subset {\Large \tau}$
+
+A cover $\lbrace U_i \rbrace_{i \in I}$ is said to be **finite** if the index set $I$ is finite.
+
+Let $\lbrace B_i \rbrace_{i \in I}$ be a cover of $A$, we say that $\lbrace B_i \rbrace_{i \in J}$ is a **subcover** of $A$ if $J \subset I$ such that $\lbrace B_i \rbrace_{i \in J}$ covers $A$. 
+
+<div class="definition" markdown="1">
+
+**Compactness**
+
+Let $(X, {\Large \tau})$ be a topological space, we say that $X$ is a **compact** space if every open cover of $X$ contains a finite subcover.
+
+**Sequential Compactness**
+
+$X$ is said to be **sequentially compact** if every sequence $\lbrace x_n \rbrace \subset X$ contains a convergent subsequence.
+</div>
+
+For metric spaces, $(X,d)$, compactness is equivalent to sequential compactness.
+
 ## Vector Spaces Normed Spaces, Metric Spaces, Topological Spaces
 
 **Vector Space:** 
@@ -38,6 +63,7 @@ $\forall v\in V, \forall r\in \mathbb{R}$
 1.  $$\Vert v \Vert \ge 0$$ and $$\Vert v \Vert = 0 \iff v = 0$$
 2.  $$\Vert rV \Vert$$ $$=$$ $$\vert r \vert \Vert v \Vert$$
 3.  $$\Vert u+v \Vert \le \Vert v \Vert + \Vert u \Vert$$
+
 is called a normed space and the function $\Vert \cdot \Vert$ is called a norm on $V$.
 
 A function satisfying these properties $\Vert \cdot \Vert : V \rightarrow \mathbb{R}$ is called a norm on $V$
@@ -60,8 +86,8 @@ In turn, a metric induces a topology on $V$ which defines the notion of an open 
 
 Any normed space $(V, \Vert \cdot \Vert)$ is also a topological space $(V, {\Large \tau})$ where the topology, ${\Large \tau}$, is a collection of subsets of $V$ such that
 1.  $$V, \emptyset \in {\Large \tau}$$ $$ $$
-2.  $$\rbrace  U_{\alpha}  \lbrace_{\alpha \in \Lambda} \subset {\Large {\Large \tau}} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in {\Large \tau}$$ $$ $$
-3.  $$\rbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \lbrace \subset {\Large \tau} \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in {\Large \tau}$$ $$ $$
+2.  $$\lbrace  U_{\alpha}  \rbrace_{\alpha \in \Lambda} \subset {\Large {\Large \tau}} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in {\Large \tau}$$ $$ $$
+3.  $$\lbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \rbrace \subset {\Large \tau} \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in {\Large \tau}$$ $$ $$
 
 The sets $U \in {\Large \tau}$ are called open.
 
@@ -81,13 +107,13 @@ Where $B_{\epsilon}(u) := \rbrace v \in V: \| u - v \| < \epsilon \lbrace$ is th
 **Set Manipulation** 
 
 We will use $A + B$ to denote the algebraic sum of sets $A,B \subset V$ 
-- $$A + B := \rbrace a + b: a \in A, b \in B \lbrace$$ $$$$
+- $$A + B := \lbrace a + b: a \in A, b \in B \rbrace$$ $$$$
 
 $x_0 + A$ is for us the algebraic sum of an element $x_0 \in V$ with the set $A \subset V$
-- $$x_0 \in V \qquad x_0 + A := \rbrace x_0 + a: a \in A \lbrace$$ $$$$
+- $$x_0 \in V \qquad x_0 + A := \lbrace x_0 + a: a \in A \rbrace$$ $$$$
 
 And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the real number $r \in \mathbb{R}$
-- $$r \in \mathbb{R} \qquad rA := \rbrace ra: a \in A \lbrace$$ $$$$
+- $$r \in \mathbb{R} \qquad rA := \lbrace ra: a \in A \rbrace$$ $$$$
 
 <div class="proposition" markdown="1">
 
@@ -143,7 +169,7 @@ Let $U \in {\Large \tau}$ then $\forall_{ x \in U} \exists_{\epsilon > 0} B_{\ep
 - And so $$\forall z \in \tilde{U}$$ $$\exists_{\epsilon > 0}$$ such that $$B_{\epsilon}(z) \subset \tilde{U}$$ 
 - i.e. $$\tilde{U} \in {\Large \tau}$$
 
-More generally if $A \in V$ then $A+U = \rbrace a+x: a \in A, x \in U  \lbrace = \cup_{a \in A} a + U \in {\Large \tau}$
+More generally if $A \in V$ then $A+U = \lbrace a+x: a \in A, x \in U  \rbrace = \cup_{a \in A} a + U \in {\Large \tau}$
 </div>
 
 **Equivalence of Norms** 
@@ -256,7 +282,7 @@ We say that $T: V \rightarrow W$ is continous $\iff$
 Let $T: V \rightarrow W$ be a linear operator. The following conditions are equivalent:
 1. T is continuous
 2. T is continuous at $$0\in V$$
-3. $$T(B)$$ is bounded in $$W$$, where $$B:= \rbrace  x\in V \Vert \| x \| \leq 1  \lbrace$$ is the unit ball in $$V$$.
+3. $$T(B)$$ is bounded in $$W$$, where $$B:= \lbrace  x\in V \Vert \| x \| \leq 1  \rbrace$$ is the unit ball in $$V$$.
 4. $$\exists_{c>0} \forall_{x \in V}$$ $$ \Vert Tx \Vert \leq c \Vert x \Vert$$
 5. The operator norm of T is bounded, i.e. $$\| T \|:= \sup_{x\in B} \| Tx \| < \infty$$
 </div>
@@ -304,7 +330,7 @@ Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous
 > $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$
 
 Finally, we denote the set of all bounded operators from $V \rightarrow W$ with
-> $$L(V,W):= \rbrace  T: V \rightarrow W \vert  \begin{cases} (1) \text{T} \; \text{linear} \\ (2) \text{T} \; \text{bounded} \end{cases}  \lbrace $$
+> $$L(V,W):= \lbrace  T: V \rightarrow W \vert  \begin{cases} (1) \text{T} \; \text{linear} \\ (2) \text{T} \; \text{bounded} \end{cases}  \rbrace $$
 
 <div class="proposition" markdown="1">
 
@@ -318,4 +344,76 @@ $(L(V,W),  \Vert \cdot \Vert)$ is a normed space where $\Vert \cdot \Vert : L(V,
 *Proof:*
 
 It is clear enough that $L(V,W)$ is a vector space, what must be checked is that $\Vert \cdot \Vert$ satisfies the norm properties.
-1. $$ \Vert T \Vert \ge 0$$ $$\forall T \in L(V,W)$$ and $$ \Vert T \Vert = 0 \iff T = 0$$
+1. $$ \Vert T \Vert \geq 0$$ $$\forall T \in L(V,W)$$ 
+    - Take $$T \in L(V,W)$$ then $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$ where $$\Vert Tx \Vert \geq 0$$ for all $$x \in V$$, hence
+    > $$ \Vert T \Vert \geq 0$$ $$\forall T \in L(V,W)$$ 
+2. $$\Vert T \Vert = 0$$ $$\iff$$ $$T = 0$$
+    - $$(\leftarrow)$$ if $$T = 0$$ then clearly $$\Vert T \Vert = 0$$
+    - $$(\rightarrow)$$ Suppose $$\Vert T \Vert = 0$$
+</div>
+
+
+## Banach Spaces
+
+<div class="definition" markdown="1">
+
+**Banach Space**
+
+A normed space $(\mathbb{E}, \Vert \cdot \Vert$ is called a Banach space if $\mathbb{E}$ is a complete metric space with respect to the metric, $d: \mathbb{E} \times \mathbb{E} \rightarrow \mathbb{R}$, associated with the norm $\Vert \cdot \Vert$
+> $$d(x,y) = \Vert x - y \Vert $$
+
+</div>
+
+Recall, we call a sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence if its terms are arbitrarily close when greater than some sufficiently large index, i.e. 
+- $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}}$$ such that $$\forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
+
+We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy sequence in $\mathbb{E}$ converges in $\mathbb{E}$.
+
+**Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ aare equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
+
+<div class="proof" markdown="1">
+
+**Educative Example of Banach Spaces:**
+
+Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
+> $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
+
+Then we equip $E$ with the so-called $\sup$-norm. 
+> $$\Vert \phi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) \Vert < \infty$$
+
+<hr>
+
+*Claim*: $\Vert \phi \Vert_{\infty}$ is a norm on $E$
+
+Clearly $(n1)$, $(n2)$ are satisfied, we must only check $(n3)$, namely that the triangle inequality is satisfied. Take $\phi, \psi \in E$
+> $$\Vert \phi + \psi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) + \psi(x) \Vert$$
+> $$ \leq \sup_{x \in X} \lbrace  \Vert \phi(x) \Vert + \Vert \psi(x) \Vert \rbrace \leq \sup_{x \in X}\Vert \phi(x) \Vert + \sup_{x \in X}\Vert \phi(x) \Vert = \Vert \phi \Vert_{\infty} + \Vert \psi \Vert_{\infty}$$
+
+<hr>
+
+*Claim*: $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+
+*Proof:*
+Indeed, take any Cauchy sequence $\lbrace \phi_n \rbrace \subset B(X; F)$
+> $$\rightarrow \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert \phi_n - \phi_m \Vert_{\infty} < \epsilon$$
+> $$\iff \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \sup_{x \in X} \Vert \phi_n(x) - \phi_m(x) \Vert_{\infty} < \epsilon$$
+> $$\rightarrow \quad \forall_{x \in X} \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \sup_{x \in X} \Vert \phi_n(x) - \phi_m(x) \Vert_{\infty} < \epsilon$$
+
+Now, $\phi_n(x)$ is a Cauchy sequence in the Banach space, $F$, hence,
+$\exists \phi_0: X \rightarrow F$ such that $\forall_{x \in X} \lim_{n \rightarrow \infty} \phi_n(x) = \phi_0(x)$. We need to show that $\phi_0 \in E$ i.e. that $\Vert \phi_0 \Vert_{\infty}$ is bounded.
+
+Choose $\epsilon > 0$ and find $N \in mathbb{N}$ such that
+> $$ \forall_{n \geq N} \quad \sup \sup_{x \in X} \Vert \phi_n(x) - \phi_N(x) \Vert \leq \epsilon$$
+> $$(\rightarrow) \quad$$ $$\forall_{x \in X} \forall_{n \geq N} \quad \Vert \phi_n(x) - \phi_N(x) \Vert \leq \epsilon$$
+
+Now, by the reverse triangle inequality we have $\Vert \phi_n(x) \Vert - \Vert \phi_N(x) \Vert \leq \Vert \phi_n(x) - \phi_N(x) \Vert$ such that
+> $$(\rightarrow) \quad$$ $$\forall_{x \in X} \forall_{n \geq N} \quad \Vert \phi_n(x) \Vert \leq \Vert \phi_N(x) \Vert + \epsilon$$
+
+Notice, this inequality holds $\forall_{x \in X}$ and hence in particular for the $\sup_{x \in X}$
+> $$(\rightarrow) \quad$$ $$\forall_{n \geq N} \quad \Vert \phi_n \Vert_{\infty} \leq \Vert \phi_N \Vert_{\infty} + \epsilon$$
+
+In addition, as this inequality holds for $\forall_{n \geq N}$ it also holds in the limit as $n \rightarrow \infty$
+> $$(\rightarrow) \quad$$ $$\Vert \phi_0 \Vert_{\infty} = \lim_{n \rightarrow \infty} \Vert \phi_n \Vert_{\infty} \leq \Vert \phi_N \Vert_{\infty} + \epsilon$$
+
+Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. And so, we conclude that $E$ is indeed a Banach space.
+</div>
