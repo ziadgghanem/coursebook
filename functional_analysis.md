@@ -300,7 +300,10 @@ Suppose $\exists C > 0$ such that $\Vert T(x-y) \Vert \leq C \Vert x-y \Vert$ bu
 
 **Terminology**
 
-Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and $\Vert T \Vert$ the operator norm of $T$. Finally, we denote the set of all bounded operators from $V \rightarrow W$ with
+Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and $\Vert \dot \Vert$, the operator norm of $T$.
+> $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$
+
+Finally, we denote the set of all bounded operators from $V \rightarrow W$ with
 > $$L(V,W):= \rbrace  T: V \rightarrow W \vert  \begin{cases} (1) \text{T} \; \text{linear} \\ (2) \text{T} \; \text{bounded} \end{cases}  \lbrace $$
 
 <div class="proposition" markdown="1">
