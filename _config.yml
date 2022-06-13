@@ -14,8 +14,6 @@ permalink: /articles/:short_year/:title
 timezone: America/Texas
 excerpt_separator: <!--more-->  # you can specify your own separator, of course.
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
-layouts_dir: /coursebook/_layouts
-includes_dir: /coursebook/_includes
 post:
   template: _post.txt
   extension: md

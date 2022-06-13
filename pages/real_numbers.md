@@ -1,5 +1,5 @@
 ---
-previewWebRootPath: ../
+previewWebRootPath: \coursebook
 layout: post
 title: 'Real Numbers'
 ---
