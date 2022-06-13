@@ -371,9 +371,9 @@ We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy 
 
 **Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ aare equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
 
-<div class="proof" markdown="1">
+<div class="example" markdown="1">
 
-**Educative Example of Banach Spaces:**
+**Example 2.03**Educative Example of a Banach Space
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
 > $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
@@ -416,4 +416,53 @@ In addition, as this inequality holds for $\forall_{n \geq N}$ it also holds in 
 > $$(\rightarrow) \quad$$ $$\Vert \phi_0 \Vert_{\infty} = \lim_{n \rightarrow \infty} \Vert \phi_n \Vert_{\infty} \leq \Vert \phi_N \Vert_{\infty} + \epsilon$$
 
 Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. And so, we conclude that $E$ is indeed a Banach space.
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition 2.04:**
+
+A closed subspace of a Banach space is also Banach.
+</div>
+
+<div class="proposition" markdown="1">
+
+*Proof:*
+
+Let $C \subset B$ be a closed subspace of the Banach space $(B, \Vert \cdot \Vert)$. Take a sequence $\lbrace x_n \rbrace \subset C$ and suppose it satisfies the Cauchy property with respect to the norm $\Vert \cdot \Vert$
+> $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
+
+Then, as $B$ is complete, it contains the limit point of $\lbrace x_n \rbrace$
+> $$\lim_{n \rightarrow \infty}{x_n} = x_0 \in B$$ $$ $$
+
+But as $C$ is closed, it contains all of its limit points such that
+> $$x_0 \in C$$
+
+Hence, $C$ is also Banach
+
+</div>
+
+<div class="example" markdown="1">
+
+**Example 2.05** Another Educative Example of a Banach Space
+
+Let $(F, \Vert \cdot \Vert)$ be a Banach space and $(X, d)$ an arbitrary metric space. Consider the space of continuous functions $X \rightarrow F$
+> $$E:=BC(X; F):= \lbrace \phi: X \rightarrow F \; : \; \phi is continuous$$
+
+*Claim*: $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+
+We have already demonstrated that $B(X; F)$ is Banach, so by  **Proposition 2.04**, It is sufficient to show that $BC(X; F)$ is a closed subspace of $B(X; F)$.
+
+Take any sequence $\lbrace \phi_n \rbrace \in E$ such that $\phi_n$ is continuous $\forall_{n \in \mathbb{N}}$ with $\lim_{n \rightarrow \infty} \phi_n = \phi_0 \in B(X; F)$. 
+> $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n > N} \Vert \phi_n - \phi_0 \Vert_{\infty} < \frac{\epsilon}{3}$$
+
+We must show that $\phi_0$ is continuous. Take $x_0 \in X$ and choose $n_0 > N$, by continuity of $\phi_{n_0}$ at $x_0$ we have
+> $$\exists_{\delta > 0} \forall_{x \in X} \quad d(x,x_0) < \delta \; \rightarrow \; \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert < \frac{\epsilon}{3}$$
+
+Therefore if we take any $x_0 \in X$ then $\forall_{\epsilon > 0} \forall_{x \in X}$ $\exists_{\delta > 0}$ such that if $d(x,x_0) < \delta$ then
+> $$\Vert \phi_0(x) - \phi_0(x_0) \Vert$$ $$= \Vert \phi_0(x) - \phi_{n_0}(x) - (\phi_0(x_0) - \phi_{n_0}(x_0)) + \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
+> $$\leq \Vert \phi_0(x) - \phi_{n_0}(x) \Vert + \Vert \phi_0(x_0) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
+> $$\leq \sup_{x \in X}{[\Vert \phi_0(x) - \phi_{n_0}(x) \Vert + \Vert \phi_0(x_0) - \phi_{n_0}(x_0) \Vert}] + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
+> $$= 2 \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
+> $$ \leq 2 \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
