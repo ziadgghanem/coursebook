@@ -425,7 +425,7 @@ Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. A
 A closed subspace of a Banach space is also Banach.
 </div>
 
-<div class="proposition" markdown="1">
+<div class="proof" markdown="1">
 
 *Proof:*
 
@@ -462,7 +462,36 @@ We must show that $\phi_0$ is continuous. Take $x_0 \in X$ and choose $n_0 > N$,
 Therefore if we take any $x_0 \in X$ then $\forall_{\epsilon > 0} \forall_{x \in X}$ $\exists_{\delta > 0}$ such that if $d(x,x_0) < \delta$ then
 > $$\Vert \phi_0(x) - \phi_0(x_0) \Vert$$ $$= \Vert \phi_0(x) - \phi_{n_0}(x) - (\phi_0(x_0) - \phi_{n_0}(x_0)) + \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
 > $$\leq \Vert \phi_0(x) - \phi_{n_0}(x) \Vert + \Vert \phi_0(x_0) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
-> $$\leq \sup_{x \in X}{[\Vert \phi_0(x) - \phi_{n_0}(x) \Vert + \Vert \phi_0(x_0) - \phi_{n_0}(x_0) \Vert}] + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
+> $$\leq \sup_{x \in X}{\lbrace \Vert \phi_0(x) - \phi_{n_0}(x) \Vert + \Vert \phi_0(x_0) - \phi_{n_0}(x_0) \Vert \rbrace} + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
 > $$= 2 \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
 > $$ \leq 2 \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 2.06:** The Uniform Convergence Theorem
+
+Suppose $(X,d)$ is a metric space, $F$ is a normed space, and $\lbrace \phi_n: X \rightarrow F \rbrace$ is a family of continuous functions such that
+1. $$\lbrace \phi_n \rbrace$$ has a well-defined limit function $$\phi$$ i.e.
+    - $$\forall_{x \in X} \quad \lim_{n \rightarrow \infty} \phi_n(x) = \phi(x)$$ $$$$
+2. $$\lbrace \phi_n \rbrace$$ uniformly converges to $$\phi$$ i.e.
+    - $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \quad \Vert \phi_n(x) - \phi(x) \Vert < \epsilon$$
+
+Then, $\phi: X \rightarrow F$ is continuous.
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* 
+
+Take $\epsilon > 0$ then as $\phi$ is the uniform limit of $\lbrace \phi_n \rbrace$ we have
+> $$\exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \quad \Vert \phi_n(x) - \phi(x) \Vert < \frac{\epsilon}{3}$$
+
+Choose any $x_0 \in X$ and some $n_0 > N$, then as $\phi_{n_0}$ is continuous
+> $$ \exists_{\delta > 0} \forall_{x \in X} \quad d(x,x_0) < \delta \; \rightarrow \; \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert < \epsilon$$
+
+Therefore, $\forall_{x_0} \in X \forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in X}$ if $d(x,x_0) < \delta$ then
+> $$\Vert \phi(x) - \phi(x_0) \Vert = \Vert  (\phi(x) - \phi_{n_0}(x)) + (\phi_{n_0}(x) - \phi_{n_0}(x_0)) + (\phi_{n_0}(x_0) - \phi(x_0)) \Vert$$
+> $$ \Vert \phi(x) - \phi_{n_0}(x) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x_0) - \phi(x_0) \Vert \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
