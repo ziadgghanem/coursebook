@@ -493,5 +493,5 @@ Choose any $x_0 \in X$ and some $n_0 > N$, then as $\phi_{n_0}$ is continuous
 
 Therefore, $\forall_{x_0} \in X \forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in X}$ if $d(x,x_0) < \delta$ then
 > $$\Vert \phi(x) - \phi(x_0) \Vert = \Vert  (\phi(x) - \phi_{n_0}(x)) + (\phi_{n_0}(x) - \phi_{n_0}(x_0)) + (\phi_{n_0}(x_0) - \phi(x_0)) \Vert$$
-> $$ \Vert \phi(x) - \phi_{n_0}(x) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x_0) - \phi(x_0) \Vert \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
+> $$ \leq \Vert \phi(x) - \phi_{n_0}(x) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x_0) - \phi(x_0) \Vert \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
