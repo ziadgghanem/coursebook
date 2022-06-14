@@ -16,73 +16,87 @@ A mathematical result must first be appreciated according to its aesthetics and 
 
 ## Compactness
 
-**Cover**
+A number of important topological notions, including compactness, are best understood in terms of the open-cover. We say that a family of sets covers a space if it is contained in their union.
 
-Let $X$ be a set and $A \subset X$ we say that the family of sets $\lbrace B_i \rbrace_{i \in I} \subset \mathcal{P}(X)$ is a **cover** of $A$ if and only if $A \subset \bigcup_{i \in I} B_i$
+<div class="definition" markdown="1">
+
+**Definition: Cover**
+
+Let $X$ be a set and $A \subset X$ we say that the family of sets $\lbrace B_i \rbrace_{i \in I} \subset \mathcal{P}(X)$ is a **cover** of $A$ if and only if $A = \bigcup_{i \in I} B_i$
 
 In the case that $(X, {\Large \tau})$ is a topological space, a cover $\lbrace U_i \rbrace_{i \in I}$ is said to be an **open cover** if $\lbrace U_i \rbrace_{i \in I} \subset {\Large \tau}$
 
 A cover $\lbrace U_i \rbrace_{i \in I}$ is said to be **finite** if the index set $I$ is finite.
 
 Let $\lbrace B_i \rbrace_{i \in I}$ be a cover of $A$, we say that $\lbrace B_i \rbrace_{i \in J}$ is a **subcover** of $A$ if $J \subset I$ such that $\lbrace B_i \rbrace_{i \in J}$ covers $A$. 
+</div>
+
+Now that we have defined the open cover we are ready to approach compactness. A compact space, in plain terms, may be described with a finite cover.
 
 <div class="definition" markdown="1">
 
-**Compactness**
+**Definition: Compactness**
 
 Let $(X, {\Large \tau})$ be a topological space, we say that $X$ is a **compact** space if every open cover of $X$ contains a finite subcover.
 
-**Sequential Compactness**
+**Definition: Sequential Compactness**
 
 $X$ is said to be **sequentially compact** if every sequence $\lbrace x_n \rbrace \subset X$ contains a convergent subsequence.
 </div>
 
 For metric spaces, $(X,d)$, compactness is equivalent to sequential compactness.
 
-## Vector Spaces Normed Spaces, Metric Spaces, Topological Spaces
+## From Vector Spaces to Normed Spaces to Metric Spaces to Topological Spaces
 
-**Vector Space:** 
+<div class="definition" markdown="1">
 
-A set $V$ containing at least the two elements $\mathbb{1}, \mathbb{0}$, is called a **vector space** if it is equipped with an addition and scalar multiplication operations satisfying the following conditions $\forall u,v,w \in V$ $\forall a,b \in \mathbb{R}$
-- Conditions on addition operation $$+: \quad$$ $$\forall u,v,w \in V$$ 
+**Definition: Vector Space** 
+
+A set $V$ containing at least the two elements $\mathbb{1}, \mathbb{0}$, is called a **vector space** if it is equipped with addition and scalar multiplication operations satisfying the following conditions $\forall u,v,w \in V$ $\forall a,b \in \mathbb{R}$
+- Conditions on addition operation: $$\;$$ $$\forall u,v,w \in V$$ 
     1. *Commutivity:* $$u+v = v+u$$
     2. *Associativity:* $$u+(v+w) = (u + v) + w$$
     3. *Additive Identity:* $$u + \mathbb{0} = \mathbb{0} + u = u$$
     4. *Additive Inverse:* For all $$u$ \in V$$ there exists a unique $$-u \in V$$ such that $$u + (-u) = (-u) + u = \mathbb{0}$$
-- Conditions on multiplicative operation $$\cdot: \quad$$ $$\forall u,v,w \in V$$ $$\forall a,b \in \mathbb{R}$$
+- Conditions on multiplicative operation: $$\;$$ $$\forall u,v,w \in V$$ $$\forall a,b \in \mathbb{R}$$
     1. *Associativity:* $$a \cdot (b \cdot u) = (a \cdot b) \cdot c$$
     2. *Multplicative Identity:* $$ u \cdot \mathbb{1} = \mathbb{1} \cdot u = u$$
     3. *Distributivity:* $$a \cdot (u + v) = a \cdot u + a \cdot v$$ and $$(a+b) \cdot v = a \cdot v + b \cdot v$$
 
 Elements of a vector space are called vectors.
+</div>
 
-**Normed Space** 
+<div class="definition" markdown="1">
+**Definition: Normed Space** 
 
 A vector space $$V$$ together with a function $\Vert \cdot \Vert : V \rightarrow \mathbb{R}$ satisfying
 $\forall v\in V, \forall r\in \mathbb{R}$ 
 1.  $$\Vert v \Vert \ge 0$$ and $$\Vert v \Vert = 0 \iff v = 0$$
 2.  $$\Vert rV \Vert$$ $$=$$ $$\vert r \vert \Vert v \Vert$$
-3.  $$\Vert u+v \Vert \le \Vert v \Vert + \Vert u \Vert$$
+3.  $$\Vert u+v \Vert \le \Vert v \Vert + \Vert u \Vert$$ $$$$
 
 is called a normed space and the function $\Vert \cdot \Vert$ is called a norm on $V$.
 
 A function satisfying these properties $\Vert \cdot \Vert : V \rightarrow \mathbb{R}$ is called a norm on $V$
 The norm naturally induces a metric on $V$ which generalizes the notion of distance between vectors.
 
-**Induced Metric On a Normed Space**
+</div>
+
+**Remark: Induced Metric On a Normed Space**
 
 Any normed space $(V, \Vert \cdot \Vert)$ is also a metric space $(V,d)$ where
-$d: VxV \rightarrow \mathbb{R}$ satisfies the metric space properties:
+$d: VxV \rightarrow \mathbb{R}$ is the metric induced by $\Vert \cdot \Vert$
+> $$d(u,v) := \Vert u-v \Vert$$ $$ $$
+
+Such a map is indeed a metric, satisfying the metric space properties:
 $\forall u,v,w\in V$ we have 
 1.  $$d(u,v) \ge 0$$ and $$d(u,v) = 0 \iff u = v$$
 2.  $$d(u,v)$$ $$=$$ $$d(v,u)$$
-3.  $$d(u,v) \le d(u,w) + d(w,v)$$
+3.  $$d(u,v) \le d(u,w) + d(w,v)$$ $$$$
 
-Indeed it is sufficient to take $d(u,v) := \Vert u-v \Vert$. 
+In turn, a metric induces a topology on $V$.
 
-In turn, a metric induces a topology on $V$ which defines the notion of an open set. 
-
-**Induced Topology On a normed space**
+**Remark: Induced Topology On a Normed Space**
 
 Any normed space $(V, \Vert \cdot \Vert)$ is also a topological space $(V, {\Large \tau})$ where the topology, ${\Large \tau}$, is a collection of subsets of $V$ such that
 1.  $$V, \emptyset \in {\Large \tau}$$ $$ $$
@@ -96,13 +110,15 @@ The sets $U \in {\Large \tau}$ are called open.
 **Open Sets**
 
 Let $(V, \Vert \cdot \Vert)$ be a normed space, we say that $U \subset V$ is open iff
-> $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \| u - v \| < \epsilon \Rightarrow	v \in U $$ $$ $$
+> $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad \Vert u - v \Vert < \epsilon \; \implies \; v \in U$$ $$ $$
 
-Or equivalently,
-> $$\forall_{ u \in U} \exists_{\epsilon \geq 0} B_{\epsilon}(u) \subset U $$ $$ $$
+Or equivalently in terms of neighborhoods,
+> $$\forall_{ u \in U} \exists_{\epsilon \geq 0} \quad B_{\epsilon}(u) \subset U $$ $$ $$
 
-Where $B_{\epsilon}(u) := \rbrace v \in V: \| u - v \| < \epsilon \lbrace$ is the open ball of radius $\epsilon$ centered at $u$.
+Where $B_{\epsilon}(u) := \lbrace v \in V: \Vert u - v \Vert < \epsilon \rbrace$ is the open ball of radius $\epsilon$ centered at $u$.
 </div>
+
+<hr>
 
 **Set Manipulation** 
 
@@ -110,16 +126,15 @@ We will use $A + B$ to denote the algebraic sum of sets $A,B \subset V$
 - $$A + B := \lbrace a + b: a \in A, b \in B \rbrace$$ $$$$
 
 $x_0 + A$ is for us the algebraic sum of an element $x_0 \in V$ with the set $A \subset V$
-- $$x_0 \in V \qquad x_0 + A := \lbrace x_0 + a: a \in A \rbrace$$ $$$$
+- $$x_0 + A := \lbrace x_0 + a: a \in A \rbrace$$ $$$$
 
 And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the real number $r \in \mathbb{R}$
-- $$r \in \mathbb{R} \qquad rA := \lbrace ra: a \in A \rbrace$$ $$$$
+- $$rA := \lbrace ra: a \in A \rbrace$$ $$$$
 
 <div class="proposition" markdown="1">
 
 **Proposition 1.01:**
 
-For convenience we denote by $B$ the open unit ball $B:= B_1{0}$
 1. $$ B_{\epsilon}(x_0) = x_0 + B_{\epsilon}(0) = x_0 + \epsilon B_1(0) $$ $$ \tag{..1.01a} \label{1.01a} $$
 2. $$ B_{\epsilon}(x_0) + B_{\delta}(y_0) = (x_0+y_0) + (\epsilon + \delta)B_{1}(0) $$   $$ \tag{..1.01b} \label{1.01b} $$
 </div>
@@ -150,24 +165,28 @@ Next that $\tilde{B} = \tilde{C}$ $\iff$ $x \in B_{\epsilon}(0) \iff x \in \epsi
 
 **Proposition 1.02**
 
-Let $(V, \|\cdot\|)$ be a normed space with topology ${\Large \tau},$ then
+Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 1. The following functions are continous: $$\tag{..1.02a} \label{1.02a}$$
-    1. $$ + : V \times V \rightarrow V $$ $$$$
-    2. $$ \cdot : R \times V \rightarrow V $$ $$$$
-    3. $$ \Vert \cdot \Vert : V \rightarrow R $$ $$$$
-2. $$U \in {\Large \tau} \Rightarrow \forall_{ x_{0} \in V} x_{0} + U \in {\Large \tau}$$ $$\tag{..1.02b} \label{1.02b}$$
-3. $$U \in {\Large \tau} \Rightarrow \forall_{ r \neq 0} rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
+    1. The addition operator, $$ + : V \times V \rightarrow V $$ $$$$
+    2. The scalar-multiplication operator, $$ \cdot : R \times V \rightarrow V $$ $$$$
+    3. The norm operator, $$ \Vert \cdot \Vert : V \rightarrow R $$ $$$$
+2. $$U \in {\Large \tau} \; \implies \; \forall_{ x_{0} \in V} \quad x_{0} + U \in {\Large \tau}$$ $$\tag{..1.02b} \label{1.02b}$$
+3. $$U \in {\Large \tau} \; \implies \; \forall_{ r \neq 0} \quad rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
 </div>
 
 <div class="proof" markdown="1">
 
 *Proof 1.0.2b:*
 
-Let $U \in {\Large \tau}$ then $\forall_{ x \in U} \exists_{\epsilon > 0} B_{\epsilon}(x) \subset U$
-- Take $$x_{0} \in V$$ and denote the set $$\tilde{U} = x_0 + U$$ then $$x_0 + B_{\epsilon}(x) \subset \tilde{U}$$
-- Put $$z= x + x_0 \in \tilde{U}$$ By (1.01a) $$x_0 + B_{\epsilon}(x) = (x + x_0) B_{\epsilon}(0) = B_{\epsilon}(x+x_0) = B_{\epsilon}(z) \subset \tilde{U}$$
-- And so $$\forall z \in \tilde{U}$$ $$\exists_{\epsilon > 0}$$ such that $$B_{\epsilon}(z) \subset \tilde{U}$$ 
-- i.e. $$\tilde{U} \in {\Large \tau}$$
+Let $U \in {\Large \tau}$ then by the definition of open set
+> $$\forall_{ x \in U} \exists_{\epsilon > 0} B_{\epsilon}(x) \subset U$$
+
+Take $x_{0} \in V$ and denote the set $\tilde{U} = x_0 + U$ then $x_0 + B_{\epsilon}(x) \subset \tilde{U}$.
+Put $z= x + x_0 \in \tilde{U}$. By (1.01a) 
+> $$x_0 + B_{\epsilon}(x) = (x + x_0) B_{\epsilon}(0) = B_{\epsilon}(x+x_0) = B_{\epsilon}(z) \subset \tilde{U}$$
+
+And so $\forall z \in \tilde{U}$ $\exists_{\epsilon > 0}$ such that $B_{\epsilon}(z) \subset \tilde{U}$ 
+i.e. $\tilde{U} \in {\Large \tau}$
 
 More generally if $A \in V$ then $A+U = \lbrace a+x: a \in A, x \in U  \rbrace = \cup_{a \in A} a + U \in {\Large \tau}$
 </div>
@@ -192,14 +211,16 @@ Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space
 
 <div class="proof" markdown="1">
 
-*Proof 1.0.2b:*
+*Proof 1.0.3:*
 
 $(\rightarrow)$ 
 
-Suppose ${\Large \tau}_{1} \subset {\Large \tau}_{2}$ $\iff$ $U \in {\Large \tau}_{1}$ $\rightarrow$ $U \in {\Large \tau}_{2}$
+Suppose ${\Large \tau}_1 \subset {\Large \tau}_2$ 
+$\iff$ $U \in {\Large \tau}_1$ $\rightarrow$ $U \in {\Large \tau}_2$
 
-In particular, consider the open ball in $(V, \Vert \cdot \Vert_{1}),$ $B^1_1(0):= \lbrace x: \Vert x \Vert_1 < 1 \rbrace \subset {\Large \tau}_{1}$ 
-- As $$B^1_1(0)$$ is open in $${\Large \tau}_{1}$$ it is also open in $${\Large \tau}_{2}$$ $$\rightarrow$$ $$\exists_{\epsilon > 0}$$ such that $$B^2_{\epsilon}:= \lbrace x: \Vert x \Vert_2 < \epsilon \rbrace \subset B^1_1(0)$$
+In particular, consider the open ball in $(V, \Vert \cdot \Vert_1),$ 
+$B^1_1(0):= \lbrace x: \Vert x \Vert_1 < 1 \rbrace \subset {\Large \tau}_1$ 
+- As $$B^1_1(0)$$ is open in $${\Large \tau}_{1}$$ it is also open in $${\Large \tau}_2$$ $$\rightarrow$$ $$\exists_{\epsilon > 0}$$ such that $$B^2_{\epsilon}:= \lbrace x: \Vert x \Vert_2 < \epsilon \rbrace \subset B^1_1(0)$$
 
 Equivalently, $\forall x \in V$ $\Vert x \Vert_2 \leq \epsilon$ $\rightarrow$ $\Vert x \Vert_1 < 1$
 - $$\rightarrow \quad$$ $$\forall_{x \neq 0}$$ $$\Vert \epsilon \frac{x}{\Vert x \Vert_2} \Vert_2 = \epsilon$$ $$\rightarrow$$ $$\Vert \epsilon \frac{x}{\Vert x \Vert_2} \Vert_1 < 1$$ 
@@ -210,15 +231,14 @@ Equivalently, $\forall x \in V$ $\Vert x \Vert_2 \leq \epsilon$ $\rightarrow$ $\
 
 **Example:**
 
-Take $V = \mathbb{R}^n$ and define the functions
+Take $V = \mathbb{R}^n$ and the following functions are norms on $V$
 1. $$\Vert \cdot \Vert_1: \mathbb{R}^n \rightarrow \mathbb{R}$$ $$$$
-    > $$\Vert x \Vert_1 = \sum^n_{i = 1} \vert x_i \vert$$
+    > $$\Vert x \Vert_1 = \sum^n_{i = 1} \vert x_i \vert$$ $$$$
 2. $$\Vert \cdot \Vert_2: \mathbb{R}^n \rightarrow \mathbb{R}$$ $$$$
-    > $$\Vert x \Vert_2 = (\sum^n_{i = 1} (x_i)^2)^{\frac{1}{2}}$$
+    > $$\Vert x \Vert_2 = (\sum^n_{i = 1} (x_i)^2)^{\frac{1}{2}}$$ $$$$
 3. $$\Vert \cdot \Vert_p: \mathbb{R}^n \rightarrow \mathbb{R}$$ $$$$
-    > $$\Vert x \Vert_p = (\sum^n_{i = 1} (x_i)^p)^{\frac{1}{p}}$$ 
+    > $$\Vert x \Vert_p = (\sum^n_{i = 1} (x_i)^p)^{\frac{1}{p}}$$ $$$$
 
-Each of these functions are norms on $V$ and they are all equivalent.
 </div>
 
 <div class="proposition" markdown="1">
@@ -246,7 +266,8 @@ For the other inequality we will make use of the **Weierstrass Theorem,** also k
 **Weierstrass Theorem**
 
 Let $K$ be a compact subset of metric space $M$ and $f:M \rightarrow \mathbb{R}$ a continuous map. Then $f$ achieves maximum
-and minimum on $f(K$).$
+and minimum on $f(K)$.
+
 </div>
 
 Consider the unit sphere in $(V, \Vert \cdot \Vert_1)$, $S:= \lbrace x: \Vert x \Vert_1 = 1 \rbrace$. As demonstrated above, any normed space is also a metric space. In a metric space compactness is equivalent to closedness and boundedness $\rightarrow$ $S$ is compact. In addition, $\Vert \cdot \Vert$ is a continuous on $S$ as it is a norm. Put $d = \min_{x \in S} \Vert x \Vert$ then
@@ -264,7 +285,7 @@ If $V$ is a finite dimensional vector space then any two norms $V$ are equivalen
 
 ## Linear operators
 
-Given two normed spaces, $(V, \|\cdot\|)$ and $(W, \|\cdot\|)$, consider a linear operator $T: V \rightarrow W$
+Given two normed spaces, $(V, \Vert\cdot\Vert)$ and $(W, \Vert\cdot\Vert)$, consider a linear operator $T: V \rightarrow W$
 Notice, if $dimV < \infty$ then $T$ must be continuous, if however, $dimV = \infty,$ $T$ might be discontinuous. We will later provide an example of a linear operator $f:V\rightarrow W$ with infinite dimensional domain such that $f$ is discontinuous. 
 
 <div class="definition" markdown="1">
@@ -272,7 +293,7 @@ Notice, if $dimV < \infty$ then $T$ must be continuous, if however, $dimV = \inf
 **Continuity**
 
 We say that $T: V \rightarrow W$ is continous $\iff$
-> $$ \forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \, \forall_{y \in V} \quad \| x-y \| < \delta \rightarrow \| Tx-Ty \| < \epsilon$$
+> $$ \forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \, \forall_{y \in V} \quad \Vert x-y \Vert < \delta \rightarrow \Vert Tx-Ty \Vert < \epsilon$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -282,12 +303,13 @@ We say that $T: V \rightarrow W$ is continous $\iff$
 Let $T: V \rightarrow W$ be a linear operator. The following conditions are equivalent:
 1. T is continuous
 2. T is continuous at $$0\in V$$
-3. $$T(B)$$ is bounded in $$W$$, where $$B:= \lbrace  x\in V \Vert \| x \| \leq 1  \rbrace$$ is the unit ball in $$V$$.
+3. $$T(B)$$ is bounded in $$W$$, where $$B:= \lbrace  x\in V \Vert \Vert x \Vert \leq 1  \rbrace$$ is the unit ball in $$V$$.
 4. $$\exists_{c>0} \forall_{x \in V}$$ $$ \Vert Tx \Vert \leq c \Vert x \Vert$$
-5. The operator norm of T is bounded, i.e. $$\| T \|:= \sup_{x\in B} \| Tx \| < \infty$$
+5. $$\Vert T \Vert:= \sup_{x\in B} \Vert Tx \Vert < \infty$$ where $$\Vert \cdot \Vert$$ is called the operator norm on linear operator $T$
 </div>
 
 
+<button type="button" class="collapsible">Proof</button>
 <div class="proof" markdown="1">
 
 *Proof*
@@ -296,12 +318,12 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 <hr>
 
 (2) $\rightarrow$ (1) <br>
-Suppose $T$ is continuous at $0$, i.e. $\forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \quad \| x \| < \delta \rightarrow \| Tx \| < \epsilon $ choose $y,z \in V$ such that $x = y-z$ then 
-- $$\| x \| < \delta \iff \| y-z \| < \delta \rightarrow \| Tx \| < \epsilon$$ $$\iff$$ $$\| T(y-z) \| = \| Ty-Tz) \|< \epsilon$$ 
+Suppose $T$ is continuous at $0$, i.e. $\forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \quad \Vert x \Vert < \delta \rightarrow \Vert Tx \Vert < \epsilon $ choose $y,z \in V$ such that $x = y-z$ then 
+- $$\Vert x \Vert < \delta \iff \Vert y-z \Vert < \delta \rightarrow \Vert Tx \Vert < \epsilon$$ $$\iff$$ $$\Vert T(y-z) \Vert = \Vert Ty-Tz) \Vert< \epsilon$$ 
 <hr>
 
 (2) $\rightarrow$ (3) <br>
-Suppose $T$ is continuous at $0$, i.e. $\forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \quad \| x \| < \delta \rightarrow \| Tx \| < \epsilon$ choose $0 < c < \delta$ then
+Suppose $T$ is continuous at $0$, i.e. $\forall_{x\in V} \forall_{\epsilon > 0} \, \exists_{\delta > 0} \quad \Vert x \Vert < \delta \rightarrow \Vert Tx \Vert < \epsilon$ choose $0 < c < \delta$ then
 - $$\forall_{x\in V} \forall_{\epsilon > 0} \exists_{c > 0} \Vert x \Vert \leq c$$ $$\rightarrow$$ $$\Vert Tx \Vert \leq \epsilon$$
 
 Take $y \in B$ with $\Vert y \Vert \leq 1$ such that $\Vert cy \Vert \leq c$ then,
@@ -320,7 +342,7 @@ Suppose $T(B) \subset W$ is bounded i.e. suppose $\exists C>0$ such that $\foral
 
 (4) $\rightarrow$ (1) <br>
 Suppose $\exists C > 0$ such that $\Vert T(x-y) \Vert \leq C \Vert x-y \Vert$ but then $\forall_{\epsilon >0}$ if $\Vert x-y \Vert < \frac{\epsilon}{C}$ we will have $\Vert Tx - Ty \Vert \leq C \frac{\epsilon}{C} = \epsilon$ i.e.
-- $$\forall_{x,y \in V} \forall_{\epsilon >0} \exists_{\delta = \frac{\epsilon}{C}$$  such that $$\Vert x-y \Vert < \delta$$ $$\rightarrow$$ $$\Vert Tx - Ty \Vert < \epsilon$$ 
+- $$\forall_{x,y \in V} \forall_{\epsilon >0} \exists_{\delta} = \frac{\epsilon}{C}$$  such that $$\Vert x-y \Vert < \delta$$ $$\rightarrow$$ $$\Vert Tx - Ty \Vert < \epsilon$$ 
 
 </div>
 
@@ -495,3 +517,9 @@ Therefore, $\forall_{x_0} \in X \forall_{\epsilon > 0} \exists_{\delta > 0} \for
 > $$\Vert \phi(x) - \phi(x_0) \Vert = \Vert  (\phi(x) - \phi_{n_0}(x)) + (\phi_{n_0}(x) - \phi_{n_0}(x_0)) + (\phi_{n_0}(x_0) - \phi(x_0)) \Vert$$
 > $$ \leq \Vert \phi(x) - \phi_{n_0}(x) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x_0) - \phi(x_0) \Vert \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
+
+Notice that, if $\lbrace \phi_n \rbrace \subset BC(X;F)$ converges to some $\phi \in BC(X;F)$ then, by the definition of the supremum norm, $\Vert \cdot \Vert_{\infty}$,  $\lbrace \phi_n \rbrace$ converges uniformly. Indeed, suppose $lim_{n \rightarrow \infty} \phi_n = \phi$ then
+> $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \Vert \phi_n - \phi \Vert_{\infty} < \epsilon $$
+> $$(\iff) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \sup_{x \in X}{\Vert \phi_n(x) - \phi(x) \Vert} < \epsilon $$
+> $$(\rightarrow) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \Vert \phi_n(x) - \phi(x) \Vert < \epsilon $$
+> $$(\iff) \quad$$  $$\lbrace \phi_n \rbrace$$ converges uniformly to $$\phi$$
