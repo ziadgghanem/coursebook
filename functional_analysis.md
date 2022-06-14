@@ -309,10 +309,11 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 </div>
 
 
-<button type="button" class="collapsible">Proof</button>
-<div class="content" markdown="1">
+<details>
+<summary><i>Proof</i></summary>
+  
+<div class="proof" markdown="1">
 
-*Proof*
 
 (1) $\rightarrow$ (2) is immediate
 <hr>
@@ -345,6 +346,7 @@ Suppose $\exists C > 0$ such that $\Vert T(x-y) \Vert \leq C \Vert x-y \Vert$ bu
 - $$\forall_{x,y \in V} \forall_{\epsilon >0} \exists_{\delta} = \frac{\epsilon}{C}$$  such that $$\Vert x-y \Vert < \delta$$ $$\rightarrow$$ $$\Vert Tx - Ty \Vert < \epsilon$$ 
 
 </div>
+</details>
 
 **Terminology**
 
