@@ -859,8 +859,13 @@ What remains is to show that such a family of sets $\lbrace N_r \rbrace^{\infty}
 
 **Measure on Rectangles**
 
-Let $X$ be any one of the following sets $[a,b],[a,b),(a,b],(a,b)$ and $Y$ any one of $[c,d],[c,d),(c,d],(c,d)$
-then the set $P = X \times Y$ is called a rectangle.
+Let $X$ be any one of the following sets 
+> $$[a,b],[a,b),(a,b],(a,b)$$  $$$$
+
+And $Y$ any one of 
+> $$[c,d],[c,d),(c,d],(c,d)$$ $$$$
+
+Then the set $P = X \times Y$ is called a **rectangle**.
 
 In the degenerate case that either $a=b$ or $c=d$ then we say that the rectangle is *empty* and write $P = \emptyset$ 
 
@@ -1014,6 +1019,8 @@ Fix some $\epsilon > 0$
 
 **Step 1:** Approximation of $A$ by compact subset
 
+<hr>
+
 As an elementary set, $A$ may be expressed as the finite union of disjoint rectangles
 > $$A = \bigcup^{k}_{i=1} B_i$$ where $$ \lbrace B_i \rbrace$$ is the disjoint family of rectangles
 
@@ -1021,15 +1028,86 @@ For each $B_i$ find a closed rectangle $\hat{B}_i$ such that
 1. $$\hat{B}_i$ \subset B_i$$ $$$$
 2. $$\mu(B_i) \leq \mu(\hat{B}_i) + \frac{\epsilon}{2k}$$ $$ $$
 
-Put $\hat{A}:= \bigcup^{k}_{i=1} \hat{B}_i,$ then $\hat{A}$ is an elementary compact subset of $A$ with
-> $$\mu(A) \leq \sum^{k}_{i=1} [\mu(\hat{B}_i) + \frac{\epsilon}{2k}]$$ $$$$
-> $$\leq \sum^{k}_{i=1} \mu(\hat{B}_i) + \sum^{k}_{i=1} \frac{\epsilon}{2k} = \mu(\hat{A}) + \frac{\epsilon}{2}$$
+Put $\hat{A}:= \bigcup^{k}_{i=1} \hat{B}_i,$ then 
+1. $$\hat{A}$$ is an compact 
+2. $$\hat{A} \subset A$$ $$ $$
+3. $$\mu(A) \leq \sum^{k}_{i=1} [\mu(\hat{B}_i) + \frac{\epsilon}{2k}]$$ $$$$
+    > $$\leq \sum^{k}_{i=1} \mu(\hat{B}_i) + \sum^{k}_{i=1} \frac{\epsilon}{2k} $$ $$$$
+    > $$ \leq \mu(\hat{A}) + \frac{\epsilon}{2}$$ $$$$
 
-**Step 2:** Approximation of $\lbrace A_n \rbrace$ by open superset
+**Step 2:** Open approximation of $\lbrace A_n \rbrace$ 
+
+<hr>
 
 For each $A_n$ find an elementary set $\mathring{A}_n$ such that
 1. $$A_n \subset \mathring{A}_n$$ $$ $$
 2. $$\mathring{A}_n$$ is open
-3. $$\mu(\mathring{A}_n) \leq \mu(A_n) + \frac{\epsilon}{2^{n+1}}
+3. $$\mu(\mathring{A}_n) \leq \mu(A_n) + \frac{\epsilon}{2^{n+1}}$$ $$ $$
  
+**Step 3:** Application of Heine Borel
+
+<hr>
+
+We have both, $\hat{A} \subset A$ and $\bigcup^{\infty}_{n=1} A_n \subset \bigcup^{\infty}_{n=1} \mathring{A}_n$, by construction and $A \subset \bigcup^{\infty}_{n=1} A_n$ by assumption such that $\lbrace \mathring{A}_n \rbrace^{\infty}_{n=1}$ is an open cover of $\hat{A}$ i.e.
+> $$\hat{A} \subset  \bigcup^{\infty}_{n=1} \mathring{A}_n$$ $$$$
+
+As $\hat{A}$ is compact there exists a finite open subcover $\lbrace \mathring{A}_{n_1},\mathring{A}_{n_2}, \ldots, \mathring{A}_{n_s} \rbrace$ such that $\hat{A} \subset  \bigcup^{s}_{k=1} \mathring{A}_{n_k}$. As this cover is, in particular, *finite*, we have
+> $$\mu(\hat{A}) \leq \sum^{s}_{k=1} \mu(\mathring{A}_{n_k})$$
+
+Finally, as $\lbrace \mathring{A}_{n_1},\mathring{A}_{n_2}, \ldots, \mathring{A}_{n_s} \rbrace \subset \lbrace \mathring{A}_n \rbrace^{\infty}_{n=1}$ we can bound $\sum^{s}_{k=1} \mu(\mathring{A}_{n_k}) \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})$ such that
+> $$\mu(\hat{A}) \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})$$
+
+**Step 4:** Final Estimate
+
+<hr>
+
+In **(Step 1)** we obtained 
+> $$\mu(A) \leq \mu(\hat{A}) + \frac{\epsilon}{2}$$ $$$$
+
+In **(Step 3)** we further bound this with 
+> $$\mu(A) \leq \mu(\hat{A}) + \frac{\epsilon}{2} \leq \sum^{s}_{k=1} \mu(\mathring{A}_{n_k}) + \frac{\epsilon}{2} \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})  + \frac{\epsilon}{2}$$
+        > Now, using positivity of $\epsilon$ and linearity of addition,
+        > $$ \leq \sum^{\infty}_{n=1}{(\mu(\mathring{A}_{n})  + \frac{\epsilon}{2^{n+1}})} + \frac{\epsilon}{2}$$ $$$$
+        > $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \sum^{\infty}_{n=1}{\frac{\epsilon}{2^{n+1}}} + \frac{\epsilon}{2}$$ $$$$
+        > $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \frac{\epsilon}{2} + \frac{\epsilon}{2} = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \epsilon$$ $$$$
+
+And so, we have $\mu(A) \leq \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \epsilon$. As $\epsilon>0$ was chosen arbitrarily we conclude that the measure is indeed semi-$\sigma$-additive on elementary sets
+> $$\mu(A) \leq \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})}$$ $$$$
+
+</div>
+
+<div class="definition" markdown="1">
+
+**Outer Measure**
+
+Take $A \subset E$ and denote by $\mathcal{M}$ the set of all collections of the form $\lbrace A_n \rbrace_{n=1}^{\infty}$ such that
+1. $$\forall_{n} \quad$$ $$A_n \subset E$$
+2. $$\forall_{n} \quad$$ $$A_n$$ is a rectangle
+3. $$A \subset \bigcup_{n=1}^{\infty} A_n$$ $$$$
+
+The outer measure of $A$ is here defined
+> $$\mu^{\star}(A):= \inf_{\lbrace A_n \rbrace \in \mathcal{M}} \sum_{n=1}^{\infty} \mu(A_n)$$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Properties of the Outer Measure**
+
+1. $$\mu^{\star}$$ is correctly defined (finite) for any $$A \subset E$$
+2. $$\mu^{\star}$$ is $$\sigma$$-semi-additive, i.e.
+    > If $$A \subset \bigcup_{n=1}^{\infty} A_n, \; A_n \subset E \;$$ then $$\mu^{\star}(A) \leq \sum_{n=1}^{\infty} \mu^{\star}(A_n)$$
+
+</div>
+
+
+<div class="definition" markdown="1">
+
+**Inner Measure**
+
+Given $A \subset E$ define its inner measure as
+> $$\mu_{\star}(A):= 1 - \mu^{\star}(E \setminus A)$$ $$$$
+
+A set $A \subset E$ is called Lebesgue measurable if
+>  $$\mu_{\star}(A) =  $$\mu^{\star}(A)$$ $$$$
 </div>
