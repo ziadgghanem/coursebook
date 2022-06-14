@@ -310,7 +310,7 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 
 
 <button type="button" class="collapsible">Proof</button>
-<div class="proof" markdown="1">
+<div class="content" markdown="1">
 
 *Proof*
 
