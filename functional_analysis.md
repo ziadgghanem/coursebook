@@ -139,9 +139,10 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 2. $$ B_{\epsilon}(x_0) + B_{\delta}(y_0) = (x_0+y_0) + (\epsilon + \delta)B_{1}(0) $$   $$ \tag{..1.01b} \label{1.01b} $$
 </div>
 
-<div class="proof" markdown="1">
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
 
-*Proof:*
+<div class="proof" markdown="1">
 
 **(1.01a)**
 
@@ -159,7 +160,7 @@ Next that $\tilde{B} = \tilde{C}$ $\iff$ $x \in B_{\epsilon}(0) \iff x \in \epsi
 **(1.01b)**
 
 </div>
-
+</details>
 
 <div class="proposition" markdown="1">
 
@@ -174,9 +175,10 @@ Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 3. $$U \in {\Large \tau} \; \implies \; \forall_{ r \neq 0} \quad rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
 </div>
 
-<div class="proof" markdown="1">
+<details>
+<summary style="font-size: 15px"><i>Proof of 1.0.2b</i></summary>
 
-*Proof 1.0.2b:*
+<div class="proof" markdown="1">
 
 Let $U \in {\Large \tau}$ then by the definition of open set
 > $$\forall_{ x \in U} \exists_{\epsilon > 0} B_{\epsilon}(x) \subset U$$
@@ -190,6 +192,7 @@ i.e. $\tilde{U} \in {\Large \tau}$
 
 More generally if $A \in V$ then $A+U = \lbrace a+x: a \in A, x \in U  \rbrace = \cup_{a \in A} a + U \in {\Large \tau}$
 </div>
+</details>
 
 **Equivalence of Norms** 
 
@@ -209,9 +212,10 @@ Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space
 
 </div>
 
-<div class="proof" markdown="1">
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
 
-*Proof 1.0.3:*
+<div class="proof" markdown="1">
 
 $(\rightarrow)$ 
 
@@ -226,6 +230,7 @@ Equivalently, $\forall x \in V$ $\Vert x \Vert_2 \leq \epsilon$ $\rightarrow$ $\
 - $$\rightarrow \quad$$ $$\forall_{x \neq 0}$$ $$\Vert \epsilon \frac{x}{\Vert x \Vert_2} \Vert_2 = \epsilon$$ $$\rightarrow$$ $$\Vert \epsilon \frac{x}{\Vert x \Vert_2} \Vert_1 < 1$$ 
 - $$\rightarrow \quad$$ $$\forall_{x \neq 0}$$ $$\Vert x \Vert_1 \leq \frac{1}{\epsilon} \Vert x \Vert_2$$
 </div>
+</details>
 
 <div class="example" markdown="1">
 
@@ -248,9 +253,11 @@ Take $V = \mathbb{R}^n$ and the following functions are norms on $V$
 Any two norms on $\mathbb{R}^n$ are equivalent.
 </div>
 
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
+
 <div class="proof" markdown="1">
 
-*Proof:*
 
 Let $\Vert \cdot \Vert: \mathbb{R}^n \rightarrow \mathbb{R}$ be any norm on $\mathbb{R}^n$ we will show that $\Vert \cdot \Vert$ is equivalent to the $1$-norm $\Vert \cdot \Vert_1$. <br>
 We say that $\Vert \cdot \Vert, \Vert \cdot \Vert_1$ are equivalent $\iff$ $\exists c,d > 0$ such that $d  \Vert x \Vert_1 < \Vert x \Vert < c \Vert x \Vert_1$
@@ -275,6 +282,7 @@ Consider the unit sphere in $(V, \Vert \cdot \Vert_1)$, $S:= \lbrace x: \Vert x 
 - Hence, $$\forall_{x \neq 0}$$ $$d \Vert x \Vert_1 \leq \Vert x \Vert$$
 
 </div>
+</details>
 
 <div class="proposition" markdown="1">
 
@@ -310,7 +318,7 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 
 
 <details>
-<summary><i>Proof</i></summary>
+<summary style="font-size: 15px"><i>Proof</i></summary>
   
 <div class="proof" markdown="1">
 
@@ -350,11 +358,11 @@ Suppose $\exists C > 0$ such that $\Vert T(x-y) \Vert \leq C \Vert x-y \Vert$ bu
 
 **Terminology**
 
-Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and $\Vert \dot \Vert$, the operator norm of $T$.
-> $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$
+Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and denote the set of all bounded operators from $V \rightarrow W$ with
+> $$L(V,W):= \lbrace  T: V \rightarrow W \; \vert$$ $$T$$ is linear, $$T$$ is bounded $$ \rbrace $$
 
-Finally, we denote the set of all bounded operators from $V \rightarrow W$ with
-> $$L(V,W):= \lbrace  T: V \rightarrow W \vert  \begin{cases} (1) \text{T} \; \text{linear} \\ (2) \text{T} \; \text{bounded} \end{cases}  \rbrace $$
+A bounded operator is *bounded* with respect to the **operator norm**, $\Vert \cdot \Vert: L(V,W) \rightarrow \mathbb{R}$, which we define as follows
+> $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$
 
 <div class="proposition" markdown="1">
 
@@ -363,9 +371,10 @@ Finally, we denote the set of all bounded operators from $V \rightarrow W$ with
 $(L(V,W),  \Vert \cdot \Vert)$ is a normed space where $\Vert \cdot \Vert : L(V,W) \rightarrow \mathbb{R}$ is the operator norm on $L(V,W)$.
 </div>
 
-<div class="proof" markdown="1">
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
 
-*Proof:*
+<div class="proof" markdown="1">
 
 It is clear enough that $L(V,W)$ is a vector space, what must be checked is that $\Vert \cdot \Vert$ satisfies the norm properties.
 1. $$ \Vert T \Vert \geq 0$$ $$\forall T \in L(V,W)$$ 
@@ -375,7 +384,7 @@ It is clear enough that $L(V,W)$ is a vector space, what must be checked is that
     - $$(\leftarrow)$$ if $$T = 0$$ then clearly $$\Vert T \Vert = 0$$
     - $$(\rightarrow)$$ Suppose $$\Vert T \Vert = 0$$
 </div>
-
+</details>
 
 ## Banach Spaces
 
@@ -409,15 +418,21 @@ Then we equip $E$ with the so-called $\sup$-norm.
 
 *Claim*: $\Vert \phi \Vert_{\infty}$ is a norm on $E$
 
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
+
 Clearly $(n1)$, $(n2)$ are satisfied, we must only check $(n3)$, namely that the triangle inequality is satisfied. Take $\phi, \psi \in E$
 > $$\Vert \phi + \psi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) + \psi(x) \Vert$$
 > $$ \leq \sup_{x \in X} \lbrace  \Vert \phi(x) \Vert + \Vert \psi(x) \Vert \rbrace \leq \sup_{x \in X}\Vert \phi(x) \Vert + \sup_{x \in X}\Vert \phi(x) \Vert = \Vert \phi \Vert_{\infty} + \Vert \psi \Vert_{\infty}$$
+</details>
 
 <hr>
 
 *Claim*: $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
 
-*Proof:*
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
+
 Indeed, take any Cauchy sequence $\lbrace \phi_n \rbrace \subset B(X; F)$
 > $$\rightarrow \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert \phi_n - \phi_m \Vert_{\infty} < \epsilon$$
 > $$\iff \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \sup_{x \in X} \Vert \phi_n(x) - \phi_m(x) \Vert_{\infty} < \epsilon$$
@@ -440,6 +455,8 @@ In addition, as this inequality holds for $\forall_{n \geq N}$ it also holds in 
 > $$(\rightarrow) \quad$$ $$\Vert \phi_0 \Vert_{\infty} = \lim_{n \rightarrow \infty} \Vert \phi_n \Vert_{\infty} \leq \Vert \phi_N \Vert_{\infty} + \epsilon$$
 
 Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. And so, we conclude that $E$ is indeed a Banach space.
+</details>
+
 </div>
 
 <div class="proposition" markdown="1">
@@ -449,9 +466,11 @@ Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. A
 A closed subspace of a Banach space is also Banach.
 </div>
 
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
+
 <div class="proof" markdown="1">
 
-*Proof:*
 
 Let $C \subset B$ be a closed subspace of the Banach space $(B, \Vert \cdot \Vert)$. Take a sequence $\lbrace x_n \rbrace \subset C$ and suppose it satisfies the Cauchy property with respect to the norm $\Vert \cdot \Vert$
 > $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
@@ -465,6 +484,7 @@ But as $C$ is closed, it contains all of its limit points such that
 Hence, $C$ is also Banach
 
 </div>
+</details>
 
 <div class="example" markdown="1">
 
@@ -505,9 +525,10 @@ Then, $\phi: X \rightarrow F$ is continuous.
 
 </div>
 
-<div class="proof" markdown="1">
+<details>
+<summary style="font-size: 15px"><i>Proof</i></summary>
 
-*Proof:* 
+<div class="proof" markdown="1">
 
 Take $\epsilon > 0$ then as $\phi$ is the uniform limit of $\lbrace \phi_n \rbrace$ we have
 > $$\exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \quad \Vert \phi_n(x) - \phi(x) \Vert < \frac{\epsilon}{3}$$
@@ -519,6 +540,7 @@ Therefore, $\forall_{x_0} \in X \forall_{\epsilon > 0} \exists_{\delta > 0} \for
 > $$\Vert \phi(x) - \phi(x_0) \Vert = \Vert  (\phi(x) - \phi_{n_0}(x)) + (\phi_{n_0}(x) - \phi_{n_0}(x_0)) + (\phi_{n_0}(x_0) - \phi(x_0)) \Vert$$
 > $$ \leq \Vert \phi(x) - \phi_{n_0}(x) \Vert + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert + \Vert \phi_{n_0}(x_0) - \phi(x_0) \Vert \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
+</details>
 
 Notice that, if $\lbrace \phi_n \rbrace \subset BC(X;F)$ converges to some $\phi \in BC(X;F)$ then, by the definition of the supremum norm, $\Vert \cdot \Vert_{\infty}$,  $\lbrace \phi_n \rbrace$ converges uniformly. Indeed, suppose $lim_{n \rightarrow \infty} \phi_n = \phi$ then
 > $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \Vert \phi_n - \phi \Vert_{\infty} < \epsilon $$
