@@ -140,7 +140,7 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -176,7 +176,7 @@ Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof of 1.0.2b</i></summary>
+<summary><i>Proof of 1.0.2b</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -213,7 +213,7 @@ Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -254,7 +254,7 @@ Any two norms on $\mathbb{R}^n$ are equivalent.
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -318,7 +318,7 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
   
 <div class="proof" markdown="1">
 
@@ -372,7 +372,7 @@ $(L(V,W),  \Vert \cdot \Vert)$ is a normed space where $\Vert \cdot \Vert : L(V,
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -404,9 +404,11 @@ We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy 
 
 **Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ aare equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
 
-<div class="example" markdown="1">
+## Educative Examples of Banach Spaces
 
-**Example 2.03**Educative Example of a Banach Space
+<hr>
+
+**Space of Bounded Functions**
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
 > $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
@@ -414,24 +416,36 @@ Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set
 Then we equip $E$ with the so-called $\sup$-norm. 
 > $$\Vert \phi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) \Vert < \infty$$
 
-<hr>
+<div class="proposition" markdown="1">
 
-*Claim*: $\Vert \phi \Vert_{\infty}$ is a norm on $E$
+*Claim*: 
+
+$\Vert \phi \Vert_{\infty}$ is a norm on $E$
+</div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
+
+<div class="proof" markdown="1">
 
 Clearly $(n1)$, $(n2)$ are satisfied, we must only check $(n3)$, namely that the triangle inequality is satisfied. Take $\phi, \psi \in E$
 > $$\Vert \phi + \psi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) + \psi(x) \Vert$$
 > $$ \leq \sup_{x \in X} \lbrace  \Vert \phi(x) \Vert + \Vert \psi(x) \Vert \rbrace \leq \sup_{x \in X}\Vert \phi(x) \Vert + \sup_{x \in X}\Vert \phi(x) \Vert = \Vert \phi \Vert_{\infty} + \Vert \psi \Vert_{\infty}$$
+</div>
 </details>
 
-<hr>
+<div class="proposition" markdown="1">
 
-*Claim*: $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+*Claim*:
+
+$(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+
+</div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
+
+<div class="proof" markdown="1">
 
 Indeed, take any Cauchy sequence $\lbrace \phi_n \rbrace \subset B(X; F)$
 > $$\rightarrow \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert \phi_n - \phi_m \Vert_{\infty} < \epsilon$$
@@ -455,9 +469,8 @@ In addition, as this inequality holds for $\forall_{n \geq N}$ it also holds in 
 > $$(\rightarrow) \quad$$ $$\Vert \phi_0 \Vert_{\infty} = \lim_{n \rightarrow \infty} \Vert \phi_n \Vert_{\infty} \leq \Vert \phi_N \Vert_{\infty} + \epsilon$$
 
 Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. And so, we conclude that $E$ is indeed a Banach space.
-</details>
-
 </div>
+</details>
 
 <div class="proposition" markdown="1">
 
@@ -467,7 +480,7 @@ A closed subspace of a Banach space is also Banach.
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -486,14 +499,24 @@ Hence, $C$ is also Banach
 </div>
 </details>
 
-<div class="example" markdown="1">
+<hr>
 
-**Example 2.05** Another Educative Example of a Banach Space
+**Space of Continuous Functions**
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $(X, d)$ an arbitrary metric space. Consider the space of continuous functions $X \rightarrow F$
-> $$E:=BC(X; F):= \lbrace \phi: X \rightarrow F \; : \; \phi is continuous$$
+> $$E:=BC(X; F):= \lbrace \phi: X \rightarrow F \; : \; \phi$$ is continuous $$\rbrace$$
 
-*Claim*: $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+<div class="proposition" markdown="1">
+
+*Claim*: 
+
+$(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+</div>
+
+<details>
+<summary><i>Proof</i></summary>
+
+<div class="proof" markdown="1">
 
 We have already demonstrated that $B(X; F)$ is Banach, so by  **Proposition 2.04**, It is sufficient to show that $BC(X; F)$ is a closed subspace of $B(X; F)$.
 
@@ -510,6 +533,9 @@ Therefore if we take any $x_0 \in X$ then $\forall_{\epsilon > 0} \forall_{x \in
 > $$= 2 \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi - \phi_{n_0} \Vert_{\infty} + \Vert \phi_{n_0}(x) - \phi_{n_0}(x_0) \Vert$$
 > $$ \leq 2 \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$$
 </div>
+</details>
+
+Alternatively we could use the following theorem to demonstrate the closedness of $BC(X; F)$.
 
 <div class="proposition" markdown="1">
 
@@ -526,7 +552,7 @@ Then, $\phi: X \rightarrow F$ is continuous.
 </div>
 
 <details>
-<summary style="font-size: 15px"><i>Proof</i></summary>
+<summary><i>Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -542,8 +568,29 @@ Therefore, $\forall_{x_0} \in X \forall_{\epsilon > 0} \exists_{\delta > 0} \for
 </div>
 </details>
 
-Notice that, if $\lbrace \phi_n \rbrace \subset BC(X;F)$ converges to some $\phi \in BC(X;F)$ then, by the definition of the supremum norm, $\Vert \cdot \Vert_{\infty}$,  $\lbrace \phi_n \rbrace$ converges uniformly. Indeed, suppose $lim_{n \rightarrow \infty} \phi_n = \phi$ then
-> $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \Vert \phi_n - \phi \Vert_{\infty} < \epsilon $$
-> $$(\iff) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \sup_{x \in X}{\Vert \phi_n(x) - \phi(x) \Vert} < \epsilon $$
-> $$(\rightarrow) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \Vert \phi_n(x) - \phi(x) \Vert < \epsilon $$
-> $$(\iff) \quad$$  $$\lbrace \phi_n \rbrace$$ converges uniformly to $$\phi$$
+<div class="proposition" markdown="1">
+
+*Claim*: 
+
+$BC(X; F)$ is a closed subspace of $B(X; F)$, i.e. $(BC(X; F), \Vert \cdot \Vert_{\infty})$ is a Banach Space.
+</div>
+
+<details>
+<summary><i>Proof</i></summary>
+
+<div class="proof" markdown="1">
+
+Recall that $BC(X;F)$ is closed iff it contains all of its limit points. Let $\lbrace \phi_n \rbrace \subset BC(X;F)$ be a sequence of continuous functions that converge to some bounded function, $\phi \in B(X;F)$. Then, as $BC(X; F)$ is equipped with the supremum norm, the sequence must converge uniformly to $\phi$. 
+
+Indeed, suppose $lim_{n \rightarrow \infty} \phi_n = \phi$
+> $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \quad \Vert \phi_n - \phi \Vert_{\infty} < \epsilon $$
+
+> $$(\iff) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \quad \sup_{x \in X}{\Vert \phi_n(x) - \phi(x) \Vert} < \epsilon $$
+
+> $$(\implies) \quad \forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n \geq N} \forall_{x \in X} \quad \Vert \phi_n(x) - \phi(x) \Vert < \epsilon \quad$$ i.e. $$\lbrace \phi_n \rbrace$$ converges uniformly to $$\phi$$
+
+Now, have a sequence of continuous functions that uniformly convegre to $\phi$ and so, by the Uniform Convergence Theorem, $\phi$ must also be continuous.
+
+Therefore, $BC(X;F)$ is indeed closed as it contains all of its limit points. Hence, $(BC(X; F), \Vert \cdot \Vert_{\infty})$ is a Banach Space as the closed subspace of one.
+</div>
+</details>
