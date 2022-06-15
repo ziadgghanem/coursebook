@@ -1066,13 +1066,48 @@ In **(Step 1)** we obtained
 
 In **(Step 3)** we further bound this with 
 > $$\mu(A) \leq \mu(\hat{A}) + \frac{\epsilon}{2} \leq \sum^{s}_{k=1} \mu(\mathring{A}_{n_k}) + \frac{\epsilon}{2} \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})  + \frac{\epsilon}{2}$$
-        > Now, using positivity of $\epsilon$ and linearity of addition,
-        > $$ \leq \sum^{\infty}_{n=1}{(\mu(\mathring{A}_{n})  + \frac{\epsilon}{2^{n+1}})} + \frac{\epsilon}{2}$$ $$$$
-        > $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \sum^{\infty}_{n=1}{\frac{\epsilon}{2^{n+1}}} + \frac{\epsilon}{2}$$ $$$$
-        > $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \frac{\epsilon}{2} + \frac{\epsilon}{2} = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \epsilon$$ $$$$
+
+Now, using positivity of $\epsilon$ and linearity of addition,
+> $$\mu(A) \leq \sum^{\infty}_{n=1}{(\mu(\mathring{A}_{n})  + \frac{\epsilon}{2^{n+1}})} + \frac{\epsilon}{2}$$ $$$$
+> $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \sum^{\infty}_{n=1}{\frac{\epsilon}{2^{n+1}}} + \frac{\epsilon}{2}$$ $$$$
+ > $$ = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \frac{\epsilon}{2} + \frac{\epsilon}{2} = \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \epsilon$$ $$$$
 
 And so, we have $\mu(A) \leq \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})} + \epsilon$. As $\epsilon>0$ was chosen arbitrarily we conclude that the measure is indeed semi-$\sigma$-additive on elementary sets
 > $$\mu(A) \leq \sum^{\infty}_{n=1}{\mu(\mathring{A}_{n})}$$ $$$$
+
+</div>
+
+It has been demonstrated that the measure on elementary sets is semi-$\sigma$-additive. We will prove further that the measure is $\sigma$-additive on elementary sets. 
+
+<div class="definition" markdown="1">
+
+**Proposition:** 
+
+The measure of elementary sets is $\sigma$-additive, i.e. if $A$ is an elementary set with $A = \bigcup_{n=1}^{\infty} A_n$ where $\lbrace A_n \rbrace_{n=1}^{\infty}$ is a disjoint family of elementary sets,then
+> $$\mu(A) = \sum^{\infty}_{n=1}{\mu(A_{n})}$$ $$$$
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* 
+
+We will show two inequalities, 
+
+$(\leq) \quad$ in which we show that 
+> $$\mu(A) \leq \sum^{\infty}_{n=1}{\mu(A_{n})}$$ $$$$
+
+Indeed, as $A = \bigcup_{n=1}^{\infty} A_n$, in particular $$A \subset \bigcup_{n=1}^{\infty} A_n$, and so by $\sigma$-semi-additivity we have
+> $$\mu(A) \leq \sum^{\infty}_{n=1}{\mu(A_{n})}$$ $$$$
+
+$(\geq) \quad$ in which we show that 
+> $$\mu(A) \geq \sum^{\infty}_{n=1}{\mu(A_{n})}$$ $$$$
+
+Again we start from the assumption that $A = \bigcup_{n=1}^{\infty} A_n$, if we truncate this union at some finite number $N \in \mathbb{N}$ it must be the case that $\bigcup_{n=1}^{N} A_n \subset A$ such that
+> $$\mu(A) \geq \sum^{N}_{n=1}{\mu(A_{n})}$$ $$$$
+
+Now, as $\lim_{N \rightarrow \infty}{\sum^{N}_{n=1}{\mu(A_{n})}} = \sum^{\infty}_{n=1}{\mu(A_{n})}$ we simply take the limit as $N \rightarrow \infty$ of both sides of this inequality to obtain the desired result
+> $$\mu(A) \geq \sum^{\infty}_{n=1}{\mu(A_{n})}$$ $$$$
 
 </div>
 
@@ -1090,6 +1125,8 @@ The outer measure of $A$ is here defined
 
 </div>
 
+*Remark:* it is clear that the outer measure of a rectangle must coincide with the measure constructed above. 
+
 <div class="proposition" markdown="1">
 
 **Properties of the Outer Measure**
@@ -1100,6 +1137,31 @@ The outer measure of $A$ is here defined
 
 </div>
 
+<div class="proof" markdown="1">
+
+*Proof:*
+
+<div class="proposition" markdown="1">
+
+**Lemma:**
+
+Let $\lbrace A_n \rbrace_{n=1}^{\infty} \in \mathcal{M}$ then 
+> $$\forall_{\epsilon>0} \forall_{n \in \mathbb{N}} \quad \exists$$ a countable collection of rectangles $$\lbrace P_{n_k} \rbrace_{k=1}^{\infty} \in \mathcal{M}$$ such that
+1. $$A_n \subset \bigcup_{k=1}^{\infty} P_{n_k}$$ $$$$
+2. $$\sum_{k=1}^{\infty} \mu(P_{n_k}) \leq \mu^{\star}(A_n) + \frac{\epsilon}{2^n}$$ $$$$
+</div>
+
+Then by the **lemma**, we have the following inclusions
+> $$A \subset \bigcup_{n=1}^{\infty}{A_n} \subset \bigcup_{n=1}^{\infty}{\bigcup_{k=1}^{\infty}{P_{n_k}}}$$ $$$$
+
+And as the outer-measure of $A$ is an infimum over the set of infinite rectangular covers of $A$ we have the inequality
+> $$\mu^{\star}(A) \leq \sum_{n=1}^{\infty}{\sum_{k=1}^{\infty}{\mu(P_{n_k})}}$$ $$$$
+> $$ \leq \sum_{n=1}^{\infty}{(\mu^{\star}(A_n) + \frac{\epsilon}{2^n})}$$ (by the second claim of **lemma**)
+> $$ = \sum_{n=1}^{\infty}{\mu^{\star}(A_n)} + \sum_{n=1}^{\frac{\epsilon}{2^n}} = \sum_{n=1}^{\infty}{\mu^{\star}(A_n)} + \epsilon$$
+
+Since, this holds $\forall_{\epsilon>0}$ we have our result
+> $$\mu^{\star}(A) \leq \sum_{n=1}^{\infty}{\mu^{\star}(A_n)}$$ $$$$
+</div>
 
 <div class="definition" markdown="1">
 
@@ -1109,5 +1171,96 @@ Given $A \subset E$ define its inner measure as
 > $$\mu_{\star}(A):= 1 - \mu^{\star}(E \setminus A)$$ $$$$
 
 A set $A \subset E$ is called Lebesgue measurable if
->  $$\mu_{\star}(A) =  $$\mu^{\star}(A)$$ $$$$
+>  $$\mu_{\star}(A)$$ $$=$$  $$\mu^{\star}(A)$$ 
 </div>
+
+<div class="proposition" markdown="1">
+
+**Proposition**
+> $$\mu_{\star}(A)$$ $$\leq$$  $$\mu^{\star}(A)$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Assume for contradiction that it is not the case, i.e. suppose
+> $$\mu_{\star}(A)$$ $$>$$  $$\mu^{\star}(A)$$
+
+Using our definition of inner measure we rewrite this inequality
+> $$1 - \mu^{\star}(E \setminus A)$$ $$>$$  $$\mu^{\star}(A)$$
+
+Rearrange terms to find
+> $$\mu^{\star}(E \setminus A) + \mu^{\star}(A)$$ $$<$$ $$\mu^{\star}(E)$$
+
+However, we have shown that the outer measure is $\sigma$-additive. Now, as $E = A + (E \setminus A)$ we have $E \subset A + (E \setminus A)$ and so by $\sigma$-additivty of the outer measure
+> $$\mu^{\star}(E) \leq \mu^{\star}(E \setminus A) + \mu^{\star}(A)$$
+
+Contradiction.
+</div>
+
+We will show that the Lebesgue measure is an extension of the measure on elementary sets. 
+
+<div class="proposition" markdown="1">
+
+**Proposition**
+
+Let $A$ be an elementary set, then it is Lebesgue measurable and if $\mu_{E}$ denotes the measure on elementary sets
+and $\mu$ the Lebesgue measure then
+> $$\mu_{E}(A) = \mu(A)$$ $$$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Take $A \subset E$ elementary, we will prove that $A$ is Lebesgue measurable, i.e. that $\mu^{\star}(A) = \mu_{\star}(A)$, by demonstrating two inequalities
+1. $$\mu^{\star}(A) \leq \mu(A)$$ $$$$
+2. $$\mu_{\star}(A) \geq \mu(A)$$ $$$$
+
+<hr>
+
+*($1.$):* in which we show
+> $$\mu^{\star}(A) \leq \mu(A)$$ $$$$
+
+As $A$ is elementary it may be represented by the finite union of disjoint rectangles
+> $$A = \bigcup_{i=1}^n P_i$$ where $$\forall_{i = 1,\ldots,n} \; P_i$$ is a rectangle and $$P_i \cap P_j = \emptyset$$ for $$i \neq j$$
+
+We have already the elementary measure of $A$
+> $$\mu(A) = \sum_{i=1}^n{\mu(P_i)}$$ $$$$
+
+and the outer measure of $A$
+> $$\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace_{k =1} \in \mathcal{M}}^{\infty}{\sum_{k =1}^{\infty} \mu(Q_k) }
+
+In particular, $A \subset \bigcup_{i=1}^n P_i$, such that by $\sigma$-additivity of the outer measure
+> $$\mu^{\star}(A) \leq \sum_{i=1}^n{\mu^{\star}(P_i)} = \sum_{i=1}^n{\mu(P_i)}$$ $$$$
+
+And so, we have our first inequality
+> $$\mu^{\star}(A) \leq \mu(A)$$ $$$$
+
+<hr>
+
+*($2.$):* in which we show
+> $$\mu^{\star}(A) \geq \mu(A)$$ $$$$
+
+Choose a countable rectangular cover $$\lbrace P_n \rbrace_{n=1}^{\infty} \in \mathcal{M}$$ of $$A$$, then by the $\sigma$-additivity of the measure on elementary sets
+> $$\sum_{n=1}^{\infty}{\mu(P_n)} \geq \mu(A)$$
+
+Consider the definition of the outer measure, as the infimum over countable rectangular covers of our set $\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace_{k =1} \in \mathcal{M}}^{\infty}$, it must be that
+> $$\mu^{\star}(A) \geq \sum_{n=1}^{\infty}{\mu(P_n)}$$ $$$$
+
+and hence we have our result
+> $$\mu^{\star}(A) \geq \mu(A)$$ $$$$
+
+<hr>
+
+*($3.$):* in which we show
+> $$\mu_{\star}(A) = \mu(A)$$ $$$$
+
+By ($1.$) and ($2.$) we have $\mu^{\star}(A) = \mu(A)$ for any elementary set $A$, in particular, as $E \setminus A$, is elementary 
+> $$\mu^{\star}(E \setminus A) = \mu(E \setminus A)$$ $$$$ 
+> $$(\rightarrow)$$ $$1 - \mu^{\star}(E \setminus A) = 1 - \mu(E \setminus A)$$ 
+> $$(\rightarrow)$$ $$\mu_{\star}(A) = \mu(A)$$ 
+
+</div>
+
