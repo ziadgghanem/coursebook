@@ -174,7 +174,7 @@ We call sets with partial and total orders partially and totally ordered, respec
 
 **Ordered Field**
 
-Let $\mathbb{F}$ be a set with total order $\leq \in \mathbb{F} \times \mathbb{F}$ we say that $\mathbb{F}$ is ordered if $\forall a,b,c \in \mathbb{F}$
+Let $\mathbb{F}$ be a set with total order $\leq \subset \mathbb{F} \times \mathbb{F}$ we say that $\mathbb{F}$ is ordered if $\forall a,b,c \in \mathbb{F}$
 1. The order respects addition: $$a \leq b \implies a+c \leq b+c$$
 2. The order respects multiplication: $$a \leq b \implies ac \leq bc$$ for $$c \geq \mathcal{0}$$
 

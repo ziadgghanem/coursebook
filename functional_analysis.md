@@ -76,55 +76,66 @@ Elements of a vector space are called vectors.
 </div>
 
 <div class="definition" markdown="1">
+
 **Definition: Normed Space** 
 
 A vector space $$V$$ together with a function $\Vert \cdot \Vert : V \rightarrow \mathbb{R}$ satisfying
-$\forall v\in V, \forall r\in \mathbb{R}$ 
+$\forall u,v\in V, \forall r\in \mathbb{R}$ 
 1.  $$\Vert v \Vert \ge 0$$ and $$\Vert v \Vert = 0 \iff v = 0$$
 2.  $$\Vert rV \Vert$$ $$=$$ $$\vert r \vert \Vert v \Vert$$
 3.  $$\Vert u+v \Vert \le \Vert v \Vert + \Vert u \Vert$$ $$$$
 
 is called a normed space and the function $\Vert \cdot \Vert$ is called a norm on $V$.
 
-A function satisfying these properties $\Vert \cdot \Vert : V \rightarrow \mathbb{R}$ is called a norm on $V$
-The norm naturally induces a metric on $V$ which generalizes the notion of distance between vectors.
-
 </div>
 
 **Remark: Induced Metric On a Normed Space**
 
-Any normed space $(V, \Vert \cdot \Vert)$ is also a metric space $(V,d)$ where
+Any normed space $(V, \Vert \cdot \Vert)$ is naturally also a metric space $(V,d)$ where
 $d: VxV \rightarrow \mathbb{R}$ is the metric induced by $\Vert \cdot \Vert$
 > $$d(u,v) := \Vert u-v \Vert$$ $$ $$
 
-Such a map is indeed a metric, satisfying the metric space properties:
-$\forall u,v,w\in V$ we have 
+<div class="definition" markdown="1">
+
+**Definition: Metric Space** 
+
+A vector space $$V$$ together with a function $d: V \times V \rightarrow \mathbb{R}$ satisfying
+$\forall u,v,w \in V$ 
 1.  $$d(u,v) \ge 0$$ and $$d(u,v) = 0 \iff u = v$$
 2.  $$d(u,v)$$ $$=$$ $$d(v,u)$$
 3.  $$d(u,v) \le d(u,w) + d(w,v)$$ $$$$
 
-In turn, a metric induces a topology on $V$.
+is called a metric space and the function $d (\cdot, \cdot)$ is called a metric on $V$.
 
-**Remark: Induced Topology On a Normed Space**
+</div>
 
-Any normed space $(V, \Vert \cdot \Vert)$ is also a topological space $(V, {\Large \tau})$ where the topology, ${\Large \tau}$, is a collection of subsets of $V$ such that
-1.  $$V, \emptyset \in {\Large \tau}$$ $$ $$
-2.  $$\lbrace  U_{\alpha}  \rbrace_{\alpha \in \Lambda} \subset {\Large {\Large \tau}} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in {\Large \tau}$$ $$ $$
-3.  $$\lbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \rbrace \subset {\Large \tau} \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in {\Large \tau}$$ $$ $$
+**Remark: Induced Topology On a Metric Space**
 
-The sets $U \in {\Large \tau}$ are called open.
-
-<div class="definition" markdown="1">
-
-**Open Sets**
-
-Let $(V, \Vert \cdot \Vert)$ be a normed space, we say that $U \subset V$ is open iff
-> $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad \Vert u - v \Vert < \epsilon \; \implies \; v \in U$$ $$ $$
+In turn, any metric space $(V,d)$ is naturally a topological space $(V, {\Large \tau})$ where ${\Large \tau}$ is the topology induced by the metric such that $U \in {\Large \tau}$ if and only if
+> $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad d(u,v) < \epsilon \; \implies \; v \in U$$ $$ $$
 
 Or equivalently in terms of neighborhoods,
 > $$\forall_{ u \in U} \exists_{\epsilon \geq 0} \quad B_{\epsilon}(u) \subset U $$ $$ $$
 
-Where $B_{\epsilon}(u) := \lbrace v \in V: \Vert u - v \Vert < \epsilon \rbrace$ is the open ball of radius $\epsilon$ centered at $u$.
+Where $B_{\epsilon}(u) := \lbrace v \in V: d(u,v) < \epsilon \rbrace$ is the open ball of radius $\epsilon$ centered at $u$.
+
+In the case that $d: VxV \rightarrow \mathbb{R}$ is the induced metric of some norm $\Vert \cdot \Vert$ (as will often be the case in our study) the induced topology, ${\Large \tau}$ is such that $U \in {\Large \tau}$ if and only if
+> $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad \Vert u - v \Vert < \epsilon \; \implies \; v \in U$$ $$ $$
+
+And the open ball, $B_{\epsilon}$ is expressed 
+> $$B_{\epsilon}(u) := \lbrace v \in V: \Vert u - v \Vert < \epsilon \rbrace$$ $$$$
+
+<div class="definition" markdown="1">
+
+**Definition: Topological Space** 
+
+A vector space $$V$$ together with a collection of subsets ${\Large \tau} \subset \mathcal{P}(V)$ satisfying
+1.  $$V, \emptyset \in {\Large \tau}$$ $$ $$
+2.  $$\lbrace  U_{\alpha}  \rbrace_{\alpha \in \Lambda} \subset {\Large {\Large \tau}} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in {\Large \tau}$$ $$ $$
+3.  $$\lbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \rbrace \subset {\Large \tau} \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in {\Large \tau}$$ $$ $$
+
+is called a topological space and the sets $U \in {\Large \tau}$ are called open.
+
 </div>
 
 <hr>
@@ -142,7 +153,7 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.01:**
+**Proposition 1.01:** Properties of Balls
 
 1. $$ B_{\epsilon}(x_0) = x_0 + B_{\epsilon}(0) = x_0 + \epsilon B_1(0) $$ $$ \tag{..1.01a} \label{1.01a} $$
 2. $$ B_{\epsilon}(x_0) + B_{\delta}(y_0) = (x_0+y_0) + (\epsilon + \delta)B_{1}(0) $$   $$ \tag{..1.01b} \label{1.01b} $$
@@ -173,15 +184,15 @@ Next that $\tilde{B} = \tilde{C}$ $\iff$ $x \in B_{\epsilon}(0) \iff x \in \epsi
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.02**
+**Proposition 1.02** Properties of the Topological induced by a Norm
 
 Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 1. The following functions are continous: $$\tag{..1.02a} \label{1.02a}$$
     1. The addition operator, $$ + : V \times V \rightarrow V $$ $$$$
     2. The scalar-multiplication operator, $$ \cdot : R \times V \rightarrow V $$ $$$$
     3. The norm operator, $$ \Vert \cdot \Vert : V \rightarrow R $$ $$$$
-2. $$U \in {\Large \tau} \; \implies \; \forall_{ x_{0} \in V} \quad x_{0} + U \in {\Large \tau}$$ $$\tag{..1.02b} \label{1.02b}$$
-3. $$U \in {\Large \tau} \; \implies \; \forall_{ r \neq 0} \quad rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
+2. $$U \in {\Large \tau} \; \implies \; \forall_{ x_{0} \in V} \; x_{0} + U \in {\Large \tau}$$ $$\tag{..1.02b} \label{1.02b}$$
+3. $$U \in {\Large \tau} \; \implies \; \forall_{ r \neq 0} \; rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
 </div>
 
 <details>
@@ -217,7 +228,7 @@ and furthermore $\Vert \cdot \Vert_{1}$ is said to be **weaker** than $\Vert \cd
 **Theorem 1.03** 
 
 Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space $V$ then
-> $${\Large \tau}_{1} \subset {\Large \tau}_{2} \iff \exists_{c > 0} \forall_{x \in V} \Vert \cdot \Vert_{1} \leq c \Vert \cdot \Vert_{2}$$ 
+> $${\Large \tau}_{1} \subset {\Large \tau}_{2} \iff \exists_{c > 0} \forall_{x \in V} \; \Vert \cdot \Vert_{1} \leq c \Vert \cdot \Vert_{2}$$ 
 
 </div>
 
@@ -257,7 +268,7 @@ Take $V = \mathbb{R}^n$ and the following functions are norms on $V$
 
 <div class="proposition" markdown="1">
 
-**Theorem 1.04:**
+**Theorem 1.04:** Equivalence of norms on $\mathbb{R}^n$
 
 Any two norms on $\mathbb{R}^n$ are equivalent.
 </div>
@@ -295,15 +306,16 @@ Consider the unit sphere in $(V, \Vert \cdot \Vert_1)$, $S:= \lbrace x: \Vert x 
 
 <div class="proposition" markdown="1">
 
-**Corollary 1.05:**
+**Corollary 1.05:** Equivalence of norms on finite dimensional vector spaces
 
 If $V$ is a finite dimensional vector space then any two norms $V$ are equivalent.
 </div>
 
 ## Linear operators
 
-Given two normed spaces, $(V, \Vert\cdot\Vert)$ and $(W, \Vert\cdot\Vert)$, consider a linear operator $T: V \rightarrow W$
-Notice, if $dimV < \infty$ then $T$ must be continuous, if however, $dimV = \infty,$ $T$ might be discontinuous. We will later provide an example of a linear operator $f:V\rightarrow W$ with infinite dimensional domain such that $f$ is discontinuous. 
+Given two normed spaces, $(V, \Vert\cdot\Vert)$ and $(W, \Vert\cdot\Vert)$, consider the linear operator $T: V \rightarrow W$
+
+Notice, if $dimV < \infty$ then $T$ must be continuous, if however, $dimV = \infty,$ it might be that $T$ is discontinuous. We will later provide an example of a linear operator $f:V\rightarrow W$ with infinite dimensional domain such that $f$ is discontinuous. 
 
 <div class="definition" markdown="1">
 
@@ -322,7 +334,8 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 2. T is continuous at $$0\in V$$
 3. $$T(B)$$ is bounded in $$W$$, where $$B:= \lbrace  x\in V \Vert \Vert x \Vert \leq 1  \rbrace$$ is the unit ball in $$V$$.
 4. $$\exists_{c>0} \forall_{x \in V}$$ $$ \Vert Tx \Vert \leq c \Vert x \Vert$$
-5. $$\Vert T \Vert:= \sup_{x\in B} \Vert Tx \Vert < \infty$$ where $$\Vert \cdot \Vert$$ is called the operator norm on linear operator $T$
+5. $$\Vert T \Vert:= \sup_{x\in B} \Vert Tx \Vert < \infty$$ $$$$
+
 </div>
 
 
@@ -395,6 +408,14 @@ It is clear enough that $L(V,W)$ is a vector space, what must be checked is that
 </div>
 </details>
 
+<div class="proposition" markdown="1">
+
+**Proposition 2.03**
+
+Along with having the norm properites, the operator norm has the following additional property $\forall_{T \in L(V,W)$ $\forall_{S \in L(W,U)$ $\forall_{x \in V}$
+> $$\Vert ST \Vert \leq \Vert S \Vert \cdot \Vert T \Vert$$ $$$$
+</div>
+
 ## Banach Spaces
 
 <div class="definition" markdown="1">
@@ -411,7 +432,7 @@ Recall, we call a sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence i
 
 We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy sequence in $\mathbb{E}$ converges in $\mathbb{E}$.
 
-**Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ aare equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
+**Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ are equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
 
 **Educative Examples of Banach Spaces**
 
@@ -422,7 +443,7 @@ We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
 > $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
 
-Then we equip $E$ with the so-called $\sup$-norm. 
+Then $E$ is a Banach space when equipped with the so-called $\sup$-norm. 
 > $$\Vert \phi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) \Vert < \infty$$
 
 <div class="proposition" markdown="1">
@@ -615,7 +636,8 @@ Therefore, $BC(X;F)$ is indeed closed as it contains all of its limit points. He
 
 Given a compact metric space $(X,d)$ then any continuous function $\phi: X \rightarrow F$ is bounded such that the space of continuous functions from $X \rightarrow F$ coincides with the set of bounded, continuous functions from $X \rightarrow F$ and so we might write
 > $$C(X;F):= BC(X;F)$$ $$ $$
-    - Where $$C(X;F)$$ denotes the space of continuous functions from $$X \rightarrow F$$
+
+Where $$C(X;F)$$ denotes the space of continuous functions from $$X \rightarrow F$$
 
 Which we have already shown is a Banach space with respect to the norm $\Vert \cdot \Vert_{\infty}$
 </div>
@@ -664,23 +686,20 @@ And the triple $(X, \mathcal{M}, \mu)$ is called a measure space.
 Let $(X,d)$ be a metric space. We denote by $\mathcal{B}(X)$ the smallest $\sigma$-algebra generated by the set of open sets in $X$. Elements (sets) in $\mathcal{B}(X)$ are called Borel sets and $\mathcal{B}(X)$ itself is called the Borel $\sigma$-algebra or  simply the Borel algebra
 </div>
 
+Put $X = \mathbb{R}^n$ and, $\mathcal{B} = \mathcal{B}(X)$, the Borel algebra over $\mathbb{R}^n$. The Lebesgue measure $\mu: \mathcal{M} \rightarrow R$ satisfies the property
+> $$\forall_{A \in \mathcal{B}} \quad \mu(A) = \inf{\lbrace \mu(U): A \subset U, \; U \; \text{open} \rbrace}$$ $$= \sup{\lbrace \mu(K): K \subset A, \; K \; \text{compact} \rbrace} \tag{*}$$
 
-<div class="example" markdown="1">
+Now, let $(X,d)$ be any measure space. We call a measure which satisfies property $\star$ a metric measure.
 
-**The Metric Measure** 
+<div class="definition" markdown="1">
 
-For a metric space $(X,d)$, we consider the Borel algebra, $\mathcal{B} = \mathcal{B}(X)$, and define the metric measure, $\mu: \mathcal{B} \rightarrow [0,\infty]$, as
-> $$\forall_{A \in \mathcal{B}} \quad \mu(A) = \inf{\lbrace \mu(U): A \subset U, \; U \; \text{open} \rbrace}$$ $$ $$
-    > $$ = \sup{\lbrace \mu(K): K \subset A, \; K \; \text{compact} \rbrace}$$ $$ $$
+**Definition: Measurable Functions** 
 
-In the case that $X = \mathbb{R}^n$ we call the measure $\mu: \mathcal{B}(\mathbb{R}^n) \rightarrow [0,\infty]$ the Lebesgue measure.
-</div>
-
-Let $(X, \mathcal{M}, \mu)$ be a measure space, $\mathcal{B}(X)$ its Borel algebra, where $\mu$ is a metric measure on $\mathcal{B}(X)$.
+Assume $(X, \mathcal{M}, \mu)$ is a metric measure space with Borel algebra $\mathcal{B}(X)$.
 
 A function $f: X \rightarrow \mathbb{R}$ is called **$\mu$-measurable**, or simply measurable, iff
-> $$\forall_{A \subset \mathcal{B}(\mathbb{X})} \quad f^{-1}(A) \in \mathcal{M}$$
+> $$\forall_{A \subset \mathcal{B}(X)} \quad f^{-1}(A) \in \mathcal{M}$$
 
-A function $s: X \rightarrow \mathbb{R}$ is called **simple** if $s(X)$ is finite
+</div>
 
-Let $(X,d)$ be a metric space. We denote by $\mathcal{B}(X)$ the smallest $\sigma$-algebra generated by the set of open sets in $X$. Elements (sets) in $\mathcal{B}(X)$ are called Borel sets and $\mathcal{B}(X)$ itself is called the Borel $\sigma$-algebra
+

@@ -9,6 +9,7 @@ These are my notes.
 ## Course Notes
 
 - [Functional Analysis](functional_analysis.md): Notes on Functional Analysis
+    - [Functional Analysis Notes](functional_analysis_notes.md): Notes without proof.
 
 - [Real Analysis](real_analysis.md): Notes on Real Analysis.
     - [Real Numbers](/pages/real_numbers.md)
