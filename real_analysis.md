@@ -10,6 +10,8 @@ title: 'Real Analysis'
 
 <hr>
 
+A good mind, already a rare thing, and the best of us struggle to use our minds at all, let alone use them well.
+
 ## 1. Real Numbers
 
 ### Binary Relations

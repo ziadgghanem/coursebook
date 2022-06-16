@@ -100,7 +100,7 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.02** Properties of the Topological induced by a Norm
+**Proposition 1.02** Properties of the Topology induced by a Norm
 
 Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 1. The following functions are continous: $$\tag{..1.02a} \label{1.02a}$$
@@ -216,7 +216,7 @@ A normed space $(\mathbb{E}, \Vert \cdot \Vert$ is called a Banach space if $\ma
 
 </div>
 
-Recall, we call a sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence if its terms are arbitrarily close when greater than some sufficiently large index, i.e. 
+Recall, we call the sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence if its terms are arbitrarily close when greater than some sufficiently large index, i.e. 
 - $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}}$$ such that $$\forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
 
 We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy sequence in $\mathbb{E}$ converges in $\mathbb{E}$.
@@ -273,6 +273,8 @@ Which we have already shown is a Banach space with respect to the norm $\Vert \c
 
 ### $1.5$ $L^p$ Spaces
 
+#### Divergence Into Measure Theory
+
 <div class="definition" markdown="1">
 
 **Definition: $\sigma$-algebra** 
@@ -306,4 +308,47 @@ Let $(X,d)$ be a metric space. We denote by $\mathcal{B}(X)$ the smallest $\sigm
 </div>
 
 Put $X = \mathbb{R}^n$ and, $\mathcal{B} = \mathcal{B}(X)$, the Borel algebra over $\mathbb{R}^n$. The Lebesgue measure $\mu: \mathcal{M} \rightarrow R$ satisfies the property
-> $$\forall_{A \in \mathcal{B}} \quad \mu(A) = \inf{\lbrace \mu(U): A \subset U, \; U \; \text{open} \rbrace}$$ $$= \sup{\lbrace \mu(K): K \subset A, \; K \; \text{compact} \rbrace}$$
+> $$\forall_{A \in \mathcal{B}} \quad \mu(A) = \inf{\lbrace \mu(U): A \subset U, \; U \; \text{open} \rbrace}$$ $$ \quad \quad \quad = \sup{\lbrace \mu(K): K \subset A, \; K \; \text{compact} \rbrace} \tag{*}$$
+
+Now, let $(X,d)$ be any measure space. We call a measure which satisfies property $\star$ a metric measure.
+
+<div class="definition" markdown="1">
+
+**Definition: Measurable Functions** 
+
+Assume $(X, \mathcal{M}, \mu)$ is a metric measure space with Borel algebra $\mathcal{B}(X)$.
+
+A function $f: X \rightarrow \mathbb{R}$ is called **$\mu$-measurable**, or measurable, iff
+> $$\forall_{A \subset \mathcal{B}(X)} \quad f^{-1}(A) \in \mathcal{M}$$
+
+A function $s: X \rightarrow \mathbb{R}$ is called simple if it takes only a finite number of values i.e. $s(X) = \lbrace \alpha_1 \ldots \alpha_N \rbrace$. Put $A_k := s^{-1}(\alpha_k} = \lbrace x \in X \; : \; s(x) = \alpha_k \rbrace$ then we write
+> $$s(x) = \sum_{i=1}^{N}{\alpha_i \Chi_{A_i}(x)}$$ $$$$
+
+where $\Chi_{A}$ is the characteristic function of the set $A$ defined by
+> $$\Chi_{A}(x) = \begin{cases} 0 \quad x \notin A \\ 1 \quad x \in A \end{cases}$$
+
+A simple function, $s: X \rightarrow \mathbb{R}$, is measurable if and only if $\forall_{k = 1, \ldots, N} A_k \in \mathcal{M}$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition 1.11:** 
+
+For any non-negative measurable function $f: X \rightarrow [0, \infty]$ there exists a sequence of simple measurable functions $\lbrace s_n \rbrace$ such that $\forall_{x \in X}$
+1. $$0 \leq s_1(x) \leq \cdots \leq \s_n(x) \leq s_{n+1}(x) \leq \cdots \leq f(x)$$ $$$$
+2. $$\lim_{n \rightarrow \infty} s_n(x) = f(x)$$ $$$$
+
+</div>
+
+#### Construction of the Lebesgue Integral on $(X, \mathcal{M}, \mu)$
+
+For a simple measurable function, $s(x) = \sum_{i=1}^{N}{\alpha_i \Chi_{A_i}(x)}$, with $A_n \cap A_m = \emptyset$ for $n \neq m$, the Lebesgue integral is defined
+> $$ \int_{X} s d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
+
+For a non-negative measurable function, $f: X \rightarrow [0, \infty]$, we have a sequence of non-negative, simple, measurable functions $\lbrace s_n\rbrace$ with $\forall_{x \in X} \forall_{n \in \mathbb{N}} s_n(x) \leq f(x)$ and $\lim_{n \rightarrow \infty} s_n(x) = f(x)$ we have
+> $$ \int_{X} f d \mu := \lim_{n \rightarrow \infty} \int_{X} s_n d \mu $$ $$$$
+
+Finally, for any measurable function, $f: X \rightarrow \mathbb{R}$, we put $f_{+}(x) := \max{\lbrace 0, f(x)\rbrace}$ and $f_{-}(x) := \min{\lbrace 0, -f(x)\rbrace}$. Notice that $\forall_{x \in X}$ we have $f(x) = f_{+}(x) + f_{-}(x)$ and $f_{\pm}(x) \geq 0$ such that
+> $$ \int_{X} f d \mu := \int_{X} f_{+} d \mu + \int_{X} f_{-} d \mu$$ $$$$
+
+If both $\int_{X} f_{+} d \mu$ and $\int_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable
