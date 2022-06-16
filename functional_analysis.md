@@ -46,6 +46,15 @@ $X$ is said to be **sequentially compact** if every sequence $\lbrace x_n \rbrac
 
 For metric spaces, $(X,d)$, compactness is equivalent to sequential compactness.
 
+<div class="definition" markdown="1">
+
+**Theorem:** (Heine-Borel)
+
+A set $A \subset \mathbb{R}^n$ is compact if and only if it is closed and bounded.
+
+</div>
+
+
 ## From Vector Spaces to Normed Spaces to Metric Spaces to Topological Spaces
 
 <div class="definition" markdown="1">

@@ -1121,7 +1121,7 @@ Take $A \subset E$ and denote by $\mathcal{M}$ the set of all collections of the
 3. $$A \subset \bigcup_{n=1}^{\infty} A_n$$ $$$$
 
 The outer measure of $A$ is here defined
-> $$\mu^{\star}(A):= \inf_{\lbrace A_n \rbrace \in \mathcal{M}} \sum_{n=1}^{\infty} \mu(A_n)$$
+> $$\mu^{\star}(A):= \inf_{\lbrace A_n \rbrace \in \mathcal{M}} \sum_{n=1}^{\infty}{\mu(A_n)} $$
 
 </div>
 
@@ -1220,7 +1220,7 @@ Take $A \subset E$ elementary, we will prove that $A$ is Lebesgue measurable, i.
 
 <hr>
 
-*($1.$):* in which we show
+$(1.):$ in which we show
 > $$\mu^{\star}(A) \leq \mu(A)$$ $$$$
 
 As $A$ is elementary it may be represented by the finite union of disjoint rectangles
@@ -1230,7 +1230,7 @@ We have already the elementary measure of $A$
 > $$\mu(A) = \sum_{i=1}^n{\mu(P_i)}$$ $$$$
 
 and the outer measure of $A$
-> $$\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace_{k =1} \in \mathcal{M}}^{\infty}{\sum_{k =1}^{\infty} \mu(Q_k) }
+> $$\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace_{k =1} \in \mathcal{M}}^{\infty}{\sum_{k =1}^{\infty} \mu(Q_k)}$$ $$$$
 
 In particular, $A \subset \bigcup_{i=1}^n P_i$, such that by $\sigma$-additivity of the outer measure
 > $$\mu^{\star}(A) \leq \sum_{i=1}^n{\mu^{\star}(P_i)} = \sum_{i=1}^n{\mu(P_i)}$$ $$$$
@@ -1240,13 +1240,13 @@ And so, we have our first inequality
 
 <hr>
 
-*($2.$):* in which we show
+$(2.):$ in which we show
 > $$\mu^{\star}(A) \geq \mu(A)$$ $$$$
 
 Choose a countable rectangular cover $$\lbrace P_n \rbrace_{n=1}^{\infty} \in \mathcal{M}$$ of $$A$$, then by the $\sigma$-additivity of the measure on elementary sets
-> $$\sum_{n=1}^{\infty}{\mu(P_n)} \geq \mu(A)$$
+> $$\sum_{n=1}^{\infty}{\mu(P_n)} \geq \mu(A)$$ $$$$
 
-Consider the definition of the outer measure, as the infimum over countable rectangular covers of our set $\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace_{k =1} \in \mathcal{M}}^{\infty}$, it must be that
+Consider the definition of the outer measure, as the infimum over countable rectangular covers of our set $\mu^{\star}(A) = \inf_{\lbrace Q_k \rbrace \in \mathcal{M}} \sum_{k=1}^{\infty}{\mu(Q_k)}$ it must be that
 > $$\mu^{\star}(A) \geq \sum_{n=1}^{\infty}{\mu(P_n)}$$ $$$$
 
 and hence we have our result
@@ -1254,7 +1254,7 @@ and hence we have our result
 
 <hr>
 
-*($3.$):* in which we show
+$(3.):$ in which we show
 > $$\mu_{\star}(A) = \mu(A)$$ $$$$
 
 By ($1.$) and ($2.$) we have $\mu^{\star}(A) = \mu(A)$ for any elementary set $A$, in particular, as $E \setminus A$, is elementary 
@@ -1264,3 +1264,377 @@ By ($1.$) and ($2.$) we have $\mu^{\star}(A) = \mu(A)$ for any elementary set $A
 
 </div>
 
+The **Caratheodory Theorem** gives us a criterion for the Lebesgue measurability of a set.
+
+<div class="proposition" markdown="1">
+
+**Theorem** (Caratheodory Theorem)
+
+A set $A$ is Lebesgue measurable if and only if $\forall_{\epsilon > 0}$ there exists an elementary set $B \subset E$ such that
+> $$\mu^{\star}(A \Deleta B) < \epsilon$$ $$$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+We will need two lemmas to complete this proof
+
+<div class="proposition" markdown="1">
+
+**Lemma A** 
+
+For any two sets $A,B \subset E$
+> $$\vert \mu^{\star}(A) - \mu^{\star}(B) \vert \leq \mu^{\star}(A \Delta B)$$ $$$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof of Lemma A* 
+
+Recall $A \Delta B = (A \cup B) \setminus (A \cap B)$ such that $A \subset B \cup (A \Delta B)$ and now by $\sigma$-additivity of the outer measure
+> $$\mu^{\star}(A) \leq \mu^{\star}(B) + \mu^{\star}(A \Delta B)$$
+> Hence, $$\mu^{\star}(A) - \mu^{\star}(B) \leq \mu^{\star}(A \Delta B) \tag{\star}$$
+
+Likewise we have $B \subset A \cup (A \Delta B)$ and obtain the analagous result
+> Hence, $$\mu^{\star}(B) - \mu^{\star}(A) \leq \mu^{\star}(A \Delta B) \tag{\star \star}$$
+
+Now consider the case when $\mu^{\star}(A) \geq \mu^{\star}(B)$, then by $\star$ we have
+> $$\mu^{\star}(A) - \mu^{\star}(B) = \vert \mu^{\star}(A) - \mu^{\star}(B) \vert \ leq \mu^{\star}(A \Delta B)$$
+
+Suppose, on the otherhand, that $\mu^{\star}(A) \leq \mu^{\star}(B)$ then by $\star \star$ we have
+> $$\mu^{\star}(B) - \mu^{\star}(A) = \vert \mu^{\star}(A) - \mu^{\star}(B) \vert \ leq \mu^{\star}(A \Delta B)$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma B** 
+
+For any two sets $A,B \subset E$
+> $$A \Delta B = (E \setminus A) \Delta (E \setminus B)$$ $$$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof of Lemma B* 
+
+We must recall De Morgan's Laws
+1. $$(A \cup B)^c = A^c \cap B^c$$
+2. $$(A \cap B)^c = A^c \cup B^c$$
+
+
+Starting from the definition of symmetric difference 
+> $$\cdots$$
+</div>
+
+**Proof of Sufficiency**
+
+**Proof of Necessity**
+
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Theorem** 
+
+If $A_1, \ldot, A_n \subset E$ are measurable sets then so are
+1. $$\bigcup_{i=1}^n{A_n}$$ $$$$
+2. $$\bigcap_{i=1}^n{A_n}$$ $$$$
+3. $$A_i \setminus A_j$$ $$$$
+4. $$A_j \Delta A_j$$ $$$$
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+<hr>
+
+$(1.)$ In which we prove
+> $$\bigcup_{i=1}^n{A_n}$$ $$$$
+
+It is enough to prove that the union of two measurable sets is again measurable and then by induction extend it to any finite union. Take measurable sets $A_1,A_2$ then by Caratheodory $\forall_{\epsilon > 0} \; \exists B_1,B_2$, elementary sets, such that
+- $$\mu^{\star}(A_1 \Delta B_1) < \frac{\epsilon}{2},$$ and $$\mu^{\star}(A_2 \Delta B_2) < \frac{\epsilon}{2},$$ 
+
+$\cdots$
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Theorem** 
+
+Assume that $A_1,A_2$ are measurable with $A_1 \cap A_2 = \emptyset$ then
+> $$\mu(A_1 \cup A_2) = \mu(A_1) + \mu(A_2)$$ $$$$
+
+This result extends, by induction, to any finite disjoint family of measurable sets, let us call this property **finite additivity** of the Lebesgue measure.
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+$\cdots$
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Theorem** ($\sigma$-additivity of the Lebesgue Measure)
+
+Given a countable collection of disjoint measurable sets $\lbrace A_n \rbrace_{n=1}^{\infty}$ 
+> $$\mu(\bigcup_{n=1}^{\infty}{A_n}) = \sum_{n=1}^{\infty}{\mu(A_n)} $$ $$$$
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+Put $A = \bigcup_{n=1}^{\infty}{A_n}$, as the countable union of measurable sets, $A$ is measurable. In particular as $A \subset \bigcup_{n=1}^{\infty}{A_n}$ we use $\sigma$-semi-additivity of the outer measure to conclude
+> $$\mu^{\star}(A) \leq \sum_{n=1}^{\infty}{\mu^{\star}(A_n)}$$ $$$$
+
+As $A$ and $A_n$ are measurable $\forall_{n}$ the outer measure coincides with the Lebesgue measure
+> $$\mu(A) \leq \sum_{n=1}^{\infty}{\mu(A_n)}$$ $$$$
+
+Conversely, $\forall_{N \in \mathbb{N}}$ we have the inclusion $\bigcup_{n=1}^{N}{A_n} \subset A$ and again by $\sigma$-semi-additivity of the outer measure and the measurability of all sets concerned
+> $$\sum_{n=1}^{N}{\mu(A_n)} \leq \mu(A)$$ $$$$
+
+Finally, as we take the limit as $N \rightarrow \infty$ the inclusion remains true such that
+> $$\lim_{N \rightarrow \infty}{\sum_{n=1}^{N}{\mu(A_n)}} = \sum_{n=1}^{\infty}{\mu(A_n)} \leq \mu(A)$$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem** (Continuity of the Lebesgue Measure)
+
+Assume $\lbrace A_n \rbrace_{n=1}^{\infty}$ is a countable collection of measurable subsets of $E$ and
+- $$A_1 \supset	A_2 \supset \cdots \supset A_n \supset \cdots$$ $$$$
+
+Then,
+> $$\mu(\bigcap_{n=1}^{\infty}{A_n} = \lim_{n \rightarrow \infty}{\mu(A_n)}$$ $$$$
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+$\cdots$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem** (Corollary to Continuity of the Lebesgue Measure)
+
+Assume $\lbrace A_n \rbrace_{n=1}^{\infty}$ is a countable collection of measurable subsets of $E$ and
+- $$A_1 \subset	A_2 \subset \cdots \subset A_n \subset \cdots$$ $$$$
+
+Then,
+> $$\mu(\bigcup_{n=1}^{\infty}{A_n} = \lim_{n \rightarrow \infty}{\mu(A_n)}$$ $$$$
+
+Which follows directly from De Morgan's laws.
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem** (Completeness of the Lebesgue Measure)
+
+Let $A \subset E$ be a measurable set such that $\mu(A) = 0$, then for any $B \subset A$ one has
+1. $$B$$ is measurable
+2. $$\mu(B) = 0$$ $$$$ 
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+That $\mu(B) = 0$ follows from the claim that $B$ is measurable, non-negativeness of the Lebesgue measure, and semi-$\sigma$-additivity of the Lebesgue measure.
+
+Take the set $C = \lbrace \emptyset \rbrace$, then as an *empty* rectangle, $C$ is, in particular, elementary and measurable.
+Consider, the symmetric difference of $B$ and $C$
+- $$B \Delta C = (B \cup C) \setminus (B \cap C)$$ 
+
+$\cdots$
+
+</div>
+
+## Measurability and Topology in $E$
+
+<div class="proposition" markdown="1">
+
+**Theorem** (Measurability of open sets)
+
+Any open subset $A \subset E$ is measurable
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof* 
+
+Take the cartesian product of the rational numbers with itself $Q^2 = Q \times Q$
+
+</div>
+
+Informally we say that $A \subset E$ is a Borel set if it can be expressed with countable unions and intersections of open and closed subsets of $E$
+
+### Measure in $\mathbb{R}^2$
+
+$\cdots$
+
+## Jordan Measure
+
+For simplicity we assume that all sets are subsets of $E:= I^n = [0,1] \times \cdots \times [0,1]$
+
+<div class="definition" markdown="1">
+
+**Definition:** Jordan Measurable Sets
+
+A set $A \subset E$ is called **Jordan measurable** if $\forall \epsilon > 0$ there exist two elementary sets $A_1,A_2 \subset E$ such that
+1. $$A_1 \subset A \subset A_2$$ $$$$
+2. $$\mu(A_2 \setminus A_1) < \epsilon$$
+</div>
+
+*Statement:* If a set is Jordan measurable, then it is Lebesgue measurable. The converse is not necessarily true.
+
+<div class="proposition" markdown="1">
+
+**Proposition:** Properties of Jordan Measurable Sets
+
+If $A$ and $B$ are Jordan measurable then so are
+1. $$A \cup B$$ $$$$
+2. $$A \cap B$$ $$$$
+3. $$A \setminus B$$ $$$$
+4. $$A \Delta B$$ $$$$
+
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* (only of union)
+
+Take $\epsilon > 0$ by definition, there exist elementary sets $A_1,A_2,B_1,B_2$ such that $A_1 \subset A \subset A_2$, $B_1 \subset B \subset B_2$ and $\mu(A_2 \setminus A_1) < \frac{\epsilon}{2}$, $\mu(B_2 \setminus B_1) < \frac{\epsilon}{2}$
+
+As $A_1 \subset A$, $B_1 \subset B$ and $A \subset A_2$ and $B \subset B_2$ we have
+> $$A_1 \cup B_1 \subset A \cup B \subset A_2 \cup B_2$$ $$$$
+
+If $A_2,B_2$ are disjoint we have the equality
+> $$(A_2 \cup B_2) \setminus (A_1 \cup B_1) = (A_2 \setminus A_1) \cup (B_2 \setminus B_1)$$ $$$$
+
+In general, we have the inclusion
+> $$(A_2 \cup B_2) \setminus (A_1 \cup B_1) \subset (A_2 \setminus A_1) \cup (B_2 \setminus B_1)$$ $$$$
+
+And hence by semi-$\sigma$-additivity of the lebesgue measure
+> $$\mu((A_2 \cup B_2) \setminus (A_1 \cup B_1)) \leq \mu((A_2 \setminus A_1) \cup (B_2 \setminus B_1)) < \epsilon$$ $$$$
+</div>
+
+
+<div class="definition" markdown="1">
+
+**Definition:** Outer/Inner Jordan Measure
+
+For $A \subset E$ we define the **outer Jordan measure** of $A$ as the infimum over the Lebesgue measure of elementary sets containing $A$
+> $$\overline{\mu}(A) = \inf_{S \supset A, S \; \text{elementary}}{\mu(S)}$$ $$$$
+
+Similarly we define the **inner Jordan measure**  of $A$ as the supremum over the Lebesgue measure of elementary sets contained in $A$
+> $$\underline{\mu}(A) = \sup_{S \subset A, S \; \text{elementary}}{\mu(S)}$$ $$$$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem:** 
+
+Given $A \subset E$, $A$ is Jordan measurable if and only if 
+> $$\overline{\mu}(A) = \underline{\mu}(A)$$ $$$$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem:** (Crieterion of Jordan Measurability)
+
+A set $A \subset E$, $A$ is Jordan measurable if and only if the boundary of $A$ has outer measure 0. 
+> $$\mu^{\star}(\partial A) = 0$$ $$$$
+
+</div>
+
+## Measure on $\sigma$-algebras of sets
+
+<div class="definition" markdown="1">
+
+**Definition:** Rings/Algebras
+
+Let $\Sigma$ be a collection of subsets of $A$. We say that $\Sigma$ is a **ring** if it is closed with respect to $\cap, \cup, \setminus, \Delta$ i.e. if $\sigma_1, \sigma_2 \in \Sigma$ then
+1. $$\sigma_1 \cap \sigma_2 \in \Sigma$$ $$$$
+2. $$\sigma_1 \cup \sigma_2 \in \Sigma$$ $$$$
+3. $$\sigma_1 \setminus \sigma_2 \in \Sigma$$ $$$$
+4. $$\sigma_1 \Delta \sigma_2 \in \Sigma$$ $$$$
+
+If, in addition, there exists a set $B$ such that $\forall \sigma \in \Sigma$ $\sigma \subset B$ then the ring is called an algebra
+</div>
+
+<div class="example" markdown="1">
+
+**Examples:** 
+
+1. The collection of all Lebesgue measurable sets in $$\mathbb{R}^n$$ is a ring.
+2. The collection of all Jordadn measurable sets in $$\mathbb{R}^n$$ is a ring.
+3. The trivial algebra containing exactly the two elements $$\lbrace A, \emptyset \rbrace$$
+4. The power set, $\mathcal{P}(A)$, which contains all subsets of $A$ is a ring
+5. The collection of all finite subsets of $A$ is a ring
+6. If $A$ is a subset of metric space $X$, the collection of all bounded subsets of $A$ is a ring.
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Let $\lbrace A_{\alpha} \rbrace_{\alpha \in I}$ be a collection of rings, then $\bigcap_{\alpha \in I} A_{\alpha}$ is a ring aswell
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:*
+
+Let $A = \bigcap_{\alpha \in I} A_{\alpha}$ then $x \in A$ if and only if $x \in A_{\alpha} \; \forall_{\alpha \in I}$ and as each $A_{\alpha}$ is a ring in its own right its elements are already closed under the necessary operations.
+</div>
+
+<div class="definition" markdown="1">
+
+**Definition:** Minimal Rings
+
+Given a collection $\Sigma$ of subsets of $X$ we call $\mathcal{M}(\Sigma)$ a minimal ring containing $\Sigma$ if the following three properties are satisfied
+1. $$\sigma \subset \mathcal{M}(\Sigma)$$ $$$$
+2. $$\mathcal{M}(\Sigma)$$ is a ring
+3. If $$\mathcal{M'}(\Sigma)$$ is any other ring containing $$\Sigma$$ then $$\mathcal{M}(\Sigma) \subset \mathcal{M'}(\Sigma)$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem:** 
+
+A minimal ring always exists and is unique
+</div>
+
+<div class="proof" markdown="1">
+
+*Proof:* 
+
+**Existence**
+
+Take a collection of sets $\Sigma$ and put $X_0:= \bigcap_{A \in \Sigma} A$. Consider the set of all subsets of $X_0$, $\mathcal{P}(X_0)$. Let $S$ be the set of all rings containing subsets of $\mathcal{P}(X_0)$ and containing $\Sigma$
+> $$S = \lbrace X \; : \; $\sigma$ \subset X \subset \mathcal{P}(X_0), X$$ is a ring  $$\rbrace$$
+
+The intersection of this set $\mathcal{M}_1(\Sigma) = \bigcap_{X \in S} X$ is again a ring and must be minimal as an intersection of all rings containing $\Sigma$.
+
+**Uniqueness**
+
+Assume that $\mathcal{M}_1(\Sigma)$ is not unique, i.e. suppose there exists another minimal ring containing $\Sigma$, $\mathcal{M}_2(\Sigma)$. Then $\mathcal{M}_1(\Sigma) \cap \mathcal{M}_2(\Sigma)$ is also a ring containing $\Sigma$ and is contained in both $\mathcal{M}_1(\Sigma)$ and $\mathcal{M}_2(\Sigma)$ but this contradicts the minimality of $\mathcal{M}_1(\Sigma)$
+
+
+</div>
