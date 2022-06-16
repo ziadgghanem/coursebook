@@ -10,52 +10,11 @@ title: 'Functional Analysis'
 
 <hr>
 
-A mathematical result must first be appreciated according to its aesthetics and only after for any practical application. As in all things, an aesthetic result cuts to the heart of things using only as much as is necessary to make its point.  
+Long have we fallen from that age of men who sought only to honor the human spirit and yet we may pay them tribute by studying their works and thereby honoring them who had such vision. May we ever walk in their footsteps.
 
-# Basic Topology
+## $1.$ The Banach Space
 
-## Compactness
-
-A number of important topological notions, including compactness, are best understood in terms of the open-cover. We say that a family of sets covers a space if it is contained in their union.
-
-<div class="definition" markdown="1">
-
-**Definition: Cover**
-
-Let $X$ be a set and $A \subset X$ we say that the family of sets $\lbrace B_i \rbrace_{i \in I} \subset \mathcal{P}(X)$ is a **cover** of $A$ if and only if $A = \bigcup_{i \in I} B_i$
-
-In the case that $(X, {\Large \tau})$ is a topological space, a cover $\lbrace U_i \rbrace_{i \in I}$ is said to be an **open cover** if $\lbrace U_i \rbrace_{i \in I} \subset {\Large \tau}$
-
-A cover $\lbrace U_i \rbrace_{i \in I}$ is said to be **finite** if the index set $I$ is finite.
-
-Let $\lbrace B_i \rbrace_{i \in I}$ be a cover of $A$, we say that $\lbrace B_i \rbrace_{i \in J}$ is a **subcover** of $A$ if $J \subset I$ such that $\lbrace B_i \rbrace_{i \in J}$ covers $A$. 
-</div>
-
-Now that we have defined the open cover we are ready to approach compactness. A compact space, in plain terms, may be described with a finite cover.
-
-<div class="definition" markdown="1">
-
-**Definition: Compactness**
-
-Let $(X, {\Large \tau})$ be a topological space, we say that $X$ is a **compact** space if every open cover of $X$ contains a finite subcover.
-
-**Definition: Sequential Compactness**
-
-$X$ is said to be **sequentially compact** if every sequence $\lbrace x_n \rbrace \subset X$ contains a convergent subsequence.
-</div>
-
-For metric spaces, $(X,d)$, compactness is equivalent to sequential compactness.
-
-<div class="definition" markdown="1">
-
-**Theorem:** (Heine-Borel)
-
-A set $A \subset \mathbb{R}^n$ is compact if and only if it is closed and bounded.
-
-</div>
-
-
-## From Vector Spaces to Normed Spaces to Metric Spaces to Topological Spaces
+### $1.1$ Normed Spaces
 
 <div class="definition" markdown="1">
 
@@ -160,7 +119,7 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -184,7 +143,7 @@ Next that $\tilde{B} = \tilde{C}$ $\iff$ $x \in B_{\epsilon}(0) \iff x \in \epsi
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.02** Properties of the Topological induced by a Norm
+**Proposition 1.02** Properties of the Topology induced by a Norm
 
 Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 1. The following functions are continous: $$\tag{..1.02a} \label{1.02a}$$
@@ -196,7 +155,7 @@ Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
 </div>
 
 <details>
-<summary><i>Proof of 1.0.2b</i></summary>
+<summary><i style="font-size:150%;">Proof of 1.0.2b</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -233,7 +192,7 @@ Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -254,7 +213,7 @@ Equivalently, $\forall x \in V$ $\Vert x \Vert_2 \leq \epsilon$ $\rightarrow$ $\
 
 <div class="example" markdown="1">
 
-**Example:**
+**Example:** Norms on $\mathbb{R}^n$
 
 Take $V = \mathbb{R}^n$ and the following functions are norms on $V$
 1. $$\Vert \cdot \Vert_1: \mathbb{R}^n \rightarrow \mathbb{R}$$ $$$$
@@ -274,7 +233,7 @@ Any two norms on $\mathbb{R}^n$ are equivalent.
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -311,7 +270,7 @@ Consider the unit sphere in $(V, \Vert \cdot \Vert_1)$, $S:= \lbrace x: \Vert x 
 If $V$ is a finite dimensional vector space then any two norms $V$ are equivalent.
 </div>
 
-## Linear operators
+### $1.2$ Linear operators
 
 Given two normed spaces, $(V, \Vert\cdot\Vert)$ and $(W, \Vert\cdot\Vert)$, consider the linear operator $T: V \rightarrow W$
 
@@ -327,7 +286,7 @@ We say that $T: V \rightarrow W$ is continous $\iff$
 
 <div class="proposition" markdown="1">
 
-**Proposition 2.01**
+**Proposition 1.06**
 
 Let $T: V \rightarrow W$ be a linear operator. The following conditions are equivalent:
 1. T is continuous
@@ -340,7 +299,7 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
   
 <div class="proof" markdown="1">
 
@@ -378,7 +337,6 @@ Suppose $\exists C > 0$ such that $\Vert T(x-y) \Vert \leq C \Vert x-y \Vert$ bu
 </div>
 </details>
 
-**Terminology**
 
 Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and denote the set of all bounded operators from $V \rightarrow W$ with
 > $$L(V,W):= \lbrace  T: V \rightarrow W \; \vert$$ $$T$$ is linear, $$T$$ is bounded $$ \rbrace $$
@@ -388,13 +346,13 @@ A bounded operator is *bounded* with respect to the **operator norm**, $\Vert \c
 
 <div class="proposition" markdown="1">
 
-**Proposition 2.02**
+**Proposition 1.07**
 
 $(L(V,W),  \Vert \cdot \Vert)$ is a normed space where $\Vert \cdot \Vert : L(V,W) \rightarrow \mathbb{R}$ is the operator norm on $L(V,W)$.
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -410,35 +368,33 @@ It is clear enough that $L(V,W)$ is a vector space, what must be checked is that
 
 <div class="proposition" markdown="1">
 
-**Proposition 2.03**
+**Proposition 1.08**
 
 Along with having the norm properites, the operator norm has the following additional property $\forall_{T \in L(V,W)$ $\forall_{S \in L(W,U)$ $\forall_{x \in V}$
 > $$\Vert ST \Vert \leq \Vert S \Vert \cdot \Vert T \Vert$$ $$$$
 </div>
 
-## Banach Spaces
+### $1.3$ Banach Spaces
 
 <div class="definition" markdown="1">
 
-**Banach Space**
+**Definition: Banach Space**
 
 A normed space $(\mathbb{E}, \Vert \cdot \Vert$ is called a Banach space if $\mathbb{E}$ is a complete metric space with respect to the metric, $d: \mathbb{E} \times \mathbb{E} \rightarrow \mathbb{R}$, associated with the norm $\Vert \cdot \Vert$
 > $$d(x,y) = \Vert x - y \Vert $$
 
 </div>
 
-Recall, we call a sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence if its terms are arbitrarily close when greater than some sufficiently large index, i.e. 
+Recall, we call the sequence $\mathbb{x_n} \subset \mathbb{E}$ a Cauchy sequence if its terms are arbitrarily close when greater than some sufficiently large index, i.e. 
 - $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}}$$ such that $$\forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
 
 We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy sequence in $\mathbb{E}$ converges in $\mathbb{E}$.
 
 **Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ are equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
 
-**Educative Examples of Banach Spaces**
+### $1.4$ Educative Examples of Banach Spaces
 
-<div class="example" markdown="1">
-
-**Space of Bounded Functions**
+#### $1.4.1$ Space of Bounded Functions
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
 > $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
@@ -450,11 +406,11 @@ Then $E$ is a Banach space when equipped with the so-called $\sup$-norm.
 
 *Claim*: 
 
-$\Vert \phi \Vert_{\infty}$ is a norm on $E$
+First we must verify that $\Vert \phi \Vert_{\infty}$ is, in fact, a norm on $E$
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -468,12 +424,12 @@ Clearly $(n1)$, $(n2)$ are satisfied, we must only check $(n3)$, namely that the
 
 *Claim*:
 
-$(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
+Now we prove the central claim, i.e. that $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
 
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -502,18 +458,19 @@ Hence, $\Vert \phi_0 \Vert_{\infty} \leq \infty$ which implies $\phi_0 \in E$. A
 </div>
 </details>
 
+#### $1.4.2$ Space of Bounded, Continuous Functions
+
 <div class="proposition" markdown="1">
 
-**Proposition 2.04:**
+**Proposition 1.09:**
 
 A closed subspace of a Banach space is also Banach.
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
-
 
 Let $C \subset B$ be a closed subspace of the Banach space $(B, \Vert \cdot \Vert)$. Take a sequence $\lbrace x_n \rbrace \subset C$ and suppose it satisfies the Cauchy property with respect to the norm $\Vert \cdot \Vert$
 > $$\forall_{\epsilon > 0} \exists_{N \in \mathbb{N}} \forall_{n,m > N} \quad \Vert x_n - x_m \Vert < \epsilon$$
@@ -529,12 +486,6 @@ Hence, $C$ is also Banach
 </div>
 </details>
 
-</div>
-
-
-<div class="example" markdown="1">
-
-**Space of Bounded, Continuous Functions**
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $(X, d)$ an arbitrary metric space. Consider the space of continuous functions $X \rightarrow F$
 > $$E:=BC(X; F):= \lbrace \phi \in B(X;F) \; : \; \phi$$ is continuous $$\rbrace$$
@@ -547,7 +498,7 @@ $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -572,7 +523,7 @@ Alternatively we could use the following theorem to demonstrate the closedness o
 
 <div class="proposition" markdown="1">
 
-**Lemma 2.06:** The Uniform Convergence Theorem
+**Lemma 1.10:** The Uniform Convergence Theorem
 
 Suppose $(X,d)$ is a metric space, $F$ is a normed space, and $\lbrace \phi_n: X \rightarrow F \rbrace$ is a family of continuous functions such that
 1. $$\lbrace \phi_n \rbrace$$ has a well-defined limit function $$\phi$$ i.e.
@@ -585,7 +536,7 @@ Then, $\phi: X \rightarrow F$ is continuous.
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -610,7 +561,7 @@ $BC(X; F)$ is a closed subspace of $B(X; F)$,
 </div>
 
 <details>
-<summary><i>Proof</i></summary>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
 <div class="proof" markdown="1">
 
@@ -628,11 +579,8 @@ Now, have a sequence of continuous functions that uniformly convegre to $\phi$ a
 Therefore, $BC(X;F)$ is indeed closed as it contains all of its limit points. Hence, $(BC(X; F), \Vert \cdot \Vert_{\infty})$ is a Banach Space as the closed subspace of one.
 </div>
 </details>
-</div>
 
-<div class="example" markdown="1">
-
-**Space of Continuous Functions**
+#### $1.4.3$ Space Continuous Functions From Compact Metric Spaces
 
 Given a compact metric space $(X,d)$ then any continuous function $\phi: X \rightarrow F$ is bounded such that the space of continuous functions from $X \rightarrow F$ coincides with the set of bounded, continuous functions from $X \rightarrow F$ and so we might write
 > $$C(X;F):= BC(X;F)$$ $$ $$
@@ -640,18 +588,10 @@ Given a compact metric space $(X,d)$ then any continuous function $\phi: X \righ
 Where $$C(X;F)$$ denotes the space of continuous functions from $$X \rightarrow F$$
 
 Which we have already shown is a Banach space with respect to the norm $\Vert \cdot \Vert_{\infty}$
-</div>
 
-<div class="example" markdown="1">
+### $1.5$ $L^p$ Spaces
 
-**Banach Space**
-
-Take $X = [a,b] \subset \mathbb{R}$ any interval in the real numbers, $n \in \mathbb{n}$ any natural number, and $(F, \Vert \cdot \Vert)$ any normed space, then define the space
-> $$E:= C^{n}([a,b]; F) := \lbrace \phi:[a,b] \rightarrow F \; : \;$$ $$1.)$$ $$\phi$$ is continuous,  $$2.)$$ $$\phi^{(k)}$$ exists and is continuous $$\forall_{1 \leq k \leq n}$$ $$\rbrace$$
-
-</div>
-
-### Measure Theory
+#### Divergence Into Measure Theory
 
 <div class="definition" markdown="1">
 
@@ -665,7 +605,6 @@ A set $X$ with a family of subsets $\mathcal{M} \subset \mathcal{P}(X)$ is calle
 By convention, the sets $A \in \mathcal{M}$ are called measurable sets
 
 </div>
-
 
 <div class="definition" markdown="1">
 
