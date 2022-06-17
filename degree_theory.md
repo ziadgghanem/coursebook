@@ -10,7 +10,7 @@ title: 'Planar Degree Theory'
 
 <hr>
 
-A mathematical result must first be appreciated according to its aesthetics and only after for any practical application. As in all things, an aesthetic result cuts to the heart of things using only as much as is necessary to make its point.  
+What is, is what must be, or so we must assume. 
 
 ## 0. Degree Theory in $\mathbb{R}^1$
 

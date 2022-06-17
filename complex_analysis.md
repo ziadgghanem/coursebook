@@ -10,6 +10,8 @@ title: 'Complex Analysis'
 
 <hr>
 
+A mathematical result must first be appreciated according to its aesthetics and only after for any practical application. As in all things, an aesthetic result cuts to the heart of things using only as much as is necessary to make its point.  
+
 ## 1. Fields
 
 <div class="definition" markdown="1">
