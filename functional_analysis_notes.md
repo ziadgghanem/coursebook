@@ -322,10 +322,10 @@ A function $f: X \rightarrow \mathbb{R}$ is called **$\mu$-measurable**, or meas
 > $$\forall_{A \subset \mathcal{B}(X)} \quad f^{-1}(A) \in \mathcal{M}$$
 
 A function $s: X \rightarrow \mathbb{R}$ is called simple if it takes only a finite number of values i.e. $s(X) = \lbrace \alpha_1 \ldots \alpha_N \rbrace$. Put $A_k := s^{-1}(\alpha_k} = \lbrace x \in X \; : \; s(x) = \alpha_k \rbrace$ then we write
-> $$s(x) = \sum_{i=1}^{N}{\alpha_i \Chi_{A_i}(x)}$$ $$$$
+> $$s(x) = \sum_{i=1}^{N}{\alpha_i \chi_{A_i}(x)}$$ $$$$
 
-where $\Chi_{A}$ is the characteristic function of the set $A$ defined by
-> $$\Chi_{A}(x) = \begin{cases} 0 \quad x \notin A \\ 1 \quad x \in A \end{cases}$$
+where $\chi_{A}$ is the characteristic function of the set $A$ defined by
+> $$\chi_{A}(x) = \begin{cases} 0 \quad x \notin A \\ 1 \quad x \in A \end{cases}$$
 
 A simple function, $s: X \rightarrow \mathbb{R}$, is measurable if and only if $\forall_{k = 1, \ldots, N} A_k \in \mathcal{M}$
 </div>
@@ -335,20 +335,71 @@ A simple function, $s: X \rightarrow \mathbb{R}$, is measurable if and only if $
 **Proposition 1.11:** 
 
 For any non-negative measurable function $f: X \rightarrow [0, \infty]$ there exists a sequence of simple measurable functions $\lbrace s_n \rbrace$ such that $\forall_{x \in X}$
-1. $$0 \leq s_1(x) \leq \cdots \leq \s_n(x) \leq s_{n+1}(x) \leq \cdots \leq f(x)$$ $$$$
+1. $$0 \leq s_1(x) \leq \cdots \leq s_n(x) \leq s_{n+1}(x) \leq \cdots \leq f(x)$$ $$$$
 2. $$\lim_{n \rightarrow \infty} s_n(x) = f(x)$$ $$$$
 
 </div>
 
-#### Construction of the Lebesgue Integral on $(X, \mathcal{M}, \mu)$
+#### Construction of the $L^p$ space on $(X, \mathcal{M}, \mu)$
 
-For a simple measurable function, $s(x) = \sum_{i=1}^{N}{\alpha_i \Chi_{A_i}(x)}$, with $A_n \cap A_m = \emptyset$ for $n \neq m$, the Lebesgue integral is defined
+For a simple measurable function, $s(x) = \sum_{i=1}^{N}{\alpha_i \chi_{A_i}(x)}$, with $A_n \cap A_m = \emptyset$ for $n \neq m$, the Lebesgue integral is defined
 > $$ \int_{X} s d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
 
-For a non-negative measurable function, $f: X \rightarrow [0, \infty]$, we have a sequence of non-negative, simple, measurable functions $\lbrace s_n\rbrace$ with $\forall_{x \in X} \forall_{n \in \mathbb{N}} s_n(x) \leq f(x)$ and $\lim_{n \rightarrow \infty} s_n(x) = f(x)$ we have
+For a non-negative measurable function, $f: X \rightarrow [0, \infty]$, we have a sequence of non-negative, simple, measurable functions $\lbrace s_n\rbrace$ with $\forall_{x \in X} \forall_{n \in \mathbb{N}} s_n(x) \leq f(x)$ and $\lim_{n \rightarrow \infty} s_n(x) = f(x)$. The Lebesgue integral of a non-negative measurable function is defined
 > $$ \int_{X} f d \mu := \lim_{n \rightarrow \infty} \int_{X} s_n d \mu $$ $$$$
 
-Finally, for any measurable function, $f: X \rightarrow \mathbb{R}$, we put $f_{+}(x) := \max{\lbrace 0, f(x)\rbrace}$ and $f_{-}(x) := \min{\lbrace 0, -f(x)\rbrace}$. Notice that $\forall_{x \in X}$ we have $f(x) = f_{+}(x) + f_{-}(x)$ and $f_{\pm}(x) \geq 0$ such that
-> $$ \int_{X} f d \mu := \int_{X} f_{+} d \mu + \int_{X} f_{-} d \mu$$ $$$$
+Finally, for any measurable function, $f: X \rightarrow \mathbb{R}$, we put $f_{+}(x) := \max{\lbrace 0, f(x)\rbrace}$ and $f_{-}(x) := \min{\lbrace 0, -f(x)\rbrace}$. Notice that $\forall_{x \in X}$ $f_{\pm}(x)$ are non-negative, measurable functions such that $f(x) = f_{+}(x) - f_{-}(x)$. And so we define the Lebesgue integral of any measurable function in terms of these non-negative counter-parts as follows
+> $$ \int_{X} f d \mu := \int_{X} f_{+} d \mu - \int_{X} f_{-} d \mu$$ $$$$
 
-If both $\int_{X} f_{+} d \mu$ and $\int_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable
+If both $\int_{X} f_{+} d \mu$ and $\int_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable. Notice also that as $\forall_{x \in X}$ we have $\vert f(x) \vert = f_{+}(x) + f_{-}(x)$ the absolute integral of measurable $f$ will be the sum of the integrals of its positive and negative counter parts
+> $\int_{X} \vert f \vert d \mu := \int_{X} f_{+} d \mu + \int_{X} f_{-} d \mu$
+
+One can identify the integrable functions $f,g: X \rightarrow \mathbb{R}$ if they differ on a set of measure zero, i.e.
+> $$f \equiv g \; \iff \; \mu(\lbrace x \in X \; : \; g(x) \neq f(x) \rbrace)$$ $$$$
+
+This is an equivalence relation on the space of integrable functions $X \rightarrow \mathbb{R}$ and we will say that $f$ and $g$ are almost everywhere equal if and only if $f \equiv g$.
+
+Now we are ready to define the $L^p$ space on the measure space $(X, \mathcal{M}, \mu)$ as the space of measurable maps $X \rightarrow \mathbb{R}$ such that $$ \int_{X} \vert f \vert^p d \mu $ is finite.
+> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} (i.) f \; \text{is} \; \text{measurable}, \\ (ii.) \int_{X} \vert f \vert^p d \mu < \infty \end{align*} \rbrace$$ $$$$
+
+Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called $p$-norm $\Vert \cdot \Vert_p: L^p(X, \mu) \rightarrow \mathbb{R}$ which is defined
+> $$ \Vert f \Vert_p := (\int_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
+
+<div class="proposition" markdown="1">
+
+**Proposition 1.12:** 
+
+The map $\Vert \cdot \Vert_p$, defined above, is a norm on $L^p(X, \mu)$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 1.13:**  Young Inequality
+
+Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
+> $$ \int_{X} \vert f g \vert \leq \frac{1}{p} \Vert f \Vert_p^p +  \frac{1}{q} \Vert g \Vert_q^q = \frac{1}{p} \int_{X} \vert f \vert^p + \frac{1}{q} \int_{X} \vert g \vert^q$$ $$$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 1.14:**  Holder Inequality
+
+Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
+> $$ \int_{X} \vert f g \vert \leq  \Vert f \Vert_p +   \Vert g \Vert_q =  (\int_{X} \vert f \vert^p)^{\frac{1}{p}} + (\frac{1}{q} \int_{X} \vert g \vert^q)^{\frac{1}{q}}$$ $$$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 1.15:**  Minkowsky Inequality
+
+$\forall_{f,g \in L^p(X, \mu)}$ 
+> $$ \Vert f g \Vert_p \leq \Vert f \Vert_p + \Vert g \Vert_p$$ $$$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem 1.16:**  
+
+The space $L^p(X, \mu)$, $p \geq 1$, is a Banachspace with respect to the norm $\Vert \cdot \Vert_p$
+</div>
