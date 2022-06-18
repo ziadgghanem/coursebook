@@ -343,24 +343,24 @@ For any non-negative measurable function $f: X \rightarrow [0, \infty]$ there ex
 ### $1.5.1$ Construction of the $L^p$ space on $(X, \mathcal{M}, \mu)$
 
 For a simple measurable function, $s(x) = \sum_{i=1}^{N}{\alpha_i \chi_{A_i}(x)}$, with $A_n \cap A_m = \emptyset$ for $n \neq m$, the Lebesgue integral is defined
-> $$ \int\limits_{X} s d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
+> $$ \int\limits_{X} s \; d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
 
 For a non-negative measurable function, $f: X \rightarrow [0, \infty]$, we have a sequence of non-negative, simple, measurable functions $\lbrace s_n\rbrace$ with $\forall_{x \in X} \forall_{n \in \mathbb{N}} s_n(x) \leq f(x)$ and $\lim_{n \rightarrow \infty} s_n(x) = f(x)$. The Lebesgue integral of a non-negative measurable function is defined
-> $$ \int\limits_{X} f d \mu := \lim_{n \rightarrow \infty} \int\limits_{X} s_n d \mu $$ $$$$
+> $$ \int\limits_{X} f \; d \mu := \lim_{n \rightarrow \infty} \int\limits_{X} s_n \; d \mu $$ $$$$
 
 Finally, for any measurable function, $f: X \rightarrow \mathbb{R}$, we put $f_{+}(x) := \max{\lbrace 0, f(x)\rbrace}$ and $f_{-}(x) := \min{\lbrace 0, -f(x)\rbrace}$. Notice that $\forall_{x \in X}$ $f_{\pm}(x)$ are non-negative, measurable functions such that $f(x) = f_{+}(x) - f_{-}(x)$. And so we define the Lebesgue integral of any measurable function in terms of these non-negative counter-parts as follows
-> $$ \int\limits_{X} f d \mu := \int\limits_{X} f_{+} d \mu - \int\limits_{X} f_{-} d \mu$$ $$$$
+> $$ \int\limits_{X} f \; d \mu := \int\limits_{X} f_{+} \; d \mu - \int\limits_{X} f_{-} \; d \mu$$ $$$$
 
-If both $\int\limits_{X} f_{+} d \mu$ and $\int\limits_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable. Notice also that as $\forall_{x \in X}$ we have $\vert f(x) \vert = f_{+}(x) + f_{-}(x)$ the absolute integral of measurable $f$ will be the sum of the integrals of its positive and negative counter parts
-> $\int\limits_{X} \vert f \vert d \mu := \int\limits_{X} f_{+} d \mu + \int\limits_{X} f_{-} d \mu$
+If both $\int\limits_{X} f_{+} \; d \mu$ and $\int\limits_{X} f_{-} \; d \mu$ are finite, we say that $f$ is integrable. Notice also that as $\forall_{x \in X}$ we have $\vert f(x) \vert = f_{+}(x) + f_{-}(x)$ the absolute integral of measurable $f$ will be the sum of the integrals of its positive and negative counter parts
+> $\int\limits_{X} \vert f \vert \; d \mu := \int\limits_{X} f_{+} \; d \mu + \int\limits_{X} f_{-} \; d \mu$
 
 One can identify the integrable functions $f,g: X \rightarrow \mathbb{R}$ if they differ on a set of measure zero, i.e.
 > $$f \equiv g \; \iff \; \mu(\lbrace x \in X \; : \; g(x) \neq f(x) \rbrace)$$ $$$$
 
 This is an equivalence relation on the space of integrable functions $X \rightarrow \mathbb{R}$ and we will say that $f$ and $g$ are almost everywhere equal if and only if $f \equiv g$.
 
-Now we are ready to define the $L^p$ space on the measure space $(X, \mathcal{M}, \mu)$ as the space of measurable maps $X \rightarrow \mathbb{R}$ such that $$ \int\limits_{X} \vert f \vert^p d \mu $ is finite.
-> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \int\limits_{X} \vert f \vert^p d \mu < \infty \end{align*} \rbrace$$ $$$$
+Now we are ready to define the $L^p$ space on the measure space $(X, \mathcal{M}, \mu)$ as the space of measurable maps $X \rightarrow \mathbb{R}$ such that $$ \int\limits_{X} \vert f \vert^p \; d \mu $ is finite.
+> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \int\limits_{X} \vert f \vert^p \; d \mu < \infty \end{align*} \rbrace$$ $$$$
 
 Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called $p$-norm $\Vert \cdot \Vert_p: L^p(X, \mu) \rightarrow \mathbb{R}$ which is defined
 > $$ \Vert f \Vert_p := (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
@@ -414,7 +414,88 @@ For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the no
 
 <div class="proposition" markdown="1">
 
-**Theorem 1.1:**  
+**Theorem 1.17:**  
 
-For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the norm $\Vert \cdot \Vert_p$
+Let $V$ be a normed space and $F$ a Banach space, then the space of bounded linear maps from $V \rightarrow F$
+> $$\begin{equation} L(V;F) = \left\{ A: V \rightarrow F \; : \; \begin{aligned} &i. \; \text{(A is linear)} \\ &ii. \; \text{(A is bounded)} \end{aligned} \right\} \end{equation}$$
+
+when eqipped with the operator norm, is a Banach space.
 </div>
+
+
+<div class="proposition" markdown="1">
+
+**Definition:** Dual Space
+
+If $E$ is a normed space then the space of linear functionals, $L(E;\mathbb{R})$ is denoted $E^*$ and called the dual space of $E$. A dual space on $E$ induces the bilinear functional $\langle \cdot,\cdot \rangle: E^* \times E \rightarrow \mathbb{R}$ such that
+> $$\langle f,x \rangle := f(x)$$ $$$$
+
+The dual space on a normed space is always a Banach space with respect to the operator norm.
+> $$ \Vert f \Vert = \sup_{\Vert x \Vert \leq 1}{\langle f,x \rangle} $$ $$$$
+</div>
+
+
+<div class="example" markdown="1">
+
+**Example:** The Dual of a Euclidean Space
+
+Let $E = \mathbb{R}^n$, then $E^* = \mathbb{R}^n$. Indeed, $\forall_{f \in E^*} \exists_{y \in \mathbb{R^n}} y = (y_1, \ldots, y_n)$ such that $\forall_{x \in \mathbb{R^n}} x = (x_1, \ldots, x_n)$  we have
+> $$f(x) = \langle y,x \rangle = \sum_{i=1}^n{x_i y_i}$$ $$$$
+
+Notice that the operator norm on $E^* = (\mathbb{R}^n)^*$ may be expressed in terms of the $y \in \mathbb{R^n}$ associated with $f \in E^*$ i.e.
+> $$\Vert f \Vert = \Vert y \Vert_{*} = \sup_{\Vert x \Vert \leq 1}{\langle y,x \rangle}$$ $$$$
+
+</div
+
+<hr>
+
+**A Few Remarks**
+
+<div class="definition" markdown="1">
+
+**Definition:** Totally Bounded
+
+Let $(X,d)$ be a metric space, then a set $A \subset X$ is called totally bounded if for any specified radius $\epsilon > 0$ there exist at most finitely many points such the union of $\epsilon$-balls about these points constitute a cover for $A$, i.e.
+> $$\forall_{\epsilon >0} \exists_{\lbrace x_1, \ldots x_n \rbrace}$$ such that $$A \subset \bigcup_{i=1}^n B_{\epsilon}(x_i)$$
+
+</div
+
+<div class="proposition" markdown="1">
+
+**Proposition 1.18:**  
+
+For any metric space, $(X,d)$, the following are equivalent concerning a subset $A \subset X$
+1. $A$ is compact
+2. $A$ is totally bounded and complete (with respect to $$d$$)
+3. Every sequence in $A$ has a convergent subsequence with limit in $A$.
+
+</div>
+
+<hr>
+
+<div class="proposition" markdown="1">
+
+**Theorem 1.19:**  
+
+Let $E$ be a normed space and denote $B:= \lbrace x \in E \; : \; \Vert x \Vert \leq 1 \rbrace$, then $B$ is totally bounded if and only if $E$ is finite dimensional.
+
+**Corollary 1.20:**  
+
+If $E$ is an infinite-dimensional Banach space then the closed unit ball $B \subset E$ is never compact.
+</div>
+
+# 2 Classical Theorems of Functional Analysis
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.01:**  (Hahn-Banach)
+
+Let $E$ be a normed space and denote $B:= \lbrace x \in E \; : \; \Vert x \Vert \leq 1 \rbrace$, then $B$ is totally bounded if and only if $E$ is finite dimensional.
+
+**Corollary 1.20:**  
+
+If $E$ is an infinite-dimensional Banach space then the closed unit ball $B \subset E$ is never compact.
+</div>
+
+
+
