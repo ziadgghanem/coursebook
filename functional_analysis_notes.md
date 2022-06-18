@@ -12,9 +12,9 @@ title: 'Functional Analysis Notes'
 
 Long have we fallen from that age of men who sought only to honor the human spirit and yet we may pay them tribute by studying their works and thereby honoring them who had such vision. May we ever walk in their footsteps.
 
-## $1.$ The Banach Space
+# $1.$ The Banach Space
 
-### $1.1$ Normed Spaces
+## $1.1$ Normed Spaces
 
 <div class="definition" markdown="1">
 
@@ -157,7 +157,7 @@ Any two norms on $\mathbb{R}^n$ are equivalent.
 If $V$ is a finite dimensional vector space then any two norms $V$ are equivalent.
 </div>
 
-### $1.2$ Linear operators
+## $1.2$ Linear operators
 
 Given two normed spaces, $(V, \Vert\cdot\Vert)$ and $(W, \Vert\cdot\Vert)$, consider the linear operator $T: V \rightarrow W$
 
@@ -205,7 +205,7 @@ Along with having the norm properites, the operator norm has the following addit
 > $$\Vert ST \Vert \leq \Vert S \Vert \cdot \Vert T \Vert$$ $$$$
 </div>
 
-### $1.3$ Banach Spaces
+## $1.3$ Banach Spaces
 
 <div class="definition" markdown="1">
 
@@ -223,9 +223,9 @@ We say that a metric space $\mathbb{E}$ is complete if and only if every Cauchy 
 
 **Remark:** If $\Vert \cdot \Vert_1$ and $\Vert \cdot \Vert_2$ are equivalent norms on $\mathbb{E}$, then completeness with respect to either of these norms will imply completeness with respect to the other.
 
-### $1.4$ Educative Examples of Banach Spaces
+## $1.4$ Educative Examples of Banach Spaces
 
-#### $1.4.1$ Space of Bounded Functions
+### $1.4.1$ Space of Bounded Functions
 
 Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set. Consider the space of bounded functions $X \rightarrow F$
 > $$E:=B(X; F):= \lbrace \phi: X \rightarrow F \; : \; \sup_{x \in X} \Vert \phi(x) \Vert < \infty \rbrace$$
@@ -233,7 +233,7 @@ Let $(F, \Vert \cdot \Vert)$ be a Banach space and $X$ an arbitrary nonempty set
 Then $E$ is a Banach space when equipped with the so-called $\sup$-norm. 
 > $$\Vert \phi \Vert_{\infty} = \sup_{x \in X} \Vert \phi(x) \Vert < \infty$$
 
-#### $1.4.2$ Space of Bounded, Continuous Functions
+### $1.4.2$ Space of Bounded, Continuous Functions
 
 <div class="proposition" markdown="1">
 
@@ -262,7 +262,7 @@ Then, $\phi: X \rightarrow F$ is continuous.
 </div>
 
 
-#### $1.4.3$ Space Continuous Functions From Compact Metric Spaces
+### $1.4.3$ Space Continuous Functions From Compact Metric Spaces
 
 Given a compact metric space $(X,d)$ then any continuous function $\phi: X \rightarrow F$ is bounded such that the space of continuous functions from $X \rightarrow F$ coincides with the set of bounded, continuous functions from $X \rightarrow F$ and so we might write
 > $$C(X;F):= BC(X;F)$$ $$ $$
@@ -271,9 +271,9 @@ Where $$C(X;F)$$ denotes the space of continuous functions from $$X \rightarrow 
 
 Which we have already shown is a Banach space with respect to the norm $\Vert \cdot \Vert_{\infty}$
 
-### $1.5$ $L^p$ Spaces
+## $1.5$ $L^p$ Spaces
 
-#### Divergence Into Measure Theory
+### Divergence Into Measure Theory
 
 <div class="definition" markdown="1">
 
@@ -340,30 +340,36 @@ For any non-negative measurable function $f: X \rightarrow [0, \infty]$ there ex
 
 </div>
 
-#### Construction of the $L^p$ space on $(X, \mathcal{M}, \mu)$
+### $1.5.1$ Construction of the $L^p$ space on $(X, \mathcal{M}, \mu)$
 
 For a simple measurable function, $s(x) = \sum_{i=1}^{N}{\alpha_i \chi_{A_i}(x)}$, with $A_n \cap A_m = \emptyset$ for $n \neq m$, the Lebesgue integral is defined
-> $$ \int_{X} s d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
+> $$ \int\limits_{X} s d \mu := \sum_{i=1}^N{\alpha_i \mu(A_i)} $$ $$$$
 
 For a non-negative measurable function, $f: X \rightarrow [0, \infty]$, we have a sequence of non-negative, simple, measurable functions $\lbrace s_n\rbrace$ with $\forall_{x \in X} \forall_{n \in \mathbb{N}} s_n(x) \leq f(x)$ and $\lim_{n \rightarrow \infty} s_n(x) = f(x)$. The Lebesgue integral of a non-negative measurable function is defined
-> $$ \int_{X} f d \mu := \lim_{n \rightarrow \infty} \int_{X} s_n d \mu $$ $$$$
+> $$ \int\limits_{X} f d \mu := \lim_{n \rightarrow \infty} \int\limits_{X} s_n d \mu $$ $$$$
 
 Finally, for any measurable function, $f: X \rightarrow \mathbb{R}$, we put $f_{+}(x) := \max{\lbrace 0, f(x)\rbrace}$ and $f_{-}(x) := \min{\lbrace 0, -f(x)\rbrace}$. Notice that $\forall_{x \in X}$ $f_{\pm}(x)$ are non-negative, measurable functions such that $f(x) = f_{+}(x) - f_{-}(x)$. And so we define the Lebesgue integral of any measurable function in terms of these non-negative counter-parts as follows
-> $$ \int_{X} f d \mu := \int_{X} f_{+} d \mu - \int_{X} f_{-} d \mu$$ $$$$
+> $$ \int\limits_{X} f d \mu := \int\limits_{X} f_{+} d \mu - \int\limits_{X} f_{-} d \mu$$ $$$$
 
-If both $\int_{X} f_{+} d \mu$ and $\int_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable. Notice also that as $\forall_{x \in X}$ we have $\vert f(x) \vert = f_{+}(x) + f_{-}(x)$ the absolute integral of measurable $f$ will be the sum of the integrals of its positive and negative counter parts
-> $\int_{X} \vert f \vert d \mu := \int_{X} f_{+} d \mu + \int_{X} f_{-} d \mu$
+If both $\int\limits_{X} f_{+} d \mu$ and $\int\limits_{X} f_{-} d \mu$ are finite, we say that $f$ is integrable. Notice also that as $\forall_{x \in X}$ we have $\vert f(x) \vert = f_{+}(x) + f_{-}(x)$ the absolute integral of measurable $f$ will be the sum of the integrals of its positive and negative counter parts
+> $\int\limits_{X} \vert f \vert d \mu := \int\limits_{X} f_{+} d \mu + \int\limits_{X} f_{-} d \mu$
 
 One can identify the integrable functions $f,g: X \rightarrow \mathbb{R}$ if they differ on a set of measure zero, i.e.
 > $$f \equiv g \; \iff \; \mu(\lbrace x \in X \; : \; g(x) \neq f(x) \rbrace)$$ $$$$
 
 This is an equivalence relation on the space of integrable functions $X \rightarrow \mathbb{R}$ and we will say that $f$ and $g$ are almost everywhere equal if and only if $f \equiv g$.
 
-Now we are ready to define the $L^p$ space on the measure space $(X, \mathcal{M}, \mu)$ as the space of measurable maps $X \rightarrow \mathbb{R}$ such that $$ \int_{X} \vert f \vert^p d \mu $ is finite.
-> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} (i.) f \; \text{is} \; \text{measurable}, \\ (ii.) \int_{X} \vert f \vert^p d \mu < \infty \end{align*} \rbrace$$ $$$$
+Now we are ready to define the $L^p$ space on the measure space $(X, \mathcal{M}, \mu)$ as the space of measurable maps $X \rightarrow \mathbb{R}$ such that $$ \int\limits_{X} \vert f \vert^p d \mu $ is finite.
+> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \int\limits_{X} \vert f \vert^p d \mu < \infty \end{align*} \rbrace$$ $$$$
 
 Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called $p$-norm $\Vert \cdot \Vert_p: L^p(X, \mu) \rightarrow \mathbb{R}$ which is defined
-> $$ \Vert f \Vert_p := (\int_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
+> $$ \Vert f \Vert_p := (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
+
+We also define the space $L^{\infty}(X, \mu)$
+> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \rbrace$$
+
+And introduce the essential supremum norm $ess \sup_{x \in X} := \Vert \cdot \Vert_{\infty}: L^{\infty}(X, \mu) \rightarrow \mathbb{R}$
+> $$ \Vert f \Vert_{\infty} := \inf{ \lbrace c > 0 \; : \; \vert f(x) \vert \leq c \; \text{a.e.} \rbrace}$$ $$$$
 
 <div class="proposition" markdown="1">
 
@@ -378,7 +384,7 @@ The map $\Vert \cdot \Vert_p$, defined above, is a norm on $L^p(X, \mu)$
 **Lemma 1.13:**  Young Inequality
 
 Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
-> $$ \int_{X} \vert f g \vert \leq \frac{1}{p} \Vert f \Vert_p^p +  \frac{1}{q} \Vert g \Vert_q^q = \frac{1}{p} \int_{X} \vert f \vert^p + \frac{1}{q} \int_{X} \vert g \vert^q$$ $$$$
+> $$ \int\limits_{X} \vert f g \vert \leq \frac{1}{p} \Vert f \Vert_p^p +  \frac{1}{q} \Vert g \Vert_q^q = \frac{1}{p} \int\limits_{X} \vert f \vert^p + \frac{1}{q} \int\limits_{X} \vert g \vert^q$$ $$$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -386,7 +392,7 @@ Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q}
 **Lemma 1.14:**  Holder Inequality
 
 Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
-> $$ \int_{X} \vert f g \vert \leq  \Vert f \Vert_p +   \Vert g \Vert_q =  (\int_{X} \vert f \vert^p)^{\frac{1}{p}} + (\frac{1}{q} \int_{X} \vert g \vert^q)^{\frac{1}{q}}$$ $$$$
+> $$ \int\limits_{X} \vert f g \vert \leq  \Vert f \Vert_p +   \Vert g \Vert_q =  (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}} + (\frac{1}{q} \int\limits_{X} \vert g \vert^q)^{\frac{1}{q}}$$ $$$$
 </div>
 
 <div class="proposition" markdown="1">
@@ -401,5 +407,14 @@ $\forall_{f,g \in L^p(X, \mu)}$
 
 **Theorem 1.16:**  
 
-The space $L^p(X, \mu)$, $p \geq 1$, is a Banachspace with respect to the norm $\Vert \cdot \Vert_p$
+For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the norm $\Vert \cdot \Vert_p$
+</div>
+
+## $1.6$ Additional Properties of Banach Spaces
+
+<div class="proposition" markdown="1">
+
+**Theorem 1.1:**  
+
+For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the norm $\Vert \cdot \Vert_p$
 </div>
