@@ -445,7 +445,7 @@ Let $E = \mathbb{R}^n$, then $E^* = \mathbb{R}^n$. Indeed, $\forall_{f \in E^*} 
 Notice that the operator norm on $E^* = (\mathbb{R}^n)^*$ may be expressed in terms of the $y \in \mathbb{R^n}$ associated with $f \in E^*$ i.e.
 > $$\Vert f \Vert = \Vert y \Vert_{*} = \sup_{\Vert x \Vert \leq 1}{\langle y,x \rangle}$$ $$$$
 
-</div
+</div>
 
 <hr>
 
@@ -490,11 +490,30 @@ If $E$ is an infinite-dimensional Banach space then the closed unit ball $B \sub
 
 **Theorem 2.01:**  (Hahn-Banach)
 
-Let $E$ be a normed space and denote $B:= \lbrace x \in E \; : \; \Vert x \Vert \leq 1 \rbrace$, then $B$ is totally bounded if and only if $E$ is finite dimensional.
+Let $E$ be a vector space and $p: E \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in E}$ $\forall_{\lambda > 0}$
+> $$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
 
-**Corollary 1.20:**  
+Assume that $$L \subset E$$ is a linear subspace and $g: E \rightarrow \mathbb{R}$ a linear functional such that
+> $$\forall_{x \in L} \; g(x) \leq p(x)$$ $$$$
 
-If $E$ is an infinite-dimensional Banach space then the closed unit ball $B \subset E$ is never compact.
+Then there exists a linear functional $f: E \rightarrow \mathbb{R}$ with
+1. $$\forall_{x \in L} \; f(x) = g(x)$$ $$$$
+2. $$\forall_{x \in E} \; f(x) \leq p(x)$$ $$$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.01:**  (Hahn-Banach)
+
+Let $E$ be a vector space and $p: E \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in E}$ $\forall_{\lambda > 0}$
+> $$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
+
+Assume that $$L \subset E$$ is a linear subspace and $g: E \rightarrow \mathbb{R}$ a linear functional such that
+> $$\forall_{x \in L} \; g(x) \leq p(x)$$ $$$$
+
+Then there exists a linear functional $f: E \rightarrow \mathbb{R}$ with
+1. $$\forall_{x \in L} \; f(x) = g(x)$$ $$$$
+2. $$\forall_{x \in E} \; f(x) \leq p(x)$$ $$$$
 </div>
 
 

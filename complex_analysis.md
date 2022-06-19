@@ -143,10 +143,86 @@ Let $z_0$ be a finite removeable singular point of the function $f(z)$, then the
 
 <hr>
 
-**2. Calculation of residue at a simple pole.** <br>
+**ii. Calculation of residue at a simple pole.** <br>
 Let $z_0$ be a finite simple pole of the function $f(z)$, then its Laurent series expansion about $z_0$ must be of the form 
 > $$f(z) =  \frac{c_{-1}}{(z-z_0)} + c_0 + c_1(z-z_0) + c_2(z-z_0)^2 + \cdots$$ $$$$
 
 such that $f(z)(z-z_0) = c_{-1} + c_0(z-z_0)+ c_1(z-z_0)^2 + c_2(z-z_0)^3 + \cdots$ and so as we pass to the limit $z \rightarrow z_0$
 > $$Res_{z = z_0} f(z) = c_{-1} = \lim_{z \rightarrow z_0}f(z)(z-z_0)$$ $$$$
 
+<div class="Example" markdown="1">
+
+**Example:**  Find the residues of the function $f(z) = \frac{1}{z^2 + 1}$ at its finite singular points
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+First we must find the singular points of the function
+> $$f(z) = \frac{1}{z^2 + 1} = \frac{1}{(z+i)(z-i)}$$ $$$$
+
+We find that $f(z)$ has singular points at $z_1 = i$, $z_2 = -i$ and we notice that both are simple poles and so we may calculate the residues of $f$ at each as follows
+> $$Res_{z = i} \frac{1}{(z+i)(z-i)} = \lim_{z \rightarrow i}{\frac{1}{(z+i)(z-i)}(z-i)} = \frac{1}{2i}$$ $$$$
+> $$Res_{z = -i} \frac{1}{(z+i)(z-i)} = \lim_{z \rightarrow -i}{\frac{1}{(z+i)(z-i)}(z+i)} = \frac{-1}{2i}$$ $$$$
+
+</details>
+</div>
+
+**ii.i Calculation of residue at a simple pole (Special Case).** <br>
+Let $z_0$ be a finite simple pole of the function $f(z)$, which can be represented as the quoteint of two analytic functions $f(z) = \frac{g(z)}{h(z)}$ where $g(z_0) \neq 0$ and $h(z)$ such that $z_0$ is a zero of order one then we have
+> $$Res_{z = z_0} f(z) = \lim_{z \rightarrow z_0}\frac{g(z)}{h(z)}(z-z_0) = \frac{g(z)}{\frac{h(z) - h(z_0)}{z-z_0}}$$ $$$$
+
+And hence, we obtain the formula
+> $$Res_{z = z_0} \frac{g(z)}{h(z)} = \frac{g(z_0)}{h'(z_0)}$$ $$$$
+
+
+<div class="Example" markdown="1">
+
+**Example:**  Find the residues of the function $f(z) = \cot(z)$ at $z_0 = 0$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+First we note that $f(z) = \cot(z) = \frac{\cos(z)}{\sin(z)}$ indeed has a singular point at $z = 0$, furthermore $\cos(0) \neq 0$ and $\sin(z)$ has a zero of the first order at $z=0$ so
+> $$Res_{z = 0} cot(z) = \frac{\cos(0)}{\sin'(0)} = \frac{\cos(0)}{\cos(0)} = 1$$ $$$$
+
+</details>
+
+**Example:**  Find the residues of the function $f(z) = \frac{1}{sinz}$ at each of its isolated singularities.
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$f(z)$ has simple poles at the points $z_k = k \pi$ for all $k \in \mathbb{Z}$ and so
+> $$Res_{z = z_k} \frac{1}{sinz} = \frac{1)}{\sin'(k \pi)} = \frac{1}{\cos(k \pi)} = (-1)^k$$ $$$$
+</details>
+</div>
+
+**iii Calculation of residue at a multiple poles.** <br>
+Let $z_0$ be a multiple pole of the function $f(z)$, then its Laurent series expansion about $z_0$ must be of the form 
+> $$f(z) = \frac{c_{-n}}{(z-z_0)^n} + \frac{c_{-n+1}}{(z-z_0)^{n-1}} + \cdots + \frac{c_{-1}}{(z-z_0)} + c_0 + c_1(z-z_0) + \cdots$$ $$$$
+
+such that $f(z)(z-z_0)^n = c_{-n} + c_{-n+1}(z-z_0) + \cdots c_{-1}(z-z_0)^{n-1} +  c_0(z-z_0)^n + \cdots$ and so as we pass to the limit $z \rightarrow z_0$. If we differentiate this equation $(n-1)$ times we obtain
+> $$\frac{d^{n-1}{dz^{n-1}}[f(z)(z-z_0)^n] = c_{-1}(n-1)! + c_0 n! (z-z_0) + \cdots$$ $$$$
+
+Hence, if we pass to the limit $z \rightarrow z_0$ and divide by the factorial factor on $c_{-1}$ we obtain
+> $$Res_{z = z_0} f(z) = c_{-1} = \frac{1}{(n-1)!}\lim_{z \rightarrow z_0}\frac{d^{n-1}[f(z)(z-z_0)]$$ $$$$
+
+<div class="Example" markdown="1">
+
+**Example:**  Find the residues of the function $f(z) = \frac{1}{(z^2 + 1)^3}$ at $z_0 = -i$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+First we note that $f(z) = \frac{1}{(z^2 + 1)^3} = \frac{1}{(z-i)^3(z+i)^3}$ has a pole of order $3$ at $z_0 = -i$
+so will need to calculate two derivatives
+> $$[\frac{1}{(z-i)^3(z+i)^3}(z+i)^3]'' = [\frac{1}{(z-i)^3]'' = [\frac{-3}{(z-i)^4]' = \frac{12}{(z-i)^5
+
+Now we can directly calculate the residue
+> $$Res_{z = -i} f(z) =  \frac{1}{2}\lim_{z \rightarrow -i}[\frac{12}{(z-i)^5] = \frac{1}{2} \frac{12}{(-2i)^5 = \frac{3i}{2^4}$$ $$$$
+
+</details>
+</div>
+
+**iv Calculation of residue at an essential singular point.** <br>
+In order to calculate the residue of $f(z)$ at an essential singular point $z_0$ is is necessary to determine the coefficient $c_{-1}$ in its Laurent series about the singularity. 
