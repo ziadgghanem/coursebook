@@ -505,8 +505,8 @@ If $\EE$ is an infinite-dimensional Banach space then the closed unit ball $B \s
 **Theorem 2.01:**  (Hahn-Banach Analytic Version)
 
 Let $\EE$ be a vector space and $p: \EE \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in \EE}$ $\forall_{\lambda > 0}$
-
-$$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
+1. $$p(\lambda x) = \lambda p(x)$$ $$$$
+2. $$p(x+y) \leq p(x) + p(y)$$ $$$$
 
 Assume that $\LL \subset \EE$ is a linear subspace and $g: \EE \rightarrow \mathbb{R}$ a linear functional such that
 > $$\forall_{x \in \LL} \; g(x) \leq p(x)$$ $$$$
@@ -610,7 +610,7 @@ In addition, it is said that $[f = \alpha]$ strictly separates two sets $A,B$ if
 
 Let $(\EE, \Vert \cdot \Vert)$ be a normed space and $C \subset \EE$ a convex set, then
 1. $$int(C)$$ is convex
-2. $$cl(C)$$ is convex
+2. $$\overline{C}$$ is convex
 
 </div>
 
@@ -619,7 +619,7 @@ Let $(\EE, \Vert \cdot \Vert)$ be a normed space and $C \subset \EE$ a convex se
 **Lemma 2.06:** 
 
 If $(\EE, \Vert \cdot \Vert)$ is a normed space and $C \subset \EE$ is a nonempty convex set, then
-> $$cl(int(C)) = cl(C)$$
+> $$\overline{int(C)} = \overline{C}$$
 
 </div>
 
@@ -641,7 +641,64 @@ Such a function $p_C$ is called the gauge function of $C$.
 Let $p_C$ be the gauge function of $C$, an open convex neighborhood of zero, in a normed space $\EE$ then 
 1. $$\forall_{x,y \in \EE} \; p_C(x+y) \leq p_C(x) + p_C(y)$$ $$$$
 2. $$\forall_{\lambda > 0} \forall_{x \in \EE} \; p_C(\lambda x) = \lambda p_C(x)$$ $$$$
-3. $$\exist_{M} \forall_{x \in E} \; 0 \leq p_C(x) \leq M \Vert x \Vert$$
+3. $$\exists_{M} \forall_{x \in E} \; 0 \leq p_C(x) \leq M \Vert x \Vert$$
 4. $$C:= \lbrace x \in \EE \; : \; p_C(x) \leq 1 \rbrace$$
 
 </div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 2.08:** 
+
+Let $\EE$ be a normed space and $C \subset \EE$ and open, convex set with $0 \in C$. Take $x_0 \in \EE$ with $x_0 \notin C$ then there exists $f \in \EE^*$ such that
+>$$\forall_{x \in C} f(x) < f(x_0)$$ $$$$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.09:** Hahn-Banach Geometric V.1
+
+Let $\EE$ be a normed space, and $A,B \subset \EE$ two non-empty, convex sets such that
+1. $$A \cap B = \emptyset$$ $$$$
+2. $$A$$ is open
+
+Then, there exists $f \in \EE^*$ and $\alpha \in \mathbb{R}$ such that the hyperplane $[f = \alpha]$ separates $A$ and $B$ i.e.
+> $$\forall_{a \in A} \forall_{b \in B} \; \langle f,a \rangle \leq \alpha \leq \langle f, b \rangle$$ $$$$
+
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.09:** Hahn-Banach Geometric V.2
+
+Let $\EE$ be a normed space, and $A,B \subset \EE$ two non-empty, convex, closed sets such that
+1. $$A \cap B = \emptyset$$ $$$$
+2. $$A$$ is compact
+
+Then, there exists $f \in \EE^*$ and $\alpha \in \mathbb{R}$ such that the hyperplane $[f = \alpha]$ strictly separates $A$ and $B$ i.e.
+> $$\forall_{a \in A} \forall_{b \in B} \; \langle f,a \rangle \leq \alpha - \delta < \alpha \leq \langle f, b \rangle$$ $$$$
+
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Corollary 2.10:** 
+
+Let $\EE$ be a normed space, and $\LL \subset \EE$ a subspace such that $\overline{\LL} \subsetneq \EE$ (i.e. such that $\LL$ is *not* a dense subspace of $\EE$) then $\exists_{f \in \EE^*}$ such that
+1. $$f \notequiv 0$$ $$$$
+2. $$\forall_{x \in \LL} \langle f,x \rangle = 0$$ $$$$
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Corollary 2.11:** 
+
+Let $\EE$ be a normed space, and $\LL \subset \EE$ a subspace then $\LL$ is a dense subspace of $\EE$  if and only if any linear functional in $\EE^*$ with all of $\LL$ in its kernel must be the zero map, i.e.
+> $$\overline{\LL} \subset \EE \;$$ $$\iff$$ $$\; \forall_{f \in \EE^*} \forall_{x \in \LL} \; \langle f,x \rangle = 0 \; \rightarrow f \equiv 0$$ 
+</div>
+
+## 2.3 Orthogonality Relations in Banach Spaces
