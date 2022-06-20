@@ -185,21 +185,33 @@ Let $T: V \rightarrow W$ be a linear operator. The following conditions are equi
 </div>
 
 Let $T:V \rightarrow W$ be a linear operator. If $T$ is, in addition, continuous, we call $T$ a bounded operator, and denote the set of all bounded operators from $V \rightarrow W$ with
-> $$L(V,W):= \lbrace  T: V \rightarrow W \; \vert$$ $$T$$ is linear, $$T$$ is bounded $$ \rbrace $$
+> $$L(V,W):= \left{ T: V \rightarrow W \; : \; \begin{align*} i. \; T \; \text{is} \; \text{linear}, \\ ii. \;  \; T \; \text{is} \; \text{bounded} \end{align*} \right}$$
 
 A bounded operator is *bounded* with respect to the **operator norm**, $\Vert \cdot \Vert: L(V,W) \rightarrow \mathbb{R}$, which we define as follows
 > $$\Vert T \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Tx \Vert$$
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.07**
+**Proposition 1.07** Properties of the Operator Norm $\Vert \cdot \Vert: L(V,W) \rightarrow \mathbb{R}$
+Let $A \in L(V,W)$ then
+1. $$\Vert A \Vert := \sup_{\Vert x \Vert \leq 1} \Vert Ax \Vert = \Vert A \Vert := \sup_{\Vert x \Vert = 1} \Vert Ax \Vert$$ $$$$
+2. $$\Vert A \Vert := \inf{ \lbrace c > 0 \; : \; \forall_{x \in V} \; \Vert Ax \Vert \leq c \Vert x \Vert \rbrace}$$ $$$$
+3. $$\Vert A + B \Vert \leq \Vert A \Vert + \Vert B \Vert$$ $$$$
+4. $$\Vert r A \Vert \leq \vert r \vert \Vert A \Vert$$ $$\; \forall_{r \in \mathbb{R}$$
+5. $$\Vert A x \Vert \leq \Vert A \Vert \Vert x \Vert$$ $$\; \forall_{x \in V}$$
+6. If $$B \in L(W,U)$$ then $$\Vert AB \Vert \leq \Vert A \Vert \Vert B \Vert$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition 1.08**
 
 $(L(V,W),  \Vert \cdot \Vert)$ is a normed space where $\Vert \cdot \Vert : L(V,W) \rightarrow \mathbb{R}$ is the operator norm on $L(V,W)$.
 </div>
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.08**
+**Proposition 1.09**
 
 Along with having the norm properites, the operator norm has the following additional property $\forall_{T \in L(V,W)$ $\forall_{S \in L(W,U)$ $\forall_{x \in V}$
 > $$\Vert ST \Vert \leq \Vert S \Vert \cdot \Vert T \Vert$$ $$$$
@@ -237,7 +249,7 @@ Then $E$ is a Banach space when equipped with the so-called $\sup$-norm.
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.09:**
+**Proposition 1.10:**
 
 A closed subspace of a Banach space is also Banach.
 </div>
@@ -249,7 +261,7 @@ $(E, \Vert \cdot \Vert_{\infty})$ is a Banach space as a closed subspace of $B(X
 
 <div class="proposition" markdown="1">
 
-**Lemma 1.10:** The Uniform Convergence Theorem
+**Lemma 1.11:** The Uniform Convergence Theorem
 
 Suppose $(X,d)$ is a metric space, $F$ is a normed space, and $\lbrace \phi_n: X \rightarrow F \rbrace$ is a family of continuous functions such that
 1. $$\lbrace \phi_n \rbrace$$ has a well-defined limit function $$\phi$$ i.e.
@@ -332,7 +344,7 @@ A simple function, $s: X \rightarrow \mathbb{R}$, is measurable if and only if $
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.11:** 
+**Proposition 1.12:** 
 
 For any non-negative measurable function $f: X \rightarrow [0, \infty]$ there exists a sequence of simple measurable functions $\lbrace s_n \rbrace$ such that $\forall_{x \in X}$
 1. $$0 \leq s_1(x) \leq \cdots \leq s_n(x) \leq s_{n+1}(x) \leq \cdots \leq f(x)$$ $$$$
@@ -366,14 +378,14 @@ Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called
 > $$ \Vert f \Vert_p := (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
 
 We also define the space $L^{\infty}(X, \mu)$
-> $$L^p(X, \mu):= \lbrace f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \rbrace$$
+> $$L^p(X, \mu):= \left{ f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \right}$$
 
 And introduce the essential supremum norm $ess \sup_{x \in X} := \Vert \cdot \Vert_{\infty}: L^{\infty}(X, \mu) \rightarrow \mathbb{R}$
 > $$ \Vert f \Vert_{\infty} := \inf{ \lbrace c > 0 \; : \; \vert f(x) \vert \leq c \; \text{a.e.} \rbrace}$$ $$$$
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.12:** 
+**Proposition 1.13:** 
 
 The map $\Vert \cdot \Vert_p$, defined above, is a norm on $L^p(X, \mu)$
 
@@ -381,7 +393,7 @@ The map $\Vert \cdot \Vert_p$, defined above, is a norm on $L^p(X, \mu)$
 
 <div class="proposition" markdown="1">
 
-**Lemma 1.13:**  Young Inequality
+**Lemma 1.14:**  Young Inequality
 
 Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
 > $$ \int\limits_{X} \vert f g \vert \leq \frac{1}{p} \Vert f \Vert_p^p +  \frac{1}{q} \Vert g \Vert_q^q = \frac{1}{p} \int\limits_{X} \vert f \vert^p + \frac{1}{q} \int\limits_{X} \vert g \vert^q$$ $$$$
@@ -389,7 +401,7 @@ Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q}
 
 <div class="proposition" markdown="1">
 
-**Lemma 1.14:**  Holder Inequality
+**Lemma 1.15:**  Holder Inequality
 
 Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q} = 1$, $p > 1$, then $\forall_{f \in L^p(X, \mu)}$ $\forall_{g \in L^q(X, \mu)}$ 
 > $$ \int\limits_{X} \vert f g \vert \leq  \Vert f \Vert_p +   \Vert g \Vert_q =  (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}} + (\frac{1}{q} \int\limits_{X} \vert g \vert^q)^{\frac{1}{q}}$$ $$$$
@@ -397,7 +409,7 @@ Let $p,q \in \mathbb{N}$ be conjugate, i.e. such that $\frac{1}{p} + \frac{1}{q}
 
 <div class="proposition" markdown="1">
 
-**Lemma 1.15:**  Minkowsky Inequality
+**Lemma 1.16:**  Minkowsky Inequality
 
 $\forall_{f,g \in L^p(X, \mu)}$ 
 > $$ \Vert f g \Vert_p \leq \Vert f \Vert_p + \Vert g \Vert_p$$ $$$$
@@ -405,7 +417,7 @@ $\forall_{f,g \in L^p(X, \mu)}$
 
 <div class="proposition" markdown="1">
 
-**Theorem 1.16:**  
+**Theorem 1.17:**  
 
 For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the norm $\Vert \cdot \Vert_p$
 </div>
@@ -414,7 +426,7 @@ For $p \geq 1$, the space $L^p(X, \mu)$ is a Banach space with respect to the no
 
 <div class="proposition" markdown="1">
 
-**Theorem 1.17:**  
+**Theorem 1.18:**  
 
 Let $V$ be a normed space and $F$ a Banach space, then the space of bounded linear maps from $V \rightarrow F$
 > $$\begin{equation} L(V;F) = \left\{ A: V \rightarrow F \; : \; \begin{aligned} &i. \; \text{(A is linear)} \\ &ii. \; \text{(A is bounded)} \end{aligned} \right\} \end{equation}$$
@@ -458,11 +470,11 @@ Notice that the operator norm on $E^* = (\mathbb{R}^n)^*$ may be expressed in te
 Let $(X,d)$ be a metric space, then a set $A \subset X$ is called totally bounded if for any specified radius $\epsilon > 0$ there exist at most finitely many points such the union of $\epsilon$-balls about these points constitute a cover for $A$, i.e.
 > $$\forall_{\epsilon >0} \exists_{\lbrace x_1, \ldots x_n \rbrace}$$ such that $$A \subset \bigcup_{i=1}^n B_{\epsilon}(x_i)$$
 
-</div
+</div>
 
 <div class="proposition" markdown="1">
 
-**Proposition 1.18:**  
+**Proposition 1.19:**  
 
 For any metric space, $(X,d)$, the following are equivalent concerning a subset $A \subset X$
 1. $A$ is compact
@@ -475,46 +487,161 @@ For any metric space, $(X,d)$, the following are equivalent concerning a subset 
 
 <div class="proposition" markdown="1">
 
-**Theorem 1.19:**  
+**Theorem 1.20:**  
 
 Let $E$ be a normed space and denote $B:= \lbrace x \in E \; : \; \Vert x \Vert \leq 1 \rbrace$, then $B$ is totally bounded if and only if $E$ is finite dimensional.
 
-**Corollary 1.20:**  
+**Corollary 1.21:**  
 
-If $E$ is an infinite-dimensional Banach space then the closed unit ball $B \subset E$ is never compact.
+If $\EE$ is an infinite-dimensional Banach space then the closed unit ball $B \subset \EE$ is never compact.
 </div>
 
 # 2 Classical Theorems of Functional Analysis
 
+## 2.1 Hahn Banach, Analytic Version
+
 <div class="proposition" markdown="1">
 
-**Theorem 2.01:**  (Hahn-Banach)
+**Theorem 2.01:**  (Hahn-Banach Analytic Version)
 
-Let $E$ be a vector space and $p: E \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in E}$ $\forall_{\lambda > 0}$
-> $$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
+Let $\EE$ be a vector space and $p: \EE \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in \EE}$ $\forall_{\lambda > 0}$
 
-Assume that $$L \subset E$$ is a linear subspace and $g: E \rightarrow \mathbb{R}$ a linear functional such that
-> $$\forall_{x \in L} \; g(x) \leq p(x)$$ $$$$
+$$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
+
+Assume that $\LL \subset \EE$ is a linear subspace and $g: \EE \rightarrow \mathbb{R}$ a linear functional such that
+> $$\forall_{x \in \LL} \; g(x) \leq p(x)$$ $$$$
 
 Then there exists a linear functional $f: E \rightarrow \mathbb{R}$ with
-1. $$\forall_{x \in L} \; f(x) = g(x)$$ $$$$
-2. $$\forall_{x \in E} \; f(x) \leq p(x)$$ $$$$
+1. $$\forall_{x \in \LL} \; f(x) = g(x)$$ $$$$
+2. $$\forall_{x \in \EE} \; f(x) \leq p(x)$$ $$$$
 </div>
 
 <div class="proposition" markdown="1">
 
-**Theorem 2.01:**  (Hahn-Banach)
+**Corollary 2.02:** 
 
-Let $E$ be a vector space and $p: E \rightarrow \mathbb{R}$ a function such that $\forall_{x,y \in E}$ $\forall_{\lambda > 0}$
-> $$ \begin{itemize} \item[--] \lambda p(x) \item[--] p(x+y) \leq p(x) + p(y) \end{itemize}$$ $$$$
+Let $(\mathbb{L}, \Vert \cdot \Vert_{\LL}$ be a subspace of normed space $\mathbb{E}$ and $g \in L(\mathbb{L},\mathbb{R})$ a linear functional with $\Vert g \Vert:= \sup_{\Vert x \Vert \leq 1}{g(x)} \leq \infty$, then there exists $f \in L(\mathbb{L},\mathbb{R})$ such that
+> $$\Vert f \Vert = \Vert g \Vert$$ 
 
-Assume that $$L \subset E$$ is a linear subspace and $g: E \rightarrow \mathbb{R}$ a linear functional such that
-> $$\forall_{x \in L} \; g(x) \leq p(x)$$ $$$$
+<details>
+<summary><i style="font-size:150%;">Proof</i></summary>
 
-Then there exists a linear functional $f: E \rightarrow \mathbb{R}$ with
-1. $$\forall_{x \in L} \; f(x) = g(x)$$ $$$$
-2. $$\forall_{x \in E} \; f(x) \leq p(x)$$ $$$$
+<div class="proof" markdown="1">
+
+Take $p(x) = \Vert g \Vert \Vert x \Vert_{\LL}$ and check that it satisfies the conditions of the Hahn-Banach Theorem.
+
+*Claim 1:* $p(x)$ satisfies $\forall_{x \in E} \forall_{\lambda > 0} p(\lambda x) = \lambda p(x)$
+- This property follows from $$\Vert \lambda x \Vert_L = \lambda \Vert \lambda x \Vert_{\LL}$$ 
+
+*Claim 2:* $p(x)$ satisfies $p(x+y) \leq p(x) + p(y)$
+- Again, as $$\Vert \cdot \Vert_{\LL}$$ is a norm on $$\mathbb{L}$$ this is simply a result of the triangle inequality.
+
+*Claim 3:* $\forall_{x \in \LL} \; g(x) \leq p(x)$
+- $$\cdots$$
+
+</div>
+</details>
+
 </div>
 
+<div class="proposition" markdown="1">
 
+**Corollary 2.03:** 
 
+Let $\mathbb{E}$ be a normed space and $x_0 \in \EE$ then $\exists_{f_0 \in \EE^*}$ such that
+1. $$\Vert f_0 \Vert = \Vert x_0 \Vert$$ $$$$
+2. $$ \langle f_0,x_0 \rangle = \Vert x_0 \Vert^2$$
+
+</div>
+
+Notice that the bilinear operator $\langle \cdot, \cdot \rangle: \EE^* \times \EE \rightarrow \mathbb{R}$ satisfies similar properties as does the inner product on a vector space $\mathcal{H}$. 
+
+An inner product is a bilnear map, $\langle \cdot, \cdot \rangle: \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{R}$, satisfying $\forall_{x,y \in \mathcal{H}}$
+1. $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \; \iff \; x=0$$
+2. $$\langle x, y \rangle = \langle y, x \rangle$$ $$$$
+3. $$\langle x, \alpha y_1 + \beta y_2 \rangle = \alpha \langle x, y_1 \rangle + \beta \langle x, y_2 \rangle$$ $$$$
+4. $$\langle \alpha x_1 + \beta x_2, y \rangle = \alpha \langle x_1, y \rangle + \beta \langle x_2, y \rangle$$ $$$$
+
+We call the pair $(\mathcal{H}, \langle \cdot, \cdot \rangle)$ an inner product space and define the induced norm
+> $$\Vert x \Vert := \sqrt{\langle x, x \rangle}$$ $$\tag{*}$$
+
+<div class="definition" markdown="1">
+
+**Definition:** Hilbert Space
+
+An inner product space $(\mathcal{H}, \langle \cdot, \cdot \rangle)$ is said to be a Hilbert space if $\mathcal{H}$ is complete with respect to the norm $\tag{*}$
+
+</div>
+
+*Remark:* It will be shown that for a Hilbert space $(\mathcal{H}, \langle \cdot, \cdot \rangle)$, for every $f \in \mathcal{H}^*$ there exists a unique $x_0 \in \mathcal{H}$ such that $\forall_{x \in \mathcal{H}}$ $f(x) = \langle x,x_0 \rangle$. This result is known as the Riesz-Representation Theorem and will be our proximate goal.
+
+<div class="proposition" markdown="1">
+
+**Lemma 2.04:** 
+
+Let $\mathbb{E}$ be a normed space and $f: \rightarrow \EE \rightarrow \mathbb{R}$ with $f \not\equiv 0$ be a linear functional then
+$f$ is continuous if and only if $Ker(f):= \lbrace x\in \EE \; : \; \langle f,x \rangle = 0 \rbrace$ is a closed subspace.
+
+</div>
+
+## 2.2 Hahn Banach, Geometric Version
+
+<div class="definition" markdown="1">
+
+**Definition:** Hyperplane
+
+Let $A,B$ be two non-empty subsets of $(\EE, \Vert \cdot \Vert)$ with $A \cap B = \emptyset$. We say that a functional $f \in \EE^*$ separates $A$ and $B$ if $\exists_{\alpha \in \mathbb{R}}$ such that
+> $$\forall_{a \in A} \forall_{b \in B} \; f(a) \leq \alpha \leq f(b)$$ $$$$
+
+We might also say that the hyperplane $[f = \alpha]$ separates $A$ and $B$ where
+> $$[f = \alpha]:= \lbrace x \in \EE \; : \; f(x) = \alpha \rbrace$$ $$$$
+
+In addition, it is said that $[f = \alpha]$ strictly separates two sets $A,B$ if $\exists_{\alpha \in \mathbb{R}}$ and $\exists_{\delta > 0}$ such that
+> $$\forall_{a \in A} \forall_{b \in B} \; f(a) \leq \alpha - \delta < \alpha \leq f(b)$$ $$$$
+
+</div>
+
+**Recall:** That a set $C$ in a vector space $V$ is convex if and only if
+> $$\forall_{x,y \in C} \forall_{t\in [0,1]} \; tx + (1-t)y \in C$$ $$$$
+
+<div class="proposition" markdown="1">
+
+**Lemma 2.05:** 
+
+Let $(\EE, \Vert \cdot \Vert)$ be a normed space and $C \subset \EE$ a convex set, then
+1. $$int(C)$$ is convex
+2. $$cl(C)$$ is convex
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Lemma 2.06:** 
+
+If $(\EE, \Vert \cdot \Vert)$ is a normed space and $C \subset \EE$ is a nonempty convex set, then
+> $$cl(int(C)) = cl(C)$$
+
+</div>
+
+<div class="definition" markdown="1">
+
+**Definition:** Gauge Function
+
+Let $\EE$ be a normed space and $C \subset \EE$ and open, convex neighborhood of zero. Define the map $p_C: \EE \rightarrow \mathbb{R}$ by
+> $$\forall_{x \in \EE} p_C(x):= \inf{\lbrace \alpha > 0 \; : \; x \in \alpha C \rbrace}
+
+Such a function $p_C$ is called the gauge function of $C$.
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition 2.07:** Properties of the Gauge Function
+
+Let $p_C$ be the gauge function of $C$, an open convex neighborhood of zero, in a normed space $\EE$ then 
+1. $$\forall_{x,y \in \EE} \; p_C(x+y) \leq p_C(x) + p_C(y)$$ $$$$
+2. $$\forall_{\lambda > 0} \forall_{x \in \EE} \; p_C(\lambda x) = \lambda p_C(x)$$ $$$$
+3. $$\exist_{M} \forall_{x \in E} \; 0 \leq p_C(x) \leq M \Vert x \Vert$$
+4. $$C:= \lbrace x \in \EE \; : \; p_C(x) \leq 1 \rbrace$$
+
+</div>

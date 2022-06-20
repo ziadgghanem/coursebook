@@ -150,7 +150,7 @@ Let $z_0$ be a finite simple pole of the function $f(z)$, then its Laurent serie
 such that $f(z)(z-z_0) = c_{-1} + c_0(z-z_0)+ c_1(z-z_0)^2 + c_2(z-z_0)^3 + \cdots$ and so as we pass to the limit $z \rightarrow z_0$
 > $$Res_{z = z_0} f(z) = c_{-1} = \lim_{z \rightarrow z_0}f(z)(z-z_0)$$ $$$$
 
-<div class="Example" markdown="1">
+<div class="example" markdown="1">
 
 **Example:**  Find the residues of the function $f(z) = \frac{1}{z^2 + 1}$ at its finite singular points
 
@@ -175,7 +175,7 @@ And hence, we obtain the formula
 > $$Res_{z = z_0} \frac{g(z)}{h(z)} = \frac{g(z_0)}{h'(z_0)}$$ $$$$
 
 
-<div class="Example" markdown="1">
+<div class="example" markdown="1">
 
 **Example:**  Find the residues of the function $f(z) = \cot(z)$ at $z_0 = 0$
 
@@ -207,7 +207,7 @@ such that $f(z)(z-z_0)^n = c_{-n} + c_{-n+1}(z-z_0) + \cdots c_{-1}(z-z_0)^{n-1}
 Hence, if we pass to the limit $z \rightarrow z_0$ and divide by the factorial factor on $c_{-1}$ we obtain
 > $$Res_{z = z_0} f(z) = c_{-1} = \frac{1}{(n-1)!}\lim_{z \rightarrow z_0}\frac{d^{n-1}[f(z)(z-z_0)]$$ $$$$
 
-<div class="Example" markdown="1">
+<div class="example" markdown="1">
 
 **Example:**  Find the residues of the function $f(z) = \frac{1}{(z^2 + 1)^3}$ at $z_0 = -i$
 
@@ -226,3 +226,58 @@ Now we can directly calculate the residue
 
 **iv Calculation of residue at an essential singular point.** <br>
 In order to calculate the residue of $f(z)$ at an essential singular point $z_0$ is is necessary to determine the coefficient $c_{-1}$ in its Laurent series about the singularity. 
+
+### Residues at Infinity
+
+**v Calculation of residue at an infinite removeable singularity,** <b4>
+Let $z_0 = \infty$ be a removeable singulaar point of the function $f(z)$, the expansion of its Laurent series about $\infty$ will have the form
+> $$f(z) = c_0 + \frac{c_{-1}}{z} + \frac{c_{-2}}{z^2} + \cdots$$ $$\tag{v}$$
+
+Such that the residue can be obtained $c_{-1} = \lim_{z \rightarrow \infty}[(f(z) - c_0) \cdot z]$ and if we put $f(\infty) = \lim_{z \rightarrow \infty}f(z) = c_0$ we have a formula for the residue
+> $$Res_{z = \infty}f(z) = \lim_{z \rightarrow \infty}[f(\infty) - f(z)] \cdot z$$ $$$$
+
+In particular, if $z = \infty$ is a zero fo $f(z)$, i.e. if $c_0 = 0$ in the Laurent expansion, the formula can be simplified
+> $$Res_{z = \infty}f(z) = \lim_{z \rightarrow \infty}[-z f(z)]$$ $$\tag{v.1}$$
+
+<div class="example" markdown="1">
+
+**Example:**  Find the residue of the function $f(z) = \frac{z+2}{z^2 - 2z + 3}$ at $z_0 = \infty$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+We note that $z_0 = \infty$ is a removeable singularity of $f(z)$ such that $\lim_{z \rightarrow \infty}f(z) = 0$ and so by $v.i$
+> $$Res_{z = \infty}f(z) = - \lim_{z \rightarrow \infty}\frac{z(z+2)}{z^2 - 2z + 3} = -1$$ $$$$
+</details>
+
+**Example:**  Find the residue of the function $f(z) = \frac{z+2}{(z+1)^2(z-3)}$ at $z_0 = \infty$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+Again, $z_0 = \infty$ is a removeable singularity of $f(z)$ and $\lim_{z \rightarrow \infty}f(z) = 0$ so by $v.i$
+> $$Res_{z = \infty}f(z) = - \lim_{z \rightarrow \infty}\frac{z(z+2)}{(z+1)^2(z-3)} = 0$$ $$$$
+</details>
+
+**Example:**  Find the residue of the function $f(z) = \frac{3z^2 + z}{z^2 + z - 4}$ at $z_0 = \infty$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+Now, $z_0 = \infty$ is a removeable singularity of $f(z)$ but this time, $\lim_{z \rightarrow \infty}f(z) = 3$ so by $v.i$
+> $$Res_{z = \infty}f(z) = \lim_{z \rightarrow \infty}(3 - \frac{3z^2 + z}{z^2 + z - 4}) \cdot z$$ $$= \lim_{z \rightarrow \infty}(\frac{3z^2 + 3z - 12}{z^2 + z - 4} - \frac{3z^2 + z}{z^2 + z - 4}) \cdot z = \lim_{z \rightarrow \infty} \frac{(2z - 12)z}{z^2 + z - 4} = 2$$ 
+</details>
+
+</div>
+
+
+<div class="proposition" markdown="1">
+
+**Theorem**
+
+If a function $f(z)$ is analytic on the extended complex plane except for finitely many isolated singular points then the sum of all its residues, including its residue at infinity is zero.
+
+Let $\lbrace a_1, \ldots, a_n \rbrace$ be the finite isolated singular points of $f(z)$ then
+> $$ Res_{z = \infty}f(z) = - \sum_{k =1}^{n} Res_{z = a_k}f(z) $$ $$$$
+
+</div>
