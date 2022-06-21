@@ -135,7 +135,7 @@ The residue of $f(z)$ at an isolated singularity $a$ coincides with the coeffici
 
 </div>
 
-## 7.2 Calculation of Residues
+## 7.2 Calculation of Residues at Isolated Singularity
 
 **i. Calculation of residue at a removeable singular point.** <br>
 Let $z_0$ be a finite removeable singular point of the function $f(z)$, then the Laurent expansion of $f$ about $z_0$ has no principle part such that $Res_{z = z_0}f(z) = 0$.
@@ -197,15 +197,15 @@ $f(z)$ has simple poles at the points $z_k = k \pi$ for all $k \in \mathbb{Z}$ a
 </details>
 </div>
 
-**iii Calculation of residue at a multiple poles.** <br>
+**iii Calculation of residue at a multiple pole.** <br>
 Let $z_0$ be a multiple pole of the function $f(z)$, then its Laurent series expansion about $z_0$ must be of the form 
 > $$f(z) = \frac{c_{-n}}{(z-z_0)^n} + \frac{c_{-n+1}}{(z-z_0)^{n-1}} + \cdots + \frac{c_{-1}}{(z-z_0)} + c_0 + c_1(z-z_0) + \cdots$$ $$$$
 
 such that $f(z)(z-z_0)^n = c_{-n} + c_{-n+1}(z-z_0) + \cdots c_{-1}(z-z_0)^{n-1} +  c_0(z-z_0)^n + \cdots$ and so as we pass to the limit $z \rightarrow z_0$. If we differentiate this equation $(n-1)$ times we obtain
-> $$\frac{d^{n-1}{dz^{n-1}}[f(z)(z-z_0)^n] = c_{-1}(n-1)! + c_0 n! (z-z_0) + \cdots$$ $$$$
+> $$\frac{d^{n-1}}{dz^{n-1}}[f(z)(z-z_0)^n] = c_{-1}(n-1)! + c_0 n! (z-z_0) + \cdots$$ $$$$
 
 Hence, if we pass to the limit $z \rightarrow z_0$ and divide by the factorial factor on $c_{-1}$ we obtain
-> $$Res_{z = z_0} f(z) = c_{-1} = \frac{1}{(n-1)!}\lim_{z \rightarrow z_0}\frac{d^{n-1}[f(z)(z-z_0)]$$ $$$$
+> $$Res_{z = z_0} f(z) = c_{-1} = \frac{1}{(n-1)!}\lim_{z \rightarrow z_0}\frac{d^{n-1}}[f(z)(z-z_0)]$$ $$$$
 
 <div class="example" markdown="1">
 
@@ -226,6 +226,22 @@ Now we can directly calculate the residue
 
 **iv Calculation of residue at an essential singular point.** <br>
 In order to calculate the residue of $f(z)$ at an essential singular point $z_0$ is is necessary to determine the coefficient $c_{-1}$ in its Laurent series about the singularity. 
+
+<div class="example" markdown="1">
+
+**Example:**  Find the residues of the function $f(z) = e^{\frac{1}{z}}$ at $z_0 = 0$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$f(z)$ has an essential singularity at $z=0$ so we must examine its Laurent series about this point
+> $$e^{\frac{1}{z}} = 1 + \frac{1}{z} + \frac{1}{2 !} \frac{1}{z^2} + \cdots $$ $$$$
+
+And so by observation $c_{-1} = 1$
+> $$Res_{z = 0} f(z) = 1$$ $$$$
+
+</details>
+</div>
 
 ### Residues at Infinity
 

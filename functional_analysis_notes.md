@@ -378,7 +378,7 @@ Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called
 > $$ \Vert f \Vert_p := (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
 
 We also define the space $L^{\infty}(X, \mu)$
-> $$L^p(X, \mu):= \left{ f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \right}$$
+> $$L^{\infty}(X, \mu):= \left\{  f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \right\}$$
 
 And introduce the essential supremum norm $ess \sup_{x \in X} := \Vert \cdot \Vert_{\infty}: L^{\infty}(X, \mu) \rightarrow \mathbb{R}$
 > $$ \Vert f \Vert_{\infty} := \inf{ \lbrace c > 0 \; : \; \vert f(x) \vert \leq c \; \text{a.e.} \rbrace}$$ $$$$
@@ -550,7 +550,7 @@ Take $p(x) = \Vert g \Vert \Vert x \Vert_{\LL}$ and check that it satisfies the 
 
 Let $\mathbb{E}$ be a normed space and $x_0 \in \EE$ then $\exists_{f_0 \in \EE^*}$ such that
 1. $$\Vert f_0 \Vert = \Vert x_0 \Vert$$ $$$$
-2. $$ \langle f_0,x_0 \rangle = \Vert x_0 \Vert^2$$
+2. $$ \langle f_0,x_0 \rangle = \Vert x_0 \Vert^2$$ $$$$
 
 </div>
 
@@ -563,13 +563,13 @@ An inner product is a bilnear map, $\langle \cdot, \cdot \rangle: \mathcal{H} \t
 4. $$\langle \alpha x_1 + \beta x_2, y \rangle = \alpha \langle x_1, y \rangle + \beta \langle x_2, y \rangle$$ $$$$
 
 We call the pair $(\mathcal{H}, \langle \cdot, \cdot \rangle)$ an inner product space and define the induced norm
-> $$\Vert x \Vert := \sqrt{\langle x, x \rangle}$$ $$\tag{*}$$
+> $$\tag{*}$$ $$\Vert x \Vert := \sqrt{\langle x, x \rangle}$$ 
 
 <div class="definition" markdown="1">
 
 **Definition:** Hilbert Space
 
-An inner product space $(\mathcal{H}, \langle \cdot, \cdot \rangle)$ is said to be a Hilbert space if $\mathcal{H}$ is complete with respect to the norm $\tag{*}$
+An inner product space $(\mathcal{H}, \langle \cdot, \cdot \rangle)$ is said to be a Hilbert space if $\mathcal{H}$ is complete with respect to the norm $(*)$
 
 </div>
 
@@ -628,7 +628,7 @@ If $(\EE, \Vert \cdot \Vert)$ is a normed space and $C \subset \EE$ is a nonempt
 **Definition:** Gauge Function
 
 Let $\EE$ be a normed space and $C \subset \EE$ and open, convex neighborhood of zero. Define the map $p_C: \EE \rightarrow \mathbb{R}$ by
-> $$\forall_{x \in \EE} p_C(x):= \inf{\lbrace \alpha > 0 \; : \; x \in \alpha C \rbrace}
+> $$\forall_{x \in \EE} p_C(x):= \inf{\lbrace \alpha > 0 \; : \; x \in \alpha C \rbrace}$$
 
 Such a function $p_C$ is called the gauge function of $C$.
 
@@ -702,3 +702,43 @@ Let $\EE$ be a normed space, and $\LL \subset \EE$ a subspace then $\LL$ is a de
 </div>
 
 ## 2.3 Orthogonality Relations in Banach Spaces
+
+Let $\EE$ be a Banach space and $\EE^*$ its dual, then the function $\langle \cdot, \cdot \rangle: \EE^* \times \EE \rightarrow \mathbb{R}$ given by
+> $$\langle f,x \rangle := f(x)$$ $$$$
+
+satisfies the following properties $\forall_{x,y \in \EE}$ and $\forall_{f,g \in \EE^*}$
+1. $$\langle x, y \rangle = \langle y, x \rangle$$ $$$$
+2. $$\langle x, \alpha y_1 + \beta y_2 \rangle = \alpha \langle x, y_1 \rangle + \beta \langle x, y_2 \rangle$$ $$$$
+3. $$\langle \alpha x_1 + \beta x_2, y \rangle = \alpha \langle x_1, y \rangle + \beta \langle x_2, y \rangle$$ $$$$
+4. $$\forall_{x \in \EE} \exists_{f \in \EE^*}$$ such that $$\Vert f \Vert = \Vert x \Vert$$ and $$\langle f,x \rangle = \Vert x \Vert^2$$
+5. $$\forall_{x \in \EE} \; \Vert x \Vert = \sup_{\Vert f \Vert \leq 1} \langle f,x \rangle = \max_{\Vert f \Vert = 1} \langle f,x \rangle$$ $$$$
+6. $$\forall_{f \in \EE^*} \; \Vert f \Vert = \sup_{\Vert x \Vert \leq 1} \langle f,x \rangle = \sup_{\Vert x \Vert = 1} \langle f,x \rangle$$ $$$$
+
+<div class="definition" markdown="1">
+
+**Definition:** Orthogonality in Banach Spaces
+
+Let $\EE$ be a Banach space and $\EE^*$ its dual, 
+1. For $$A \subset \EE$$ we define $$A^{\perp}:= \lbrace f \in \EE^* \; : \; \forall_{x \in A} \langle f,x \rangle = 0 \rbrace$$
+2. For $$B \subset \EE^*$$ we define $$B^{\perp}:= \lbrace x \in \EE \; : \; \forall_{f \in B} \langle f,x \rangle = 0 \rbrace$$
+
+</div>
+
+**Remark:** the sets $A^{\perp}$, $B^{\perp}$, defined above, are closed linear subspaces of $\EE^*$ and $\EE$ respectively.
+
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.12:** 
+
+Let $\EE$ be a normed subspace and $\LL \subspace \EE$ any subspace, then 
+> $$\LL^{\perp \perp} = \overline{\LL}$$ $$$$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem 2.13:** 
+
+Let $\EE$ be a normed subspace and $\mathbb{N} \subspace \EE^*$ any subspace of its dual, then 
+> $$\mathbb{N}^{\perp \perp} \supset \overline{\mathbb{N}}$$ $$$$
+</div>
