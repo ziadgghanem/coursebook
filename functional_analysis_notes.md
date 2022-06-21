@@ -378,7 +378,7 @@ Notice that $L^p(X, \mu)$ is a vector space, we will equip it with the so-called
 > $$ \Vert f \Vert_p := (\int\limits_{X} \vert f \vert^p)^{\frac{1}{p}}$$ $$$$
 
 We also define the space $L^{\infty}(X, \mu)$
-> $$L^p(X, \mu):= \left\{  f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \right\}$$
+> $$L^{\infty}(X, \mu):= \left\{  f: X \rightarrow \mathbb{R} \; : \; \begin{align*} i. \; f \; \text{is} \; \text{measurable}, \\ ii. \; \exists_{c > 0} \vert f(x) \vert \leq c \; \text{a.e.} \end{align*} \right\}$$
 
 And introduce the essential supremum norm $ess \sup_{x \in X} := \Vert \cdot \Vert_{\infty}: L^{\infty}(X, \mu) \rightarrow \mathbb{R}$
 > $$ \Vert f \Vert_{\infty} := \inf{ \lbrace c > 0 \; : \; \vert f(x) \vert \leq c \; \text{a.e.} \rbrace}$$ $$$$

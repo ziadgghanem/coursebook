@@ -14,7 +14,7 @@ These are my notes.
 - [Real Analysis](real_analysis.md): Notes on Real Analysis.
     - [Real Numbers](/pages/real_numbers.md)
 
-- [Comoplex Analysis](complex_analysis.md): Notes on Complex Analysis.
+- [Complex Analysis](complex_analysis.md): Notes on Complex Analysis.
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
 
