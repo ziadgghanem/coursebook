@@ -15,7 +15,7 @@ These are my notes.
     - [Real Numbers](/pages/real_numbers.md)
 
 - [Complex Analysis](complex_analysis.md): Notes on Complex Analysis.
-    - [Complex Integration](/pages/complex_integration)
+    - [Complex Integration](/pages/complex_integration.md)
     - [Local Properties of Analytic Functions](/pages/local_properties_analytic_functions.md)
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
