@@ -76,6 +76,19 @@ $\gamma$ might be parameterized as $z(t) = (1-t)z_0 + t z_1 = \pi t - i \pi t$ w
 > $$ \quad \quad =  e^{\pi}e^{- i \pi} - 1 = e^{\pi}(\cos(-\pi) + i \sin(-\pi)) - 1 = -e^{\pi} - 1$$
 
 </details>
+
+**Example:** Calculate the integral $\int_{\gamma} e^{\overline{z}} dz$ where $\gamma$ is the line segment connecting points $z_0 = 0$ and $z_1 = \pi - i \pi$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$\gamma$ might be parameterized as $z(t) = (1-t)z_0 + t z_1 = \pi t - i \pi t$ where $0 \leq t \leq 1$ with $z'(t) = \pi - i \pi$ and $f(z(t)) = e^{t(\pi + i \pi )}$ such that
+> $$\int\limits_{\gamma} e^{z} dz =  (\pi - i \pi) \int_0^1 e^{t(\pi + i \pi)}dt$$ $$$$
+> $$ \quad \quad = \frac{(\pi - i \pi)}{(\pi + i \pi)} e^{t(\pi + i \pi)} \vert_0^1 = \frac{(\pi - i \pi)}{(\pi + i \pi)}(e^{\pi(1 + i)} - 1) $$ $$$$
+> $$ \quad \quad =  \frac{(\pi - i \pi)}{(\pi + i \pi)}(e^{\pi}e^{i \pi} - 1) = \frac{(\pi - i \pi)}{(\pi + i \pi)} (- e^{\pi} - 1)$$ $$$$
+> $$ \quad \quad = - \frac{(\pi - i \pi)^2}{2 \pi}(e^{\pi} + 1) = - \frac{\pi^2 -2i \pi - \pi^2}{2 \pi}(e^{\pi} + 1) = -i(e^{\pi} + 1)$$ $$$$
+
+</details>
 </div>
 
 <div class="proposition" markdown="1">
@@ -91,4 +104,94 @@ For any complex numbers $(c_1 = \alpha_1 + i \beta_1), (c_2 = \alpha_2 + i \beta
 4. If a curve is defined as the piecewise concatenation $$\gamma = \gamma_1 + \gamma_2 + \cdots + \gamma_n$$ then
     - $$\int\limits_{\gamma}f(z) dz =\int\limits_{\gamma_1}f(z) dz + \int\limits_{\gamma_2}f(z) dz + \cdots + \int\limits_{\gamma_n}f(z) dz$$ $$$$
 
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem:** Fundamental Theorem of Contour Integration
+
+Suppose that $f(z)$ is continuous on a domain $\Omega$ and has antiderivative $F(z)$ defined for all $z \in \Omega$, then for any curve $\gamma$ in $\Omega$ connecting $z_0$ to $z_2$ we have
+> $$\int\limits_{\gamma}f(z) dz = F(z_1) - F(z_2)$$ $$$$
+
+i.e. the integral is path independent
+</div>
+
+
+
+## 5.3 Cauchy's Theorem
+
+
+<div class="proposition" markdown="1">
+
+**Theorem:** Cauchy's Theorem in a Disk
+
+If $f$ is analytic in an open disk $D$ then for every closed curve $\gamma \in D$
+> $$\int\limits_{\gamma}f(z) dz = 0$$ $$$$
+
+**Theorem:** Cauchy's Theorem in a Disk
+
+If $f$ is analytic in a disk $D$, except perhaps at finitely many points $a_1, \ldots, a_n$ which are removeable singularities of $f$ (i.e. $\forall_i \; \lim_{z \rightarrow a_i} (z-a_i)f(z) = 0$) then for any closed curve not passing through any $a_i$
+> $$\int\limits_{\gamma}f(z) dz = 0$$ $$$$
+
+</div>
+
+<div class="example" markdown="1">
+
+**Example:** Calculate the integral $\int_{\gamma} \frac{dz}{1 + z^2}$ where $\gamma$ is the the positively oriented circle $\vert z + i \vert = 1$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+First we find the singular points of $f(z)$ as $z = \pm i$ and note that only $-i$ is locted inside $\gamma$
+> $$\frac{1}{1 + z^2} = \frac{1}{(z-i)(z+i)} = \frac{A}{z-i} + \frac{B}{z+i}$$ $$$$
+
+next, we perform partial fraction decomposition $\frac{1}{(z-i)(z+i)} = \frac{A}{z-i} + \frac{B}{z+i}$
+where 
+- $$A = \lim_{z \rightarrow i} (z-i)f(z) = \lim_{z \rightarrow i} \frac{1}{z+i} = \frac{1}{2i}$$ $$$$
+- $$B = \lim_{z \rightarrow -i} (z+i)f(z) = \lim_{z \rightarrow -i} \frac{1}{z-i} = \frac{-1}{2i}$$ $$$$
+
+and so we write $\frac{1}{1 + z^2} = \frac{1}{2i}( \frac{1}{z-i} - \frac{1}{z+i})$, as the term $\frac{1}{z-i}$ is analytic in the region bounded by $\gamma$, it will vanish under integration such that
+> $$ \int\limits_{\gamma} \frac{1}{2i}( \frac{1}{z-i} - \frac{1}{z+i}) dz = \frac{-1}{2i} \int\limits_{\gamma} \frac{1}{z+i} = \frac{- 2 \pi i}{2 i} = - \pi$$ $$$$
+
+</details>
+</div>
+
+## 5.4 Winding Number
+
+
+<div class="definition" markdown="1">
+
+**Definition:** Index (Winding Number)
+
+The index of a curve $\gamma$ about a point $p$, not lying on $\gamma$ is given by
+> $$n(\gamma,p):= \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z-p}$$ $$$$
+
+If our curve is defined $\gamma: [a,b] \rightarrow \mathbb{C}$ then the above integral can be expressed 
+> $$\int\limits_{\gamma}  = \int_a^b \facr{\gamma'(t)}{\gamma(t)-p}$$ $$$$
+</div>
+
+<div class="example" markdown="1">
+
+**Example:** Let $\gamma(t) = e^{2n \pi i t}$ for some $n \in \mathbb{N}$ and where $0 \leq 1$. Calculate $n(\gamma,0)$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$\gamma$ is the curve that traces the unit circle $n$-times in the positive direction, we can directly calculate its index
+> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z} = \frac{1}{2 \pi i}  \int_0^1 \frac{1}{e^{2n \pi i t}} 2 n \pi i e^{2n \pi i t} dt = \int_0^1 n dt = n$$ $$$$
+
+
+</details>
+
+
+**Example:** Let $\gamma(t) = e^{-2n \pi i t}$ for some $n \in \mathbb{N}$ and where $0 \leq 1$. Calculate $n(\gamma,0)$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$\gamma$ is the curve that traces the unit circle $n$-times in the negative direction, we can directly calculate its index
+> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z} = \frac{- 1}{2 \pi i}  \int_0^1 \frac{1}{e^{- 2n \pi i t}} 2 n \pi i e^{- 2n \pi i t} dt = - \int_0^1 n dt = - n$$ $$$$
+
+
+</details>
 </div>
