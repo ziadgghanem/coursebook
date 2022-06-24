@@ -52,7 +52,7 @@ is called a metric space and the function $d (\cdot, \cdot)$ is called a metric 
 
 **Remark: Induced Topology On a Metric Space**
 
-In turn, any metric space $(V,d)$ is naturally a topological space $(V, {\Large \tau})$ where ${\Large \tau}$ is the topology induced by the metric such that $U \in {\Large \tau}$ if and only if
+In turn, any metric space $(V,d)$ is naturally a topological space $(V, \tau)$ where $\tau$ is the topology induced by the metric such that $U \in \tau$ if and only if
 > $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad d(u,v) < \epsilon \; \implies \; v \in U$$ $$ $$
 
 Or equivalently in terms of neighborhoods,
@@ -60,7 +60,7 @@ Or equivalently in terms of neighborhoods,
 
 Where $B_{\epsilon}(u) := \lbrace v \in V: d(u,v) < \epsilon \rbrace$ is the open ball of radius $\epsilon$ centered at $u$.
 
-In the case that $d: VxV \rightarrow \mathbb{R}$ is the induced metric of some norm $\Vert \cdot \Vert$ (as will often be the case in our study) the induced topology, ${\Large \tau}$ is such that $U \in {\Large \tau}$ if and only if
+In the case that $d: VxV \rightarrow \mathbb{R}$ is the induced metric of some norm $\Vert \cdot \Vert$ (as will often be the case in our study) the induced topology, $\tau$ is such that $U \in \tau$ if and only if
 > $$ \forall_{ u \in U} \exists_{\epsilon \geq 0} \forall_{ v \in V} \quad \Vert u - v \Vert < \epsilon \; \implies \; v \in U$$ $$ $$
 
 And the open ball, $B_{\epsilon}$ is expressed 
@@ -70,14 +70,26 @@ And the open ball, $B_{\epsilon}$ is expressed
 
 **Definition: Topological Space** 
 
-A vector space $$V$$ together with a collection of subsets ${\Large \tau} \subset \mathcal{P}(V)$ satisfying
-1.  $$V, \emptyset \in {\Large \tau}$$ $$ $$
-2.  $$\lbrace  U_{\alpha}  \rbrace_{\alpha \in \Lambda} \subset {\Large {\Large \tau}} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in {\Large \tau}$$ $$ $$
-3.  $$\lbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \rbrace \subset {\Large \tau} \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in {\Large \tau}$$ $$ $$
+A vector space $$V$$ together with a collection of subsets $\tau \subset \mathcal{P}(V)$ satisfying
+1.  $$V, \emptyset \in \tau$$ $$ $$
+2.  $$\lbrace  U_{\alpha}  \rbrace_{\alpha \in \Lambda} \subset {\Large \tau} \rightarrow \bigcup_{\alpha \in \Lambda}U_{\alpha} \in \tau$$ $$ $$
+3.  $$\lbrace  \, U_{\alpha_1}, U_{\alpha_2}, \ldots , U_{\alpha_n} \,  \rbrace \subset \tau \rightarrow U_{\alpha_1} \bigcap U_{\alpha_2} \bigcap \cdots \bigcap U_{\alpha_n} \in \tau$$ $$ $$
 
-is called a topological space and the sets $U \in {\Large \tau}$ are called open.
+is called a topological space and the sets $U \in \tau$ are called open.
 
 </div>
+
+
+<div class="definition" markdown="1">
+
+**Definition: Seperability** 
+
+Let $(X, \tau)$ be a topological space, then $X$ is called **separable** if there exists a countable set $S \subset X$ such that $\overline{S} = X$.
+
+X is called **connected** if $\forall_{U,V \in \tau}$ with $X \subset U \cup V$, if $U \cap V = \emptyset$ then either $U = \emptyset$ or $V = \emptyset$
+</div>
+
+It is the case that $X$ is not connected if and only if $X$ is seperable. 
 
 **Set Manipulation** 
 
@@ -102,22 +114,22 @@ And by $rA$ we mean the scalar multiplication of a set $A \subset V$ with the re
 
 **Proposition 1.02** Properties of the Topology induced by a Norm
 
-Let $(V, \Vert\cdot\Vert)$ be a normed space with topology ${\Large \tau},$ then
+Let $(V, \Vert\cdot\Vert)$ be a normed space with topology $\tau,$ then
 1. The following functions are continous: $$\tag{..1.02a} \label{1.02a}$$
     1. The addition operator, $$ + : V \times V \rightarrow V $$ $$$$
     2. The scalar-multiplication operator, $$ \cdot : R \times V \rightarrow V $$ $$$$
     3. The norm operator, $$ \Vert \cdot \Vert : V \rightarrow R $$ $$$$
-2. $$U \in {\Large \tau} \; \implies \; \forall_{ x_{0} \in V} \; x_{0} + U \in {\Large \tau}$$ $$\tag{..1.02b} \label{1.02b}$$
-3. $$U \in {\Large \tau} \; \implies \; \forall_{ r \neq 0} \; rU \in {\Large \tau}$$ $$\tag{..1.02c} \label{1.02c}$$
+2. $$U \in \tau \; \implies \; \forall_{ x_{0} \in V} \; x_{0} + U \in \tau$$ $$\tag{..1.02b} \label{1.02b}$$
+3. $$U \in \tau \; \implies \; \forall_{ r \neq 0} \; rU \in \tau$$ $$\tag{..1.02c} \label{1.02c}$$
 </div>
 
 **Equivalence of Norms** 
 
 Let $\Vert \cdot \Vert_{1}: V \rightarrow \mathbb{R}$ $\Vert \cdot \Vert_{2}: V \rightarrow \mathbb{R}$
 be two norms on vector space $V$. We say that $\Vert \cdot \Vert_{1}$ and $\Vert \cdot \Vert_{2}$ are **equivalent** 
-when their associated topologies, ${\Large \tau}_{1}$, ${\Large \tau}_{2}$ coincide.
+when their associated topologies, $\tau_{1}$, $\tau_{2}$ coincide.
 
-In the case that ${\Large \tau}_{1} \subset {\Large \tau}_{2},$ ${\Large \tau}_{1}$ is said to be **weaker** than ${\Large \tau}_{2}$
+In the case that $\tau_{1} \subset \tau_{2},$ $\tau_{1}$ is said to be **weaker** than $\tau_{2}$
 and furthermore $\Vert \cdot \Vert_{1}$ is said to be **weaker** than $\Vert \cdot \Vert_{2}$
 
 <div class="proposition" markdown="1">
@@ -125,7 +137,7 @@ and furthermore $\Vert \cdot \Vert_{1}$ is said to be **weaker** than $\Vert \cd
 **Theorem 1.03** 
 
 Given two norms $\Vert \cdot \Vert_{1}, \Vert \cdot \Vert_{2}$ on a vector space $V$ then
-> $${\Large \tau}_{1} \subset {\Large \tau}_{2} \iff \exists_{c > 0} \forall_{x \in V} \; \Vert \cdot \Vert_{1} \leq c \Vert \cdot \Vert_{2}$$ 
+> $$\tau_{1} \subset \tau_{2} \iff \exists_{c > 0} \forall_{x \in V} \; \Vert \cdot \Vert_{1} \leq c \Vert \cdot \Vert_{2}$$ 
 
 </div>
 
