@@ -13,8 +13,12 @@ These are my notes.
 
 - [Real Analysis](real_analysis.md): Notes on Real Analysis.
     - [Real Numbers](/pages/real_numbers.md)
+    - [Lebesgue Measure](/pages/lebesgue_measure.md)
+    - [General Measure Theory](/pages/general_measure.md)
+    - [Measurable Functions](/pages/measurable_functions.md)
 
 - [Complex Analysis](complex_analysis.md): Notes on Complex Analysis.
+    - [The Complex Plane](/pages/complex_plane.md)
     - [Complex Integration](/pages/complex_integration.md)
     - [Local Properties of Analytic Functions](/pages/local_properties_analytic_functions.md)
 

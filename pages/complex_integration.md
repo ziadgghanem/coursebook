@@ -50,6 +50,7 @@ Let $f(t) = u(t) + iv(t)$ be continuous over the real interval $(a,b)$ then we d
 <summary><i style="font-size:150%;">Solution</i></summary>
 
 Direct application of Euler's formula gives us $e^{it} = \cos(t) + i \sin(t)$, 
+
 > $$\int_0^{\frac{\pi}{2}} e^{it} = \int_0^{\frac{\pi}{2}} \cos(t) + i \int_0^{\frac{\pi}{2}} \sin(t)$$ $$$$
 > $$ \quad \quad = \sin(t) \vert_0^{\frac{\pi}{2}} + i \cos(t) \vert_0^{\frac{\pi}{2}} = 1 + i$$ $$$$
 </details>
@@ -164,11 +165,13 @@ and so we write $\frac{1}{1 + z^2} = \frac{1}{2i}( \frac{1}{z-i} - \frac{1}{z+i}
 **Definition:** Index (Winding Number)
 
 The index of a curve $\gamma$ about a point $p$, not lying on $\gamma$ is given by
-> $$n(\gamma,p):= \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z-p}$$ $$$$
+> $$n(\gamma,p):= \frac{1}{2 \pi i}  \int\limits_{\gamma}  \frac{dz}{z-p}$$ $$$$
 
 If our curve is defined $\gamma: [a,b] \rightarrow \mathbb{C}$ then the above integral can be expressed 
-> $$\int\limits_{\gamma}  = \int_a^b \facr{\gamma'(t)}{\gamma(t)-p}$$ $$$$
+> $$\int\limits_{\gamma}  = \int_a^b \frac{\gamma'(t)}{\gamma(t)-p}$$ $$$$
 </div>
+
+The index $n(\gamma,p)$, if known, might be used to compute the value of any integral $\int\limits_{\gamma}  \frac{dz}{z-p} = 2 \pi i n(\gamma,p)$
 
 <div class="example" markdown="1">
 
@@ -178,7 +181,7 @@ If our curve is defined $\gamma: [a,b] \rightarrow \mathbb{C}$ then the above in
 <summary><i style="font-size:150%;">Solution</i></summary>
 
 $\gamma$ is the curve that traces the unit circle $n$-times in the positive direction, we can directly calculate its index
-> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z} = \frac{1}{2 \pi i}  \int_0^1 \frac{1}{e^{2n \pi i t}} 2 n \pi i e^{2n \pi i t} dt = \int_0^1 n dt = n$$ $$$$
+> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \frac{dz}{z} = \frac{1}{2 \pi i}  \int_0^1 \frac{1}{e^{2n \pi i t}} 2 n \pi i e^{2n \pi i t} dt = \int_0^1 n dt = n$$ $$$$
 
 
 </details>
@@ -190,8 +193,72 @@ $\gamma$ is the curve that traces the unit circle $n$-times in the positive dire
 <summary><i style="font-size:150%;">Solution</i></summary>
 
 $\gamma$ is the curve that traces the unit circle $n$-times in the negative direction, we can directly calculate its index
-> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \facr{dz}{z} = \frac{- 1}{2 \pi i}  \int_0^1 \frac{1}{e^{- 2n \pi i t}} 2 n \pi i e^{- 2n \pi i t} dt = - \int_0^1 n dt = - n$$ $$$$
+> $$n(\gamma,0) = \frac{1}{2 \pi i}  \int\limits_{\gamma}  \frac{dz}{z} = \frac{- 1}{2 \pi i}  \int_0^1 \frac{1}{e^{- 2n \pi i t}} 2 n \pi i e^{- 2n \pi i t} dt = - \int_0^1 n dt = - n$$ $$$$
 
 
+</details>
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+For any closed, piece-wise smooth curve $\gamma$ and $p \notin \gamma$, the index $n(\gamma,p)$ is an integer.
+
+**Proposition:** 
+
+Let $\gamma$ be a closed, piece-wise smooth curve then the index, $n(\gamma, p)$, is continuous with respect to $p$ on $\CC \setminus \gamma$
+
+**Corollary:** 
+
+For any closed, piece-wise smooth curve $\gamma$, $n(\gamma, p)$ is constant on connected components of $\CC \setminus \gamma$
+
+**Corollary:** 
+
+Suppose any curve $\gamma$ lies inside a circle, then $n(\gamma, p) = 0$ for all points outside the same circle.
+
+**Corollary:** 
+
+If $\gamma$ is a circle and $p$ lies inside $\gamma$, then $\vert n(\gamma, p) \vert = 1$
+
+</div>
+
+## 5.5 Cauchy's Integral Formula
+
+<div class="proposition" markdown="1">
+
+**Theorem:** Cauchy's Integral Formula
+
+Suppose $f(z)$ is analytic in a region $\Omega$ and $\gamma$ is any closed curve in the region, then for any $p \notin \gamma$
+> $$n(\gamma, p) f(p) = \frac{1}{2 \pi i} \int\limits_{\gamma} \frac{f(z)}{z-p}dz$$ $$$$
+
+In the case that $n(\gamma, p) = 1$ we have the simplified formula
+> $$f(p) = \frac{1}{2 \pi i} \int\limits_{\gamma} \frac{f(z)}{z-p}dz$$ $$$$
+
+<div class="proof" markdown="1">
+
+<details>
+<summary><i style="font-size:150%;">Proof</i></summary>
+
+We will consider the case where $\Omega$ is an open disk, then the function $F(z) = \frac{f(z) - f(p)}{z-p}$ is analytic for any $z \neq p$ and furthermore, $p$ is a removeable singularity of the function. Indeed,
+> $$ \lim_{z \rightarrow p}F(z)(z-p) = \lim_{z \rightarrow p} f(z) - f(p) = 0$$ $$$$
+
+Hence, $F(z)$ satisfies Cauchy's theorem in a disk, i.e. for any closed curve $\gamma$ in $\Omega$
+> $$ \int\limits_{\gamma} \frac{f(z) - f(p)}{z-p} dz = 0$$ $$ \; \iff \;$$ $$\int\limits_{\gamma} \frac{f(z)}{z-p} dz = \int\limits_{\gamma} \frac{f(p)}{z-p} dz$$
+
+Where $\frac{1}{2 \pi i} \int\limits_{\gamma} \frac{dz}{z-p}$ is exactly the index $n(\gamma, p)$
+</details>
+</div>
+</div>
+
+<div class="example" markdown="1">
+
+**Example:** Compute the integral $\int\limits_{\gamma} \frac{z}{(11-z^2)(z+2i)} dz$ where $\gamma$ is the positively oriented circle $\vert z \vert = 3$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+The point $z_0 = -2i$ is the only singular point of the integrand lying inside $\gamma$. Indeed, the map $f(z) = \frac{z}{11-z^2}$ is analytic at all points inside $\gamma$ and $n(\gamma,-2i) = 1$
+> $$\int\limits_{\gamma} \frac{z}{(11-z^2)(z+2i)} dz = \int\limits_{\gamma} \frac{\frac{z}{(11-z^2)}}{(z+2i)} dz = 2 \pi i n(\gamma,-2i)f(-2i) = 2 \pi i \frac{-2i}{11 + 4} = \frac{4 \pi}{15}$$
 </details>
 </div>

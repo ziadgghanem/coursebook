@@ -1565,7 +1565,7 @@ A set $A \subset E$, $A$ is Jordan measurable if and only if the boundary of $A$
 
 </div>
 
-## Measure on $\sigma$-algebras of sets
+## Measure on $\sigma$-ring
 
 <div class="definition" markdown="1">
 
