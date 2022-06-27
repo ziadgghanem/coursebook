@@ -79,7 +79,6 @@ Assume that $\mathcal{M}_1(\Sigma)$ is not unique, i.e. suppose there exists ano
 
 </div>
 
-
 <div class="definition" markdown="1">
 
 **Definition:** Semi-Rings
