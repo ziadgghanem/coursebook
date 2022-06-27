@@ -54,3 +54,65 @@ Which tends to zero as $R \rightarrow \infty$ such that $g' \equiv 0$. So the fu
 </details>
 
 </div>
+
+## 6.2 Zeros of Analytic Functions
+
+<div class="proposition" markdown="1">
+
+**Theorem 6.03:** 
+
+Let $f(z)$ be analytic in a region $\Omega$, suppose $f$ and all of its derivatives vanish for some $a \in \Omega$, i.e.
+> $f(a) = f'(a) = \cdots = f^{(n)}(a) = \cdots = 0$
+
+then $f(z) \equiv 0$ in $\Omega$
+
+</div>
+
+An obvious **corollary:** Assume $f(z)$ is not identically zero on $\Omega$ but $f(a) = 0$ for some $a \in \Omega$, then there exists a smallest $h \in \mathbb{N}$ such that $f^{(h-1)} = 0$ and  $f^{(h)} \neq 0$
+
+<div class="definition" markdown="1">
+
+**Definition:** Order of a zero
+
+$f(z)$ is said to have a zero of order $h \in \mathbb{N}$ at $a \in \CC$ if 
+> $f(a) = f'(a) = \cdots = f^{(h-1)}(a) = 0$ and $f^{(h)}(a) \neq 0$
+
+</div>
+
+*Remark:* An analytic function, not identically equal to zero has no zeros of order infinity.
+
+<div class="proposition" markdown="1">
+
+**Lemma 6.04:** 
+
+If $f$ is an analytic function, not identically equal to zero, then all of its zeros are isolated, i.e. if $f(a) = 0$ then there eixsts some $\epsilon > 0$ such that $f(z)$ is not zero on the deleted neighborhood $0 < \vert z - a \vert < \epsilon$
+
+<details>
+<summary><i style="font-size:150%;">Proof</i></summary>
+
+<div class="proposition" markdown="1">
+
+Suppose $f(z)$ is analytic in a region $\Omega$ with $a \in \Omega$ a zero of order $n$ then $f(z)$ has the taylor expansion
+> $f(z) = f(a) + f'(a)(z-a) + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(z-a)^{n-1} + f_n(z)(z-a)^n = f_n(z)(z-a)^n$
+
+where $f_n(a) \neq 0$, and as $f_n(z)$ is analytic, and therefore continuous, it is furthermore nonzero in some neighborhood of $a$. Thus, $z=a$ is indeed an isolated zero of $f(z)$.
+
+<details>
+</div>
+</div>
+
+Any $f(z)$ analytic in a neighborhood of the origin has a Talyor series expansion about $z = 0$, called the Maclaurin serries
+
+</div>
+
+*Remark:* An analytic function, not identically equal to zero has no zeros of order infinity.
+
+<div class="example" markdown="1">
+
+**Examples:** Maclaurin series
+
+1. $$e^z = 1 + z + \frac{z^2}{2!} + \cdots + \frac{z^n}{n!} + \cdots = \sum_{n=0}^{\infty} \frac{z^n}{n!}$$
+2. $$\sin(z) = z - \frac{z^3}{3!} + \cdots + (-1)^n \frac{z^{2n + 1}}{(2n+1)!} + \cdots = \sum_{n=0}^{\infty} (-1)^n \frac{z^{2n + 1}}{(2n+1)!}$$
+3. $$\cos(z) = 1 - \frac{z^2}{2!} + \cdots + (-1)^n \frac{z^{2n}}{(2n)!} + \cdots = \sum_{n=0}^{\infty} (-1)^n\frac{z^{2n}}{(2n)!}$$
+
+</div>
