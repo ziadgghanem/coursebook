@@ -16,6 +16,8 @@ These are my notes.
     - [Lebesgue Measure](/pages/lebesgue_measure.md)
     - [General Measure Theory](/pages/general_measure.md)
     - [Measurable Functions](/pages/measurable_functions.md)
+    - [Lebesgue Integration](/pages/lebesgue_integration.md)
+    
 
 - [Complex Analysis](complex_analysis.md): Notes on Complex Analysis.
     - [The Complex Plane](/pages/complex_plane.md)
