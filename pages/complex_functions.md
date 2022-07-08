@@ -173,3 +173,58 @@ The reciprocal function maps lines onto circles and circles onto circles.
 
 </div>
 
+## 2.4 The Fractional Linear Transformation
+
+<div class="definition" markdown="1">
+
+**Definition:** Fractional Linear Transformation
+
+If $a,b,c,d$ are complex constants with $ad - bc \neq 0$ then the following transformation is called a fractional linear transformation
+> $T(z) = \frac{az + b}{cz + d}$
+
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Fractional linear transformations form a group with respect to composition.
+
+</div>
+
+A fractional linear transformation $T(z) = \frac{az + b}{cz + d}$ has continuous extension to the extended complex plane
+> $\lim_{z \rightarrow \infty} T(z) = \frac{a}{c}, \quad \lim_{z \rightarrow \frac{-d}{c}} T(z) = \infty$
+
+i.e. $T(z)$ maps $\infty$ to $\frac{a}{c}$ and $\frac{-d}{c}$ to $\infty$.
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+Let $z_1,z_2,z_3 \in \CC$ be distinct, then there exists a unique fractional linear transformation mapping these points to $0,1,\infty$ (respectively) given by
+> $T(z) = \frac{z-z_1}{z_1 - z_2} \frac{z_2 - z_3}{z_3 - z}$
+</div>
+
+<div class="definition" markdown="1">
+
+**Definition:** The Cross Ratio
+
+The cross ratio of the four distinct points $z_1,z_2,z_3,z_4$ is defined
+> $(z_1,z_2,z_3,z_4) := \frac{z_1-z_2}{z_2 - z_3} \frac{z_3 - z_4}{z_4 - z_1}$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Proposition:** 
+
+For distinct $z_1,z_2,z_3 \in \CC$ there exists a unique fractional linear transformation, $L(z)$ mapping these points to $w_1,w_2,w_3 \in \CC$ respectively. Such a transformation can always be found by resolving the equality
+> $(L(z),w_1,w_2,w_3) = (z,z_1,z_2,z_3)$
+</div>
+
+<div class="proposition" markdown="1">
+
+**Theorem:** 
+
+The cross ratio is invariant under fractional linear transformation, i.e. let  $z_1,z_2,z_3,z_4 \in \CC$ be distince and $T(z)$ any fractional linear transformation then
+> $$(L(z_1),L(z_2),L(z_3),L(z_4)) = (z_1,z_2,z_3,z_4)$
+</div>
