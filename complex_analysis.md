@@ -245,8 +245,24 @@ And so by observation $c_{-1} = 1$
 
 ### Residues at Infinity
 
+The residue of the function $f(z)$ at $z = \infty$ is equal to the opposite of the coefficient of $\frac{1}{z}$ in the Laurent expansion
+> $$Res_{z = \infty}f(z) = - c_{-1}$$ $$$$
+
+<div class="example" markdown="1">
+
+**Example:**  Find the residue of the function $f(z) = \frac{1}{z}$ at $z_0 = \infty$
+
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+$f(z)$ is already a Laurent expansion with $ c_{-1} = 1$ such that 
+> $$Res_{z = \infty}f(z) = -1$$
+</details>
+
+</div>
+
+
 **v Calculation of residue at an infinite removeable singularity,** <b4>
-Let $z_0 = \infty$ be a removeable singulaar point of the function $f(z)$, the expansion of its Laurent series about $\infty$ will have the form
+Let $z_0 = \infty$ be a removeable singular point of the function $f(z)$, the expansion of its Laurent series about $\infty$ will have the form
 > $$f(z) = c_0 + \frac{c_{-1}}{z} + \frac{c_{-2}}{z^2} + \cdots$$ $$\tag{v}$$
 
 Such that the residue can be obtained $c_{-1} = \lim_{z \rightarrow \infty}[(f(z) - c_0) \cdot z]$ and if we put $f(\infty) = \lim_{z \rightarrow \infty}f(z) = c_0$ we have a formula for the residue
@@ -286,7 +302,6 @@ Now, $z_0 = \infty$ is a removeable singularity of $f(z)$ but this time, $\lim_{
 
 </div>
 
-
 <div class="proposition" markdown="1">
 
 **Theorem**
@@ -297,3 +312,30 @@ Let $\lbrace a_1, \ldots, a_n \rbrace$ be the finite isolated singular points of
 > $$ Res_{z = \infty}f(z) = - \sum_{k =1}^{n} Res_{z = a_k}f(z) $$ $$$$
 
 </div>
+
+## Evaluation of Integrals using residues
+
+Given a complex function $f(z)$ analytic in a region $\Omega$ except perhaps at finitely many points $z_1, \ldots, \z_n$ and a closed curve $\gamma \subset \Omega$ the Cauchy residue theorem suggests the following algorithm for the evaluation of the integral $\int\limits_{\gamma} f(z)$
+1. Find the singular points of the integrand and determine which ones are bounded by $\gamma$
+2. Calculate the residues at each of the singular points 
+3. Make use of the CRF $\int\limits_{\gamma} f(z) dz = 2 \pi i \sum_{k=1}^n Res_{z=z_k}f(z)$
+
+<div class="example" markdown="1">
+
+**Example:**  Evaluate the integral $\int\limits_{\gamma} \frac{dz}{z^4 + 1}$ where $\gamma$ is the circle $\vert z \vert = 2$
+
+<details>
+<summary><i style="font-size:150%;">Solution</i></summary>
+
+The singular points of the integrand are the solutions to the equation $z^+1 = 0$ i.e. the four roots of unity $z_k = e^{ i \frac{\pi + 2k \pi}{4}$ which lie evenly spaced along the boundary of the unit disk such that each of them is enclosed by $\gamma$, note further that each of the singular points are simple roots. Using case **ii.i** we have
+> $Res_{z = z_k} = \frac{1}{(z^4+1)'}(z_k) = \frac{1}{4 z_k^3} = \frac{1}{4}e^{-i 3 \frac{\pi + 2k \pi}{4}} $
+</details>
+
+</div>
+
+### Dealing with contours passing through singular points
+
+Suppose the integrand $f(z)$ has an islolated singular point $z_0$ lying on the closed contour $\gamma$, then the integral $\int\limits_{\gamma} f(z)dz$ is not well defined. However, we can still evaluate the so-called principle value of such an integral as a summation of residues of singular points, as though the contour contained $z_0$ rather than passed through it, but the contribution from $z_0$ must be halved.
+
+Given a complex function $f(z)$ analytic in a region $\Omega$ except perhaps at finitely many points $z_0, z_1, \ldots, \z_n$ and a closed curve $\gamma \subset \Omega$ containing $z_1, \ldots, \z_n$ but passing through $z_0$ then
+> $p.v. \int\limits_{\gamma} f(z) dz = \pi i Res_{z=z_0}f(z) + 2 \pi i \sum_{k=1}^n Res_{z=z_k}f(z)$
