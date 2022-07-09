@@ -21,8 +21,11 @@ These are my notes.
 
 - [Complex Analysis](complex_analysis.md): Notes on Complex Analysis.
     - [The Complex Plane](/pages/complex_plane.md)
+    - [Complex Functions](/pages/complex_functions.md)
+    - [Complex Differentiation](/pages/complex_differentiation.md)
     - [Complex Integration](/pages/complex_integration.md)
     - [Local Properties of Analytic Functions](/pages/local_properties_analytic_functions.md)
+    
 
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
 
