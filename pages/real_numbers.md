@@ -9,7 +9,7 @@ title: 'Real Numbers'
 In simple terms, a binary relation between two sets is a rule of association between elements of each set. 
 
 Consider the *cartesian product* of sets $A$ and $B$
-> $$A \times B = \lbrace (a,b): \quad a \in A, \; b \in B \rbrace$$
+> $A \times B = \lbrace (a,b): \quad a \in A, \; b \in B \rbrace$
 
 We will see that the cartesian product of sets is the most general binary relation between them as each element in $A$ is 
 associated with every element in $B$.
@@ -19,41 +19,41 @@ associated with every element in $B$.
 **Definition: Binary Relation**
 
 Given $A, B$ any subset $\sigma \subset A \times B$ is called a binary relation. We denote an element of binary relation $\sigma$ with $(a,b) \in \sigma,$ or we may equivalently write $a \; \sigma \; b$
-- In the case that $$A = B,$$ we say that $\sigma \subset A \times A$ is a binary relation on A.
+- In the case that $A = B,$ we say that $\sigma \subset A \times A$ is a binary relation on A.
 </div>
 
 In general a binary relation between sets $A$ and $B$ defines a map from $A$ to $B$ iff it is a transitive relation. 
-- i.e. $$\sigma \subset A \times B$$ is a map $$:A \rightarrow B$$ $$\iff$$ $$\begin{cases} a \; \sigma \; b \\ b \; \sigma \; c \end{cases} \implies a \; \sigma \; c$$
+- i.e. $\sigma \subset A \times B$ is a map $:A \rightarrow B$ $\iff$ $\begin{cases} a \; \sigma \; b \\ b \; \sigma \; c \end{cases} \implies a \; \sigma \; c$
 
 <div class="example" markdown="1">
 
 **Examples: Binary Relation**
 
 Some instructive examples of binary relations:
-1. Let $$A$$ be the set of all straight lines in the plane, we define $$\sigma \subset A \times A$$ such that 
-    > $$a \; \sigma \; b$$ $$\iff a \parallel b$$
-2. Again, let $$A$$ be the set of all straight lines in the plane
-    > This time we define $$\sigma \subset A \times A$$ such that $$a \; \sigma \; b \iff a \perp b$$
-3. Let $$A_m = \mathbb{Z}$$ the set of all integer numbers with $$m$$ some fixed integer, we define $$\sigma \subset A \times A$$ such that 
-    > $$a \; \sigma \; b \iff a \equiv b \; mod \; m \iff \exists k \in \mathbb{Z}$$ such that $$a-b = km$$
-4. Let $$X$$ be any set and put $$A = 	\mathcal{P}(X)$$ the set of all subsets of $$X,$$ we define $$\sigma \subset A \times A$$ such that 
-    >  $$a \; \sigma \; b \iff a \subset b$$ where $$a,b \subset X$$
-5. Let $$A = \mathbb{R}$$ and $$B = \mathbb{C},$$ we define $$\sigma \subset A \times B$$ such that,
-    >  $$t \; \sigma \; z \iff$$ $$z = e^{it}$$
+1. Let $A$ be the set of all straight lines in the plane, we define $\sigma \subset A \times A$ such that 
+    > $a \; \sigma \; b$ $\iff a \parallel b$
+2. Again, let $A$ be the set of all straight lines in the plane
+    > This time we define $\sigma \subset A \times A$ such that $a \; \sigma \; b \iff a \perp b$
+3. Let $A_m = \mathbb{Z}$ the set of all integer numbers with $m$ some fixed integer, we define $\sigma \subset A \times A$ such that 
+    > $a \; \sigma \; b \iff a \equiv b \; mod \; m \iff \exists k \in \mathbb{Z}$ such that $a-b = km$
+4. Let $X$ be any set and put $A = 	\mathcal{P}(X)$ the set of all subsets of $X,$ we define $\sigma \subset A \times A$ such that 
+    >  $a \; \sigma \; b \iff a \subset b$ where $a,b \subset X$
+5. Let $A = \mathbb{R}$ and $B = \mathbb{C},$ we define $\sigma \subset A \times B$ such that,
+    >  $t \; \sigma \; z \iff$ $z = e^{it}$
 </div>
 
 *Properties of Binary Relations:*
-1. $$\sigma \subset A \times A$$ is called **reflexive** if $$\forall a \in A$$ we have $$a \; \sigma \; a$$
-    - $$1,3,4$$ are reflexive relations, $$2,5$$ are not.
-2. $$\sigma \subset A \times A$$ is called **transitive** if $$\forall a,b,c \in A$$ if $$a \; \sigma \; b$$ and $$b \; \sigma \; c$$ then $$a \; \sigma \; c$$
-    - $$1,3,4$$ are transitive relations, $$2,5$$ are not.
-3. $$\sigma \subset A \times A$$ is called **symmetric** if $$\forall a,b \in A$$ if $$a \; \sigma \; b$$ then $$b \; \sigma \; a$$
-    - $$1,2,3$$ are symmetric relations $$4,5$$ are not.
-4. $$\sigma \subset A \times A$$ is called **anti-symmetric** if $$\forall a,b \in A$$ if $$a \; \sigma \; b$$ and $$b \sigma a$$ then it must be the case that $$a = b$$
+1. $\sigma \subset A \times A$ is called **reflexive** if $\forall a \in A$ we have $a \; \sigma \; a$
+    - $1,3,4$ are reflexive relations, $2,5$ are not.
+2. $\sigma \subset A \times A$ is called **transitive** if $\forall a,b,c \in A$ if $a \; \sigma \; b$ and $b \; \sigma \; c$ then $a \; \sigma \; c$
+    - $1,3,4$ are transitive relations, $2,5$ are not.
+3. $\sigma \subset A \times A$ is called **symmetric** if $\forall a,b \in A$ if $a \; \sigma \; b$ then $b \; \sigma \; a$
+    - $1,2,3$ are symmetric relations $4,5$ are not.
+4. $\sigma \subset A \times A$ is called **anti-symmetric** if $\forall a,b \in A$ if $a \; \sigma \; b$ and $b \sigma a$ then it must be the case that $a = b$
     - Only $4$ is an anti-symmetric relation.
-5. $$\sigma \subset A \times A$$ is called an **equivalence relation** if it is at once reflexive, transitive and symmetric.
-    - $$1,3$$ are equivalence relations, $$2,4,5$$ are not.
-6. $$\sigma \subset A \times A$$ is called a **partial order** if it is at once reflexive, transitive, and anti-symmetric 
+5. $\sigma \subset A \times A$ is called an **equivalence relation** if it is at once reflexive, transitive and symmetric.
+    - $1,3$ are equivalence relations, $2,4,5$ are not.
+6. $\sigma \subset A \times A$ is called a **partial order** if it is at once reflexive, transitive, and anti-symmetric 
     - Only $4$ is a partial order.
 
 <div class="example" markdown="1">
@@ -61,9 +61,9 @@ Some instructive examples of binary relations:
 **Statement on Equivalence Relations**
 
 Let $\sigma$ be an equivalence relation on $A,$ then $\sigma$ *partitions* $A,$ i.e. denote by $\sigma_x$ the set of all elements from $A$ equivalent to $x$ ($y \in \sigma_x \iff y \; \sigma \; x$)
-1. $$\forall x \in A$$ there exists a unique $$\sigma_x$$ such that $$x \in \sigma_x$$
-2. $$\forall x,y \in A$$ either $$\sigma_x = \sigma_y$$ or $$\sigma_x \cap \sigma_y = \emptyset$$
-3. $$ \bigcup_{x \in A}$$ $$= A$$
+1. $\forall x \in A$ there exists a unique $\sigma_x$ such that $x \in \sigma_x$
+2. $\forall x,y \in A$ either $\sigma_x = \sigma_y$ or $\sigma_x \cap \sigma_y = \emptyset$
+3. $ \bigcup_{x \in A}$ $= A$
 </div>
 
 ### Algebraic Operations
@@ -85,40 +85,40 @@ specifying the map and the set on which it acts.
 **Examples: Algebraic Operations**
 
 Some instructive examples and non-examples of algebraic operations:
-1. Let $$A = \mathbb{N}$$ the set of natural numbers
-    - $$(\mathbb{N}, +)$$ is an algebraic operation.
-    - $$(\mathbb{N}, -)$$ is not an algebraic operation.
-2. Let $$A = \mathbb{Z}$$ the set of integers
-    - $$(\mathbb{Z}, +),(\mathbb{Z}, -),(\mathbb{Z}, \cdot)$$ are algebraic operations.
-    - $$(\mathbb{Z}, \div)$$ is not an algebraic operation.
-3. Let $$A = \mathbb{Q}$$ the set of rational numbers
-    - $$(\mathbb{Q}, +),(\mathbb{Q}, -),(\mathbb{Q}, \cdot),(\mathbb{Q}, \div)$$ are all algebraic operations.
-3. Let $$A = \mathbb{R}$$ the set of real numbers
-    - $$(\mathbb{R}, +),(\mathbb{R}, -),(\mathbb{R}, \cdot),(\mathbb{R}, \div)$$ are all algebraic operations.
+1. Let $A = \mathbb{N}$ the set of natural numbers
+    - $(\mathbb{N}, +)$ is an algebraic operation.
+    - $(\mathbb{N}, -)$ is not an algebraic operation.
+2. Let $A = \mathbb{Z}$ the set of integers
+    - $(\mathbb{Z}, +),(\mathbb{Z}, -),(\mathbb{Z}, \cdot)$ are algebraic operations.
+    - $(\mathbb{Z}, \div)$ is not an algebraic operation.
+3. Let $A = \mathbb{Q}$ the set of rational numbers
+    - $(\mathbb{Q}, +),(\mathbb{Q}, -),(\mathbb{Q}, \cdot),(\mathbb{Q}, \div)$ are all algebraic operations.
+3. Let $A = \mathbb{R}$ the set of real numbers
+    - $(\mathbb{R}, +),(\mathbb{R}, -),(\mathbb{R}, \cdot),(\mathbb{R}, \div)$ are all algebraic operations.
 </div>
 
 ### Fields
 
-Simply, a field is a set on which algebraic operations behave as they do on $$\mathbb{R}$$ and $$\mathbb{Q}$$
+Simply, a field is a set on which algebraic operations behave as they do on $\mathbb{R}$ and $\mathbb{Q}$
 
 <div class="definition" markdown="1">
 
 **Definition: Field**
 
-A set $$\mathbb{F},$$ containing at least the two elements $$\mathbb{1}, \mathbb{0}$$, is called a **field** if it is equipped with two field (algebraic) operations, $$+$$ and $$\cdot,$$ satisfying the following conditions:
-1. Conditions on addition operation $$+: \quad$$ $$\forall a,b,c \in \mathbb{F}$$ 
-    1. *Associativity:* $$a + (b+c) = (a+b) + c$$
-    2. *Additive Identity:* $$a + \mathbb{0} = \mathbb{0} + a = a$$
-    3. *Additive Inverse:* For all $$a$$ there exists a unique $$b$$ such that $$a+b = b+a = \mathbb{0}$$
-    4. *Commutativity:* $$a+b = b+a$$
-2. Conditions on multiplicative operation $$\cdot: \quad$$ $$\forall a,b,c \in \mathbb{F}$$ 
-    1. *Associativity:* $$a \cdot (b \cdot c) = (a \cdot b) \cdot c$$
-    2. *Multplicative Identity:* $$a \cdot \mathbb{1} = \mathbb{1} \cdot a = a$$
-    3. *Multplicative Inverse:* For all $$a \neq 0$$ there exists a unique $$b$$ such that $$a \cdot b = b \cdot a = \mathbb{1}$$
-    4. *Commutativity:* $$a \cdot b = b \cdot a$$
-3. Conditions between $$+$$ and $$\cdot: \quad$$ $$\forall a,b,c \in \mathbb{F}$$ 
-    1. *Right Distributivity* $$(a+b) \cdot c = a \cdot c + b \cdot c$$
-    2. *Left Distributivity* $$c \cdot (a+b) = c \cdot a + c \cdot b$$
+A set $\mathbb{F},$ containing at least the two elements $\mathbb{1}, \mathbb{0}$, is called a **field** if it is equipped with two field (algebraic) operations, $+$ and $\cdot,$ satisfying the following conditions:
+1. Conditions on addition operation $+: \quad$ $\forall a,b,c \in \mathbb{F}$ 
+    1. *Associativity:* $a + (b+c) = (a+b) + c$
+    2. *Additive Identity:* $a + \mathbb{0} = \mathbb{0} + a = a$
+    3. *Additive Inverse:* For all $a$ there exists a unique $b$ such that $a+b = b+a = \mathbb{0}$
+    4. *Commutativity:* $a+b = b+a$
+2. Conditions on multiplicative operation $\cdot: \quad$ $\forall a,b,c \in \mathbb{F}$ 
+    1. *Associativity:* $a \cdot (b \cdot c) = (a \cdot b) \cdot c$
+    2. *Multplicative Identity:* $a \cdot \mathbb{1} = \mathbb{1} \cdot a = a$
+    3. *Multplicative Inverse:* For all $a \neq 0$ there exists a unique $b$ such that $a \cdot b = b \cdot a = \mathbb{1}$
+    4. *Commutativity:* $a \cdot b = b \cdot a$
+3. Conditions between $+$ and $\cdot: \quad$ $\forall a,b,c \in \mathbb{F}$ 
+    1. *Right Distributivity* $(a+b) \cdot c = a \cdot c + b \cdot c$
+    2. *Left Distributivity* $c \cdot (a+b) = c \cdot a + c \cdot b$
 </div>
 
 We say that $\mathcal{S} \subset \mathcal{F}$ is a **subfield** of the field $\mathcal{F}$ if it is a field in its own right with the field operations of $\mathcal{F}.$
@@ -128,26 +128,26 @@ We say that $\mathcal{S} \subset \mathcal{F}$ is a **subfield** of the field $\m
 **Examples: Fields**
 
 Some instructive examples and non-examples of fields:
-1. $$\mathbb{Q},\mathbb{R},\mathbb{C}$$ are fields
-2. $$\mathbb{Z}$$ is not a field
-3. The set of rational functions over $$\mathbb{R},$$ $$X = \lbrace \frac{a_0 + a_1x + \cdots + a_n x^n}{b_0 + b_1x + \cdots + b_m x^m} \rbrace$$ with $$a_i, b_j \in \mathbb{R}$$ is a field.
+1. $\mathbb{Q},\mathbb{R},\mathbb{C}$ are fields
+2. $\mathbb{Z}$ is not a field
+3. The set of rational functions over $\mathbb{R},$ $X = \lbrace \frac{a_0 + a_1x + \cdots + a_n x^n}{b_0 + b_1x + \cdots + b_m x^m} \rbrace$ with $a_i, b_j \in \mathbb{R}$ is a field.
 </div>
 
 ### Order
 
-Informally, we think of an ordered set as a set $A$ equipped with a binary relation $$\leq \in A \times A$$ that describes a comparison rule between its elements. 
+Informally, we think of an ordered set as a set $A$ equipped with a binary relation $\leq \in A \times A$ that describes a comparison rule between its elements. 
 
 <div class="definition" markdown="1">
 
 **Partial and Total Orders**
 
 Let $A$ be a set and $\leq \in A \times A$ a binary relation
-1. We say that $$\leq$$ is a partial order on $$A$$ if it is reflexive, transitive, and anti-symmetric, i.e. 
-    - *Reflexive:* every element is comparable to itself, $$a \leq a$$
-    - *Transitive:* comparable elements form a *chain*, $$a \leq b \, \land b \leq c \implies a \leq c$$
-    - *Anti-Symmetric:* elements may only be compared in at most one direction, if $$a \leq b$$ then not $$b \leq a$$
-2. We say that $$\leq$$ is a total order on $$A$$ if it is a partial order with the condition that any two elements are comparable, i.e.
-    - *Totality:* If $$a,b \in A$$ then either $$a \leq b$$ or $$b \leq a$$
+1. We say that $\leq$ is a partial order on $A$ if it is reflexive, transitive, and anti-symmetric, i.e. 
+    - *Reflexive:* every element is comparable to itself, $a \leq a$
+    - *Transitive:* comparable elements form a *chain*, $a \leq b \, \land b \leq c \implies a \leq c$
+    - *Anti-Symmetric:* elements may only be compared in at most one direction, if $a \leq b$ then not $b \leq a$
+2. We say that $\leq$ is a total order on $A$ if it is a partial order with the condition that any two elements are comparable, i.e.
+    - *Totality:* If $a,b \in A$ then either $a \leq b$ or $b \leq a$
 
 </div>
 
@@ -156,9 +156,9 @@ Let $A$ be a set and $\leq \in A \times A$ a binary relation
 **Examples: Ordered Sets**
 
 Some instructive examples of ordered sets:
-1. $$(\mathbb{R},<)$$ and $$(\mathbb{R},\leq)$$ describe respectively total and partial orders on $$\mathbb{R}$$
-2. Any set $$M$$ can be partially ordered with the following relation
-    - $$a \; \sigma \; b$$ $$\iff$$ $$a=b$$
+1. $(\mathbb{R},<)$ and $(\mathbb{R},\leq)$ describe respectively total and partial orders on $\mathbb{R}$
+2. Any set $M$ can be partially ordered with the following relation
+    - $a \; \sigma \; b$ $\iff$ $a=b$
 </div>
 
 We call sets with partial and total orders partially and totally ordered, respectively. The ordering of field comes with the extra complication that the relation respect field operations.
@@ -168,8 +168,8 @@ We call sets with partial and total orders partially and totally ordered, respec
 **Ordered Field**
 
 Let $\mathbb{F}$ be a set with total order $\leq \in \mathbb{F} \times \mathbb{F}$ we say that $\mathbb{F}$ is ordered if $\forall a,b,c \in \mathbb{F}$
-1. The order respects addition: $$a \leq b \implies a+c \leq b+c$$
-2. The order respects multiplication: $$a \leq b \implies ac \leq bc$$ for $$c \geq \mathcal{0}$$
+1. The order respects addition: $a \leq b \implies a+c \leq b+c$
+2. The order respects multiplication: $a \leq b \implies ac \leq bc$ for $c \geq \mathcal{0}$
 
 </div>
 
@@ -178,7 +178,7 @@ Let $\mathbb{F}$ be a set with total order $\leq \in \mathbb{F} \times \mathbb{F
 **Examples: Ordered Fields**
 
 Some instructive examples and ordered fields:
-1. $$(\mathbb{Q}, \leq), (\mathbb{R}, \leq)$$ are ordered fields
+1. $(\mathbb{Q}, \leq), (\mathbb{R}, \leq)$ are ordered fields
 2. Any subfield of an ordered field is again ordered.
 3. The field of rational functions is an ordered field.
 </div>
@@ -189,16 +189,16 @@ which provide sufficient condtitions for a field isomorphism to $\mathbb{R}.$
 **Fundamental Concepts from Analysis**
 
 Assume $(\mathbb{F}, \leq)$ is an ordered field with $A \subset \mathbb{F}$
-1. $$A$$ is called bounded from above with *upper bound* $$\alpha$$ if
-    > $$\exists \alpha \in \mathbb{F}$$ such that $$\forall x \in A$$ $$x \leq \alpha$$
-2.  $$A$$ is called bounded from below with *lower bound* $$\beta$$ if
-    > $$\exists \beta \in \mathbb{F}$$ such that $$\forall x \in A$$ $$ \beta \leq x$$
-3. An element $$\gamma \in \mathbb{F}$$ is called a *supremum* for $$A$$ if
-    1. $$\gamma$$ is an upper bound for $$A$$
-    2. If $$\gamma'$$ is also an upper bound for $$A$$ then $$\gamma \leq \gamma',$$ i.e. $$\gamma$$ is the least upper bound for $$A$$
-4. An element $$\delta \in \mathbb{F}$$ is called a *infimum* for $$A$$ if
-    1. $$\delta$$ is an lower bound for $$A$$
-    2. If $$\delta'$$ is also an lower bound for $$A$$ then $$\delta' \leq \delta,$$ i.e. $$\delta$$ is the greatest lower bound for $$A$$
+1. $A$ is called bounded from above with *upper bound* $\alpha$ if
+    > $\exists \alpha \in \mathbb{F}$ such that $\forall x \in A$ $x \leq \alpha$
+2.  $A$ is called bounded from below with *lower bound* $\beta$ if
+    > $\exists \beta \in \mathbb{F}$ such that $\forall x \in A$ $ \beta \leq x$
+3. An element $\gamma \in \mathbb{F}$ is called a *supremum* for $A$ if
+    1. $\gamma$ is an upper bound for $A$
+    2. If $\gamma'$ is also an upper bound for $A$ then $\gamma \leq \gamma',$ i.e. $\gamma$ is the least upper bound for $A$
+4. An element $\delta \in \mathbb{F}$ is called a *infimum* for $A$ if
+    1. $\delta$ is an lower bound for $A$
+    2. If $\delta'$ is also an lower bound for $A$ then $\delta' \leq \delta,$ i.e. $\delta$ is the greatest lower bound for $A$
 
 If a supremum for $A \subset \mathbb{F}$ belongs to $A$ then we call it a maximum of $A.$ 
 Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.$
@@ -208,7 +208,7 @@ Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.
 **Proposition**
 
 Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a limit point. i.e.
-- $$\forall \epsilon > 0$$ $$\exists a \in A$$ such that $$\sup{A} \leq a + \epsilon$$
+- $\forall \epsilon > 0$ $\exists a \in A$ such that $\sup{A} \leq a + \epsilon$
 </div>
 
 <div class="proof" markdown="1">
@@ -216,7 +216,7 @@ Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a
 *Proof:*
 
 Let $\sup{A}$ be the supremum of some set $A \subset \mathbb{R}$. Suppose, for contradiction, that $\sup{A}$ is not a limit point of $A$ i.e. suppose
-- $$\exists \epsilon > 0$$ such that $$\forall a \in A$$ $$\sup{A} > a + \epsilon$$
+- $\exists \epsilon > 0$ such that $\forall a \in A$ $\sup{A} > a + \epsilon$
 
 Then the quantity $\sup{A} - \epsilon$ is an upper bound for $A$ and as $\epsilon > 0$ $\sup{A} - \epsilon < \sup{A}$.
 
@@ -228,10 +228,10 @@ However, $\sup{A}$ was assumed to be the *least* upper bound for $A$, contradict
 **Problem**
 
 Let $A,B \subset \mathbb{R}$ be bounded above. Show that
-> $$A + B = \lbrace x+y \in \mathbb{R} \; \vert \; x \in A, \; y \in B \rbrace$$
+> $A + B = \lbrace x+y \in \mathbb{R} \; \vert \; x \in A, \; y \in B \rbrace$
 
 is bounded above, and that
-> $$\sup{(A+B)} = \sup{A} + \sup{B}$$
+> $\sup{(A+B)} = \sup{A} + \sup{B}$
 
 [Solution](/pdf/RA_HW1_1.pdf)
 
@@ -252,9 +252,9 @@ Equivalently, we might require the existence of a infimum for any set bounded fr
 **Examples: Order-Complete Fields**
 
 Some instructive examples and nonexamples of order-complete fields:
-1. $$(\mathbb{R}, <)$$ is order complete.
-2. $$(\mathbb{Q}, <), (\mathbb{N}, <), (\mathbb{Z}, <)$$ are not order complete.
-    - Indeed, put $$A:= \lbrace x \in \mathbb{Q}: \quad x^2 < 2 \rbrace$$ which has supremum $$\sqrt{2} \notin \mathbb{Q}$$
+1. $(\mathbb{R}, <)$ is order complete.
+2. $(\mathbb{Q}, <), (\mathbb{N}, <), (\mathbb{Z}, <)$ are not order complete.
+    - Indeed, put $A:= \lbrace x \in \mathbb{Q}: \quad x^2 < 2 \rbrace$ which has supremum $\sqrt{2} \notin \mathbb{Q}$
 </div>
 
 The Archimedian property is very nicely described by Euclid himself. In Book $\textrm{V}$ of Euclid's Elements we read
@@ -266,9 +266,9 @@ The Archimedian property is very nicely described by Euclid himself. In Book $\t
 
 **Archimedian Property**
 
-We say that an ordered field $$(\mathbb{F}, <)$$ is Archimedian if 
-> $$\forall a,b \in \mathbb{F}$$ with $$a < b$$ 
-    >$$\exists n \in \mathbb{N}$$ such that $$b < na $$
+We say that an ordered field $(\mathbb{F}, <)$ is Archimedian if 
+> $\forall a,b \in \mathbb{F}$ with $a < b$ 
+    >$\exists n \in \mathbb{N}$ such that $b < na $
 </div>
 
 <div class="proposition" markdown="1">
@@ -284,19 +284,19 @@ Any complete ordered field is Archimedian.
 *Proof:*
 
 Let the field, $(\mathbb{F}, <),$ be order complete.
-> $$\iff$$ any bounded set $$A \subset \mathbb{F}$$ admits a supremum
+> $\iff$ any bounded set $A \subset \mathbb{F}$ admits a supremum
 
 Suppose, by contradiction, that $\mathbb{F}$ is not Archimedian
-> $$\rightarrow$$ $$\exists a,b \in \mathbb{F}$$ with $$a < b$$ such that $$\forall n \in \mathbb{N}$$ we have $$na < b$$
+> $\rightarrow$ $\exists a,b \in \mathbb{F}$ with $a < b$ such that $\forall n \in \mathbb{N}$ we have $na < b$
 
 Now, take the set $A: = \lbrace na \rbrace_{n \in \mathbb{N}},$ by negation of the Archimedian property this set is bounded above by $b \in \mathbb{F}.$
 
 Also, by order completeness of $\mathbb{F},$ we are guarenteed the existence of some supremum $\gamma = \sup A$
-> $$\rightarrow$$ $$\forall n \in \mathbb{N}$$ we have $$na < \gamma$$
+> $\rightarrow$ $\forall n \in \mathbb{N}$ we have $na < \gamma$
 
-> In particular we have $$\forall n \in \mathbb{N} \,$$ $$(n+1)a < \gamma$$ 
+> In particular we have $\forall n \in \mathbb{N} \,$ $(n+1)a < \gamma$ 
 
-> $$\rightarrow$$ $$\forall n \in \mathbb{N} \,$$ $$na + a < \gamma$$ $$\rightarrow$$ $$na < \gamma - a < \gamma$$
+> $\rightarrow$ $\forall n \in \mathbb{N} \,$ $na + a < \gamma$ $\rightarrow$ $na < \gamma - a < \gamma$
 
 But now we must conclude that $\gamma - a$ is an upper bound for $A$ and $\gamma - a < \gamma$ which contradicts our assumption that
 $\gamma$ is the *least upper bound* for $A$ and so the proposition follows.
@@ -321,13 +321,13 @@ Suppose, by contradiction, that such an order exists.
 Case $1:$ Assume that $0 < i$ 
 
 Then, by the axioms of ordered fields, 
-> $$0 \cdot i < i \cdot i $$ $$\rightarrow$$ $$0 < -1,$$ 
+> $0 \cdot i < i \cdot i $ $\rightarrow$ $0 < -1,$ 
     > contradiction. 
 
 Case $1:$ Assume that $i < 0$ 
 
 Then, $0 < -i$ and by the axioms of ordered fields 
-> $$0 \cdot -i < -i \cdot -i $$ $$\rightarrow$$ $$0 < -1,$$ 
+> $0 \cdot -i < -i \cdot -i $ $\rightarrow$ $0 < -1,$ 
     > again a contradiction. 
 </div>
 
@@ -338,15 +338,15 @@ neighborhood* of $a$
 and by $N^*_{\epsilon}(a) := N_{\epsilon}(a) \setminus \lbrace a \rbrace$ the deleted $\epsilon$-neighborhood of $a$.
 
 **Fundamental Concepts from Topology take $A \subset \mathbb{R}$** 
-1. $$a \in A$$ is called an *interior point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(a) \subset A$$
-    - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
-2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the neighborhood $$N_{\epsilon}(b)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$N_{\epsilon}(b) \cap A \neq \emptyset$$ $$\land$$ $$N_{\epsilon}(b) \cap A^{C} \neq \emptyset$$
-    - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
-3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted neighborhood of $$c$$ has nonempty intersection with $$A$$ i.e. if $$N^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
-4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$N_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
-5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
-6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$cl(A) = A \cup \lbrace $$ limit points of $$A \rbrace$$
+1. $a \in A$ is called an *interior point* of $A$ if $\exists \epsilon > 0$ such that $N_{\epsilon}(a) \subset A$
+    - We denote the union of all interior points with $int(A)$ and call this set the *interior* of $A$
+2. $b \in A$ is called a *boundary point* of $A$ if $\forall \epsilon > 0$ the neighborhood $N_{\epsilon}(b)$ has nonempty intersection with both $A$ and its complement $A^{C}$ i.e. if  $N_{\epsilon}(b) \cap A \neq \emptyset$ $\land$ $N_{\epsilon}(b) \cap A^{C} \neq \emptyset$
+    - We denote the union of all boundaary points with $\partial(A)$ and call this set the *boundary* of $A$
+3. $c \in A$ is called an *accumulation point* of $A$ if  $\forall \epsilon > 0$ the deleted neighborhood of $c$ has nonempty intersection with $A$ i.e. if $N^{\star}_{\epsilon}(c) \cap A \neq \emptyset$
+4. $d \in A$ is called an *isolated point* of $A$ if $\exists \epsilon > 0$ such that $N_{\epsilon}(d) \cap A = \lbrace d \rbrace$
+5. The union of of accumulation points and isolated points constitute a set called the limit points of $A$
+6. We define the closure of $A$ as the union of $A$ and the limit points of $A$.
+    - The closure of $A$ is often denoted $cl(A) = A \cup \lbrace $ limit points of $A \rbrace$
 
 $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
 
@@ -360,10 +360,10 @@ A metric space is a set together with a map, called a metric, that defines a rul
 
 A set $M$ is called a metric space if there exists a map $\rho : M \times M \rightarrow \mathbb{R}$ satisfying 
 the metric properties $\forall x,y,z \in M$
-1. *Positive Semi-Definiteness:* $$\rho(x,y) \geq 0$$
-2. *Indiscernibility:* $$\rho(x,y) = 0 \iff x = y$$
-3. *Symmetry:* $$\rho(x,y) = \rho(y,x)$$
-4. *Triangle Inequality:* $$\rho(x,y) \leq \rho(x,z) + \rho(z,y)$$
+1. *Positive Semi-Definiteness:* $\rho(x,y) \geq 0$
+2. *Indiscernibility:* $\rho(x,y) = 0 \iff x = y$
+3. *Symmetry:* $\rho(x,y) = \rho(y,x)$
+4. *Triangle Inequality:* $\rho(x,y) \leq \rho(x,z) + \rho(z,y)$
 
 </div>
 
@@ -372,16 +372,16 @@ the metric properties $\forall x,y,z \in M$
 **Examples: Metric Spaces**
 
 Some instructive examples of metric spaces:
-1. It is the case that any set $$X$$ can be made into a metric space with the so-called trivial metric
-    > $$\rho(x,y) =$$ $$\begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
-2. Consider $$M = \mathbb{R}^n$$ where $$\mathbb{R}^n := \lbrace (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \rbrace$$ and define the $$p-$$ metric
-    > $$\rho(x,y)_p =$$ $$(\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$$ 
-3. Take $$M = C([a,b],\mathbb{R})$$ the space of real-valued, continuous functions defined over the interval $$[a,b] \subset \mathbb{R}$$ and define the supremum metric
-    > $$\rho(f,g) =$$ $$\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$$
-4. Again, take $$M = C([a,b],\mathbb{R})$$ but this time define the integral metric
-    > $$\rho(f,g) =$$ $$\int_a^b \vert f(x) - g(x) \vert dx$$ 
-5. Consider the set of convergent infinite sequences $$M = \ell^2 := \lbrace (x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \rbrace$$ equipped with the euclidean metric
-    > $$\rho(x,y) =$$ $$( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$$
+1. It is the case that any set $X$ can be made into a metric space with the so-called trivial metric
+    > $\rho(x,y) =$ $\begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$
+2. Consider $M = \mathbb{R}^n$ where $\mathbb{R}^n := \lbrace (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \rbrace$ and define the $p-$ metric
+    > $\rho(x,y)_p =$ $(\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$ 
+3. Take $M = C([a,b],\mathbb{R})$ the space of real-valued, continuous functions defined over the interval $[a,b] \subset \mathbb{R}$ and define the supremum metric
+    > $\rho(f,g) =$ $\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$
+4. Again, take $M = C([a,b],\mathbb{R})$ but this time define the integral metric
+    > $\rho(f,g) =$ $\int_a^b \vert f(x) - g(x) \vert dx$ 
+5. Consider the set of convergent infinite sequences $M = \ell^2 := \lbrace (x_1,x_2,\ldots): \quad \sum_{i=1}^{\infty} \vert x_i \vert^2 < \infty \rbrace$ equipped with the euclidean metric
+    > $\rho(x,y) =$ $( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$
 </div>
 
 ### Topology in Metric Spaces
@@ -392,16 +392,16 @@ Now the topological concepts in $(M, \rho)$ using balls follow
 as they did in $\mathbb{R}$ using neighborhoods.
 
 **Fundamental Concepts from Topology take $A \subset M$** 
-1. $$a \in A$$ is called an *interior point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(a) \subset A$$
-    - We denote the union of all interior points with $$int(A)$$ and call this set the *interior* of $$A$$
-2. $$b \in A$$ is called a *boundary point* of $$A$$ if $$\forall \epsilon > 0$$ the ball $$B_{\epsilon}(b)$$ has nonempty intersection with both $$A$$ and its complement $$A^{C}$$ i.e. if  $$B_{\epsilon}(b) \cap A \neq \emptyset$$ $$\land$$ $$B_{\epsilon}(b) \cap A^{C} \neq \emptyset$$
-    - We denote the union of all boundaary points with $$\partial(A)$$ and call this set the *boundary* of $$A$$
-3. $$c \in A$$ is called an *accumulation point* of $$A$$ if  $$\forall \epsilon > 0$$ the deleted ball of $$c$$ 
-has nonempty intersection with $$A$$ i.e. if $$B^{\star}_{\epsilon}(c) \cap A \neq \emptyset$$
-4. $$d \in A$$ is called an *isolated point* of $$A$$ if $$\exists \epsilon > 0$$ such that $$B_{\epsilon}(d) \cap A = \lbrace d \rbrace$$
-5. The union of of accumulation points and isolated points constitute a set called the limit points of $$A$$
-6. We define the closure of $$A$$ as the union of $$A$$ and the limit points of $$A$$.
-    - The closure of $$A$$ is often denoted $$cl(A) = A \cup \lbrace $$ limit points of $$A \rbrace$$
+1. $a \in A$ is called an *interior point* of $A$ if $\exists \epsilon > 0$ such that $B_{\epsilon}(a) \subset A$
+    - We denote the union of all interior points with $int(A)$ and call this set the *interior* of $A$
+2. $b \in A$ is called a *boundary point* of $A$ if $\forall \epsilon > 0$ the ball $B_{\epsilon}(b)$ has nonempty intersection with both $A$ and its complement $A^{C}$ i.e. if  $B_{\epsilon}(b) \cap A \neq \emptyset$ $\land$ $B_{\epsilon}(b) \cap A^{C} \neq \emptyset$
+    - We denote the union of all boundaary points with $\partial(A)$ and call this set the *boundary* of $A$
+3. $c \in A$ is called an *accumulation point* of $A$ if  $\forall \epsilon > 0$ the deleted ball of $c$ 
+has nonempty intersection with $A$ i.e. if $B^{\star}_{\epsilon}(c) \cap A \neq \emptyset$
+4. $d \in A$ is called an *isolated point* of $A$ if $\exists \epsilon > 0$ such that $B_{\epsilon}(d) \cap A = \lbrace d \rbrace$
+5. The union of of accumulation points and isolated points constitute a set called the limit points of $A$
+6. We define the closure of $A$ as the union of $A$ and the limit points of $A$.
+    - The closure of $A$ is often denoted $cl(A) = A \cup \lbrace $ limit points of $A \rbrace$
 
 Just as with subsets of $\mathbb{R},$ $A$ is called *open* if $A = int(A),$ in turn we say that $A$ is *closed* if $A^{C}$ is open. $A$ is said to be *compact* if it is both bounded and closed
 
@@ -428,9 +428,9 @@ Recall that the closure of $A$ is defined to be the union of $A$ the limit point
 **Problem:** 
 
 Let $X$ be a metric space. Show that for $A,B \subset X$ the closure satisfies the following properties:
-1. If $$A \subset B$$ then $$cl(A) \subset cl(B)$$.
-2. $$cl(A\cup B) = cl(A) \cup cl(B)$$ $$$$
-3. $$cl(A \cap B) \subset cl(A) \cap cl(B)$$ $$$$
+1. If $A \subset B$ then $cl(A) \subset cl(B)$.
+2. $cl(A\cup B) = cl(A) \cup cl(B)$ $$
+3. $cl(A \cap B) \subset cl(A) \cap cl(B)$ $$
 
 [Solution](/pdf/RA_HW1_3.pdf)
 
@@ -440,13 +440,13 @@ Let $X$ be a metric space. Show that for $A,B \subset X$ the closure satisfies t
 
 **Statement:** Let $(M,\rho)$ be a metric space
 1. The arbitrary union of open sets is open $M$. 
-    - i.e. If $$\lbrace U_{\alpha} \rbrace_{\alpha \in I}$$ is an arbitrary collection of open subsets in $$M$$ then $$\bigcup_{\alpha} U_{\alpha}$$ is open.
+    - i.e. If $\lbrace U_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of open subsets in $M$ then $\bigcup_{\alpha} U_{\alpha}$ is open.
 2. The finite intersection of open sets is open in $M$
-    - i.e. if $$\lbrace U_{\alpha} \rbrace^{N}_{n=1}$$ is a finite collection of open subsets in $$M$$ then $$\bigcap^{N}_{n=1} U_{n}$$ is open.
+    - i.e. if $\lbrace U_{\alpha} \rbrace^{N}_{n=1}$ is a finite collection of open subsets in $M$ then $\bigcap^{N}_{n=1} U_{n}$ is open.
 3. The arbitrary intersection of closed sets is closed $M$. 
-    - i.e. If $$\lbrace V_{\alpha} \rbrace_{\alpha \in I}$$ is an arbitrary collection of closed subsets in $$M$$ then $$\bigcap_{\alpha} V_{\alpha}$$ is closed.
+    - i.e. If $\lbrace V_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of closed subsets in $M$ then $\bigcap_{\alpha} V_{\alpha}$ is closed.
 4. The finite union of closed sets is closed in $M$
-    - i.e. if $$\lbrace V_{\alpha} \rbrace^{N}_{n=1}$$ is a finite collection of closed subsets in $$M$$ then $$\bigcup^{N}_{n=1} V_{n}$$ is closed.
+    - i.e. if $\lbrace V_{\alpha} \rbrace^{N}_{n=1}$ is a finite collection of closed subsets in $M$ then $\bigcup^{N}_{n=1} V_{n}$ is closed.
 </div>
 
 <div class="example" markdown="1">
@@ -469,8 +469,8 @@ convergence in a metric space.
 
 Let $(M, \rho)$ be a metric space, a sequence $\lbrace x_n \rbrace \subset M$ is said to be convergent to an element $a \in M$ if 
 all but finitely many terms of the sequence belong to any neighborhood of $a,$ i.e. 
-- $$ \lim_{n \rightarrow \infty } \lbrace x_n \rbrace = a$$ $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n > N \, 
-    \rho(x_n,a) < \epsilon$$
+- $ \lim_{n \rightarrow \infty } \lbrace x_n \rbrace = a$ $\iff$ $\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n > N \, 
+    \rho(x_n,a) < \epsilon$
 
 </div>
 
@@ -480,7 +480,7 @@ all but finitely many terms of the sequence belong to any neighborhood of $a,$ i
 
 Given a metric space $(M, \rho)$ a sequence $\lbrace x_n \rbrace \subset M$ is called a Cauchy sequence if its terms 
 become arbitarily close together, i.e.
-- $$\lbrace x_n \rbrace$$ Cauchy $$\iff$$ $$\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n,m > N \, \rho(x_n,x_m)< \epsilon$$
+- $\lbrace x_n \rbrace$ Cauchy $\iff$ $\forall \epsilon > 0 \exists N \in \mathbb{N}: \, \forall n,m > N \, \rho(x_n,x_m)< \epsilon$
 </div>
 
 <div class="proposition" markdown="1">
@@ -495,13 +495,13 @@ Any convergent sequence in a metric space is a Cauchy sequence.
 *Proof:* 
 
 Given metric space $(M, \rho),$ suppose $\lbrace x_n \rbrace \subset M$ is convergent to $a \in M$
-> $$\rightarrow$$ $$\lim_{n \rightarrow \infty } \rho(x_n, a) = 0$$
+> $\rightarrow$ $\lim_{n \rightarrow \infty } \rho(x_n, a) = 0$
 
-Now consider the distance between the $$n$$-th and $$m$$-th terms of our sequence. By the triangle inequality metric axiom:
-> $$\rho(x_n, x_m) \leq \rho(x_n, a) + \rho(x_m, a)$$
+Now consider the distance between the $n$-th and $m$-th terms of our sequence. By the triangle inequality metric axiom:
+> $\rho(x_n, x_m) \leq \rho(x_n, a) + \rho(x_m, a)$
 
 Where, both terms on the RHS of the inequality vanish in the limit such that
-> $$\lim_{n \rightarrow \infty } \rho(x_n, x_m) = 0$$
+> $\lim_{n \rightarrow \infty } \rho(x_n, x_m) = 0$
 </div>
 
 <div class="example" markdown="1">
@@ -527,14 +527,14 @@ A metric space, $(M, \rho),$ is called complete if any Cauchy sequence in $M$ co
 **Examples: Complete Metric Spaces**
 
 Some instructive examples of complete metric spaces:
-1. $$(X, \rho)$$ is a complete metric space for any set $$X$$ and the trivial metric $$\rho(x,y) = \begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$$
-    - Indeed, let $$\lbrace x_n \rbrace$$ be a Cauchy sequence in $$X$$ and choose $$\epsilon = \frac{1}{2},$$ we are guarenteed the existence of some $$N \in \mathbb{N}$$ such that $$\forall n,m > N \, \rho(x,y) < \frac{1}{2}$$ but then $$\rho(x,y) = 0$$ $$\rightarrow$$ $$x=y.$$ 
-    - Hence, any Cauchy sequence in such a metric space must become constant for all indices $$n >N$$ and as such is convergent to that constant value, which belongs to $$X$$.
-2. $$(\mathbb{R}, \rho)$$ is a complete metric space with the natural metric $$\rho(x,y) = \vert x-y \vert$$
+1. $(X, \rho)$ is a complete metric space for any set $X$ and the trivial metric $\rho(x,y) = \begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$
+    - Indeed, let $\lbrace x_n \rbrace$ be a Cauchy sequence in $X$ and choose $\epsilon = \frac{1}{2},$ we are guarenteed the existence of some $N \in \mathbb{N}$ such that $\forall n,m > N \, \rho(x,y) < \frac{1}{2}$ but then $\rho(x,y) = 0$ $\rightarrow$ $x=y.$ 
+    - Hence, any Cauchy sequence in such a metric space must become constant for all indices $n >N$ and as such is convergent to that constant value, which belongs to $X$.
+2. $(\mathbb{R}, \rho)$ is a complete metric space with the natural metric $\rho(x,y) = \vert x-y \vert$
     - This will be shown later.
-3. $$(\mathbb{R}^n, \rho_p)$$ is a complete metric space, where $$\rho_p(x,y) = (\sum^n_{i=1} \vert x-y \vert^p)^{\frac{1}{p}}$$
-4. Let $$X =C([a,b],\mathbb{R})$$ then for $$\rho(f,g) =\sup_{x \in [a,b]} \vert f(x) - g(x) \vert,$$ the metric space $$(X, \rho)$$ is complete
-    - Take fundamental sequence of functions $$\lbrace f_n \rbrace \subset X$$
+3. $(\mathbb{R}^n, \rho_p)$ is a complete metric space, where $\rho_p(x,y) = (\sum^n_{i=1} \vert x-y \vert^p)^{\frac{1}{p}}$
+4. Let $X =C([a,b],\mathbb{R})$ then for $\rho(f,g) =\sup_{x \in [a,b]} \vert f(x) - g(x) \vert,$ the metric space $(X, \rho)$ is complete
+    - Take fundamental sequence of functions $\lbrace f_n \rbrace \subset X$
 </div>
 
 ### Compactness in Metric Spaces
@@ -547,9 +547,9 @@ as motivation for a more general theorem concerning compactness in general metri
 **Heine-Borel Theorem:**
 
 The following properties are equivalent in any Euclidean space $\mathbb{R}^n$ for the closed subset $S \subset \mathbb{R}^n$
-1. If $$\lbrace U_n \rbrace_{n \in I}$$ is an open cover of $$S$$ then there exissts a finite subcover $$\lbrace U_{n_1},U_{n_2}, \ldots U_{n_k} \rbrace$$ with $$S \subset \bigcup^k_{i=1} U_{n_i}$$
-2. Any sequence $$\lbrace x_n \rbrace \subset S$$ admits a convergent subsequence, $$\lbrace x_{n_k} \rbrace,$$ with $$\lim_{k \rightarrow \infty} x_{n_k} \in S$$
-3. $$S$$ is bounded
+1. If $\lbrace U_n \rbrace_{n \in I}$ is an open cover of $S$ then there exissts a finite subcover $\lbrace U_{n_1},U_{n_2}, \ldots U_{n_k} \rbrace$ with $S \subset \bigcup^k_{i=1} U_{n_i}$
+2. Any sequence $\lbrace x_n \rbrace \subset S$ admits a convergent subsequence, $\lbrace x_{n_k} \rbrace,$ with $\lim_{k \rightarrow \infty} x_{n_k} \in S$
+3. $S$ is bounded
 </div>
 
 <div class="definition" markdown="1">
@@ -557,8 +557,8 @@ The following properties are equivalent in any Euclidean space $\mathbb{R}^n$ fo
 **Compactness:**
 
 Let $(M, \rho)$ be a metric space with subset $K \subset M$
-1. $$K$$ is called compact if any open cover of $$K$$ admits a finite subcoverr
-2. K is called sequentially compact if any sequence $$\lbrace x_n \rbrace \subset K$$ admits a subsequence convergent to some $$a \in K$$
+1. $K$ is called compact if any open cover of $K$ admits a finite subcoverr
+2. K is called sequentially compact if any sequence $\lbrace x_n \rbrace \subset K$ admits a subsequence convergent to some $a \in K$
 </div>
 
 <div class="proposition" markdown="1">
@@ -570,29 +570,29 @@ For any metric space compactness is equivalent to sequential compactness.
 
 This is not true for topological spaces in general. 
 Furthermore, it is not in general true that for a metric space $(M, \rho)$ 
-compactness is equivalent to closedness $$+$$ boundedness. 
+compactness is equivalent to closedness $+$ boundedness. 
 
 <div class="example" markdown="1">
 
 **Example: Closed, Bounded, but not Compact**
 
 Take the metric space $(\ell^2,\rho)$ which we recall was equipped with the metric
-> $$\rho(x,y)$$ $$= ( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$$
+> $\rho(x,y)$ $= ( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$
 
 Consider the unit sphere $S^{\infty} \subset \ell^2,$ the set of all vectors in $\ell^2$
 with distance $1$ away from the origin.
-> $$S^{\infty}:= \lbrace x \in \ell^2: \rho(x,0) \rbrace = 1$$ where $$0 = (0,0,\ldots)$$
+> $S^{\infty}:= \lbrace x \in \ell^2: \rho(x,0) \rbrace = 1$ where $0 = (0,0,\ldots)$
 
 Such a subset is both closed and bounded but we will show that it is not sequentially compact. Indeed consider the sequence
-> $$\begin{cases} (1,0,0,0,\ldots) \\ (0,1,0,0,\ldots) \\ (0,0,1,0,\ldots) \\ \cdots  \end{cases}$$
+> $\begin{cases} (1,0,0,0,\ldots) \\ (0,1,0,0,\ldots) \\ (0,0,1,0,\ldots) \\ \cdots  \end{cases}$
 
 Clearly this sequence does not admit any convergent subsequences. Indeed, let $z_j \in \ell^2$ denote the element with a $1$ 
 in its $j$-th index and $0$s otherwise, then
-> $$\rho(z_j,z_i) = 2$$ $$\forall i,j \in \mathbb{N}$$
+> $\rho(z_j,z_i) = 2$ $\forall i,j \in \mathbb{N}$
 
 </div>
 
-Though the Heine-Borel Theorem proposes that closedness $$+$$ boundedness is an equivalent condition to compactness 
+Though the Heine-Borel Theorem proposes that closedness $+$ boundedness is an equivalent condition to compactness 
 in Euclidean spaces, it has been demonstrated that this is not the case in general metric spaces. We will need the following 
 definition to generalize the result.
 
@@ -602,7 +602,7 @@ definition to generalize the result.
 
 Given a metric space $(M, \rho),$ a set $K \subset M$ is called totally bounded if it can be covered by finitely many
 balls of any fixed size, i.e.
-> $$K \subset M$$ is totally bounded $$\iff$$ $$\forall \epsilon > 0$$ $$\exists x_1,\ldots,x_n \in K$$ such that $$K \subset \bigcup^n_{i=1} B_{\epsilon}(x_i)$$
+> $K \subset M$ is totally bounded $\iff$ $\forall \epsilon > 0$ $\exists x_1,\ldots,x_n \in K$ such that $K \subset \bigcup^n_{i=1} B_{\epsilon}(x_i)$
 </div>
 
 <div class="proposition" markdown="1">
@@ -612,7 +612,7 @@ balls of any fixed size, i.e.
 The followinig conditions are equivalent for any subset of a metric space.
 1. Compactness (in the sense of open covers)
 2. Sequential Compactness
-3. Total Boundedness $$+$$ Completeness (or Closedness)
+3. Total Boundedness $+$ Completeness (or Closedness)
 </div>
 
 ### Continuity In Metric Spaces
@@ -625,11 +625,11 @@ imply closeness of their images in the codomain. We will generalize this notion 
 **Continuity**
 
 Given two metric spaces $(M_1, \rho_1),$ $(M_2, \rho_2),$ and a map $f: M_1 \rightarrow M_2$ then
-1. $$f$$ is called continuous at $$x_0 \in M_1$$ if $$\forall \epsilon > 0 \, \exists \delta > 0$$ such that
-    > $$\rho_1(x,x_0) < \delta$$ implies $$\rho_2(f(x),f(x_0)) < \epsilon$$
-2. $$f$$ is called sequentially continuous if $$x_n \rightarrow x_0$$ implies $$f(x_n) \rightarrow f(x_0)$$
-3. $$f$$ is said to be open if for any open subset $$U \subset M_2,$$ its preimage $$f^{-1}(U)$$ is open in $$M_1$$
-4. If $$f$$ is continuous at any point of some subset $$A \subset M_1$$ then we say that $$f$$ is continuous on $$A$$
+1. $f$ is called continuous at $x_0 \in M_1$ if $\forall \epsilon > 0 \, \exists \delta > 0$ such that
+    > $\rho_1(x,x_0) < \delta$ implies $\rho_2(f(x),f(x_0)) < \epsilon$
+2. $f$ is called sequentially continuous if $x_n \rightarrow x_0$ implies $f(x_n) \rightarrow f(x_0)$
+3. $f$ is said to be open if for any open subset $U \subset M_2,$ its preimage $f^{-1}(U)$ is open in $M_1$
+4. If $f$ is continuous at any point of some subset $A \subset M_1$ then we say that $f$ is continuous on $A$
 
 Continuity, sequential continuity, and openess of a map are equivalent conditions.
 </div>
@@ -692,8 +692,8 @@ Isometries are distance preserving bijections between metric spaces.
 
 Given two metric spaces $(M_1, \rho_1),$ $(M_2, \rho_2),$ a map $f: M_1 \rightarrow M_2$ is called
 an isometry if $\forall x,y \in M_1$
-1. $$\rho_1(x,y) = \rho_2(f(x),f(y))$$ $$$$
-2. $$f$$ is bijective
+1. $\rho_1(x,y) = \rho_2(f(x),f(y))$ $$
+2. $f$ is bijective
 </div>
 
 ### Completion of a Metric Space
@@ -704,9 +704,9 @@ an isometry if $\forall x,y \in M_1$
 
 Given a metric space $(M', \rho),$ we say that it is the completion
 of the metric space $(M, \rho)$ if 
-1. $$M'$$ complete (in the sense of Cauchy sequences)
-2. $$M'$$ contains $$M$$ i.e. $$M \subset M'$$
-3. $$M$$ is dense in $$M'$$ i.e. $$cl(M) = M'$$
+1. $M'$ complete (in the sense of Cauchy sequences)
+2. $M'$ contains $M$ i.e. $M \subset M'$
+3. $M$ is dense in $M'$ i.e. $cl(M) = M'$
 </div>
 
 We will prove that every metric space has a completion which is unique up to isometry.
@@ -716,9 +716,9 @@ We will prove that every metric space has a completion which is unique up to iso
 **Theorem**
 
 Given a metric space $(M, \rho),$ 
-1. There exists a completion of $$M$$ 
-2. If $$M_1$$ and $$M_2$$ are two completions of M, then
-    - There exists an isometry $$f: M_1 \rightarrow M_2$$ such that $$f \vert_M = \mathbb{1}$$
+1. There exists a completion of $M$ 
+2. If $M_1$ and $M_2$ are two completions of M, then
+    - There exists an isometry $f: M_1 \rightarrow M_2$ such that $f \vert_M = \mathbb{1}$
 </div>
 
 <div class="proof" markdown="1">
@@ -729,7 +729,7 @@ Given a metric space $(M, \rho),$
 
 Denote by $\tilde{M}$ the set of all Cauchy sequences in metric space $(M, \rho)$ and take $\sigma$, a 
 binary relation on $\tilde{M}$ defining the following rule
-> $$\lbrace x_n \rbrace \; \sigma \; \lbrace y_n \rbrace$$ $$\iff$$ $$\lim_{n \rightarrow \infty} \rho(x_n,y_n) = 0$$
+> $\lbrace x_n \rbrace \; \sigma \; \lbrace y_n \rbrace$ $\iff$ $\lim_{n \rightarrow \infty} \rho(x_n,y_n) = 0$
 
 **Claim 1:** $\sigma$ is an equivalence relation which partitions $\tilde{M}$ into equivalence classes.
 - verify
@@ -739,39 +739,39 @@ binary relation on $\tilde{M}$ defining the following rule
 **Step 2:** Construct Quotient Space
 
 Take the quotient space $M^{\star}:= \tilde{M}/_{\sigma}$ and define the following metric on $M^{\star}$
-> $$(1)$$ $$\rho^{\star}(\bar{x}, \bar{y}) = \lim_{n \rightarrow \infty} \rho(x_n,y_n)$$ where $$\bar{x}, \bar{y}$$ represent 
-the Cauchy sequences $$\lbrace x_n \rbrace,\lbrace y_n \rbrace$$ respectively.
+> $(1)$ $\rho^{\star}(\bar{x}, \bar{y}) = \lim_{n \rightarrow \infty} \rho(x_n,y_n)$ where $\bar{x}, \bar{y}$ represent 
+the Cauchy sequences $\lbrace x_n \rbrace,\lbrace y_n \rbrace$ respectively.
 
 **Claim 1:** Such a map, $(1)$, exists. <br>
-As $$\mathbb{R}$$ is complete, it is enough to show that $$\rho(x_n,y_n)$$ is a Cauchy sequence.
-- Indeed, $$\vert \rho(x_n,y_n) - \rho(x_m,y_m) \vert$$ 
-- *Add and subtract term:* $$ = \vert \rho(x_n,y_n) - \rho(x_m,y_n) + \rho(x_m,y_n) - \rho(x_m,y_m) \vert$$
-- *Triangle Inequality:* $$ \leq \vert \rho(x_n,y_n) - \rho(x_m,y_n) \vert + \vert \rho(x_m,y_n) - \rho(x_m,y_m) \vert$$
-- *Reverse Triangle Inequality:* $$ \leq \rho(x_n,x_m) + \rho(y_n,y_m) \rightarrow 0$$
+As $\mathbb{R}$ is complete, it is enough to show that $\rho(x_n,y_n)$ is a Cauchy sequence.
+- Indeed, $\vert \rho(x_n,y_n) - \rho(x_m,y_m) \vert$ 
+- *Add and subtract term:* $ = \vert \rho(x_n,y_n) - \rho(x_m,y_n) + \rho(x_m,y_n) - \rho(x_m,y_m) \vert$
+- *Triangle Inequality:* $ \leq \vert \rho(x_n,y_n) - \rho(x_m,y_n) \vert + \vert \rho(x_m,y_n) - \rho(x_m,y_m) \vert$
+- *Reverse Triangle Inequality:* $ \leq \rho(x_n,x_m) + \rho(y_n,y_m) \rightarrow 0$
 
 **Claim 2:** The limit in $(1)$ is independent of choice of representative. <br>
-- Assume $$\lbrace x_n \rbrace \; \sigma \; \lbrace x_n' \rbrace \in [\bar{x}]$$ and $$\lbrace y_n \rbrace \; \sigma \; \lbrace y_n' \rbrace \in [\bar{y}]$$
-- We want to show that $$ \vert \rho(x_n,y_n) - \rho(x_n',y_n') \vert \rightarrow 0,$$ which follows from the same argument used above. 
+- Assume $\lbrace x_n \rbrace \; \sigma \; \lbrace x_n' \rbrace \in [\bar{x}]$ and $\lbrace y_n \rbrace \; \sigma \; \lbrace y_n' \rbrace \in [\bar{y}]$
+- We want to show that $ \vert \rho(x_n,y_n) - \rho(x_n',y_n') \vert \rightarrow 0,$ which follows from the same argument used above. 
 
 
 **Claim 3:** $(1)$ is indeed a metric on $M^{\star}$ <br>
 We will only show the triangle inequality.   
-- Let $$\bar{x}, \bar{y}, \bar{z} \in M^{\star}$$ be represented by the Cauchy sequences $$\lbrace x_n \rbrace, \lbrace y_n \rbrace, \lbrace z_n \rbrace \subset M$$
-- As $$\rho: M \times M \rightarrow \mathbb{R}$$ is a metric it satisfies the triangle inequality $$\rho(x_n,y_n) \leq \rho(x_n,z_n) + \rho(z_n,y_n)$$
-- The inequality is preserved in the limit $$\lim_{n \rightarrow \infty} \rho(x_n,y_n) \leq \lim_{n \rightarrow \infty} \rho(x_n,z_n) + \lim_{n \rightarrow \infty} \rho(z_n,y_n)$$
-- And by construction of $$\rho^{\star}$$ this is exactly $$\rho^{\star}(\bar{x}, \bar{y}) \leq \rho^{\star}(\bar{x}, \bar{z}) + \rho^{\star}(\bar{y}, \bar{z})$$
+- Let $\bar{x}, \bar{y}, \bar{z} \in M^{\star}$ be represented by the Cauchy sequences $\lbrace x_n \rbrace, \lbrace y_n \rbrace, \lbrace z_n \rbrace \subset M$
+- As $\rho: M \times M \rightarrow \mathbb{R}$ is a metric it satisfies the triangle inequality $\rho(x_n,y_n) \leq \rho(x_n,z_n) + \rho(z_n,y_n)$
+- The inequality is preserved in the limit $\lim_{n \rightarrow \infty} \rho(x_n,y_n) \leq \lim_{n \rightarrow \infty} \rho(x_n,z_n) + \lim_{n \rightarrow \infty} \rho(z_n,y_n)$
+- And by construction of $\rho^{\star}$ this is exactly $\rho^{\star}(\bar{x}, \bar{y}) \leq \rho^{\star}(\bar{x}, \bar{z}) + \rho^{\star}(\bar{y}, \bar{z})$
 
 <hr>
 
 **Step 3:** Realization of $M$ in $M^{\star}$
 
 Take $x \in M,$ we must show that this element manifests as the limit point of some class of Cauchy sequences in $M^{\star}$
-- Consider the stationary sequence $$\lbrace x,x, \ldots \rbrace$$ which is by inspection
+- Consider the stationary sequence $\lbrace x,x, \ldots \rbrace$ which is by inspection
     1. A Cauchy Sequence
-    2. Convergent to $$x \in M$$
-- As an equivalence relation on $$\tilde{M}$$ *partitions* the space, we are guaranteed our stationary sequence represents exactly one 
-equivalence class in $$M^{\star}$$
-- Hence, $$M \subset M^{\star}$$
+    2. Convergent to $x \in M$
+- As an equivalence relation on $\tilde{M}$ *partitions* the space, we are guaranteed our stationary sequence represents exactly one 
+equivalence class in $M^{\star}$
+- Hence, $M \subset M^{\star}$
 
 <hr>
 
@@ -779,9 +779,9 @@ equivalence class in $$M^{\star}$$
 
 We will show that $cl(M) = M^{\star}:$ Take $\bar{x} \in M^{\star}$, fix $\epsilon > 0$, find Cauchy sequence, $\lbrace x_n \rbrace$ representing 
 $\bar{x}$
-- As $$\lbrace x_n \rbrace$$ is Cauchy $$\exists N$$ such that $$\forall n,m > N$$ we have $$\rho(x_n,x_m)$$
-- Choose any $$k > N$$ and take the stationary sequence $$\lbrace x_k,x_k, \ldots \rbrace$$ and denote its equivalence class $$\hat{x} \in M^{\star}$$
-- Now, $$\lim_{n \rightarrow \infty} \rho(x_n, x_k) < \epsilon$$ $$\rightarrow$$ $$\rho^{\star}(\bar{x}, \hat{x}) < \epsilon$$
+- As $\lbrace x_n \rbrace$ is Cauchy $\exists N$ such that $\forall n,m > N$ we have $\rho(x_n,x_m)$
+- Choose any $k > N$ and take the stationary sequence $\lbrace x_k,x_k, \ldots \rbrace$ and denote its equivalence class $\hat{x} \in M^{\star}$
+- Now, $\lim_{n \rightarrow \infty} \rho(x_n, x_k) < \epsilon$ $\rightarrow$ $\rho^{\star}(\bar{x}, \hat{x}) < \epsilon$
 
 <hr>
 

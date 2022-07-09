@@ -92,8 +92,8 @@ Suppose the set $f^{-1}(y_n)$ is measurable $\forall_{n}$, choose $c \in \mathbb
 **Theorem:** Criterion for measurability
 
 Any function,  $f: X \rightarrow \mathbb{R}$, is measurable if and only if there exists a sequence $\lbrace f_n: X \rightarrow \mathbb{R} \rbrace_n^{\infty}$ with
-1. $$f_n$$ is simple $$\forall_n$$
-2. $$\lbrace f_n \rbrace$$ converges uniformly to $$f$$
+1. $f_n$ is simple $\forall_n$
+2. $\lbrace f_n \rbrace$ converges uniformly to $f$
 </div>
 
 <div class="proposition" markdown="1">
@@ -102,10 +102,10 @@ Any function,  $f: X \rightarrow \mathbb{R}$, is measurable if and only if there
 
 Suppose $f,g: X \rightarrow \mathbb{R}$ are measurable functions, then so are the functions
 
-1. $$f + g$$ $$$$
-2. $$\alpha f$$ $$\; \forall_{\alpha \in \mathbb{R}$$
-3. $$fg(x):= f(x)g(x)$$ $$$$
-4. $$\frac{f}{g}(x):= \frac{f(x)}{g(x)}$$ $$$$
+1. $f + g$ $$
+2. $\alpha f$ $\; \forall_{\alpha \in \mathbb{R}$
+3. $fg(x):= f(x)g(x)$ $$
+4. $\frac{f}{g}(x):= \frac{f(x)}{g(x)}$ $$
 </div>
 
 <div class="definition" markdown="1">
@@ -113,7 +113,7 @@ Suppose $f,g: X \rightarrow \mathbb{R}$ are measurable functions, then so are th
 **Definition:** Equivalent functions
 
 Two functions $f,g: X \rightarrow \mathbb{R}$ are said to be equivalent if
-> $$\mu(\lbrace x \in X \; : \; f(x) \neq g(x) \rbrace) = 0$$ $$$$
+> $\mu(\lbrace x \in X \; : \; f(x) \neq g(x) \rbrace) = 0$ $$
 
 The equivalence of functions is an equivalence relation.
 </div>
@@ -131,8 +131,8 @@ Suppose $f,g: X \rightarrow \mathbb{R}$ are equivalent functions, then $f$ is me
 **Definition:** Convergence almost everywhere
 
 Let $X$ be a measure space and $\lbrace f_n: X \rightarrow \mathbb{R} \rbrace_n^{\infty}$ a sequence and suppose $\exists_{A \subset X}$ such that
-1. $$\mu(X \setminus A) = 0$$ $$$$
-2. $$ \lbrace f_n \vert_A \rbrace_n^{\infty}$$ converges to $$f(x)$$ $$\forall_{x \in A}$$
+1. $\mu(X \setminus A) = 0$ $$
+2. $ \lbrace f_n \vert_A \rbrace_n^{\infty}$ converges to $f(x)$ $\forall_{x \in A}$
 
 Then $ \lbrace f_n \rbrace$ is said to be convergent to $f$ almost everywhere.
 </div>
@@ -142,13 +142,13 @@ Then $ \lbrace f_n \rbrace$ is said to be convergent to $f$ almost everywhere.
 **Example:** 
 
 Define the sequence of functions $\lbrace f_n: X \rightarrow \mathbb{R} \rbrace_n^{\infty}$
-> $$f_n(x):= (-x)^n$$
+> $f_n(x):= (-x)^n$
 
 then $\lim_{n \rightarrow \infty} f_n(x) = \begin{cases} 0, \quad 0 \leq x < 1 \\ \text{DNE}, \quad x = 1 \end{cases}$
 </div>
 
 **Remark:** we have the following chain of implications
-> (Uniform Convergence) $$\implies$$ Pointwise Convergence $$\implies$$ Convergence Almost Everywhere
+> (Uniform Convergence) $\implies$ Pointwise Convergence $\implies$ Convergence Almost Everywhere
 
 The next theorem will give a partial inversion from almost everywhere convergence to uniform convergence.
 
@@ -157,8 +157,8 @@ The next theorem will give a partial inversion from almost everywhere convergenc
 **Theorem:** D. Egorov
 
 Let $\lbrace f_n: E \rightarrow \mathbb{R} \rbrace_n^{\infty}$ be a sequence of measurable functions convergent to $f$ almost everywhere then $\forall_{\delta > 0}$ there exists a subset $E_{\delta} \subset E$ such that
-1. $$\mu(E \setminus E_{\delta}) < \delta$$ $$$$
-2. $$f_n \vert_{E_{\delta}}$$ converges to $$f$$ uniformly
+1. $\mu(E \setminus E_{\delta}) < \delta$ $$
+2. $f_n \vert_{E_{\delta}}$ converges to $f$ uniformly
 </div>
 
 <div class="definition" markdown="1">
@@ -166,7 +166,7 @@ Let $\lbrace f_n: E \rightarrow \mathbb{R} \rbrace_n^{\infty}$ be a sequence of 
 **Definition:** Convergence in measure
 
 Let $X$ be a measure space and $\lbrace f_n: X \rightarrow \mathbb{R} \rbrace_n^{\infty}$ a sequence of measurable functions. $\lbrace f_n \rbrace$ is said to be convergent in measure to $f: X \rightarrow \mathbb{R}$ if $\forall_{\sigma > 0}$
-> $$\lim_{n \rightarrow \infty} \mu(\lbrace x \in X \; : \; \vert f_n(x) - f(x) \vert \geq \sigma \rbrace) = 0$$ $$$$
+> $\lim_{n \rightarrow \infty} \mu(\lbrace x \in X \; : \; \vert f_n(x) - f(x) \vert \geq \sigma \rbrace) = 0$ $$
 
 </div>
 
