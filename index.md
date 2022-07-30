@@ -30,3 +30,6 @@ These are my notes.
 - [Planar Degree Theory](degree_theory.md): Notes on planar degree theory.
 
 - [Algebraic Dynamical Systems](dynamical_systems.md): Notes on algebraic dynamical systems.
+
+- [Nonlinear Analysis]: Notes on nonlinear analysis
+    - [Brouwer Degree](/pages/brouwer_degree.md)

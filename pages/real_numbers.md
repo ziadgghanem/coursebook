@@ -208,7 +208,7 @@ Similarly, we define a minimum of $A$ as a greatest lower bound belonging to $A.
 **Proposition**
 
 Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a limit point. i.e.
-- $\forall \epsilon > 0$ $\exists a \in A$ such that $\sup{A} \leq a + \epsilon$
+> $\forall \epsilon > 0$ $\exists a \in A$ such that $\sup{A} \leq a + \epsilon$
 </div>
 
 <div class="proof" markdown="1">
@@ -216,7 +216,7 @@ Any supremum for a subset of the real numbers, $A \subset \mathbb{R}$, is also a
 *Proof:*
 
 Let $\sup{A}$ be the supremum of some set $A \subset \mathbb{R}$. Suppose, for contradiction, that $\sup{A}$ is not a limit point of $A$ i.e. suppose
-- $\exists \epsilon > 0$ such that $\forall a \in A$ $\sup{A} > a + \epsilon$
+> $\exists \epsilon > 0$ such that $\forall a \in A$ $\sup{A} > a + \epsilon$
 
 Then the quantity $\sup{A} - \epsilon$ is an upper bound for $A$ and as $\epsilon > 0$ $\sup{A} - \epsilon < \sup{A}$.
 
@@ -257,7 +257,7 @@ Some instructive examples and nonexamples of order-complete fields:
     - Indeed, put $A:= \lbrace x \in \mathbb{Q}: \quad x^2 < 2 \rbrace$ which has supremum $\sqrt{2} \notin \mathbb{Q}$
 </div>
 
-The Archimedian property is very nicely described by Euclid himself. In Book $\textrm{V}$ of Euclid's Elements we read
+The Archimedian property is described by Euclid himself. In Book $\textrm{V}$ of Euclid's Elements we read
 <blockquote>
         Magnitudes are said to have a ratio to one another which can, when multiplied, exceed one another.
 </blockquote>
@@ -266,9 +266,8 @@ The Archimedian property is very nicely described by Euclid himself. In Book $\t
 
 **Archimedian Property**
 
-We say that an ordered field $(\mathbb{F}, <)$ is Archimedian if 
-> $\forall a,b \in \mathbb{F}$ with $a < b$ 
-    >$\exists n \in \mathbb{N}$ such that $b < na $
+We say that an ordered field $(\mathbb{F}, <)$ is Archimedian if $\forall a,b \in \mathbb{F}$ with $a < b$ 
+> $\exists n \in \mathbb{N}$ such that $b < na $
 </div>
 
 <div class="proposition" markdown="1">
@@ -321,21 +320,19 @@ Suppose, by contradiction, that such an order exists.
 Case $1:$ Assume that $0 < i$ 
 
 Then, by the axioms of ordered fields, 
-> $0 \cdot i < i \cdot i $ $\rightarrow$ $0 < -1,$ 
-    > contradiction. 
+> $0 \cdot i < i \cdot i $ $\rightarrow$ $0 < -1,$ contradiction. 
 
 Case $1:$ Assume that $i < 0$ 
 
 Then, $0 < -i$ and by the axioms of ordered fields 
-> $0 \cdot -i < -i \cdot -i $ $\rightarrow$ $0 < -1,$ 
-    > again a contradiction. 
+> $0 \cdot -i < -i \cdot -i $ $\rightarrow$ $0 < -1,$ again a contradiction. 
 </div>
 
 ### Topology in $\mathbb{R}$
 
 Given $a \in \mathbb{R}$ we denote by $N_{\epsilon}(a) = \lbrace  x \in \mathbb{R}: a - \epsilon < x < a + \epsilon \rbrace$ the *$\epsilon-$ 
 neighborhood* of $a$ 
-and by $N^*_{\epsilon}(a) := N_{\epsilon}(a) \setminus \lbrace a \rbrace$ the deleted $\epsilon$-neighborhood of $a$.
+and by $ N_{\epsilon}^*(a) := N_{\epsilon}(a) \setminus \lbrace a \rbrace$ the deleted $\epsilon$-neighborhood of $a$.
 
 **Fundamental Concepts from Topology take $A \subset \mathbb{R}$** 
 1. $a \in A$ is called an *interior point* of $A$ if $\exists \epsilon > 0$ such that $N_{\epsilon}(a) \subset A$
@@ -374,8 +371,8 @@ the metric properties $\forall x,y,z \in M$
 Some instructive examples of metric spaces:
 1. It is the case that any set $X$ can be made into a metric space with the so-called trivial metric
     > $\rho(x,y) =$ $\begin{cases}1, \quad x \neq y \\ 0, \quad x=y \end{cases}$
-2. Consider $M = \mathbb{R}^n$ where $\mathbb{R}^n := \lbrace (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \rbrace$ and define the $p-$ metric
-    > $\rho(x,y)_p =$ $(\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$ 
+2. Consider $M = \mathbb{R}^n$ where $\mathbb{R}^n := \lbrace (x_1,x_2, \ldots, x_n): \quad x_i \in \mathbb{R} \forall i \rbrace$ and define the $p$-metric
+    > $\rho_p(x,y) = (\sum_{i=1}^{n} \vert x_i - y_i \vert^p)^{\frac{1}{p}}$ 
 3. Take $M = C([a,b],\mathbb{R})$ the space of real-valued, continuous functions defined over the interval $[a,b] \subset \mathbb{R}$ and define the supremum metric
     > $\rho(f,g) =$ $\sup_{x \in [a,b]} \vert f(x) - g(x) \vert$
 4. Again, take $M = C([a,b],\mathbb{R})$ but this time define the integral metric
@@ -429,8 +426,8 @@ Recall that the closure of $A$ is defined to be the union of $A$ the limit point
 
 Let $X$ be a metric space. Show that for $A,B \subset X$ the closure satisfies the following properties:
 1. If $A \subset B$ then $cl(A) \subset cl(B)$.
-2. $cl(A\cup B) = cl(A) \cup cl(B)$ $$
-3. $cl(A \cap B) \subset cl(A) \cap cl(B)$ $$
+2. $cl(A\cup B) = cl(A) \cup cl(B)$ 
+3. $cl(A \cap B) \subset cl(A) \cap cl(B)$ 
 
 [Solution](/pdf/RA_HW1_3.pdf)
 
@@ -440,13 +437,13 @@ Let $X$ be a metric space. Show that for $A,B \subset X$ the closure satisfies t
 
 **Statement:** Let $(M,\rho)$ be a metric space
 1. The arbitrary union of open sets is open $M$. 
-    - i.e. If $\lbrace U_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of open subsets in $M$ then $\bigcup_{\alpha} U_{\alpha}$ is open.
+    > i.e. If $\lbrace U_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of open subsets in $M$ then $\bigcup_{\alpha} U_{\alpha}$ is open.
 2. The finite intersection of open sets is open in $M$
-    - i.e. if $\lbrace U_{\alpha} \rbrace^{N}_{n=1}$ is a finite collection of open subsets in $M$ then $\bigcap^{N}_{n=1} U_{n}$ is open.
+    > i.e. if $\lbrace U_{\alpha} \rbrace_{n=1}^{N}$ is a finite collection of open subsets in $M$ then $\bigcap_{n=1}^{N} U_{n}$ is open.
 3. The arbitrary intersection of closed sets is closed $M$. 
-    - i.e. If $\lbrace V_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of closed subsets in $M$ then $\bigcap_{\alpha} V_{\alpha}$ is closed.
+    > i.e. If $\lbrace V_{\alpha} \rbrace_{\alpha \in I}$ is an arbitrary collection of closed subsets in $M$ then $\bigcap_{\alpha} V_{\alpha}$ is closed.
 4. The finite union of closed sets is closed in $M$
-    - i.e. if $\lbrace V_{\alpha} \rbrace^{N}_{n=1}$ is a finite collection of closed subsets in $M$ then $\bigcup^{N}_{n=1} V_{n}$ is closed.
+    > i.e. if $\lbrace V_{\alpha} \rbrace_{n=1}^{N}$ is a finite collection of closed subsets in $M$ then $\bigcup_{n=1}^{N} V_{n}$ is closed.
 </div>
 
 <div class="example" markdown="1">
@@ -580,15 +577,15 @@ Take the metric space $(\ell^2,\rho)$ which we recall was equipped with the metr
 > $\rho(x,y)$ $= ( \sum_{i=1}^{\infty} \vert x_i - y_i \vert^2 )^{\frac{1}{2}}$
 
 Consider the unit sphere $S^{\infty} \subset \ell^2,$ the set of all vectors in $\ell^2$
-with distance $1$ away from the origin.
-> $S^{\infty}:= \lbrace x \in \ell^2: \rho(x,0) \rbrace = 1$ where $0 = (0,0,\ldots)$
+with distance $1$ away from the origin, $0 := (0,0,\ldots)$
+> $S^{\infty}:= \lbrace x \in \ell^2: \rho(x,0) \rbrace = 1$
 
 Such a subset is both closed and bounded but we will show that it is not sequentially compact. Indeed consider the sequence
-> $\begin{cases} (1,0,0,0,\ldots) \\ (0,1,0,0,\ldots) \\ (0,0,1,0,\ldots) \\ \cdots  \end{cases}$
+$$\begin{cases} (1,0,0,0,\ldots) \\ (0,1,0,0,\ldots) \\ (0,0,1,0,\ldots) \\ \cdots  \end{cases}$$
 
 Clearly this sequence does not admit any convergent subsequences. Indeed, let $z_j \in \ell^2$ denote the element with a $1$ 
-in its $j$-th index and $0$s otherwise, then
-> $\rho(z_j,z_i) = 2$ $\forall i,j \in \mathbb{N}$
+in its $j$-th index and $0$s otherwise, then $\forall i,j \in \mathbb{N}$
+> $\rho(z_j,z_i) = 2$ 
 
 </div>
 

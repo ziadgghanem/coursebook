@@ -69,7 +69,7 @@ A minimal ring always exists and is unique
 **Existence**
 
 Take a collection of sets $\Sigma$ and put $X_0:= \bigcap_{A \in \Sigma} A$. Consider the collection of all of its subsets, $\mathcal{P}(X_0)$. Let $S$ be the set of all rings containing subsets of $\mathcal{P}(X_0)$ and containing $\Sigma$
-> $S = \lbrace X \; : \; \Sigma \subset X \subset \mathcal{P}(X_0), X is a ring  $\rbrace$
+> $S = \lbrace X \; : \; \Sigma \subset X \subset \mathcal{P}(X_0)$, X is a ring  $\rbrace$
 
 The intersection of this set $\mathcal{M}_1(\Sigma) = \bigcap_{X \in S} X$ is again a ring and must be minimal as an intersection of all rings containing $\Sigma$.
 
