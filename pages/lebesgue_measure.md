@@ -107,7 +107,9 @@ Suppose that $A,B$ are elementary sets, then so are
 1. $A \cap B$ $ $
 2. $A \cup B$ $ $
 3. $A \setminus B$ $ $
-4. $A \Delta B = (A \cup B) \setminus (A \cap B)$ where $A \Delta B$ is called the symmetric difference of $A$ and $B$
+4. $A \Delta B = (A \cup B) \setminus (A \cap B)$ 
+
+where $A \Delta B$ is called the symmetric difference of $A$ and $B$
 </div>
 
 <div class="proof" markdown="1">
@@ -167,8 +169,7 @@ only consider subsets of the unit square $E = [0,1] \times [0,1]$ and then show 
 
 **Measure on Elementary Sets**
 
-Let $E =  = [0,1] \times [0,1]$ an take elementary set $A \subset E$ with expression as finite union of disjoint rectangles
-> $A = \bigcup^n_{i=1} P_i$ where $\begin{cases} \lbrace P_i \rbrace \; \text{rectangles} \\ P_i \cap P_j = \emptyset \; i \neq j \end{cases}$
+Let $E =  = [0,1] \times [0,1]$ and take elementary set $A \subset E$ which has expression as finite union of disjoint rectangles, $A = \bigcup^n_{i=1} P_i$, where $P_i \cap P_j = \emptyset \; \forall_{i \neq j}$
 
 We define the measure of $A$ as
 > $ \mu(A):= \sum^n_{i=1} \mu(P_i)$
@@ -191,12 +192,14 @@ The measure of an elementary set is independent of its partition.
 
 *Proof:*
 
-Given elementary $A$ take any two partitions
-- $A = \bigcup^n_{i=1} P_i,$ $\bigcup^m_{j=1} Q_j$ $ \quad \begin{cases} \lbrace P_i,Q_j \rbrace \; \text{rectangles} \\ P_i \cap P_l = \emptyset \; i \neq l \\ Q_j \cap Q_k = \emptyset \; j \neq k \end{cases}$
+Given elementary $A$ take any two rectangular partitions of $A$
+> $\bigcup^n_{i=1} P_i,$ $\bigcup^m_{j=1} Q_j$ 
+
+$P_i \cap P_j = \emptyset \; \forall_{i \neq j}$ and $Q_l \cap Q_k = \emptyset \; \forall_{l \neq k}$. 
 
 We make the observation that
-1.  $ \sum^n_{i=1} \mu(P_i) = \sum^n_{i=1} \sum^m_{j=1} \mu(P_i \cap Q_j)$ $ $
-2.  $ \sum^m_{j=1} \mu(Q_j) = \sum^m_{j=1} \sum^n_{i=1} \mu(Q_j \cap P_i)$ $ $
+1.  $ \sum^n_{i=1} \mu(P_i) = \sum^n_{i=1} \sum^m_{j=1} \mu(P_i \cap Q_j)$ 
+2.  $ \sum^m_{j=1} \mu(Q_j) = \sum^m_{j=1} \sum^n_{i=1} \mu(Q_j \cap P_i)$ 
 
 Hence $\mu(A):= \sum^n_{i=1} \mu(P_i) = \sum^m_{j=1} \mu(Q_j)$
 
@@ -210,7 +213,7 @@ A measure must satisfy the properties of a measure, lets check that $\mu$ is $\s
 
 The measure of an elementary set is $\sigma$-additive i.e.
 
-Suppose $A, \lbrace A_n \rbrace^{\infty}_{n=1} \subset E$ are elementary sets with $A \subset \bigcup^{\infty}_{n=1} A_n$ then,
+Suppose $A, \lbrace A_n \rbrace_{n=1}^{\infty} \subset E$ are elementary sets with $A \subset \bigcup_{n=1}^{\infty} A_n$ then,
 > $\mu(A) \leq \sum^{\infty}_{n=1} \mu(A_n)$
 </div>
 
@@ -225,18 +228,18 @@ Fix some $\epsilon > 0$
 <hr>
 
 As an elementary set, $A$ may be expressed as the finite union of disjoint rectangles
-> $A = \bigcup^{k}_{i=1} B_i$ where $ \lbrace B_i \rbrace$ is the disjoint family of rectangles
+> $A = \bigcup_{i=1}^{k} B_i$ where $ \lbrace B_i \rbrace$ is the disjoint family of rectangles
 
 For each $B_i$ find a closed rectangle $\hat{B}_i$ such that
 1. $\hat{B}_i$ \subset B_i$ $$
 2. $\mu(B_i) \leq \mu(\hat{B}_i) + \frac{\epsilon}{2k}$ $ $
 
-Put $\hat{A}:= \bigcup^{k}_{i=1} \hat{B}_i,$ then 
+Put $\hat{A}:= \bigcup_{i=1}^{k} \hat{B}_i,$ then 
 1. $\hat{A}$ is an compact 
-2. $\hat{A} \subset A$ $ $
-3. $\mu(A) \leq \sum^{k}_{i=1} [\mu(\hat{B}_i) + \frac{\epsilon}{2k}]$ $$
-    > $\leq \sum^{k}_{i=1} \mu(\hat{B}_i) + \sum^{k}_{i=1} \frac{\epsilon}{2k} $ $$
-    > $ \leq \mu(\hat{A}) + \frac{\epsilon}{2}$ $$
+2. $\hat{A} \subset A$ 
+3. $\mu(A) \leq \sum_{i=1}^{k} [\mu(\hat{B}_i) + \frac{\epsilon}{2k}]$
+    - $\leq \sum_{i=1}^{k} \mu(\hat{B}_i) + \sum_{i=1}^{k} \frac{\epsilon}{2k} $ 
+    - $ \leq \mu(\hat{A}) + \frac{\epsilon}{2}$ $$
 
 **Step 2:** Open approximation of $\lbrace A_n \rbrace$ 
 
@@ -251,14 +254,14 @@ For each $A_n$ find an elementary set $\mathring{A}_n$ such that
 
 <hr>
 
-We have both, $\hat{A} \subset A$ and $\bigcup^{\infty}_{n=1} A_n \subset \bigcup^{\infty}_{n=1} \mathring{A}_n$, by construction and $A \subset \bigcup^{\infty}_{n=1} A_n$ by assumption such that $\lbrace \mathring{A}_n \rbrace^{\infty}_{n=1}$ is an open cover of $\hat{A}$ i.e.
-> $\hat{A} \subset  \bigcup^{\infty}_{n=1} \mathring{A}_n$ $$
+We have both, $\hat{A} \subset A$ and $\bigcup_{n=1}^{\infty} A_n \subset \bigcup_{n=1}^{\infty} \mathring{A}_n$, by construction and $A \subset \bigcup_{n=1}^{\infty} A_n$ by assumption such that $\lbrace \mathring{A}_n \rbrace_{n=1}^{\infty}$ is an open cover of $\hat{A}$ i.e.
+> $\hat{A} \subset  \bigcup_{n=1}^{\infty} \mathring{A}_n$ $$
 
 As $\hat{A}$ is compact there exists a finite open subcover $\lbrace \mathring{A}_{n_1},\mathring{A}_{n_2}, \ldots, \mathring{A}_{n_s} \rbrace$ such that $\hat{A} \subset  \bigcup^{s}_{k=1} \mathring{A}_{n_k}$. As this cover is, in particular, *finite*, we have
 > $\mu(\hat{A}) \leq \sum^{s}_{k=1} \mu(\mathring{A}_{n_k})$
 
-Finally, as $\lbrace \mathring{A}_{n_1},\mathring{A}_{n_2}, \ldots, \mathring{A}_{n_s} \rbrace \subset \lbrace \mathring{A}_n \rbrace^{\infty}_{n=1}$ we can bound $\sum^{s}_{k=1} \mu(\mathring{A}_{n_k}) \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})$ such that
-> $\mu(\hat{A}) \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})$
+Finally, as $\lbrace \mathring{A}_{n_1},\mathring{A}_{n_2}, \ldots, \mathring{A}_{n_s} \rbrace \subset \lbrace \mathring{A}_n \rbrace_{n=1}^{\infty}$ we can bound $\sum_{k=1}^{s} \mu(\mathring{A}_{n_k}) \leq \sum^{\infty}_{n=1} \mu(\mathring{A}_{n})$ such that
+> $\mu(\hat{A}) \leq \sum_{n=1}^{\infty} \mu(\mathring{A}_{n})$
 
 **Step 4:** Final Estimate
 
