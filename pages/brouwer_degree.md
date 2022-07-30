@@ -8,23 +8,36 @@ title: 'Brouwer Degree'
 **Definition:** Admissiblity
 
 Let $\Omega \subset \RR^n$ be an open bounded set and $f: \RR^n \rightarrow \RR^n$ a continuous map. The pair $(f, \Omega)$ is called admissible (equivalently, $f$ might be called $\Omega$-admissible) if 
-$$\forall_{x \in \partial \Omega} f(x) \neq 0$$
+> $\forall_{x \in \partial \Omega} f(x) \neq 0$
 </div>
 
 The theory of the Brouwer Degree is concerned with algebraically counting the solutions of the equation
-$$\begin{equation} f(x) = 0, \; x \in \Omega \end{equation}$$
+
+$$
+\begin{align}
+f(x) = 0, \; x \in \Omega \end{equation} \tag{*}\label{*}
+\end{align}
+$$
+
 for admissible pairs $(f,\Omega)$. 
 
+
 For a Euclidean space $\RR^n$ we denote by $\mathcal{M}(\RR^n)$ the set of all admissible pairs $(f, \Omega)$ in $\RR^n$ and, taking a union over all Euclidean spaces, we put 
-$$\mathcal{M} := \bigcup_n \mathcal{M}(\RR^n)$$
+> $\mathcal{M} := \bigcup_n \mathcal{M}(\RR^n)$
 
 <div class="definition" markdown="1">
 
 **Definition:** Local Brouwer Degree
 
 The Local Brouwer degree is a function
-$$deg: \mathcal{M} \rightarrow \mathbb{Z}$$
+> $deg: \mathcal{M} \rightarrow \mathbb{Z}$
 satisfying the following three conditions
 1. (Additivity): If $(f, \Omega) \in \mathcal{M}(\RR^n)$ with $(f^{-1}(0) \cap \Omega) \subset (\Omega_1 \cup \Omega_2) \subset \Omega$ for disjoint open subsets $\Omega_1, \Omega_2$ then
     - $deg(f, \Omega) = deg(f, \Omega_1) + deg(f, \Omega_2)$
+2. (Homotopy): Given an $\Omega$-admissible homotopy, $h: [0,1] \times \RR^n \rightarrow \RR^n$, 
+    - $deg(h_t, \Omega)$ is constant with respect to $t \in [0,1]$
+3. (Normalization): Let $\Omega \subset \RR^n$ be open, bounded with $a \in \RR^n$, $a \notin \partial \Omega$ then
+    - $deg(Id - a, \Omega) = \begin{cases} 0 \\ 1 \end{cases}$
 </div>
+
+**Remark:** A homotopy, $h: [0,1] \times \RR^n \rightarrow \RR^n$, is said to be $\Omega$ admissible if $\forall_{x \in \partial \Omega,} \forall_{t \in [0,1]} h_t(x) \neq 0$, i.e. $h$ is an $\Omega$-admissible homotopy if $\forall_{t \in [0,1] (h_t, \Omega) \in \mathcal{M}(\RR^n)$.
